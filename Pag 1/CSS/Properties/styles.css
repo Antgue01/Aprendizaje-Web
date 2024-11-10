@@ -1,0 +1,12 @@
+p{
+    color: red;
+font-family: sans-serif;
+font-size: 34px;
+font-weight: bolder;
+font-style: oblique;
+text-align: start;
+}
+h1{
+    text-align: center;
+    text-decoration: underline #1fc276 1px;
+}

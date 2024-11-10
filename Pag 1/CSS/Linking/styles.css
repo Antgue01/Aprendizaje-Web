@@ -1,0 +1,12 @@
+li{
+color:rgb(102, 190, 190);
+}
+h1{
+   font-style: italic;
+}
+.notEnough{
+    color: red;
+}
+#hazardousIngredient{
+    color: blue;
+}
