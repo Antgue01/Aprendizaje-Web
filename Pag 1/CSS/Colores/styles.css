@@ -1,0 +1,27 @@
+.box{
+    width: 130px;
+    height: 130px;
+    background: rgb(78, 27, 23);
+    margin: 20px;
+    padding: 50px;
+    margin-left: 150px;
+    text-align: center;
+    color: rgb(122, 8, 0);
+
+}
+.card{
+    width: 130px;
+    height: 100px;
+    background: rgb(218, 134, 101);
+    margin: 20px;
+    padding: 20px 50px;
+    margin-left: 150px;
+    text-align: center;
+    color: rgb(138, 85, 65);
+    border-top: 3px solid rgb(201, 96, 40);
+    font-weight: bold;
+    
+}
+.bien{
+    color: rgb(236, 129, 102);
+}

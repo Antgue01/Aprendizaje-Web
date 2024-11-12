@@ -10,3 +10,8 @@ h1{
     text-align: center;
     text-decoration: underline #1fc276 1px;
 }
+div{
+    background: #cfee21;
+    width: 100px;
+    height: 10px;
+}

@@ -2,6 +2,22 @@
 <font color ="#b61187"><u><b>Image Preview</u></b></font></br>
 <font color ="#b61187"><u><b>Live server</u></b></font>
 <font color ="#5999ee"> Permite ver tu página web en tiempo real. En la parte de abajo de vsCode (al lado de las líneas) pone un botón Go Live, que abre la página</font>
+
+<h1>Diccionario</h1>
+
+<font color ="#5999ee">
+
+<font color = "#fae48b"><b>
+Shorthand.
+</b></font>
+Etiqueta abreviada, atajo
+
+<font color = "#fae48b"><b>
+Margin collapse.
+</b></font>
+Efecto que se da al acumularse margins, ya que aunque lo lógico es que se sumen, en realidad predomina el mayor, ahorrando cuentas al desarrollador.
+</font>
+
 <h1>CSS</h1>
 <font color ="#5999ee">
 Para enlazar HTML con CSS se usa el tag link en el head con rel="stylesheet"
@@ -30,9 +46,15 @@ propiedad: valor<b>;</b></br>
 }
 </font>
  
+ Se pueden poner varias clases en un mismo elemento separándolas con espacios en el valor de 
+<font color ="#a3f383">
+ class.
+ </font>
+
  Además de las clases, existen los <b>id</b>, que están pensados para seleccionar elementos únicos, de forma que <b>uno y sólo uno de los elementos de la página</b> debe tener <b>un id en particular</b>. Su función es identificar al elemento de cara a ser utilizado en código javascript.
  
  Se redefinen en CSS con un # delante en lugar del punto que utilizamos en la clase.
+
 </font>
 <h2>Propiedades de texto más usadas</h2>
 <font color ="#5999ee">
@@ -128,6 +150,149 @@ full-size
 </font>, para alfabetos especiales como el japonés.
 </font>
 
+<h2>Box Model</h2>
+<p>
+<font color ="#5999ee">
+Es un paradigma de CSS que define cómo poner los elementos de una página web.
+
+Cada elemento sería una caja rectangular y este paradigma dicta cómo se redimensionan, interactúan entre sí, etc.
+
+Cada caja tiene un <b> content</b>, que es lo que hay dentro, es decir, el texto, la imagen o lo que sea.
+
+Las cajas también tienen un <b>border</b>, que es el contorno de la caja. Se puede configurar el estilo, el color y el grosor, un <b>padding</b>, que es el espacio entre el contenido y el border, y un <b>margin</b>, que es el espacio en blanco alrededor de la caja, y separa el elemento de los demás. <b> El margin NO forma parte de la caja. </b>
+
+Las propiedades que se pueden modificar son:
+
+<font color ="#b7dafc"><b>
+Contenido
+</b></font>
+<br>
+Width y Height. 
+<b>Cuidado, porque pueden descentrar el conteido.</b>
+</p>
+
+<font color ="#b7dafc"><b>
+Padding y margin
+</b></font>
+</br>
+left, right, top y bottom
+
+<font color ="#b7dafc"><b>
+Border
+</b></font></br>
+width, radius y sizing.
+</font>
+
+<h3>Box sizing</h3>
+
+<font color ="#5999ee">
+Hay dos modelos a la hora de calcular los tamaños de las cajas, el 
+<font color ="#54d398"> 
+content box
+</font>
+,que es el default, le aplica el tamaño que le demos a la caja únicamente al 
+<font color ="#c0f5dc"> 
+content
+</br>
+</font>
+,por lo que los tamaños del padding, border y margin serán un extra.
+
+El otro es el 
+<font color ="#54d398"> 
+border box
+</font>
+, que le aplica el tamaño de la caja al 
+<font color ="#c0f5dc"> 
+border
+</font>
+, haciendo que el contenido y el padding se ajusten dentro de ese tamaño.
+
+En resumen, si elegimos 
+<font color ="#54d398"> 
+content box
+</font>
+, todo lo que le agreguemos al content hará que la 
+<font color ="#c0f5dc"> 
+caja crezca
+</font>
+, mientras que si elegimos 
+<font color ="#54d398"> 
+border box
+</font>
+,
+<font color ="#c0f5dc"> 
+ mantendrá su tamaño
+</font>
+ a pesar de que le agreguemos cosas.
+</font>
+<h3>Propiedades interesantes Box Model</h3>
+<font color ="#5999ee">
+
+<font color = "#fae48b"><b>
+background
+</b></font>
+. Color de fondo del content.
+
+<font color = "#fae48b"><b>
+padding
+</b></font>
+Define el padding en el sentido de las agujas del reloj  empezando por arriba separado por espacios. Tiene varios shorthands. También podemos poner solo dos valores que serán el vertical y el horizontal.
+
+<font color = "#fae48b"><b>
+margin
+</b></font>
+De igual forma que el padding, define el margin, que separa las cajas entre sí.
+</br> Si usamos auto lo centra horizontalmente con respecto a su contenedor.
+
+<font color = "#fae48b"><b>
+border
+</b></font>
+hay varias propiedades del borde, pero como mínimo deben estar definidas
+ <font color = "#fae48b"><b>
+border-width, border-color y border-style.
+</br>
+</b></font>
+Uno de los estilos, 
+<font color ="#54d398"> 
+hidden,
+</font>
+oculta el borde para poder mostrarlo posteriormente por código, aunque modifica el tamaño.
+Para que no se modifique el tamaño podríamos usar
+<font color ="#54d398"> 
+transparent.
+</font>
+</br>
+ <font color = "#fae48b"><b>
+border-radius
+</b></font>
+redondea los bordes tantos píxeles como queramos (o porcentaje, que redondea usando también parte de los lados verticales). Al igual que el margin, podemos ponerle varios valores para que cada uno afecte a cada una de las esquinas del borde. Si solo ponemos dos, lo hará en diagonal de izquierda a derecha.
+
+El shorthand 
+ <font color = "#fae48b"><b>
+border
+</b></font>
+se usa para sustituir las tres propiedades imprescindibles del borde y se dan en el siguiente orden: <b>width style color</b>.
+
+Se pueden modificar cualquiera de los lados del borde por separado con 
+ <font color = "#fae48b"><b>
+border-top,border-right, etc
+</b></font>
+y los valores de anchura, estilo y color en el mismo orden.
+</br>
+Lo mismo sucede con los radios, pudiendo hacer formas redondeadas un poco más personalizadas.
+
+ <font color = "#fae48b"><b>
+box-sizing.
+</b></font>
+<font color ="#54d398"> 
+border-box
+</font>
+o
+<font color ="#54d398"> 
+content-box
+</font>
+.
+</font>
 <h1>Workflow</h1>
 
 <font color ="#5999ee">
@@ -146,6 +311,13 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
 <font color ="#5999ee"> <font color ="#b61187"><u><b>html:5</u></b></font> Autocompleta la estructura básica de una página web. </font></br>
 <font color ="#b61187"><u><b>a + enter</u></b></font>
 <font color ="#5999ee">Autocompleta un enlace.</font>
+<font color ="#5999ee">
+
+<font color ="#b61187"><u><b>
+ctrl + alt + flechas
+</u></b></font>
+Cursor múltiple.
+</font>
 <h1>Tags importantes HTML</h1>
 <font color ="#b61187"><u><b>< h1></u></b></font>
 <font color ="#5999ee"> Los h son los títulos. Son importantes porque a nivel de SEO, Google le va a dar más importancia a los h1 que a los h2 y así sucesivamente. Solo se debe utilizar un h1</font>
@@ -334,11 +506,16 @@ le dice al tag que pertenece a una clase de CSS.
 </font>
 
 <h2>Tags HTML para referenciar CSS</h2>
+<font color ="#5999ee">
 <font color ="#b61187"><u><b>
 < span>
 </u></b></font>
-<font color ="#5999ee">
 Se utiliza para seleccionar partes concretas de nuestro código.
+
+<font color ="#b61187"><u><b>
+< div>
+</b></u></font>
+ Crea un elemento (o un box) vacío.
 </font>
 </font>
 <h1>Listas</h1>
@@ -367,4 +544,23 @@ title </font> es muy recomendable usarlo para las <b>personas ciegas</b>, pues l
 
 En CSS, hay que tener en cuenta que los enlaces deben ser <b>muy reconocibles</b>.
 
+Además, los inputs suelen tener atributos height y width porcentuales para que se adapten al contenedor.
+
+Es importante <b>añadir algo de padding</b> a los elementos por motivos estéticos.
+</font>
+
+<h2>Colores</h2>
+<font color ="#5999ee">
+Los colores pastel se caracterizan por tener <b>poca saturación</b> y <b>mucha iluminación</b>.
+
+
+</br>
+Los colores que usemos de <b>fondo</b> tienen que <b>contrastar</b> con los que usemos de <b>letra</b> para que se vea bien la letra. Por ejemplo, un color claro de fondo con uno oscuro de letra. 
+</br>
+Una forma de hacer esto es elegir el mismo color para fondo y letra y hacer uno de los dos más claro o más oscuro para que mantengan el mismo tema.
+
+<b>Para ayudarnos</b> a elegir los colores, podemos buscar un 
+<font color ="#54d398">
+generador de paletas de colores.
+</font>
 </font>
