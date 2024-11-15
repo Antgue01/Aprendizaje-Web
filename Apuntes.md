@@ -1,7 +1,7 @@
 <h1>Extensiones interesantes VSCode</h1>
 <font color ="#b61187"><u><b>Image Preview</u></b></font></br>
 <font color ="#b61187"><u><b>Live server</u></b></font>
-<font color ="#5999ee"> Permite ver tu página web en tiempo real. En la parte de abajo de vsCode (al lado de las líneas) pone un botón Go Live, que abre la página</font>
+<font color ="#5999ee"> Permite ver tu página web en tiempo real. En la parte de abajo de vsCode (al lado de las líneas) pone un botón Go Live, que abre la página.</font>
 
 <h1>Diccionario</h1>
 
@@ -16,8 +16,17 @@ Etiqueta abreviada, atajo
 Margin collapse.
 </b></font>
 Efecto que se da al acumularse margins, ya que aunque lo lógico es que se sumen, en realidad predomina el mayor, ahorrando cuentas al desarrollador.
-</font>
 
+<font color = "#fae48b"><b>
+Ventana modal o modal box.
+</b></font>
+Recuadro que aparece sobre la página, con la particularidad de que bloquea todas las funciones y hace que el usuario solamente pueda realizar una determinada acción o cerrar la ventana.
+
+<font color = "#fae48b"><b>
+favicon.
+</b></font>
+Icono de la pestaña.
+</font>
 <h1>CSS</h1>
 <font color ="#5999ee">
 Para enlazar HTML con CSS se usa el tag link en el head con rel="stylesheet"
@@ -150,6 +159,81 @@ full-size
 </font>, para alfabetos especiales como el japonés.
 </font>
 
+<h2> Funciones más usadas</h2>
+<font color ="#5999ee">
+<b><font color = "#88a12c">
+url (
+<font color ="#e6c925">
+link
+</font>
+)
+</font>
+</b>
+Devuelve lo que haya en la url referenciada por el parámetro
+<font color ="#e6c925">
+link.
+</font>
+
+</br>
+<b><font color = "#88a12c">
+linear-gradient ( 
+<font color ="#e6c925">
+degs, color1 perc, color2 perc, colorn perc
+</font>
+)
+</font>
+</b>
+Devuelve un degradado lineal con 
+<font color ="#e6c925">
+deg
+</font>
+grados y tantos colores como se les suministren en los porcentajes dados.
+
+</br>
+<b><font color = "#88a12c">
+radial-gradient ( 
+<font color ="#e6c925">
+shape 
+<font color ="5999ee">
+at
+</font>
+position, color1 perc, color2 perc, colorn perc
+</font>
+)
+</font>
+</b>.
+La 
+<font color ="#e6c925">
+shape
+</font>
+puede ser un 
+<font color ="#54d398"> 
+circle
+</font>
+o una
+<font color ="#54d398"> 
+elipse.
+</font>
+
+</br>
+<b><font color = "#88a12c">
+conic-gradient(
+<font color ="#e6c925">
+color1, color2, color n
+</font>
+)
+</font></b>
+
+</br>
+<b><font color = "#88a12c">
+drop-shadow(
+<font color ="#e6c925">
+horizontal vertical size color
+</font>
+).
+</b></font>
+Filtro que aplica una sombra a las imágenes sin fondo basadas en los bordes de la misma usando un kernel. Útil para logos, por ejemplo.
+</font>
 <h2>Box Model</h2>
 <p>
 <font color ="#5999ee">
@@ -229,11 +313,6 @@ border box
 <font color ="#5999ee">
 
 <font color = "#fae48b"><b>
-background
-</b></font>
-. Color de fondo del content.
-
-<font color = "#fae48b"><b>
 padding
 </b></font>
 Define el padding en el sentido de las agujas del reloj  empezando por arriba separado por espacios. Tiene varios shorthands. También podemos poner solo dos valores que serán el vertical y el horizontal.
@@ -284,6 +363,8 @@ Lo mismo sucede con los radios, pudiendo hacer formas redondeadas un poco más p
  <font color = "#fae48b"><b>
 box-sizing.
 </b></font>
+
+
 <font color ="#54d398"> 
 border-box
 </font>
@@ -292,6 +373,130 @@ o
 content-box
 </font>
 .
+
+</br>
+ <font color = "#fae48b"><b>
+filter
+</b></font>
+Aplica filtros al elemento.
+</font>
+<h3>Fondos</h3>
+<font color ="#5999ee">
+
+ <font color = "#fae48b"><b>
+background-image.
+</b></font>
+podemos usar varias funciones para darle valor. Con la función 
+<font color = "#88a12c">
+url
+</font>
+le damos el valor de una imagen de internet, con la función 
+<font color = "#88a12c">
+linear-gradient
+</font>
+o
+<font color = "#88a12c">
+radial-gradient
+</font>
+le damos un degradado.
+
+ <font color = "#fae48b"><b>
+background-size.
+</b></font>
+Si le damos un
+<font color ="#54d398"> 
+porcentaje
+</font>
+, reescala la imagen (o lo que haya de fondo) para que la anchura ocupe ese tanto por ciento del contenedor.
+</br>
+También podemos darle
+<font color ="#54d398"> 
+ medidas absolutas.
+</font>
+</br>
+</br>
+<font color ="#54d398"> 
+contain
+</font>
+obliga al contenedor a que la imagen quepa al menos una vez, aunque luego se repita.
+</br>
+</br>
+<font color ="#54d398"> 
+cover
+</font>
+hace que la imagen ocupe todo el contenedor, pudiendo incluso cortarse. La diferencia con dar 
+<font color ="#54d398"> 
+100%
+</font>
+es que este último repetirá la imagen.
+
+
+ <font color = "#fae48b"><b>
+background-position.
+</b></font>
+<font color ="#54d398"> 
+left, right, top, bottom o center.
+</font>
+Alinea el fondo.
+También se le puede dar un número de pixeles en positivo o negativo para derecha y otro para abajo.
+ 
+ <font color = "#fae48b"><b>
+background-repeat.
+</b></font>
+Controla si queremos que se repita la imagen de fondo o no.
+
+ <font color = "#fae48b"><b>
+background-attachment.
+</b></font>
+Controla cómo scrollea la imagen de fondo con respecto al scroll general de la página.
+</br>
+<font color ="#54d398"> 
+fixed
+</font>
+deja el fondo fijo con respecto al scroll, de forma que cuando se scrollee la página dará la impresión de que se mueve.
+
+<font color ="#54d398"> 
+scroll
+</font>
+es el valor por defecto. La imagen de fondo se mueve con el scroll, por lo que da la impresión de estar fija.
+
+</br>
+<font color = "#fae48b"><b>
+background.
+</b></font>
+Shorthand para todo lo anterior. El orden de los atributos es 
+<font color ="#54d398"> 
+image position / size repeat attachment color.
+</font>
+</br>
+<b>Entre 
+<font color ="#54d398"> 
+position
+</font>
+ y 
+<font color ="#54d398"> 
+size
+</font>
+hay que poner siempre la barra /.</b>
+</font>
+<h3>Sombras</h3>
+<font color ="#5999ee">
+
+<font color = "#fae48b"><b>
+box-shadow.
+</b></font>
+Controla las sombras de las cajas, hay que pasarle 
+<font color ="#54d398"> 
+tamaño horizontal, tamaño vertical ,tamaño del blur, longitud o separación y color.
+</font>
+
+<font color = "#fae48b"><b>
+text-shadow.
+</b></font>
+Igual que el anterior pero <b>sin</b>
+<font color ="#54d398"> 
+longitud o separación.
+</font>
 </font>
 <h1>Workflow</h1>
 
@@ -299,6 +504,41 @@ content-box
 Para <b>crear un menú navegable </b>creamos una lista sin orden y en cada elemento ponemos un enlace a la página que deseemos.
 </br>
 </br>
+
+Para crear <b>fondos con colores superpuestos a imágenes</b>, hacemos un 
+<font color="#b61187">
+<b>div</b>
+</font>
+con una clase,por ejemplo 
+<font color ="#3ef7f7"> 
+A
+</font> 
+y otro 
+<font color="#b61187">
+<b>div</b>
+</font>
+con otra clase, por ejemplo 
+<font color ="#3ef7f7"> 
+B
+</font> 
+.
+En el Css, para 
+<font color ="#3ef7f7"> 
+A
+</font> 
+ponemos
+<font color = "#fae48b"><b>
+background-image
+</b></font>
+y para 
+<font color ="#3ef7f7"> 
+B
+</font> 
+ponemos 
+<font color = "#fae48b"><b>
+background-color
+</b></font> 
+con un color con alpha.
 
 <b>Para vincular fuentes de google</b>, nos vamos a google fonts, seleccionamos las que queramos y nos aparece el código html para ponerlo en el head.
 
@@ -328,7 +568,7 @@ Cursor múltiple.
 <font color ="#b61187"><u><b>
 < link 
 <font color ="#dd9b37"> 
-rel href
+rel href type
 </font> >
 </u></b></font>
 <font color ="#5999ee">
@@ -337,15 +577,33 @@ Se coloca en el head y sirve para enlazar archivos a la página para que los use
 <font color ="#dd9b37">
 rel 
 </font>
-sería la relación que mantiene el archivo con la página. Para enlazar un CSS le damos el valor
+sería la relación que mantiene el archivo con la página. </br></br>
+Para enlazar un CSS le damos el valor
 <font color ="#54d398"> 
 stylesheet
 </font>.
+
+<font color ="#54d398"> 
+icon
+</font>
+es para ponerle el icono.
+
 </br>
 <font color ="#dd9b37">
 href
 </font>
 es la ruta al archivo.
+
+</br>
+<font color ="#dd9b37">
+type
+</font>
+es el tipo del recurso. Es <b>MUY</b> recomendable ponerlo por compatibilidad. Ejemplos son:
+
+</br>
+<font color ="#54d398"> 
+image/png
+</font>
 </font>
 </br>
 <font color ="#b61187"><u><b>< title></u></b></font>
@@ -547,10 +805,15 @@ En CSS, hay que tener en cuenta que los enlaces deben ser <b>muy reconocibles</b
 Además, los inputs suelen tener atributos height y width porcentuales para que se adapten al contenedor.
 
 Es importante <b>añadir algo de padding</b> a los elementos por motivos estéticos.
+
+Las <b>sombras</b> son importantes porque añaden realismo, profundidad, crean una <b>jerarquía, destacando elementos</b> y mejoran la legibilidad separando contenido de fondo.
 </font>
 
 <h2>Colores</h2>
 <font color ="#5999ee">
+
+<b>NO</b> se suele usar el negro puro como color.
+
 Los colores pastel se caracterizan por tener <b>poca saturación</b> y <b>mucha iluminación</b>.
 
 
@@ -559,8 +822,147 @@ Los colores que usemos de <b>fondo</b> tienen que <b>contrastar</b> con los que 
 </br>
 Una forma de hacer esto es elegir el mismo color para fondo y letra y hacer uno de los dos más claro o más oscuro para que mantengan el mismo tema.
 
+</br>
+Otra forma bastante común es usar <b>gradientes</b> con uno de los colores en transparent, pues son bastante utilizados para dar <b>sombreado</b>. 
+</br>
+Ejemplo: </br>
+<img src="imgs/shad.png"></img>
+</br>
 <b>Para ayudarnos</b> a elegir los colores, podemos buscar un 
 <font color ="#54d398">
 generador de paletas de colores.
 </font>
+
+</br>Una sombra bastante utilizada en diseño es la que tiene 0 de vertical y horizontal, bastante blur, como unos 40px, 0 de longitud y algo de transparencia.
+</font>
+
+<h2>Fonts</h2>
+<font color ="#5999ee">
+La tipología 
+ <font color = "#fae48b"><b>
+sans-serif
+</b></font>
+es buena para ver los cambios, se notan bastante.
+</font>
+<h2>Unidades</h2>
+<font color ="#5999ee">
+Las <b>unidades fijas</b> son aquellas que tienen un tamaño determinado que no cambia en función de las dimensiones de la página, por lo que <b>no son adecuadas para diseños responsive, es decir, que se puedan ver en distintos dispositivos</b>.
+
+</br>
+
+Son ideales cuando necesitamos 
+<font color ="#5dffd4">
+ser precisos.
+</font>
+Por ejemplo, maquetación de elementos muy específicos o imágenes que tienen que tener un tamaño fijo.
+
+</br>
+Los 
+<font color ="#54d398">
+píxeles
+</font>
+ se suelen usar para las dimensiones de  
+<font color ="#5dffd4">
+imágenes, margins y paddings, textos
+</font>
+.
+
+</br>
+Los
+<font color ="#54d398">
+pt y unidades métricas (cm, etc)
+</font>
+se usan para diseños pensados para 
+<font color ="#5dffd4">
+ser impresos
+</font>
+.</br> Los últimos también se utilizan para 
+<font color ="#5dffd4">
+apps táctiles
+</font>
+.
+
+</br>
+Las <b>unidades relativas</b> son aquellas que dependen de otro valor. 
+
+</br>Son importantísimas para el 
+<font color ="#5dffd4">
+responsive design.
+</font>
+
+La más común es el 
+<font color ="#54d398">
+porcentaje
+</font>
+,que depende del 
+<font color ="#5dffd4">
+tamaño del contenedor.
+</font>
+<font color =#ee2727>
+</br>
+<b>NO</b>
+</font> 
+se suele usar para 
+<font color =#ee2727>
+texto
+</font>
+, ya que usa el porcentaje no lo aplica sobre el tamaño 
+del contenedor, sino sobre 
+<font color =#ee2727>
+el font size del contenedor.
+</br>
+</font>
+<font color =#ee2727><b>
+TAMPOCO
+</b></font> 
+se suele usar en 
+<font color =#ee2727>
+margins, padding, etc.
+</font>
+
+Una bastante utilizada es el 
+<font color ="#54d398">
+em
+</font>, que es el 
+<font color =#5dffd4>
+el font size del contenedor.
+</font>
+Si este lo tiene definido, busca recursivamente en los padres.
+</br>
+
+El
+<font color ="#54d398">
+rem
+</font>
+es el 
+<font color ="#5dffd4">
+font size del elemento raíz, es decir, del tag html.
+</font>
+
+<font color ="#54d398">
+vh 
+</font>
+y
+<font color ="#54d398">
+vw 
+</font> son el 
+<font color ="#5dffd4">
+porcentaje de la altura y anchura del viewport disponible,
+</font>
+respectivamente. 
+</br>
+Se usa bastante para ventanas modales, es decir, que ocupan toda la pantalla.
+
+<font color ="#54d398">
+vmax 
+</font>
+y
+<font color ="#54d398">
+vmin
+</font>
+son el 
+<font color ="#5dffd4">
+máximo y mínimo
+</font>
+entre vh y vw, respectivamente.
 </font>

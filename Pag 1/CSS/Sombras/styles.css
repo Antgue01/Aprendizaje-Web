@@ -1,0 +1,40 @@
+.box{
+    width: 280px;
+    background: #e2e2e2;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 0 50px 0 #0007;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color:#444;
+    text-align: center;
+
+
+}
+p{
+   list-style:none;
+   text-align: justify;
+   line-height: 1.4;
+   font-size: 14px; 
+   text-shadow: 0 0 5px #f88;
+}
+h2{
+    text-shadow: 0 0 12px #f88;
+}
+body{
+    margin: 0
+
+}
+img{
+
+    width: 160px;
+    border-radius: 100%;
+    margin: auto;
+    box-shadow: 0 0 10px 1px #000;
+}
+.logo{
+    box-shadow: 0 0 0 0;
+    border-radius: 0%;
+    filter: drop-shadow( 0 0 3px #000);
+}
