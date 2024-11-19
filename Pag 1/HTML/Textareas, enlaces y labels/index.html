@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textareas, enlaces y labels</title>
+</head>
+
+<body>
+    <form>
+        <h2>Formulario de contacto</h2>
+        <!-- SIMPLE INPUT -->
+        <fieldset>
+            <legend>Información básica</legend>
+            <div class="form_imput">
+                <label for="Nombre">Nombre Completo</label>
+                <input type="text" id="Nombre" placeholder="John Doe">
+            </div>
+            <div class="form_imput">
+                <label for="email">Email</label>
+                <input id="email" type="text" placeholder="johndoe@gmail.com">
+            </div>
+            <div class="form_imput">
+                <label for="Asunto">Asunto</label>
+                <input id="Asunto" type="text" placeholder="Texto...">
+            </div>
+        </fieldset>
+            <!--LABEL-OPTION-->
+            <div class="form_imput">
+                <label>Tipo de usuario
+                    <select name="type-of-user">
+                        <option value="user1">Seguidor</option>
+                        <option value="user2">Empresa</option>
+                        <option value="user2">Otro</option>
+                    </select>
+                </label>
+            </div>
+        <!--DATALIST-OPTION-->
+        <div class="form_imput">
+            <label>Referente
+                <input list="referrer" name="referrer">
+                <datalist id="referrer" name="type-of-user">
+                    <option value="AJ">Un programador</option>
+                    <option value="IT12">Una empresa</option>
+                    <option value="Jose">Un amigo</option>
+                    <option value="Otro"></option>
+                </datalist>
+            </label>
+        </div>
+        <!-- TEXT AREA -->
+        <div class="form_imput">
+            <label for="Mensaje">Mensaje</label>
+            <textarea id="Mensaje" readonly placeholder="Texto..."></textarea>
+        </div>
+        <div class="form_imput">
+            <label>
+                <input type="checkbox" class="checkbox">
+                Acepto los 
+                <a href="terms.html" target="_blank">
+                    términos y condiciones
+                </a>
+            </label>
+        </div>
+    </form>
+</body>
+
+</html>

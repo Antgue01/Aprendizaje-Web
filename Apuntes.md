@@ -1,3 +1,7 @@
+<h1>Curiosidades</h1>
+<font color ="#5999ee">
+Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una página web, se copiará también su estilo.
+</font>
 <h1>Extensiones interesantes VSCode</h1>
 <font color ="#b61187"><u><b>Image Preview</u></b></font></br>
 <font color ="#b61187"><u><b>Live server</u></b></font>
@@ -26,7 +30,18 @@ Recuadro que aparece sobre la página, con la particularidad de que bloquea toda
 favicon.
 </b></font>
 Icono de la pestaña.
+
+<font color = "#fae48b"><b>
+metatags.
+</b></font>
+Etiquetas que van en el <b>head</b> que se usan para dar información de cara al SEO. Importante hacerlas bien.
+
+<font color = "#fae48b"><b>
+lazy loading.
+</b></font>
+Carga diferida, básicamente, la página va a ir cargando el contenido según lo vaya necesitando en lugar de cargarlo todo al principio.
 </font>
+
 <h1>CSS</h1>
 <font color ="#5999ee">
 Para enlazar HTML con CSS se usa el tag link en el head con rel="stylesheet"
@@ -34,7 +49,7 @@ Para enlazar HTML con CSS se usa el tag link en el head con rel="stylesheet"
 La sintaxis CSS es la siguiente:
 </br>
 <font color ="#a3f383">
-tag a modificar
+tag a modificar, opcionalmente otro tag
 {</br>
 propiedad : valor<b>;</b></br>
 propiedad: valor<b>;</b></br>
@@ -379,6 +394,12 @@ content-box
 filter
 </b></font>
 Aplica filtros al elemento.
+
+ <font color = "#fae48b"><b>
+
+border-spacing.
+</b></font>
+Se  usa sobre todo en tablas, separa los bordes entre sí.
 </font>
 <h3>Fondos</h3>
 <font color ="#5999ee">
@@ -549,6 +570,13 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
 </font>
 <h1>Atajos VSCode</h1>
 <font color ="#5999ee"> <font color ="#b61187"><u><b>html:5</u></b></font> Autocompleta la estructura básica de una página web. </font></br>
+<font color ="#b61187"><u><b>
+meta:
+</u></b></font>
+<font color ="#5999ee">
+Da opciones para los meta tags.
+</font>
+
 <font color ="#b61187"><u><b>a + enter</u></b></font>
 <font color ="#5999ee">Autocompleta un enlace.</font>
 <font color ="#5999ee">
@@ -557,8 +585,23 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
 ctrl + alt + flechas
 </u></b></font>
 Cursor múltiple.
+
+<font color ="#b61187"><u><b>
+Windows + Ctrl + Enter.
+</u></b></font>
+En el navegador, activa las funciones de accesibilidad.
 </font>
-<h1>Tags importantes HTML</h1>
+<h1>HTML</h1>
+<font color ="#b61187"><u><b>
+< html 
+<font color = "#dd9b37">
+lang
+</font>>
+</font></u></b>.
+<font color ="#5999ee">
+Es el principal, le decimos el lenguaje con un language code.
+</font>
+</br>
 <font color ="#b61187"><u><b>< h1></u></b></font>
 <font color ="#5999ee"> Los h son los títulos. Son importantes porque a nivel de SEO, Google le va a dar más importancia a los h1 que a los h2 y así sucesivamente. Solo se debe utilizar un h1</font>
 
@@ -623,6 +666,72 @@ image/png
  <font color ="#b61187"><u><b> 
  < b>.
  </b></u></font>
+<font color ="#b61187"><u><b> 
+
+< em>
+</b></u></font>
+<font color ="#5999ee">
+Se utiliza para hacer énfasis en algo o para citar. Pone la letra en cursiva.
+</font>
+
+<font color ="#b61187"><u><b> 
+< del>
+</b></u></font>
+
+<font color ="#5999ee">
+Se usa para tachar contenido erróneo.
+</font>
+<font color ="#b61187"><u><b> 
+
+< header>
+</b></u></font>
+<font color ="#5999ee">
+Se usa para encabezados. No confundir con 
+<font color ="#b61187">
+< head>
+</font>
+
+<font color ="#b61187"><u><b> 
+< nav>
+</b></u></font>
+<font color ="#5999ee">
+Se usa para marcar semánticamente navegables. Un ejemplo sería un menú navegable.
+</font>
+
+<font color ="#b61187"><u><b> 
+< section>
+</b></u></font>
+<font color ="#5999ee">
+Se usa semánticamente para marcar una sección de contenido. Por ejemplo en una página de recetas, la sección ingredientes, la sección preparación, etc.
+</font>
+
+<font color ="#b61187"><u><b> 
+< main>
+</b></u></font>
+<font color ="#5999ee">
+Marca el contenido principal de la página.
+</font>
+
+<font color ="#b61187"><u><b> 
+< aside>
+</b></u></font>
+<font color ="#5999ee">
+Se utiliza para marcar contenido más bien secundario pero de alguna forma relacionado con la página. Un ejemplo sería la sección "Otras noticias" de muchas páginas de noticias.
+</font>
+
+<font color ="#b61187"><u><b> 
+< footer>
+</b></u></font>
+<font color ="#5999ee">
+Se usa para marcar semánticamente un pie de página. En él se suelen encontrar elementos como el copyright o la información de contacto.
+</font>
+
+<font color ="#b61187"><u><b> 
+< code>
+</b></u></font>
+<font color ="#5999ee">
+Se usa para escribir snippets de código.
+</font>
 </br><font color ="#b61187"><u><b>< ol></u></b></font>
 <font color ="#5999ee">Lista ordenada. </font>
 </br><font color ="#b61187"><u><b>< ul></u></b></font>
@@ -630,13 +739,72 @@ image/png
 <font color ="#b61187"><u><b>
 < li></u></b></font>
 <font color ="#5999ee">Dentro de una lista, pone un item. </font></br>
-<font color ="#b61187"><u><b>< a <font color ="#dd9b37">href  target</font>></u></b></font> 
+<font color ="#b61187"><u><b>< a <font color ="#dd9b37">href  target rel download</font>></u></b></font> 
 <font color ="#5999ee">Enlace. 
 
-<font color ="#dd9b37">href </font> es el recurso al que lleva el enlace, puede ser una imagen, otra página, etc.<b> Lo va a buscar en local, por lo que si es una página externa hay que añadirle https://</b> Si bien pdemos poner solo //, por motivos de SEO <b>NO</b> se recomienda.</font>
+<font color ="#dd9b37">href </font> es el recurso al que lleva el enlace, puede ser una imagen, otra página, etc.<b> Lo va a buscar en local, por lo que si es una página externa hay que añadirle https://</b> Si bien pdemos poner solo //, por motivos de SEO <b>NO</b> se recomienda.
+
+Podemos enlazar con una sección de la página a través del atributo 
+<font color ="#dd9b37">
+id
+</font>
+de su propiedad con un # de esta forma:
+</font>
+<font color ="#54d398">
+href ="#id-al-que-enlazamos"
+
+</font>
+
+<font color ="#5999ee">
+También podemos hacer que se mande un mail desde poniendo
+<font color ="#54d398">
+href ="mailto:correo@correo.com"
+</font>
+ o que llame a un teléfono con 
+<font color ="#54d398">
+ tel. 
+ </font>
 </br>
-<font color ="#5999ee"> <font color ="#dd9b37">target</font> es la pestaña en la que se abre, <font color ="#54d398">_self</font> es en la misma pestaña, <font color ="#54d398">_blank</font> es una nueva pestaña o ventana, dependiendo de la configuración del navegador. <b>Se recomienda añadir el atributo rel="noreferrer" en estos casos para evitar que un hacker abuse de la API para abrir pestañas.</b> </font>
-<font color ="#b61187"><u><b></br>
+ <font color ="#dd9b37">
+ rel
+ </font> dicta qué se puede hacer con esa página:
+
+</br>
+<font color ="#54d398">
+
+Noopener
+</font> bloquea el Window.Opener de Javascript, mientras que
+
+<font color ="#54d398">
+noreferrer
+</font> 
+además bloquea los header, lo que imposibilita a la página de destino saber desde qué página se accedió.
+
+<font color ="#54d398">
+nofollow
+</font>
+hace que el motor de búsqueda no indexe la página. Se puede usar para hacer que si la gente pone enlaces en nuestra página (porque permite comentarios, por ejemplo), Google no los indexe y <b>nosotros no tengamos
+la responsabilidad de lo que suceda con ese enlace.</b>
+
+</br>
+ <font color ="#dd9b37">target</font> es la pestaña en la que se abre, <font color ="#54d398">_self</font> es en la misma pestaña, <font color ="#54d398">_blank</font> es una nueva pestaña o ventana, dependiendo de la configuración del navegador. <b>Se recomienda añadir el atributo <font color ="#54d398">
+
+rel="noreferrer"
+</font>
+o bien
+<font color ="#54d398">
+rel ="noopener"
+</font>
+ en estos casos para evitar que un hacker abuse de la API para abrir pestañas.</b> 
+ Esto además mejora el rendimiento y evita <b>phising</b>.
+
+<font color ="#dd9b37"> 
+download
+</font> se pone si queremos que el archivo al que se enlaza se descargue.
+</font>
+
+<font color ="#b61187"><u><b>
+</br>
 < img 
 <font color ="#dd9b37"> 
 src alt</font>>
@@ -651,12 +819,94 @@ es la ruta de la imagen.
 </br>alt</font>
 es lo que se muestra cuando no carga. Es importante que describa bien la imagen por motivos de SEO.
 </font>
+
+</br>
+<font color ="#b61187"><u><b>
+< video
+<font color ="#dd9b37"> 
+src autoplay controls loop muted
+</font>>
+</font></u></b>
+<font color ="#5999ee">
+Crea el video alojado en 
+<font color ="#dd9b37"> 
+src
+</font>
+.
+Por cuestiones de seguridad, los videos no se pueden reproducir con sonido automáticamente si el usuario no quiere, así que para que se reproduzca hay que darle el control al usuario o que esté muteado.
+</br>
+Por otra parte, si el navegador <b>no soporta el vídeo</b> por alguna razón (no es lo mismo que no lo cargue), podemos <b>escribir un mensaje</b> entre la etiqueta de apertura y de cierre.
+
+</br>
+<font color ="#dd9b37"> 
+
+autoplay
+</font>
+es para darle la posibilidad de que se reproduzca automáticamente al interactuar con él.
+</br>
+<font color ="#dd9b37"> 
+controls
+</font>
+es para darle la barra con los controles de pausa, volumen, fullscreen, etc.
+</br>
+<font color ="#dd9b37"> 
+muted
+</font>
+hace que el video empiece muteado al recargar la página, pero que si tiene el autoplay se reproduzca automáticamente.
+</br>
+<font color ="#dd9b37">
+loop
+</font> Hace que se reproduzca en bucle.
+
+<font color ="#b61187"><u><b>
+< track
+<font color ="#dd9b37">
+src default kind srclang label
+</font>>
+</font></u></b>
+Carga un archivo .vtt con subtítulos para el video.
+</br>
+<font color ="#dd9b37">
+default
+</font>
+</br>
+hace que aparezcan por defecto.
+<font color ="#dd9b37">
+</br> 
+kind
+</font>
+es el tipo de subtítulo. Puede ser 
+<font color ="#54d398">
+captions, subtitles, chapters, descriptions
+</font>
+. La diferencia entre captions y subtitles es que semánticamente subtitles se utiliza para traducir texto y
+captions para traducir audio.
+
+Los chapters es para dividr el video en secciones.
+
+<font color ="#dd9b37">
+srclang
+</font>
+es el idioma de los subtítulos que se muestra en el selector.
+
+<font color ="#dd9b37">
+label
+</font>
+es el texto que aparece para identificar el idioma en base al srclang. Podemos poner lo que queramos.
+
+</br>
+<font color ="#b61187"><u><b>
+< audio>
+</font></u></b>
+Funciona igual que video con los mismos atributos.
+</font>
+
 <font color ="#b61187"><u><b></br>
 < form
 <font color ="#dd9b37"> 
 method
-</font>
-></font></u></b>
+</font>>
+</font></u></b>
 <font color ="#5999ee">
 Inicio de un formulario. Dentro irán las etiquetas input.
 </br>
@@ -672,10 +922,11 @@ post
 </font>
 .
 </font>
+
 <font color ="#b61187"><u><b>
 </br>< input
 <font color ="#dd9b37"> 
-type value required name placeholder value minlength maxlength
+type value list required name placeholder value minlength maxlength
 </font>
 >
 </font></u></b>
@@ -728,6 +979,12 @@ Una fecha de calentario.
 </li>
 </ul>
 <font color ="#dd9b37"> 
+list
+</font> lo vincula con un tag
+<font color ="#b61187">
+data list.
+</font></br>
+<font color ="#dd9b37"> 
 required 
 </font>
 hace que elcampo sea obligatorio.
@@ -749,6 +1006,421 @@ es a nivel de aplicación web donde se almacenará el valor del input. Como atri
 minlength y maxlength
 </font>
 Ponen límites inferiores y superiores de número de carácteres.
+</br>
+
+<font color ="#b61187"><u><b>
+< label
+<font color ="#dd9b37">
+for
+</font>>
+</font></u></b>
+Sirven para introducir al input, es decir, sería como el "nombre" del campo a rellenar y, además, lo leen los lectores de pantalla de las perosnas ciegas. De hecho, <b>al clickar en el label, se focusea el input</b> cuyo
+<font color ="#dd9b37"> 
+id
+</font>
+coincida con el 
+<font color ="#dd9b37"> 
+for
+</font>.
+</br>
+Otra forma de enlazar 
+<font color ="#b61187">
+inputs 
+</font>
+con 
+<font color ="#b61187">
+labels
+</font>
+es meter el 
+tag del 
+<font color ="#b61187">
+input
+</font>
+dentro del del 
+<font color ="#b61187">
+label.
+</font></br>
+
+<font color ="#b61187"><u><b>
+< textarea
+<font color ="#dd9b37">
+readonly disabled maxlength rows
+</font>>.
+</font></u></b>
+Crea un input de texto multilínea cuyas dimensiones son editables.
+Si ponemos el 
+<font color ="#dd9b37">
+readonly
+</font>
+no será editable, y si ponemos 
+<font color ="#dd9b37">
+disabled
+</font> no se le podrá hacer focus y, además, no se enviará a la aplicación web que construyamos por debajo.</br>
+<font color ="#dd9b37">
+rows
+</font>
+es el número de líneas antes de que ponga una barra de scroll.</br>
+<b>Tiene su propia tipografía</b>, así que hay que cambiarla explícitamente en lugar de tomar la del padre.</br>
+Tiene propiedades específicas en CSS, que son:
+
+<font color ="#dd9b37">
+min-width, max-width, min-height, max-height
+</font>
+
+
+<font color ="#dd9b37">
+resize. 
+</font>
+<font color ="#54d398">
+horizonta, vertical, both o none.
+</font>
+</br>
+<font color ="#dd9b37">
+form-sizing
+</font>
+.Si le damos el valor
+<font color ="#54d398">
+content
+</font> el tamaño del texto se ajustará al tamaño del text area.
+
+</br>
+<font color ="#b61187"><u><b>
+< select 
+<font color ="#dd9b37">
+name
+</font>>
+</font></u></b>
+Lista desplegable con varias opciones, que se definen con el tag 
+<font color ="#b61187">
+option
+</font>.
+El 
+<font color ="#dd9b37">
+name
+</font> lo identifica para javascript.
+</br>Prácticamente <b>NO te deja modificarlo en CSS</b> (aparte del <b>background-color</b>, que no puede ser transparente), aunque se puede hacer desde javascript, pero no es algo común.
+
+<font color ="#b61187"><u><b>
+< option
+<font color ="#dd9b37">
+value
+</font>>
+</font></u></b>
+Cada una de las opciones del tag
+<font color ="#b61187">
+select.
+</font>
+El 
+<font color ="#dd9b37">
+value
+</font> lo identifica para javascript.
+
+<font color ="#b61187"><u><b>
+< datalist
+<font color ="#dd9b37">
+name id
+</font>>
+</font></u></b>
+.Crea una lista desplegable de opciones que se pueden buscar por texto.
+</br> Cada opción es un tag
+<font color ="#b61187">
+option.
+</font>
+El texto que haya entre la apertura y cierre
+de estos lo usará como descripción del
+<font color ="#dd9b37">
+value.
+</font> 
+</br>El
+<font color ="#dd9b37">
+id
+</font>
+lo vincula con el tag 
+<font color ="#b61187">
+input.</font>
+</br>
+
+<font color ="#b61187"><u><b>
+< fieldset>
+</font></u></b>
+Recuadro que agrupa distintos inputs.</br>
+En CSS se modifica con la propiedad
+<font color ="#dd9b37">
+border.
+</font>
+
+<font color ="#b61187"><u><b>
+< legend>
+</font></u></b>
+Texto explicativo del 
+<font color ="#b61187">
+fieldset.
+</font>
+
+<font color ="#b61187"><u><b>
+< details>
+</font></u></b>
+En conjunto con un 
+<font color ="#b61187">
+summary
+</font>
+, crea una sección desplegable que se puede ocultar y mostrar. En el 
+<font color ="#b61187">
+details
+</font>
+ se pone la parte oculta.
+
+ <font color ="#b61187"><u><b>
+< summary>.
+</font></u></b>
+Junto con 
+<font color ="#b61187">
+details
+</font>
+crea una sección desplegable que se puede mostrar u ocultar. Aquí se pone la parte visible.
+En <b>CSS</b> podemos modificarlo cuando está abierto con 
+<font color ="#dd9b37">
+details[open]
+</font>.
+
+<font color ="#b61187"><u><b>
+< table>
+</font></u></b>
+Crea una tabla. Para formar la tabla tenemos varias etiquetas que podemos poner dentro:
+
+<font color ="#b61187"><u><b>
+< tr>
+</font></u></b>
+Para crear tablas, crea una fila. <b>NO</b> es necesario que todas las filas tengan el mismo número de elementos.
+
+<font color ="#b61187"><u><b>
+< td 
+<font color ="#dd9b37">
+colspan
+</font>>
+</font></u></b>
+Para crear tablas, crea una celda para una fila.
+
+<font color ="#dd9b37">
+Colspan
+</font>
+es cuántas columnas ocupa la fila. Por defecto es 1.
+
+</br>
+
+<font color ="#b61187"><u><b>
+< th>
+</font></u></b>
+Dentro de una fila, crea un header para la tabla, es decir, los títulos de cada columna.
+
+Además, las tablas hay que separarlas semánticamente con:
+
+<font color ="#b61187"><u><b>
+< thead>
+</font></u></b>para los encabezados, osea, los 
+<font color ="#b61187">
+th
+</font>, 
+<font color ="#b61187"><u><b>
+< tbody>
+</font></u></b> para el cuerpo de la tabla, y 
+<font color ="#b61187"><u><b>
+< tfoot>
+</font></u></b>
+para los pie de tabla.
+
+
+<font color ="#b61187"><u><b>
+< meta 
+<font color ="#dd9b37">
+charset
+</font>>
+</font></u></b>
+.Le dice la codificación de caracteres. La más utilizada es 
+<font color ="#54d398">
+UTF-8.
+</font>
+
+</br>
+<font color ="#b61187"><u><b>
+< meta
+<font color ="#dd9b37">
+name content
+</font>>
+</font></u></b>
+Le da valor a ciertas propiedades.
+<font color ="#dd9b37">
+name
+</font>
+sería la propiedad y 
+<font color ="#dd9b37">
+content
+</font>
+el valor.
+Ejemplos:
+
+</br>
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"viewport"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"width = device-width, initial-scale = 1.0"
+</font>
+
+Esto ajusta el viewport a la anchura del dispositivo y le pone el zoom al 100%.
+
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"description"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"Algo"
+</font>
+
+Le da una descripción a la web. Importante darle unos 100 caracteres para SEO.
+
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"keywords"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"Algo, algo2"
+</font>
+
+Palabras clave separadas por comas a la hora de buscar en el navegador.
+
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"author"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"Alguien"
+</font>
+
+El nombre del autor.
+
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"robots"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"valores"
+</font>
+
+Algunos valores que le podemos dar son:
+<ul>
+<font color ="#54d398">
+<li>
+nofollow.
+<font color ="#5999ee">
+Le dice al navegador que no muestre la página en los motores de búsqueda.
+</font>
+</li>
+</br>
+<li>
+nosnippet.
+<font color ="#5999ee">
+Los navegadores modernos muestran una preview de las primeras páginas al buscar. Este valor hace que  cierta parte del contenido no la muestre en esta preview.
+</li>
+</font>
+</br>
+<li>
+noarchive.
+<font color ="#5999ee">
+Impide que el navegador almacene una copia de nuestra web en caché. Se suele usar <b>si nuestra web tiene cambios constantes o depende de cambios</b> como, por ejemplo, una página web que muestra los cambios de divisa.
+</font>
+</li>
+</br>
+<li>
+noimageindex.
+<font color ="#5999ee">
+Hace que las imágenes no aparezcan en los motores de búsqueda.
+</font>
+</li>
+</ul>
+</font>
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"title"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"Algo"
+
+</font>
+El título de la página. Casi no se usa ya.
+
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"OG:TITLE"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"Algo"
+</font>
+
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"OG:IMAGE"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"Algo"
+</font>
+
+<font color ="#dd9b37">
+name =
+</font>
+<font color ="#54d398">
+"OG:DESCRIPTION"
+</font>
+<font color ="#dd9b37">
+content =
+</font>
+<font color ="#54d398">
+"Algo"
+</font>
+
+Conforman la preview de la página cuando se enlaza en redes sociales. Se pueden generar usando la página <a href = "https://metatags.io">metatags.io</a>
+</font>
 </font><h2>Atributos importantes</h2>
 
 <font color ="#dd9b37">
@@ -761,6 +1433,41 @@ Ponen límites inferiores y superiores de número de carácteres.
 <b>class</b>
 </font>
 le dice al tag que pertenece a una clase de CSS.
+
+
+<font color ="#dd9b37"><b>
+
+id
+</b></font> 
+identifica a la propiedad de cara a <b>Javascript</b> o <b>enlaces</b>.
+
+<font color ="#dd9b37"><b>
+loading
+</b></font>
+le dice al recurso cómo cargarlo.
+Puede ser
+<font color ="#5dffd4">
+lazy 
+<font color ="#5999ee">
+o
+</font>
+ eager.
+</font>
+
+<font color ="#dd9b37"><b>
+aria-label
+</b></font>
+es lo que leerá el navegador para ciegos al pulsar sobre el elemento, incluso pudiendo cambiar el texto, aunque principalmente lo usaremos para imágenes, enlaces, etc. <B>TAMBIÉN sirve para formularios</b>
+
+<font color ="#dd9b37"><b>
+role
+</b></font>
+Le informa del rol que cumple el elemento, más que nada de cara a accesibilidad. <a href=https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles>Aquí están todos</a> (obviamente, hay que poner explícitamente aquellos para los que no haya etiqueta).
+
+<font color ="#dd9b37"><b>
+aria-valuenow, aria-valuemin, aria-valuemax
+</b></font>
+indican de cara a la accesibilidad en algo con un role que implique varios elementos, el elemento mínimo, el máximo y el actual (de forma numérica).
 </font>
 
 <h2>Tags HTML para referenciar CSS</h2>
@@ -773,7 +1480,7 @@ Se utiliza para seleccionar partes concretas de nuestro código.
 <font color ="#b61187"><u><b>
 < div>
 </b></u></font>
- Crea un elemento (o un box) vacío.
+ Crea un elemento (o un box) vacío. No tiene ningún tipo de semántica.
 </font>
 </font>
 <h1>Listas</h1>
@@ -782,15 +1489,35 @@ Hay listas ordenadas y sin orden. Se pueden utilizar para menús navegables
 
 <font color ="#5999ee">
 Como naming convention, se utiliza una similar a snake case, pero en lugar de barra baja, se utiliza el guión.
-</font>
 </br></br>
 
-<font color ="#5999ee"> En HTML trabajamos de forma semántica y en CSS de forma estética. Es importante que a nivel de SEO nuestro HTML tenga cada tag cumpliendo el rol que se supone que cumple. Un ejemplo de esto es que premia usar < strong> en lugar de < b></font>
+Una web <b>debería ser navegable</b> usando la tecla TAB  y la tecla ENTER de la misma forma que si usáramos ratón por motivos de accesibilidad.
 
+Para <b>comprobar que la web es accesible</b> click derecho -> inspeccionar -> En las pestañas de debug está lighthouse, que se encarga de analizar <b>performance, accesibilidad, mejores prácticas y SEO.
+</font>
+
+<font color ="#5999ee"> En HTML trabajamos de forma semántica y en CSS de forma estética. Es importante que a nivel de SEO nuestro HTML tenga cada tag cumpliendo el rol que se supone que cumple. Un ejemplo de esto es que premia usar < strong> en lugar de < b> y que no se suele usar < u>, sino que se subraya desde CSS.</font>
+
+<font color ="#5999ee">
+
+Cuando pongamos un link en 
+<font color ="#54d398">
+target = "_blank"
+</font> hay que poner también
+<font color ="#54d398">
+rel = "noopener"
+</font>
+.Esto bloquea la API de Javascript para Window.Opener, lo que <b>mejora el rendimiento y evita el phishing</b>.
 </br>
+También se puede usar
+<font color ="#54d398">
+rel ="noreferrer"
+</font>
+,que además bloquea los header, es decir, el sitio que se abre no sabe de qué página vino.
+</font>
+
 <font color ="#5999ee"> Cada párrafo debe describir algo, por ejemplo, en un blog sobre salud un párrafo puede describir los beneficios del ejercicio físico y otro puede hablar de salud mental.
 
-Por página web solo se utiliza un h1 por motivos de SEO y debe ser lo más descriptivo posible.
 </br>
 Por tanto, se deben escribir las páginas con la estructura y la semántica en mente. Un ejemplo es esto:
 </br>
@@ -807,8 +1534,91 @@ Además, los inputs suelen tener atributos height y width porcentuales para que 
 Es importante <b>añadir algo de padding</b> a los elementos por motivos estéticos.
 
 Las <b>sombras</b> son importantes porque añaden realismo, profundidad, crean una <b>jerarquía, destacando elementos</b> y mejoran la legibilidad separando contenido de fondo.
-</font>
 
+<b>NO </b>usar videos para meter audios en la web, ya que es ineficiente, pues tiene que cargar todo el video para usar solo el audio. Transformar el video en audio externamente mejor.
+
+Si nuestra web tiene que cargar muchos recursos, usar <b>lazy loading</b>.
+</font>
+<h2>SEO</h2>
+
+<font color ="#5999ee">
+
+Es importante que <b>los tags que utilicemos cumplan el propósito para el que están pensados</b>, es decir, que usemos h2 para subtítulos y no para párrafos, etc.
+
+Hay que poner una <b> descripción</b> como metadatos de unos 100 caracteres.
+
+Usar <b>bien las keywords </b>para que se encuentre en los motores de búsqueda.
+
+Poner el <b>nombre del autor (o propietario)</b> en la meta información da confiabilidad.
+
+Usar correctamente las <b>metatags OG </b> para crear previews para las <b>redes sociales</b> ayuda bastante.
+
+Por página web <b>solo se utiliza un h1</b> debe ser lo más descriptivo posible. Se le da importancia a los h2 más que a los h3, etc.
+
+</br>
+Usar 
+<font color ="#b61187">
+<b>< strong></b>
+</font>
+en lugar de 
+<font color ="#b61187">
+<b>
+b
+</b>
+</font>.
+
+</br>
+En los <b>enlaces</b> poner siempre <b>https://</b> en lugar de <b> solo //</b>.
+
+</br>
+En las <b>imágenes</b> que 
+<font color ="#dd9b37">
+alt
+</font>
+sea <b>lo más descriptivo posible</b>.
+
+</br>
+En las <b>tablas</b> es importante hacer un buen uso de los 
+<font color ="#b61187">
+< th>
+</font>
+y separarlas en 
+<font color ="#b61187"><u><b>
+< thead>
+</font></u></b>para los encabezados, osea, los 
+<font color ="#b61187">
+th
+</font>, 
+<font color ="#b61187"><u><b>
+< tbody>
+</font></u></b> para el cuerpo de la tabla, y 
+<font color ="#b61187"><u><b>
+< tfoot>
+</font></u></b>
+para los pie de tabla.
+</font>
+<h2>Accesibilidad</h2>
+<font color ="#5999ee">
+El flujo de una página web es el código HTML lo interpreta el navegador, este crea un DOM (Document Object Model), que es un árbol con las etiquetas HTML (se puede jugar con él en JS) y luego eso se traduce a lo visual.
+</br>
+</br>
+
+En cambio, para personas que necesitan accesibilidad, se crea una copia del DOM que interpretan las tecnologías de accesibilidad antes de mostrarse el contenido.
+</br>
+Para <b>activar las funciones de accesibilidad en el navegador</b> Windows + Ctrl + Enter.
+
+Es importante que para que todo esto funcione correctamente, la página esté diseñada para poder ser usable usando únicamente las teclas TAB y ENTER.
+
+Para <b>imágenes</b> tendríamos que usar el atributo
+<font color ="#dd9b37">
+alt
+</font>.
+
+Para <b>enlaces</b>, el atributo
+<font color ="#dd9b37">
+aria-label.
+</font>
+</font>
 <h2>Colores</h2>
 <font color ="#5999ee">
 
