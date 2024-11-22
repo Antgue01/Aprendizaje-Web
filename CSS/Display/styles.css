@@ -1,0 +1,63 @@
+div {
+  background-color: #999;
+}
+body {
+  margin: 0;
+}
+.enla {
+  background-color: red;
+  color: white;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+  padding: 20px;
+}
+.a {
+  display: inline;
+}
+
+.par {
+  color: white;
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  display: inline;
+}
+
+.nav {
+  background-color: #48e;
+}
+
+.nav__list {
+  margin: 0;
+  text-align: center;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+.nav__item {
+  display: inline-block;
+  background-color: #48e;
+}
+.nav__link:hover {
+  background-color: #59e;
+}
+
+.link--button {
+  border: 1px solid #fff;
+  background-color: white;
+  padding: 4px;
+  padding: 4px 19px;
+  color: #48e;
+  border-radius: 3px;
+  margin-left: 60px;
+  /* display: none; */
+}
+
+.link--button:hover {
+    background: transparent;
+}

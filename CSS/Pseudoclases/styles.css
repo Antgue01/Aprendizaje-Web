@@ -1,0 +1,169 @@
+:root{
+    color: rgb(5, 184, 148);
+}
+h1{
+    color: #48e;
+    font-family: sans-serif;
+    margin: 30px;
+}
+
+/* Hover */
+h1:hover{
+    color: black;
+    background-color: #ccc;
+}
+
+/* Click */
+h1:active{
+    background-color: #999;
+    color: white;
+}
+
+
+ul{
+    background-color: #777;
+    padding: 0;
+}
+
+
+/* n-avo elemento */
+li:nth-child(2n+1){
+    color: #0fc;
+    background-color: #ddd;
+    padding: 5px;
+}
+
+/* n-avo elemento de tipo */
+li:nth-of-type(2){
+    color: #0f0;
+}
+
+/* Primer elemento */
+li:first-child{
+    color: red;
+}
+
+/* Ültimo elemento */
+li:last-child{
+    color: #00f;
+}
+
+/* Los li dentro de la clase lista que no tengan la clase .excluir */
+.lista li:not(.excluir){
+    color: brown;
+}
+
+ul li{
+    color: white;
+}
+
+div{
+    border: 3px solid black;
+}
+/* Seleccionamos el div si está vacío */
+div:empty{
+    border: none;
+}
+
+input[type="checkbox"]{
+    margin: 50px;
+}
+/* Seleccionamos checkbox marcados */
+input[type="checkbox"]:checked{
+    margin: 0;
+    background-image: linear-gradient(#0f0,#0f0);
+}
+
+/* Seleccionamos enlaces NO visitados */
+a:link{
+    color: #0f0;
+}
+/* Seleccionamos enlaces  visitados */
+a:visited{
+    color: red;
+}
+
+/* Seleccionamos inputs inválidos */
+input:invalid{
+    color: red;
+}
+
+/* Seleccionamos inputs válidos */
+input:valid{
+    color: green;
+}
+
+section .el1,
+section .el2,
+section .el3{
+    color: #0f0;
+}
+section :is(.el1,.el2,.el3)
+{
+    color: pink;
+}
+
+section:has(.el1){
+    background-color: #fc5;
+}
+
+/* Seleccionamos un div al que preceda un ul */
+ul + div{
+color: black;
+}
+
+/* Seleccionamos un ul que tenga divs dentro */
+ul:has(div){
+    color: black;
+
+}
+
+label{
+    padding: 20px;
+}
+/* Seleccionamos los label que tengan un input válido */
+label:has(input:valid){
+    color: #0d39fd;
+    font-weight: bold;
+}
+
+/* Seleccionamos los label que tengan un input inválido */
+label:has(input:invalid){
+    color: #e72576;
+}
+
+h1::first-letter{
+    color: red;
+    background-color: inherit;
+    font-size: 3em;
+    letter-spacing: -15px;
+}
+div::first-line{
+    color: rgb(175, 134, 141);
+    font-weight: bold;
+}
+
+
+h1::selection{
+    background-color: green;
+}
+
+div::selection{
+    background-color: #00f;
+}
+input::placeholder{
+    color: yellowgreen;
+    background-image: linear-gradient(#500a0a,#fc7575);
+    padding: 20px;
+}
+li::marker{
+    color: #0f0;
+}
+label::after,label::before{
+    content: "Si le das a inspeccionar no me ves";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.es{
+    content: "ejsoire";
+}

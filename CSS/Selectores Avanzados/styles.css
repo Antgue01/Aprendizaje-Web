@@ -1,0 +1,34 @@
+/* Selector por atributo */
+img[src$="jpg"]{
+    width: 100%;
+}
+
+li{
+    color: black;
+}
+
+/* Selector por hijo INDIRECTO */
+ul strong{
+    color: red;
+}
+
+ul li{
+    color: #666;
+}
+
+/* Selector por hijo DIRECTO */
+ul > strong{
+    color: blue;
+}
+
+
+/* Selector de hermano adyacente*/
+h1 + p {
+    color: green;
+}
+
+/* Selector de hermanos generales */
+
+h1 ~ p{
+    color: brown;
+}

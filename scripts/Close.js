@@ -1,0 +1,1 @@
+document.querySelector(".modal__close").addEventListener("click",()=>{document.querySelector("dialog").style.display="none"})

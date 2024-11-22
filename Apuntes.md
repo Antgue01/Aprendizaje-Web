@@ -12,6 +12,22 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 <font color ="#5999ee">
 
 <font color = "#fae48b"><b>
+Elementos en línea.
+</b></font>
+Aquellos que se agrupan horizontalmente. **Negrita, cursivas, enlaces y span**.
+
+**NO** aceptan margin ni padding verticales para cambiar el tamaño de la caja, ya que se rompen.
+
+**Tampoco** aceptan alto y ancho.
+
+<font color = "#fae48b"><b>
+Elementos en bloque.
+</b></font>
+Aquellos que se agrupan verticalmente y que por defecto tienen el **width en 100%**. Son los **párrafos, los h1,h2,etc; y los div**.
+
+Aceptan margin, padding para cambiar el tamaño de la caja.
+
+<font color = "#fae48b"><b>
 Shorthand.
 </b></font>
 Etiqueta abreviada, atajo
@@ -40,7 +56,14 @@ Etiquetas que van en el <b>head</b> que se usan para dar información de cara al
 lazy loading.
 </b></font>
 Carga diferida, básicamente, la página va a ir cargando el contenido según lo vaya necesitando en lugar de cargarlo todo al principio.
+
+<font color = "#fae48b"><b>
+
+Bootstrap 5.
+</b></font>
+Librería de metodología BEM con muchas clases modificadoras.
 </font>
+
 
 <h1>CSS</h1>
 <font color ="#5999ee">
@@ -75,20 +98,60 @@ propiedad: valor<b>;</b></br>
  class.
  </font>
 
+En CSS también hay herencia, es decir, que los tags que sean hijos de otro heredarán el estilo del padre. De hecho, a los atributos podemos darle el valor <b>inherit</b>, es decir, que herede el valor de alguno de los padres. 
+</br>
+También podemos darle el valor **initial**, que sería el valor por defecto del navegador.
+
+El valor **unset** es no especificar nada y el valor **revert** es buscar el valor del tema del navegador, y si no hay ningún tema aplicado el por defecto.
+
  Además de las clases, existen los <b>id</b>, que están pensados para seleccionar elementos únicos, de forma que <b>uno y sólo uno de los elementos de la página</b> debe tener <b>un id en particular</b>. Su función es identificar al elemento de cara a ser utilizado en código javascript.
  
- Se redefinen en CSS con un # delante en lugar del punto que utilizamos en la clase.
+ Se redefinen en CSS con un **#** delante en lugar del punto que utilizamos en la clase.
 
 </font>
+ <h2>Cascada y especificidad</h2>
+
+<font color ="#5999ee">
+El orden de prioridad en que se selecciona un elemento viene dado por la cascada y, una vez seleccionado en cascada, si hay conflictos, viene dado por la especificidad del elemento.
+
+La cascada aplica el siguiente orden de prioridad, de menor a mayor:
+
+ - Estilo definido por el navegador.
+ - Estilo definido por el tema del navegador
+ - Estilo definido en un archivo CSS **o** usando el tag
+<font color ="#b61187">
+< style>.
+</font>
+ 
+ - Estilo definido usando el atributo 
+<font color = "#fae48b">
+style.
+</font>
+
+ - Estilo que tenga el marcador **!important**, esté donde esté.
+
+Dentro de lo elegido por la cascada, si hay conflictos, pasa a elegir por especificidad, es decir, qué elementos son más **específicos**.
+
+El orden en este caso de menor especificidad a mayor sería **elementos generales < clases < id**, o como lo referenciaríamos en CSS, **h1 < .clase_titulo < #titulo_razas_de_perro** .
+
+La especificidad se puede ver en Chrome como una tupla de tres valores con 1 y 0 al pasar el ratón por encima de un selector. Mientrás más a la izquierda esté el 1, más específico es. Si usamos selecotres avanzados podemos tener varios 1, siendo más específicos que si usamos selectores simples.
+
+En caso de que haya dos elementos con la **misma especificidad**, elegirá el **último de ellos**.
+</font>
+
+
+
+
 <h2>Propiedades de texto más usadas</h2>
 <font color ="#5999ee">
 <b>Las propiedades que modifican la posición, tamaño, etc, lo hacen dento del tamaño de su contenedor.</b>
 
 
 <font color = "#fae48b"><b>
+
 color
 </b></font>
-</br>
+
 <font color = "#fae48b"><b>
 font-family
 </b></font>
@@ -174,6 +237,137 @@ full-size
 </font>, para alfabetos especiales como el japonés.
 </font>
 
+<h3>
+
+Propiedad display
+
+</h3>
+<font color ="#5999ee">
+
+Hay varios valores que podemos darle a display para cambiar el tipo de elemento:
+
+<font color ="#5dffd4">
+
+inline.
+</font>
+Hace que el elemento pase a ser en línea, es decir, no acepta padding ni margin, y se apilan horizontalmente.
+
+<font color ="#5dffd4">
+
+block.
+</font>
+Hace que el elemento sea en bloque, es decir, acepta padding, margin, width y height, se apilan verticalmente y por defecto tienen width 100%, es decir, **ocupan todo el ancho de la página.** e **inician una nueva línea.**
+
+<font color ="#5dffd4">
+
+inline-block
+</font>
+Funcionan igual que los elementos en bloque, pero **NO ocupan todo el ancho disponible NI inician una nueva línea.**
+
+<font color ="#5dffd4">
+
+none.
+</font>
+El elemento pasa a no ocupar espacio en la página y a **NO** renderizarse. Además, **NO** se cuenta en el cómputo de elementos hermanos, etc.
+
+
+</font>
+
+<h3>Posicionamiento</h3>
+
+<font color ="#5999ee">
+
+Para esto se utiliza la propiedad 
+<font color = "#fae48b"><b>
+position.
+</b></font>
+
+Esta propiedad nos permite crear un contexto de apilamiento, es decir, una especie de "Eje Z" para los elementos de forma que estén unos encima de otros y se puedan superponer entre sí.
+
+En la práctica, esto quiere decir que a los elementos que están posicionados les empiezan a afectar ciertas propiedades como el 
+<font color ="#e6c925">
+z-index, 
+</font> 
+que dice dónde están en el eje Z. Se suelen poner de 10 en 10 aunque no es necesario hacerlo así.
+
+Aparecen ademas las propiedades
+<font color ="#e6c925">
+top, bottom, left y right.
+</font>
+para mover los elementos en el renderer.<font color ="#e6c925">
+</br>
+top
+ </font>
+ y
+<font color ="#e6c925">
+  left
+</font>
+ tienen prioridad sobre
+<font color ="#e6c925">
+bottom
+</font>
+y
+<font color ="#e6c925">
+right
+</font>
+, respectivamente.
+
+
+
+Los posibles valores son:
+
+<font color ="#5dffd4">
+
+relative.
+</font>
+Mantiene su **posición original** en el DOM, pero **permite renderizar el elemento desplazado** con las propiedades 
+<font color ="#e6c925">
+top, bottom, left y right.
+</font>
+y además se convierte en un **pivote** para los elementos hijos.
+
+<font color ="#5dffd4">
+
+absolute.
+</font>
+El elemento **deja de ocupar espacio en la página**, aunque sigue renderizándose ahí. Todo lo que movamos el elemento en el renderer será en **posiciones absolutas** siendo el punto **pivote** por defecto el lado **superior izquierdo**, aunque **si tiene un padre en 
+<font color ="#5dffd4">
+relative
+</font>
+, lo usará como pivote.**
+</br>
+Esto último es útil ya que de esta forma, con 
+<font color ="#e6c925">
+left
+</font>
+en 0 se posicionará en el extremo izquierdo del contenedor,
+<font color ="#e6c925">
+bottom
+</font>
+en 0 se posicionará en el extremo inferior del contenedor, etc.
+
+**Si le damos 0 en las cuatro propiedades y 
+<font color ="#e6c925">
+margin
+</font>
+auto**, se centrará el elemento. 
+
+<font color ="#5dffd4">
+
+static.
+</font>
+Es el por defecto, no se considera posicionado, pues no se puede mover a no ser por el margin.
+</font>
+
+<font color ="#5dffd4">
+
+fixed.
+</font>
+
+<font color ="#5dffd4">
+
+sticky.
+</font>
 <h2> Funciones más usadas</h2>
 <font color ="#5999ee">
 <b><font color = "#88a12c">
@@ -249,6 +443,294 @@ horizontal vertical size color
 </b></font>
 Filtro que aplica una sombra a las imágenes sin fondo basadas en los bordes de la misma usando un kernel. Útil para logos, por ejemplo.
 </font>
+<h2>Selectores avanzados</h2>
+<font color ="#5999ee">
+Los selectores se pueden encadenar unos con otros.
+</br>
+</br>
+
+<font color ="#e6c925"><b>
+[ 
+<font color = "#88a12c">
+atributo = "valor"
+</font>
+]
+</b></font>
+selecciona en base a un valor concreto de un atributo.
+
+ Si al atributo <b> le añadimos $</b> seleccionará aquellos atributos que <b>terminen</b> en lo que escribamos.
+
+Si <b> le añadimos ^</b> seleccionará los que **empiecen** con lo que escribamos.
+
+<font color ="#e6c925"><b>
+tag1, tag2
+</b></font>. Al separar por comas, aplicamos el estilo a todos los 
+<font color ="#e6c925">
+tag1 
+</font>
+y
+<font color ="#e6c925">
+tag2
+</font>
+.
+
+<font color ="#e6c925"><b>
+tag_padre tag_hijo
+</b></font>
+.Al separar por espacios, le damos estilo a todos los tags que se llamen 
+<font color ="#e6c925">
+tag_hijo 
+</font>
+y que sean hijos **directos o indirectos** de tags que se llamen
+<font color ="#e6c925">
+tag_padre.
+
+</font>
+<font color ="#e6c925"><b>
+tag_padre > tag_hijo
+</b></font>
+Usando <b>></b> seleccionamos a los 
+<font color ="#e6c925">
+tag_hijo
+</font>
+que sean hijos <b>directos</b> de
+<font color ="#e6c925">
+tag_padre
+</font>
+.
+
+</br>
+<font color ="#e6c925"><b>
+tag_anterior + tag
+</b></font>
+.Selecciona al primer tag que se llame 
+<font color ="#e6c925">
+tag
+</font>
+que esté justo después de un tag 
+<font color ="#e6c925">
+tag_anterior.
+</font>
+
+</br>
+<font color ="#e6c925"><b>
+tag_anterior ~ tag
+</b></font>
+.Selecciona a todos los tags que se llamen 
+<font color ="#e6c925">
+tag
+</font>
+que estén después de un tag 
+<font color ="#e6c925">
+tag_anterior.
+</font>
+</font>
+
+<h2>Pseudo-clases</h2>
+<font color ="#a0c2f0">
+Son funciones o atributos que marcan estados concretos a la hora de seleccionar un elemento. En la <a href ="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes">documentación</a> podemos encontrarlas todas, pero algunas de las más comunes son las siguientes:
+
+<font color ="#e6c925"><b>
+
+:root
+</b></font>
+.Es la raíz de todo el documento. Todo hereda de ello. Se pone sin ningún atributo específico.
+
+<font color ="#e6c925"><b>
+
+:hover
+</b></font>
+.Cuando el ratón está encima del elemento.
+
+<font color ="#e6c925"><b>
+
+:active
+</b></font>
+.Cuando se está clickando el elemento.
+
+<font color ="#e6c925"><b>
+
+:first-child
+</b></font>
+.Elige al primero de los elementos hermanos.
+
+<font color ="#e6c925"><b>
+
+:last-child
+</b></font>
+.Elige al último de los elementos hermanos.
+
+<font color ="#e6c925"><b>
+
+:nth-child( expresión )
+</b></font>
+. Elige a uno de los elementos hermanos en base a una expresión con la n. Por ejemplo,
+<font color ="#54d398"> 
+2
+</font>
+elige al segundo hermano, pero
+<font color ="#54d398"> 
+2n + 1
+</font>
+elige a los hermanos impares.
+
+<font color ="#e6c925"><b>
+
+:nth-of-type ( expresión )
+</b></font>.Elige a uno de los elementos hermanos que sea del tipo concreto del selector en base a una expresión con la n.
+
+<font color ="#e6c925"><b>
+
+:not( selector)
+</b></font>
+.Elige a todos aquellos elementos que no sean seleccionados por el 
+<font color ="#e6c925">selector.
+</font>
+
+<font color ="#e6c925"><b>
+:empty
+</b></font>
+.Elige a todos los elementos que estén vacíos y no formateados, es decir, la única forma de elegirlos es que tengan esta forma (sin espacios):
+<font color ="#54d398"> 
+< tag>< /tag>.
+</font>
+Puede servir para por ejemplo darle un borde a un elemento, pero si está vacío quitárselo.
+
+<font color ="#e6c925"><b>
+
+:checked
+</b></font>
+.En una checkbox, la elige si está marcada.
+
+<font color ="#e6c925"><b>
+
+:link
+</b></font>
+.Selecciona un enlace que **NO** está visitado.
+
+<font color ="#e6c925"><b>
+
+:visited
+</b></font>
+.Selecciona un enlace que **YA** esté visitado.
+
+<font color ="#e6c925"><b>
+
+:focus
+</b></font>
+.Selecciona un elemento si tiene el foco.
+
+<font color ="#e6c925"><b>
+
+:enabled
+</b></font>
+. Selecciona un input si está activado, es decir, puede recoger input.
+
+<font color ="#e6c925"><b>
+
+:disabled
+</b></font>
+. Selecciona un input si está desactivado.
+
+<font color ="#e6c925"><b>
+
+:fullscreen
+</b></font>
+. Selecciona un elemento solo en modo pantalla completa.
+
+<font color ="#e6c925"><b>
+
+:invalid
+</b></font>
+. Selecciona un input cuyo valor dado por el usuario es incorrecto, por ejemplo, un email sin el @. También está la pseudo-clase 
+<font color ="#e6c925">
+:valid.</font>
+
+<font color ="#e6c925"><b>
+
+:is ( elementos )
+</b></font>. Agrupa elementos para no tener que repetirlos cuando usamos selectores avanzados. Por ejemplo, en el siguiente caso, el color rosa y el color verde están seleccionando los mismos elementos.
+</br>
+![alt text](imgs/is.png)
+</br>
+**Cambia la especificidad**, pues hace los elementos **más específicos.**
+
+<font color ="#e6c925"><b>
+
+:where( elementos )
+</b></font>
+. Es igual que is, pero **NO** cambia la especificidad.
+
+<font color ="#e6c925"><b>
+
+:has ( elementos )
+</b></font>
+.Selecciona aquellos objetos que sean padres de los 
+<font color ="#e6c925">
+elementos
+</font>
+del argumento.
+</font>
+
+<h2>Pseudo-elementos</h2>
+
+<font color ="#5999ee">
+
+Son los componentes de los elementos, por ejemplo, los placeholder de los inputs. **Sólo se les pueden modificar ciertas propiedades dependiendo del pseudoelemento.**
+
+Los más importantes son:
+
+<font color ="#e6c925"><b>
+
+::first-letter
+</b></font>
+.La primera letra del elemento.
+
+<font color ="#e6c925"><b>
+
+::first-line
+</b></font>
+.La primera línea del elemento.
+
+<font color ="#e6c925"><b>
+
+::selection
+</b></font>
+.El texto (u otros elementos) que seleccionamos con el ratón.
+
+<font color ="#e6c925"><b>
+
+::placeholder
+</b></font>
+
+<font color ="#e6c925"><b>
+
+::marker
+</b></font>
+.Los puntos de las < ul>.
+
+<font color ="#e6c925"><b>
+
+:before
+</b></font>
+.Lo que hay antes del elemento.
+
+<font color ="#e6c925"><b>
+
+::after
+</b></font>
+.Lo que hay después del elemento.
+
+Una de las propiedades que se pueden cambiar exclusivamente en los pseudo-elementos es:
+
+<font color = "#fae48b"><b>
+
+content
+</b></font>
+.Contenido en general, puede usarse para cambiar un texto por otro.
+</font>
+
+
 <h2>Box Model</h2>
 <p>
 <font color ="#5999ee">
@@ -566,8 +1048,29 @@ con un color con alpha.
 Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el que definimos la propiedad <b>@font-face</b>, a la cual hay que darle un nombre, el <b>font-family</b> y un <b>src</b>, que sería utilizar la función <b>url</b> con la ruta a la fuente en cuestión y, para que el navegador la cargue más rápido, le decimos el formato con la función <b>format</b>. Si queremos configurar variantes de la misma fuente, cramos diferentes <b>@font-face</b> con la misma family y distintas propiedades.
 
  Ejemplo:
+
 <img src ="imgs/fonts.png" title="Configuración de una fuente">
+
 </font>
+<h2>Metodología BEM</h2>
+<font color ="#5999ee">
+
+Se componne de tres elementos: bloque, elemento y modificador.
+
+Un **bloque** es un componente independiente y reutilizable que no depende de nadie para existir, por ejemplo, una barra de navegación, una tarjeta de presentación, etc.
+Podríamos compararlo con las **clases de POO**.
+
+Los bloques se nombran en base a la **función que cumple**, por ejemplo, lista o navbar.
+
+Un **elmento** es una parte de un bloque que por sí solo no tiene sentido pero lo toma al formar parte del bloque. Por ejemplo un icono dentro de un menú de navegación, ya que solo tendrá sentido en el menú de navegación.
+
+Los elementos se nombran con el nombre del bloque, dos guiones bajos y el nombre del elemento. P. ejm: lista__item.
+
+Un **modificador** es una forma de modificar un bloque o un elemento.
+
+Los modificadores serían clases adicionales para los elementos o bloques y se nombran con el nombre del elemento, dos guiones y el nombre del modificador.
+</font>
+
 <h1>Atajos VSCode</h1>
 <font color ="#5999ee"> <font color ="#b61187"><u><b>html:5</u></b></font> Autocompleta la estructura básica de una página web. </font></br>
 <font color ="#b61187"><u><b>
@@ -804,6 +1307,20 @@ download
 </font>
 
 <font color ="#b61187"><u><b>
+
+< dialog 
+<font color ="#dd9b37"> 
+open
+</font>>
+</u></b></font>
+Da la semántica de una ventana modal, de un diálogo. Por defecto está cerrada, a no ser que le pongamos el atributo
+<font color ="#dd9b37"> 
+open.
+</font>
+</br>
+Viene configurado por defecto con el **position en absolute.**
+
+<font color ="#b61187"><u><b>
 </br>
 < img 
 <font color ="#dd9b37"> 
@@ -922,6 +1439,20 @@ post
 </font>
 .
 </font>
+
+Adicionalmente, existe el valor
+<font color ="#54d398">
+dialog
+</font>
+,que lo que hace es que si está dentro de un 
+<font color ="#b61187">
+< dialog>
+</font>
+y **el form** tiene un 
+<font color ="#b61187">
+< button>
+</font>
+dentro, cierra el diálogo.
 
 <font color ="#b61187"><u><b>
 </br>< input
