@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #ccc;
+}
+
+.flex-item {
+  background-color: #a22;
+  flex-basis: 250px;
+  color: #fff;
+  font-size: 40px;
+  border-radius:2px;
+  text-align: center;
+}
+.flex-item:nth-child(2n) {
+  background-color: #d34;
+  align-self: flex-start;
+}
+
+.flex-item:first-child {
+  background-color: red;
+}
+.flex-item:last-child {
+  background-color: #000;
+}
+
+.flexbox {
+  background-color: #fff;
+  height: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 4px solid black;
+}

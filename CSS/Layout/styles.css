@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: #7bd2ec;
+  color: #e2f8ff;
+}
+/* #region HEADER */
+.header {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-image: url("../../imgs/family.webp");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+}
+h1 {
+  margin: 0;
+  font-size: 3.6rem;
+  text-wrap: balance;
+  filter: none;
+}
+
+div,
+header,
+nav,
+ul,
+h1,
+h2,
+p,
+img {
+  box-sizing: border-box;
+}
+
+.header__overlay {
+  background-color: #7bd2ec85;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.header__item-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: auto;
+  max-width: 700px;
+}
+
+.header__item-container p {
+  text-wrap: pretty;
+}
+.header__img {
+  overflow: hidden;
+  border-radius: 100%;
+  min-width: 200px;
+  max-width: 40%;
+  border: 6px solid #ccddee;
+  margin-bottom: 30px;
+}
+/* #endregion */
+
+/* #region NAVBAR */
+.nav {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 6px 20px;
+  position: sticky;
+  top: 0;
+  margin-bottom: 10px;
+  box-shadow: 0 0px 25px #0006;
+}
+.nav__ul {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+.nav__link {
+  color: #77ced3;
+  text-decoration: none;
+  padding: 8px 10px;
+  margin: 2px;
+  border-radius: 0;
+  transition: 
+          background-color .2s, 
+          border-radius .2s,
+          outline .2s,
+          outline-offset .2s;
+  outline: 0;
+  outline-offset: 0;
+} 
+.nav__link:hover{
+  border-radius: 20px;
+  background-color: #cfeef0;
+  outline: 2px solid #7bd2ec60; 
+  outline-offset: -7px;
+}
+.nav__item {
+  list-style: none;
+  margin: 12px;
+}
+.link--login{
+  background-color: #7bd2ec;
+  border-radius: 20px;
+  color: #fff;
+  padding: 8px 20px;
+  margin-left: 6px;
+}
+
+.link--login:hover{
+  background-color: #00516990;
+  outline: none;
+
+}
+.nav__logo {
+  width: 40px;
+}
+
+.nav__ul-container{
+  flex-grow: 4;
+
+} .nav__logo-container{
+  flex-grow: 1;
+  text-align: center;
+}
+/* #endregion */
+
+/* #region MAIN  */
+main{
+max-width: 800px;
+margin: auto;
+font-size: 30px;
+text-wrap: pretty;
+}
+/* #endregion */
+
+
+/*  */

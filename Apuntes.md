@@ -2,10 +2,19 @@
 <font color ="#5999ee">
 Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una página web, se copiará también su estilo.
 </font>
-<h1>Extensiones interesantes VSCode</h1>
+<h1>Recursos</h1>
+
+<h2>Extensiones interesantes VSCode</h2>
+
 <font color ="#b61187"><u><b>Image Preview</u></b></font></br>
 <font color ="#b61187"><u><b>Live server</u></b></font>
 <font color ="#5999ee"> Permite ver tu página web en tiempo real. En la parte de abajo de vsCode (al lado de las líneas) pone un botón Go Live, que abre la página.</font>
+
+<h2>Webs</h2>
+
+[Curvas bezier](https://cubic-bezier.com)
+
+[Meta tags](https://metatags.io)
 
 <h1>Diccionario</h1>
 
@@ -228,14 +237,133 @@ Espaciado entre caracteres. Se usa bastante en botones.
 <font color = "#fae48b"><b>
 text-transform
 </b></font>
-Transforma el texto a minúscula, mayúscula, o incluso otras opciones especiales, como 
+Transforma el texto a minúscula, mayúscula, o incluso otras opciones especiales, como
+
+<font color = "#fae48b"><b>
+
+list-style.
+</b></font>
+Es el icono de los puntos de las listas desordenadas.
+
 <font color ="#5dffd4">
 capitalize
 </font>, que pone la primera letra de cada palabra en mayúscula, o 
 <font color ="#5dffd4">
 full-size
 </font>, para alfabetos especiales como el japonés.
+
+<font color = "#fae48b"><b>
+
+direction.
+</b></font>
+Dirección de lectura del texto. Puede ser 
+<font color ="#5dffd4">
+ltr
 </font>
+(left to right) o
+<font color ="#5dffd4">
+rtl
+</font>
+(right to left).
+
+<font color = "#fae48b"><b>
+
+white-space.
+</b></font>
+Define cómo se comportan los espacios en blanco.
+
+<font color ="#5dffd4">
+
+normal
+</font> 
+hace que cuando haya overflow haga un salto de línea.
+</br>
+<font color ="#5dffd4">
+nowrap
+</font>
+hace que no haya saltos de línea.
+</br>
+<font color ="#5dffd4">
+pre
+</font>
+pone los mismos saltos de línea que el editor.
+</br>
+<font color ="#5dffd4">
+pre-wrap
+</font>
+es una mezcla entre **normal** y **pre**.
+
+<font color = "#fae48b"><b>
+
+text-overflow.
+</b></font>
+Dicta qué hay que hacer con el texto que se desborda, siempre y cuando el 
+<font color = "#fae48b">
+overflow
+</font>
+no esté en 
+<font color ="#5dffd4">
+display.
+</font>
+
+Los valores son 
+<font color ="#5dffd4">
+clip
+</font> por defecto, que recorta el overflow, y
+<font color ="#5dffd4">
+ellipsis,
+</font>
+que pone puntos suspensivos.
+
+<font color = "#fae48b"><b>
+
+word-break.
+</b></font>
+Define cómo dividir las palabras cuando se desbordan.
+
+<font color ="#5dffd4">
+
+break-all
+</font>
+recorta la línea justo donde no cabe, sin tener en cuenta si forma parte de una palabra.
+</br>
+<font color ="#5dffd4">
+keep-all
+</font>
+en idiomas como el coreano evita la ruptura de palabras.
+</br>
+<font color ="#5dffd4">
+auto-phrase
+</font>
+Evita cortar las frases cuando mete el salto de línea.
+
+<font color = "#fae48b"><b>
+
+overflow-wrap.
+</b></font>
+Dicta por dónde se rompen las palabras cuando hay overflow.
+<font color ="#5dffd4">
+
+anywhere
+</font>
+rompe por cualquier sitio.
+</br>
+<font color ="#5dffd4">
+break-word
+</font>
+rompe teniendo en cuenta las sílabas.
+</br>
+<font color ="#5dffd4">
+balance
+</font>
+intenta romper de forma que el texto quede dividido de forma más o menos uniforme o balanceada.
+</br>
+<font color ="#5dffd4">
+pretty
+</font>
+intenta que no se queden palabras solas.
+</font>
+
 
 <h3>
 
@@ -294,7 +422,8 @@ Aparecen ademas las propiedades
 <font color ="#e6c925">
 top, bottom, left y right.
 </font>
-para mover los elementos en el renderer.<font color ="#e6c925">
+para mover los elementos en el renderer.
+<font color ="#e6c925">
 </br>
 top
  </font>
@@ -357,16 +486,32 @@ auto**, se centrará el elemento.
 static.
 </font>
 Es el por defecto, no se considera posicionado, pues no se puede mover a no ser por el margin.
-</font>
 
 <font color ="#5dffd4">
 
 fixed.
 </font>
+Es exactamente igual que el absolute, pero con la diferencia de que **se posiciona con respecto a la ventana** en lugar de con respecto al padre.
+</br>
+De hecho, al hacer scroll, va a seguir al scroll.
 
 <font color ="#5dffd4">
 
 sticky.
+</font>
+Es como relative, pero cuando hay scroll usa 
+<font color ="#e6c925">
+top, bottom, left y right
+</font>
+como **tresholds** antes de tener el comportamiento de 
+<font color ="#5dffd4">
+fixed. 
+</font>
+Es decir, si por ejemplo, le ponemos 10px de 
+<font color ="#e6c925">
+top
+</font>
+, cuando al hacer scroll llegue a los 10 píxeles de arriba de la pantalla, de ahí para abajo va a acompañar al scroll.
 </font>
 <h2> Funciones más usadas</h2>
 <font color ="#5999ee">
@@ -730,6 +875,61 @@ content
 .Contenido en general, puede usarse para cambiar un texto por otro.
 </font>
 
+<h2>Transiciones</h2>
+
+<font color ="#a0c2f0">
+
+Podemos controlar los siguientes aspectos de las transiciones con propiedades.
+
+<font color = "#e6c925"><b>
+
+transition-property.
+</b></font>
+Es la propiedad que queremos que transicione, como por ejemplo, el 
+<font color ="#54d398"> 
+color.
+</font>
+**NO** se recomienda poner 
+<font color ="#54d398"> 
+all
+</font>
+por ser muy ineficiente.
+
+<font color = "#e6c925"><b>
+
+transition-duration.
+</b></font>
+
+<font color = "#e6c925"><b>
+
+Transition-delay.
+</b></font>
+
+<font color = "#e6c925"><b>
+
+transition-timing-function.
+</b></font>
+Controla la curva de animación. Podemos darle valor 
+<font color ="#54d398"> 
+linear, ease
+</font>
+y todas sus variantes, o crear curvas bezier con la función
+<font color ="#54d398"> 
+bezier.
+</font>
+Para ajustarlas visualmente usaremos la página [cubic bezier](https://cubic-bezier.com) o desde las herramientas del desarrollador de chrome.
+
+El shorthand para las transiciones es
+<font color = "#e6c925"><b>
+transition
+<font color ="#54d398"> 
+properties time function delay
+</font>
+</b></font>
+</br>
+Se pueden separar por coma.
+
+</font>
 
 <h2>Box Model</h2>
 <p>
@@ -741,6 +941,7 @@ Cada elemento sería una caja rectangular y este paradigma dicta cómo se redime
 Cada caja tiene un <b> content</b>, que es lo que hay dentro, es decir, el texto, la imagen o lo que sea.
 
 Las cajas también tienen un <b>border</b>, que es el contorno de la caja. Se puede configurar el estilo, el color y el grosor, un <b>padding</b>, que es el espacio entre el contenido y el border, y un <b>margin</b>, que es el espacio en blanco alrededor de la caja, y separa el elemento de los demás. <b> El margin NO forma parte de la caja. </b>
+Además, hay un **outline** entre el border y el margin.
 
 Las propiedades que se pueden modificar son:
 
@@ -762,7 +963,19 @@ left, right, top y bottom
 Border
 </b></font></br>
 width, radius y sizing.
+
+<font color ="#b7dafc"><b>
+
+Outline
+</b></font>
+</br>
+outline-color, outline-style, outline-width, outline-offset.
+</br>
+El outline **NO** cambia el tamaño de la caja, es puramente visual, por lo que **es genial para transiciones, hovers, etc**.
+</br>
+Si queremos quitar el outline cuando el elemento tenga el foco, por accesibilidad hacerlo **en :focus-visible y NO en :focus**.
 </font>
+
 
 <h3>Box sizing</h3>
 
@@ -882,7 +1095,82 @@ Aplica filtros al elemento.
 border-spacing.
 </b></font>
 Se  usa sobre todo en tablas, separa los bordes entre sí.
+<font color = "#fae48b"><b>
+
+overflow.
+</b></font>
+Controla lo que sucede cuando algo no cabe en un elemento. Puede ser
+<font color ="#54d398"> 
+visible, hidden, clip, scroll
 </font>
+o
+<font color ="#54d398"> 
+auto
+</font>
+, que pone el scroll cuando hace falta.
+</br>
+</br> La diferencia entre
+<font color ="#54d398"> 
+clip
+</font>
+y
+<font color ="#54d398"> 
+hidden
+</font>
+es que el último reserva un poco de espacio para las barras de scroll aunque no se vean.
+
+ <font color = "#fae48b"><b>
+
+object-fit.
+</b></font>
+Define qué hacer con imágenes y videos reescalados.
+
+<font color ="#5dffd4">
+
+fill
+</font>
+rellena el contenido, aunque no se respete el aspect ratio original.
+</br>
+<font color ="#5dffd4">
+contain
+</font>
+respeta el aspect ratio original o bien por horizontal o por vertical y rellena el espacio que sobra con padding.
+</br>
+<font color ="#5dffd4">
+cover
+</font>
+mantiene el aspect ratio original recortando el contenido que se desborde.
+</br>
+<font color ="#5dffd4">
+none
+</font>
+evita que se reescale.
+</br>
+<font color ="#5dffd4">
+scale-down
+</font>
+elige entre las anteriores de forma que la imagen quede lo más pequeña posible.
+ <font color = "#fae48b"><b>
+
+object-position.
+</b></font>
+Tiene sentido cuando 
+ <font color = "#fae48b">
+ object-fit
+ </font>
+ está en 
+ <font color ="#5dffd4">
+cover.
+</font>. Dice qué parte del contenido es la que se va a ver. Puede ser 
+<font color ="#5dffd4">
+top, center, bottom, left o right.
+</font>
+</br>
+También podemos darle 
+<font color ="#5dffd4">
+píxeles
+</font>
+como valor.</font>
 <h3>Fondos</h3>
 <font color ="#5999ee">
 
@@ -982,6 +1270,7 @@ size
 </font>
 hay que poner siempre la barra /.</b>
 </font>
+
 <h3>Sombras</h3>
 <font color ="#5999ee">
 
@@ -1000,6 +1289,230 @@ Igual que el anterior pero <b>sin</b>
 <font color ="#54d398"> 
 longitud o separación.
 </font>
+</font>
+
+<h2>Flexbox</h2>
+
+<font color ="#5999ee">
+
+Es otro modelo de cajas, en este caso las cajas van a a adaptar su tamaño (**sin tener en cuenta el padding**) al tamaño de la ventana (**Solo pueden disminuir su tamaño por defecto**). Para usarlo, a un elemento padre le daremos a la propiedad
+<font color = "#fae48b">
+display
+</font>
+el valor
+<font color ="#54d398"> 
+flex, block-flex
+</font>
+o
+<font color ="#54d398"> 
+inline-flex.
+</font>
+</br></br>
+De esta forma, las cajas contenedoras se comportarán en bloque, pero sus hijos **directos** serán flexibles.
+
+Los elementos flexibles apuntan todos en una misma dirección, que se puede definir y hay dos ejes, el **main axis**, que es si están en horizontal o vertical, y el **cross axis**, que es el orden.
+
+Los hijos toman por defecto el tamaño para ocupar todo el **cross axis.**
+
+Tenemos distintas propiedades que podemos modificar.
+<font color="#fff">
+
+<h3>Propiedades para los padres</h3>
+</font>
+<font color = "#fae48b"><b>
+
+flex-direction.
+</b></font>
+</br>
+<font color ="#54d398"> 
+row.
+</font>
+En horizontal, dirección de lectura (izq -> der).
+</br>
+<font color ="#54d398"> 
+row-reverse.
+</font>
+En horizontal, dirección contraria a la lectura (der -> izq).
+</br>
+<font color ="#54d398"> 
+column.
+</font>
+En vertical, dirección de lectura (arr -> aba).
+</br>
+<font color ="#54d398"> 
+column-reverse.
+</font>
+En vertical, dirección conraria a lectura (aba -> arr).
+
+<font color = "#fae48b"><b>
+
+flex-wrap.
+</b></font>
+Determina si los elementos hijos pueden hacer saltos de linea.
+</br>
+<font color ="#54d398"> 
+wrap
+</font>
+los permite, mientras que 
+<font color ="#54d398"> 
+nowrap
+</font>
+(que es la por defecto), **NO** los permite.
+</br>
+Podemos usar sus versiones reverse para dar la vuelta al revés.
+
+<font color = "#fae48b"><b>
+
+flex-flow.
+</b></font>
+Es un shorthand para los dos anteriores.
+
+
+<font color = "#fae48b"><b>
+
+justify-content.
+</b></font>
+Posiciona los elementos en el **main axis.** Puede ser
+<font color ="#54d398"> 
+start, center, end
+</font>
+u otras especiales como:
+
+<font color ="#54d398"> 
+
+space-between.
+</font>
+Pone el primero en el principio, el último en el final y el resto los distribuye de forma equitativa.
+</br>
+<font color ="#54d398"> 
+space-around.
+</font>
+Distribuye de forma equitativa **TODOS** los elementos. Esto provoca que los elementos del medio tengan el doble de espacio que el primero y el último.
+</br>
+<font color ="#54d398"> 
+space-evenly.
+</font>
+Igual que el anterior pero ahora **TODOS** van a tener el mismo espacio.
+
+<font color = "#fae48b"><b>
+
+align-items.
+</b></font>
+Posiciona los elementos en el **cross axis.** Úil cuando hay sólo **una línea**
+Los valores que toma son:
+
+<font color ="#54d398"> 
+
+stretch.
+</font>
+Los elementos se estiran para llenar el contenedor.
+</br>
+<font color ="#54d398"> 
+start.
+</font>
+Los elementos mantienen el tamaño y se ponen al principio de su línea (o columna). Pasa lo mismo con 
+<font color ="#54d398"> 
+center
+</font>
+y
+<font color ="#54d398"> 
+end.
+</font>
+</br>
+<font color ="#54d398"> 
+baseline.
+</font>
+Intenta alinear el texto de dentro. Se nota más cuando hay distintos tamaños.
+
+<font color = "#fae48b"><b>
+
+align-content.
+</b></font>
+Igual que el anterior pero para **múltiples líneas**.
+</br>
+**También toma los valores de justify-content**.
+
+<font color = "#fae48b"><b>
+
+order.
+</b></font>
+Cambiamos el orden de renderizado de los elementos (**NO afecta al DOM.**). Los valores son de 0 a n **pero todos los elementos tienen que tenerlo definido**.
+
+<font color = "#fae48b"><b>
+
+gap.
+</b></font>
+Asigna un espaciado entre elementos. Pueden salirse del flexbox.
+
+<font color="#fff">
+
+<h3>Propiedades para los hijos</h3>
+</font>
+
+<font color = "#fae48b"><b>
+
+flex-grow.
+</b></font>
+Es un número que representa la proprción del espacio **sobrante** que puede crecer, teniendo como tope el
+<font color = "#fae48b">
+flex-basis.
+</font>
+ </br>
+**Por ejemplo**, si todos los hijos tienen 
+<font color ="#54d398"> 
+1
+</font>
+y el primero tiene
+<font color ="#54d398"> 
+2,
+</font>
+el primero va a crecer hasta ocupar el doble de espacio **en blanco** que el resto.
+</br>
+Básicamente se suman todos los flex-grow y cada elemento tiene tantas partes del total como indique el atributo.
+
+<font color = "#fae48b"><b>
+
+flex-shrink.
+</b></font>
+Determina cuánto se pueden encoger los elementos.
+<font color ="#54d398"> 
+0
+</font>
+es que no se encogen. En cuanto al resto es igual que 
+<font color = "#fae48b">
+flex-grow.
+</font>
+
+<font color = "#fae48b"><b>
+
+flex-basis.
+</b></font>
+Es el tamaño base del elemento en la dirección en la que apunta. Si la ventana reduce el elemento a menos de este tamaño empieza a aplicar las políticas del 
+<font color = "#fae48b">
+flex-shrink
+</font>
+y si la ventana se agranda a más de este tamaño aplica las del 
+<font color = "#fae48b">
+flex-grow.
+</font>
+
+El shorthand para estas tres en ese orden es 
+<font color = "#fae48b">
+flex.
+</font>
+
+<font color = "#fae48b"><b>
+
+align-self.
+</b></font>
+Overridea el 
+<font color = "#fae48b">
+align-items
+</font>
+del padre. (No funciona con 
+<font color = "#fae48b">
+align-content</font>)
+
 </font>
 <h1>Workflow</h1>
 
@@ -1072,8 +1585,11 @@ Los modificadores serían clases adicionales para los elementos o bloques y se n
 </font>
 
 <h1>Atajos VSCode</h1>
-<font color ="#5999ee"> <font color ="#b61187"><u><b>html:5</u></b></font> Autocompleta la estructura básica de una página web. </font></br>
+<font color ="#5999ee"> <font color ="#b61187"><u><b>html:5</u></b>
+</font> Autocompleta la estructura básica de una página web. </font>
+
 <font color ="#b61187"><u><b>
+
 meta:
 </u></b></font>
 <font color ="#5999ee">
@@ -1094,6 +1610,89 @@ Windows + Ctrl + Enter.
 </u></b></font>
 En el navegador, activa las funciones de accesibilidad.
 </font>
+
+<h2>Emmet</h2>
+
+<font color ="#5999ee">
+<font color ="#b61187"><b>
+
+\> 
+</b></font>
+Tags dentro de otros tags. 
+
+<font color ="#b61187"><b>
+
+\*
+</b></font>
+Tantos tags como el número que pongamos después del asterisco.
+
+
+<font color ="#b61187"><b>
+
+()
+</b></font>
+Agrupa para que otros operadores afecten a múltiples elementos.
+
+<font color ="#b61187"><b>
+
+[=]
+</b></font>
+Le da el atributo que pongamos entre los brackets y, si usamos el =, le da ese valor.
+
+<font color ="#b61187"><b>
+
+.
+</b></font>
+Seguido de un texto, le da el atributo 
+<font color ="#dd9b37">
+class
+</font> con el valor del texto al tag. Es un caso particular del anterior.
+
+<font color ="#b61187"><b>
+
+\#
+</b></font>
+Igual que el anterior pero con el 
+<font color ="#dd9b37">
+id.
+</font>
+
+<font color ="#b61187"><b>
+
+{}
+</b></font>
+Le da contenido a los tags, es decir lo que va entre el tag y el cierre del tag.
+
+<font color ="#b61187"><b>
+
+\$
+</b></font>
+Usado junto con 
+<font color ="#b61187">
+\* 
+</b></font>
+y el anterior, es el número del elemento actual, como si fuera la i dentro de un for.
+
+En CSS, los atributos y las unidades tienen abreviaciones, así que podemos hacer lo siguiente:
+
+<font color ="#b61187"><b>
+
+atributoValorUnidad
+</b></font>
+Podemos separar los distintos valores con -
+</br>
+En cuanto a las unidades, 
+<font color ="#b61187">
+p
+</font>
+es para **porcentajes**,
+<font color ="#b61187">
+e
+</font>
+es para **em**.
+
+</font>
+
 <h1>HTML</h1>
 <font color ="#b61187"><u><b>
 < html 
@@ -2024,7 +2623,7 @@ Como naming convention, se utiliza una similar a snake case, pero en lugar de ba
 
 Una web <b>debería ser navegable</b> usando la tecla TAB  y la tecla ENTER de la misma forma que si usáramos ratón por motivos de accesibilidad.
 
-Para <b>comprobar que la web es accesible</b> click derecho -> inspeccionar -> En las pestañas de debug está lighthouse, que se encarga de analizar <b>performance, accesibilidad, mejores prácticas y SEO.
+Para <b>comprobar que la web es accesible</b> click derecho -> inspeccionar -> En las pestañas de debug está lighthouse, que se encarga de analizar <b>performance, accesibilidad, mejores prácticas y SEO.</b>
 </font>
 
 <font color ="#5999ee"> En HTML trabajamos de forma semántica y en CSS de forma estética. Es importante que a nivel de SEO nuestro HTML tenga cada tag cumpliendo el rol que se supone que cumple. Un ejemplo de esto es que premia usar < strong> en lugar de < b> y que no se suele usar < u>, sino que se subraya desde CSS.</font>
@@ -2059,6 +2658,8 @@ El atributo
 title </font> es muy recomendable usarlo para las <b>personas ciegas</b>, pues las páginas leen esta información en voz alta.
 
 En CSS, hay que tener en cuenta que los enlaces deben ser <b>muy reconocibles</b>.
+
+**NO** suele ser buena idea dar valores de **height fijos.** En su lugar, **se recomienda** dar un **min-height.**
 
 Además, los inputs suelen tener atributos height y width porcentuales para que se adapten al contenedor.
 
@@ -2149,6 +2750,8 @@ Para <b>enlaces</b>, el atributo
 <font color ="#dd9b37">
 aria-label.
 </font>
+
+Si vamos a modificar el **outline**, que sea en **:focus-visible en lugar de en :focus**.
 </font>
 <h2>Colores</h2>
 <font color ="#5999ee">
