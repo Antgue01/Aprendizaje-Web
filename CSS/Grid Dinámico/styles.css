@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  p{
+      margin: 0;
+  }
+  
+  .grid{
+    display: grid;
+    grid-template-columns:  repeat(auto-fill,minmax(550px,1fr)) ;
+    gap: 40px;
+    grid-auto-flow: row;
+    margin: auto;
+    margin-top: 20px;
+}
+  .grid-item{
+    color: #fff;
+    font-size: 30px;
+    border-radius: 20px;
+    max-width: 100px;
+  }
+  .grid-item:hover{
+    opacity: .6;
+  }

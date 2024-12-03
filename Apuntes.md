@@ -1,5 +1,5 @@
 <h1>Curiosidades</h1>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una página web, se copiará también su estilo.
 </font>
 <h1>Recursos</h1>
@@ -8,7 +8,7 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 
 <font color ="#b61187"><u><b>Image Preview</u></b></font></br>
 <font color ="#b61187"><u><b>Live server</u></b></font>
-<font color ="#5999ee"> Permite ver tu página web en tiempo real. En la parte de abajo de vsCode (al lado de las líneas) pone un botón Go Live, que abre la página.</font>
+<font color ="#a0c2f0"> Permite ver tu página web en tiempo real. En la parte de abajo de vsCode (al lado de las líneas) pone un botón Go Live, que abre la página.</font>
 
 <h2>Webs</h2>
 
@@ -18,9 +18,9 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 
 <h1>Diccionario</h1>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
-<font color = "#fae48b"><b>
+<font id="eli" color = "#fae48b"><b>
 Elementos en línea.
 </b></font>
 Aquellos que se agrupan horizontalmente. **Negrita, cursivas, enlaces y span**.
@@ -29,34 +29,34 @@ Aquellos que se agrupan horizontalmente. **Negrita, cursivas, enlaces y span**.
 
 **Tampoco** aceptan alto y ancho.
 
-<font color = "#fae48b"><b>
+<font id="elb" color = "#fae48b"><b>
 Elementos en bloque.
 </b></font>
 Aquellos que se agrupan verticalmente y que por defecto tienen el **width en 100%**. Son los **párrafos, los h1,h2,etc; y los div**.
 
 Aceptan margin, padding para cambiar el tamaño de la caja.
 
-<font color = "#fae48b"><b>
-Shorthand.
+<font id ="Shorthand" color = "#fae48b"><b>
+shorthand.
 </b></font>
 Etiqueta abreviada, atajo
 
-<font color = "#fae48b"><b>
+<font id ="maco" color = "#fae48b"><b>
 Margin collapse.
 </b></font>
 Efecto que se da al acumularse margins, ya que aunque lo lógico es que se sumen, en realidad predomina el mayor, ahorrando cuentas al desarrollador.
 
-<font color = "#fae48b"><b>
+<font id ="modal" color = "#fae48b"><b>
 Ventana modal o modal box.
 </b></font>
 Recuadro que aparece sobre la página, con la particularidad de que bloquea todas las funciones y hace que el usuario solamente pueda realizar una determinada acción o cerrar la ventana.
 
-<font color = "#fae48b"><b>
+<font id="icon" color = "#fae48b"><b>
 favicon.
 </b></font>
 Icono de la pestaña.
 
-<font color = "#fae48b"><b>
+<font id="meta" color = "#fae48b"><b>
 metatags.
 </b></font>
 Etiquetas que van en el <b>head</b> que se usan para dar información de cara al SEO. Importante hacerlas bien.
@@ -71,11 +71,50 @@ Carga diferida, básicamente, la página va a ir cargando el contenido según lo
 Bootstrap 5.
 </b></font>
 Librería de metodología BEM con muchas clases modificadoras.
+
+<font id ="mq" color = "#fae48b"><b>
+
+media-query.
+</b></font>
+Solicitud que le hace al dispositivo para obtener cierta información como resolución, etc y cargar unos recursos u otros dependiendo de esto (e.g. un tema). 
+
+<font id ="fq" color = "#fae48b"><b>
+
+feature-query.
+</b></font>
+Es código que podemos escribir en caso de que el navegador soporte una cierta funcionalidad. La sintaxis es:
+</br>
+<font color="#AE8ECD">
+
+ @supports
+ </font>
+ (lo que sea){
+  </br>
+  Código CSS
+  </br>
+ }
+
+ Se suele usar para usar algo en caso de que lo soporte y otra cosa en caso de que no. (Aquí se usaría 
+<font color="#AE8ECD">
+@supports not
+</font>
+ ).
+
+<font id ="cq" color = "#fae48b"><b>
+
+container-query.
+</b></font>
+Da estilo a los elementos dependiendo de las características de su contenedor.
+
+<font id ="wrapper" color = "#fae48b"><b>
+wrapper.
+</b></font>
+Elemento cuya función es darle un estilo.
+
 </font>
 
-
 <h1>CSS</h1>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Para enlazar HTML con CSS se usa el tag link en el head con rel="stylesheet"
 </br></br>
 La sintaxis CSS es la siguiente:
@@ -120,7 +159,7 @@ El valor **unset** es no especificar nada y el valor **revert** es buscar el val
 </font>
  <h2>Cascada y especificidad</h2>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 El orden de prioridad en que se selecciona un elemento viene dado por la cascada y, una vez seleccionado en cascada, si hay conflictos, viene dado por la especificidad del elemento.
 
 La cascada aplica el siguiente orden de prioridad, de menor a mayor:
@@ -152,7 +191,7 @@ En caso de que haya dos elementos con la **misma especificidad**, elegirá el **
 
 
 <h2>Propiedades de texto más usadas</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 <b>Las propiedades que modifican la posición, tamaño, etc, lo hacen dento del tamaño de su contenedor.</b>
 
 
@@ -370,7 +409,7 @@ intenta que no se queden palabras solas.
 Propiedad display
 
 </h3>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 Hay varios valores que podemos darle a display para cambiar el tipo de elemento:
 
@@ -403,7 +442,7 @@ El elemento pasa a no ocupar espacio en la página y a **NO** renderizarse. Adem
 
 <h3>Posicionamiento</h3>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 Para esto se utiliza la propiedad 
 <font color = "#fae48b"><b>
@@ -514,8 +553,10 @@ top
 , cuando al hacer scroll llegue a los 10 píxeles de arriba de la pantalla, de ahí para abajo va a acompañar al scroll.
 </font>
 <h2> Funciones más usadas</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
+
 <b><font color = "#88a12c">
+
 url (
 <font color ="#e6c925">
 link
@@ -527,9 +568,8 @@ Devuelve lo que haya en la url referenciada por el parámetro
 <font color ="#e6c925">
 link.
 </font>
-
-</br>
 <b><font color = "#88a12c">
+
 linear-gradient ( 
 <font color ="#e6c925">
 degs, color1 perc, color2 perc, colorn perc
@@ -543,12 +583,12 @@ deg
 </font>
 grados y tantos colores como se les suministren en los porcentajes dados.
 
-</br>
 <b><font color = "#88a12c">
+
 radial-gradient ( 
 <font color ="#e6c925">
 shape 
-<font color ="5999ee">
+<font color ="a0c2f0">
 at
 </font>
 position, color1 perc, color2 perc, colorn perc
@@ -569,17 +609,16 @@ o una
 elipse.
 </font>
 
-</br>
 <b><font color = "#88a12c">
+
 conic-gradient(
 <font color ="#e6c925">
 color1, color2, color n
 </font>
 )
 </font></b>
-
-</br>
 <b><font color = "#88a12c">
+
 drop-shadow(
 <font color ="#e6c925">
 horizontal vertical size color
@@ -587,9 +626,10 @@ horizontal vertical size color
 ).
 </b></font>
 Filtro que aplica una sombra a las imágenes sin fondo basadas en los bordes de la misma usando un kernel. Útil para logos, por ejemplo.
+
 </font>
 <h2>Selectores avanzados</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Los selectores se pueden encadenar unos con otros.
 </br>
 </br>
@@ -819,7 +859,7 @@ del argumento.
 
 <h2>Pseudo-elementos</h2>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 Son los componentes de los elementos, por ejemplo, los placeholder de los inputs. **Sólo se les pueden modificar ciertas propiedades dependiendo del pseudoelemento.**
 
@@ -919,7 +959,7 @@ bezier.
 </font>
 Para ajustarlas visualmente usaremos la página [cubic bezier](https://cubic-bezier.com) o desde las herramientas del desarrollador de chrome.
 
-El shorthand para las transiciones es
+El [shorthand](#Shorthand) para las transiciones es
 <font color = "#e6c925"><b>
 transition
 <font color ="#54d398"> 
@@ -933,7 +973,7 @@ Se pueden separar por coma.
 
 <h2>Box Model</h2>
 <p>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Es un paradigma de CSS que define cómo poner los elementos de una página web.
 
 Cada elemento sería una caja rectangular y este paradigma dicta cómo se redimensionan, interactúan entre sí, etc.
@@ -979,7 +1019,7 @@ Si queremos quitar el outline cuando el elemento tenga el foco, por accesibilida
 
 <h3>Box sizing</h3>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Hay dos modelos a la hora de calcular los tamaños de las cajas, el 
 <font color ="#54d398"> 
 content box
@@ -1020,12 +1060,12 @@ border box
  a pesar de que le agreguemos cosas.
 </font>
 <h3>Propiedades interesantes Box Model</h3>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 <font color = "#fae48b"><b>
 padding
 </b></font>
-Define el padding en el sentido de las agujas del reloj  empezando por arriba separado por espacios. Tiene varios shorthands. También podemos poner solo dos valores que serán el vertical y el horizontal.
+Define el padding en el sentido de las agujas del reloj  empezando por arriba separado por espacios. Tiene varios [shorthands](#Shorthand). También podemos poner solo dos valores que serán el vertical y el horizontal.
 
 <font color = "#fae48b"><b>
 margin
@@ -1056,7 +1096,7 @@ border-radius
 </b></font>
 redondea los bordes tantos píxeles como queramos (o porcentaje, que redondea usando también parte de los lados verticales). Al igual que el margin, podemos ponerle varios valores para que cada uno afecte a cada una de las esquinas del borde. Si solo ponemos dos, lo hará en diagonal de izquierda a derecha.
 
-El shorthand 
+El [shorthand](#Shorthand) 
  <font color = "#fae48b"><b>
 border
 </b></font>
@@ -1172,7 +1212,7 @@ píxeles
 </font>
 como valor.</font>
 <h3>Fondos</h3>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
  <font color = "#fae48b"><b>
 background-image.
@@ -1255,7 +1295,7 @@ es el valor por defecto. La imagen de fondo se mueve con el scroll, por lo que d
 <font color = "#fae48b"><b>
 background.
 </b></font>
-Shorthand para todo lo anterior. El orden de los atributos es 
+[shorthand](#Shorthand) para todo lo anterior. El orden de los atributos es 
 <font color ="#54d398"> 
 image position / size repeat attachment color.
 </font>
@@ -1272,7 +1312,7 @@ hay que poner siempre la barra /.</b>
 </font>
 
 <h3>Sombras</h3>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 <font color = "#fae48b"><b>
 box-shadow.
@@ -1293,7 +1333,7 @@ longitud o separación.
 
 <h2>Flexbox</h2>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 Es otro modelo de cajas, en este caso las cajas van a a adaptar su tamaño (**sin tener en cuenta el padding**) al tamaño de la ventana (**Solo pueden disminuir su tamaño por defecto**). Para usarlo, a un elemento padre le daremos a la propiedad
 <font color = "#fae48b">
@@ -1365,10 +1405,10 @@ Podemos usar sus versiones reverse para dar la vuelta al revés.
 
 flex-flow.
 </b></font>
-Es un shorthand para los dos anteriores.
+Es un [shorthand](#Shorthand) para los dos anteriores.
 
 
-<font color = "#fae48b"><b>
+<font id="jc" color = "#fae48b"><b>
 
 justify-content.
 </b></font>
@@ -1394,7 +1434,7 @@ space-evenly.
 </font>
 Igual que el anterior pero ahora **TODOS** van a tener el mismo espacio.
 
-<font color = "#fae48b"><b>
+<font id="ai" color = "#fae48b"><b>
 
 align-items.
 </b></font>
@@ -1495,8 +1535,9 @@ y si la ventana se agranda a más de este tamaño aplica las del
 <font color = "#fae48b">
 flex-grow.
 </font>
+**Es necesario definirlo para que funcionen los anteriores.**
 
-El shorthand para estas tres en ese orden es 
+El [shorthand](#Shorthand) para estas tres en ese orden es 
 <font color = "#fae48b">
 flex.
 </font>
@@ -1514,9 +1555,374 @@ del padre. (No funciona con
 align-content</font>)
 
 </font>
+
+<h2 id="grid">Grid</h2>
+
+<font color ="#a0c2f0">
+
+Al igual que flexbox, es modelo de cajas, en este caso tenemos una grid que tiene filas y columnas (dos direcciones). Por tanto, usaríamos **flexbox** cuando el layout esté pensado para algo vertical u horizontal, pero usaremos **grid** cuando el layout tenga forma de "tabla", es decir, tanto filas como columnas. 
+
+Tenemos un **Grid container** que tendrá varios hijos, los **Grid items.**, que pueden ocupar una o más **Grid cells** de la cuadrícula. Además, tenemos las **líneas de la cuadrícula**, que se definen como bordes. Por otra parte, tenemos los **Grid tracks**, que son cada una de las filas o cada una de las columnas. Los **Grid cells** son las celdas, el espacio real de la cuadrícula. Finalmente tenemos los **Grid area**, que son celdas individuales o conjuntos de celdas delimitidas por cuatro líneas y que usamos para colocar elementos de forma más eficiente en la cuadrícula.
+
+Para crear un grid le damos a la propiedad
+<font color = "#fae48b">
+display
+</font> 
+del contenedor el valor
+<font color ="#54d398"> 
+grid.
+</font>
+Entonces, cada hijo pasará a ser una fila.
+En Grid **NO hay [margin collapse](#maco).**
+
+</font>
+
+<h3>Propiedades del contenedor</h3>
+
+<font color ="#a0c2f0">
+
+<font color = "#fae48b">
+
+**grid-template-columns.**
+</font>
+Cuánto ocupa cada una de las columnas. Mientras más valores le pongamos más columnas
+
+<font color = "#fae48b">
+
+**grid-template-rows.**
+</font>
+Cuánto ocupa cada una de las filas. Mientras más valores le pongamos más filas añade.
+
+Podemos tener **más filas y columnas que contenido** de forma que según se vaya añadiendo contenido, se irán dibujando, aunque el espacio se reserva.
+</br></br>
+Si le damos el valor 
+<font color ="#54d398"> 
+auto
+</font>
+ a alguna de las filas o columnas, el espacio reservado será hasta ocupar todo el ancho restante de la pantalla, pero si le damos un **tamaño menor al elemento**, visualmente éste será más pequeño aunque tenga reservado todo el espacio. **Básicamente** calcula el espacio mínimo que ocupa cada fila o columna **teniendo en cuenta el contenido** de las mismas, y el espacio sobrante lo reparte entre cada una de los que tenga auto.
+</br></br>
+Si usamos la unidad 
+<font color ="#54d398"> 
+fr
+</font>
+calcula el espacio mínimo que ocupa cada fila o columna **sin tener en cuenta el contenido** de las mismas y el espacio sobrante lo reparte entre cada una. **Si no cabe el contenido de alguna de las filas o columnas**, adapta esa en concreto para que quepa dándole más espacio. Es **más usado** que auto.
+</br></br>
+El valor
+<font color ="#54d398"> 
+min-content
+</font>
+hace que ocupe lo justo para que quepa el contenido.
+</br></br>
+El valor
+<font color ="#54d398"> 
+subgrid
+</font>
+hace que si hacemos que algún hijo tenga una grid dentro, ésta forme parte de la grid principal, **evitando errores**.
+</br></br>
+La función
+<font color = "#88a12c">
+**minmax(**
+</font>
+<font color ="#e6c925">
+**min max**
+</font>
+<font color = "#88a12c">
+**)**
+</font>  hace que una fila o columna tenga como mínimo
+<font color ="#e6c925">
+min
+</font>
+píxeles y como máximo
+<font color ="#e6c925">
+max
+</font>
+píxeles.
+</br></br>
+La función
+<font color = "#88a12c">
+**repeat(**
+<font color ="#e6c925">
+**times expression**
+</font>
+</font>
+<font color = "#88a12c">
+**)**
+</font>
+repite, separado por espacios,
+<font color ="#e6c925">
+times
+</font> 
+veces la expresión
+<font color ="#e6c925">
+expression
+</font>.
+</br>
+En lugar de
+<font color ="#e6c925">
+times
+</font>
+podemos darle el valor
+<font color ="#54d398"> 
+auto-fit
+</font>
+o
+<font color ="#54d398"> 
+auto-fill.
+</font>
+
+Esto, unido al uso de 
+<font color = "#88a12c">
+</font>, (que podemos darle un tamaño fijo en píxeles como mínimo y en fr como máximo para que ocupe un mínimo de espacio determinado) hace que según cambia la resolución, va metiendo columnas o filas nuevas cuando van cabiendo.
+minmax
+La diferencia entre ambos es que si tenemos menos elementos que filas y columnas, 
+<font color ="#54d398"> 
+auto-fill
+</font> va a meter nuevas, mientras que 
+<font color ="#54d398"> 
+auto-fill
+</font>
+va a ajustar el tamaño de las filas o columnas que ya haya. 
+<font color = "#fae48b">
+
+**grid-auto-columns / grid-auto-rows.**
+</font>
+Igual que las propiedades anteriores pero para las filas y columnas implícitas, es decir, las que tenga que crear porque hay más elementos definidos en HTML que filas y columnas en CSS.
+
+<font color = "#fae48b">
+
+**grid-auto-flow.**
+</font>
+Puede ser 
+<font color ="#54d398"> 
+row
+</font>
+o
+<font color ="#54d398"> 
+column.
+</font>
+Dicta qué añade automáticamente cuando hay más elementos que filas y columnas definidas. Por defecto añade **filas.**
+</br>
+También puede ser
+<font color ="#54d398"> 
+dense, 
+</font>
+que es para cuando algún elemento ocupa más de una celda, pues esto genera **huecos entre elementos**, así que este valor se encarga de rellenar los huecos, aunque **no respete el orden** de los elementos que son más grandes y por tanto no caben.
+<font color = "#fae48b">
+
+**row-gap / column-gap.**
+</font>
+Espacio entre filas y columnas, evitando así el problema del [margin collapse](#maco).
+</br>
+El [shorthand](#Shorthand) para estas propiedades es 
+<font color = "#fae48b">
+gap.
+</font>
+
+<font color = "#fae48b">
+
+**grid-column-start / grid-column-end /grid-row-start / grid-row-end.**
+</font>
+Las grid tienen filas y columnas numeradas del 1 al n +1. Estas propiedades dicen en qué fila y columna empieza y termina un elemento.
+</br>
+A las end podemos añadirle delante del número 
+<font color ="#54d398"> 
+span
+</font> y le dice que ocupe x filas o columnas más en lugar del número en el que termina.
+</br>
+El [shorthand](#Shorthand) para esto es 
+<font color = "#fae48b">
+**grid-column**
+</font>
+(o
+<font color = "#fae48b">
+**grid-row**
+</font>)
+y se separa el start y el end por una /.
+
+<font color = "#fae48b">
+
+**grid-area.**
+</font>
+Define áreas, sería como un [shorthand](#Shorthand) para la propiedad anterior.
+
+Otra opción es usar esta propiedad junto con
+<font color = "#fae48b">
+grid-template-area.
+</font>
+Para ello, esta propiedad le da nombre (no hacen falta las comillas de los strings) a los elementos y en la otra se fija la distribución.
+
+<font color = "#fae48b">
+
+**grid-template-area**.
+</font>
+Define la distribución de las áreas, usada en conjunto con 
+grid-area.
+En un string por columna escribimos la misma. Si un elemento ocupa varias celdas lo escribimos todas las veces. Un ejemplo sería:
+</br>
+![alt text](imgs/areas.png)
+
+<font id="ji" color = "#fae48b">
+
+**justify-items**.
+</font>
+Alinea los elementos hijos dentro de sus celdas en el eje horizontal. Los valores que puede tomar son:
+<font color ="#54d398"> 
+
+stretch.
+</font>
+Estira el elemento.
+<font color ="#54d398"> 
+
+start.
+</font>
+Alinea al principio según dirección de escritura.
+<font color ="#54d398"> 
+
+self-start.
+</font>
+Alinea al principio según dirección de escritura **teniendo en cuenta la dirección de los hijos.**
+Es decir, si a un hijo le cambiamos la 
+<font color = "#fae48b">
+direction
+</font>
+de 
+<font color ="#54d398"> 
+ltr
+</font>
+a 
+<font color ="#54d398"> 
+rtl,
+</font>
+ese hijo se alinea al contrario.
+<font id ="gjc" color = "#fae48b">
+
+**justify-content**.
+</font>
+Es igual que el de [flex](#jc) pero mueves la celda entera.
+<font color = "#fae48b">
+
+**align-items.** 
+</font>
+Igual que el [justify-items](#ji) pero en el eje vertical.
+
+<font color = "#fae48b">
+
+**align-content.**
+</font>
+Igual que el [justify-content](#gjc) pero en el eje vertical.
+</font>
+<h3>Propiedades de los hijos</h3>
+<font color ="#a0c2f0">
+<font color = "#fae48b">
+
+**justify-self.**
+</font>
+Alinea uno de los hijos en concreto en horizontal. Mismas opciones que [justify-items](#ji).
+
+<font color = "#fae48b">
+
+**align-self.**
+</font>
+Alinea uno de los hijos en concreto en vertical. Mismas opciones que [align-items](#ai).
+</font>
+<h2>Media Queries</h2>
+
+<font color ="#a0c2f0">
+
+La sintaxis en **CSS** es la siguiente:
+</br>
+<font color ="#ccc">
+<font color="#AE8ECD">
+@media
+</font>
+not|only mediatype
+<font color="#AE8ECD">
+and
+</font>
+(expressions){
+</br>
+<font color="#AE8ECD">
+CSS-code;</br>}
+</font>
+</br>
+</font>
+<font color ="#ccc">
+media
+</font>
+es la regla que inicia la query,
+<font color ="#ccc">
+not y only
+</font>
+son operadores opcionales. El primero descarta dispositivos y el otro es para que los navegadores antiguos que no soportan media queries no le haga caso a la query,
+<font color ="#ccc">
+mediatype
+</font>
+es sobre lo que queremos actuar (e.g 
+<font color ="#54d398"> 
+print
+</font>
+o
+<font color ="#54d398"> 
+screen
+</font>
+).
+
+<font color ="#54d398"> 
+
+print
+</font>
+serviría para dar estilos de cara a dispositivos de impresión. 
+
+<font color ="#54d398"> 
+
+screen
+</font>
+es para dar estilos en pantalla.
+
+Se utiliza bastante para adaptar ciertas cosas a dispositivos móviles, haciendo una query sobre el ancho de la pantalla y reorganizando los flexbox en columnas, por ejemplo.
+
+</font>
+
+<h2>Container Queries</h2>
+
+<font color ="#a0c2f0">
+
+Para usarlas, hay que usar la propiedad
+<font color = "#fae48b">
+container-type
+</font>
+(lo cual crea un container context) sobre el elemento que queremos que actúe como contenedor. Puede tomar los siguientes valores:
+
+
+inline-size.
+</font>
+Modificamos las propiedades en base al ancho del contenedor, sólo tiene en cuenta las propiedades en línea.
+
+<font color ="#54d398"> 
+
+size.
+</font>
+Modificamos las propiedades en base a las propiedades en bloque y en línea.
+
+También podemos darle un 
+<font color = "#fae48b">
+container-name
+</font>
+
+La sintaxis de una query sería la siguiente:
+
+<font color="#AE8ECD">
+
+@container nombre-del-contenedor (condición) {
+  </br>
+</font>
+código CSS.
+</br>
+}
+</font>
 <h1>Workflow</h1>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Para <b>crear un menú navegable </b>creamos una lista sin orden y en cada elemento ponemos un enlace a la página que deseemos.
 </br>
 </br>
@@ -1566,7 +1972,7 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
 
 </font>
 <h2>Metodología BEM</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 Se componne de tres elementos: bloque, elemento y modificador.
 
@@ -1585,20 +1991,20 @@ Los modificadores serían clases adicionales para los elementos o bloques y se n
 </font>
 
 <h1>Atajos VSCode</h1>
-<font color ="#5999ee"> <font color ="#b61187"><u><b>html:5</u></b>
+<font color ="#a0c2f0"> <font color ="#b61187"><u><b>html:5</u></b>
 </font> Autocompleta la estructura básica de una página web. </font>
 
 <font color ="#b61187"><u><b>
 
 meta:
 </u></b></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Da opciones para los meta tags.
 </font>
 
 <font color ="#b61187"><u><b>a + enter</u></b></font>
-<font color ="#5999ee">Autocompleta un enlace.</font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">Autocompleta un enlace.</font>
+<font color ="#a0c2f0">
 
 <font color ="#b61187"><u><b>
 ctrl + alt + flechas
@@ -1613,7 +2019,7 @@ En el navegador, activa las funciones de accesibilidad.
 
 <h2>Emmet</h2>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 <font color ="#b61187"><b>
 
 \> 
@@ -1700,15 +2106,15 @@ es para **em**.
 lang
 </font>>
 </font></u></b>.
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Es el principal, le decimos el lenguaje con un language code.
 </font>
 </br>
 <font color ="#b61187"><u><b>< h1></u></b></font>
-<font color ="#5999ee"> Los h son los títulos. Son importantes porque a nivel de SEO, Google le va a dar más importancia a los h1 que a los h2 y así sucesivamente. Solo se debe utilizar un h1</font>
+<font color ="#a0c2f0"> Los h son los títulos. Son importantes porque a nivel de SEO, Google le va a dar más importancia a los h1 que a los h2 y así sucesivamente. Solo se debe utilizar un h1</font>
 
 <font color ="#b61187"><u><b>< head></u></b></font>
-<font color ="#5999ee">Es el header, lo que contiene la información invisible que caracteriza la página.</font>
+<font color ="#a0c2f0">Es el header, lo que contiene la información invisible que caracteriza la página.</font>
 </br>
 <font color ="#b61187"><u><b>
 < link 
@@ -1716,7 +2122,7 @@ Es el principal, le decimos el lenguaje con un language code.
 rel href type
 </font> >
 </u></b></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se coloca en el head y sirve para enlazar archivos a la página para que los use.
 </br>
 <font color ="#dd9b37">
@@ -1724,14 +2130,15 @@ rel
 </font>
 sería la relación que mantiene el archivo con la página. </br></br>
 Para enlazar un CSS le damos el valor
+
 <font color ="#54d398"> 
+
 stylesheet
 </font>.
-
 <font color ="#54d398"> 
 icon
 </font>
-es para ponerle el icono.
+es para ponerle el [icono](#icon).
 
 </br>
 <font color ="#dd9b37">
@@ -1752,17 +2159,17 @@ image/png
 </font>
 </br>
 <font color ="#b61187"><u><b>< title></u></b></font>
-<font color ="#5999ee"> Va en un head. Es lo que le da el nombre a la pestaña.</font>
+<font color ="#a0c2f0"> Va en un head. Es lo que le da el nombre a la pestaña.</font>
 </br><font color ="#b61187"><u><b>< body></u></b></font>
-<font color ="#5999ee"> Aquí va el contenido de la página.</font>
+<font color ="#a0c2f0"> Aquí va el contenido de la página.</font>
 </br>Una página se empieza con el tag html y se divide en head y body de esta forma:</br>
 <img src="imgs/est.png"></img>
 </br><<font color ="#b61187"><u><b>< p></u></b></font>
-<font color ="#5999ee">Párrafo. </font>
+<font color ="#a0c2f0">Párrafo. </font>
 </br>
 <font color ="#b61187"><u><b> < strong>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
  Usar para las negritas, pues el SEO se va a fijar en esta etiqueta antes que en 
  </font>
  <font color ="#b61187"><u><b> 
@@ -1772,7 +2179,7 @@ image/png
 
 < em>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se utiliza para hacer énfasis en algo o para citar. Pone la letra en cursiva.
 </font>
 
@@ -1780,14 +2187,14 @@ Se utiliza para hacer énfasis en algo o para citar. Pone la letra en cursiva.
 < del>
 </b></u></font>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se usa para tachar contenido erróneo.
 </font>
 <font color ="#b61187"><u><b> 
 
 < header>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se usa para encabezados. No confundir con 
 <font color ="#b61187">
 < head>
@@ -1796,53 +2203,53 @@ Se usa para encabezados. No confundir con
 <font color ="#b61187"><u><b> 
 < nav>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se usa para marcar semánticamente navegables. Un ejemplo sería un menú navegable.
 </font>
 
 <font color ="#b61187"><u><b> 
 < section>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se usa semánticamente para marcar una sección de contenido. Por ejemplo en una página de recetas, la sección ingredientes, la sección preparación, etc.
 </font>
 
 <font color ="#b61187"><u><b> 
 < main>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Marca el contenido principal de la página.
 </font>
 
 <font color ="#b61187"><u><b> 
 < aside>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se utiliza para marcar contenido más bien secundario pero de alguna forma relacionado con la página. Un ejemplo sería la sección "Otras noticias" de muchas páginas de noticias.
 </font>
 
 <font color ="#b61187"><u><b> 
 < footer>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se usa para marcar semánticamente un pie de página. En él se suelen encontrar elementos como el copyright o la información de contacto.
 </font>
 
 <font color ="#b61187"><u><b> 
 < code>
 </b></u></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Se usa para escribir snippets de código.
 </font>
 </br><font color ="#b61187"><u><b>< ol></u></b></font>
-<font color ="#5999ee">Lista ordenada. </font>
+<font color ="#a0c2f0">Lista ordenada. </font>
 </br><font color ="#b61187"><u><b>< ul></u></b></font>
-<font color ="#5999ee">Lista sin orden. Se pueden usar para hacer menús navegables </font></br>
+<font color ="#a0c2f0">Lista sin orden. Se pueden usar para hacer menús navegables </font></br>
 <font color ="#b61187"><u><b>
 < li></u></b></font>
-<font color ="#5999ee">Dentro de una lista, pone un item. </font></br>
+<font color ="#a0c2f0">Dentro de una lista, pone un item. </font></br>
 <font color ="#b61187"><u><b>< a <font color ="#dd9b37">href  target rel download</font>></u></b></font> 
-<font color ="#5999ee">Enlace. 
+<font color ="#a0c2f0">Enlace. 
 
 <font color ="#dd9b37">href </font> es el recurso al que lleva el enlace, puede ser una imagen, otra página, etc.<b> Lo va a buscar en local, por lo que si es una página externa hay que añadirle https://</b> Si bien pdemos poner solo //, por motivos de SEO <b>NO</b> se recomienda.
 
@@ -1857,7 +2264,7 @@ href ="#id-al-que-enlazamos"
 
 </font>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 También podemos hacer que se mande un mail desde poniendo
 <font color ="#54d398">
 href ="mailto:correo@correo.com"
@@ -1912,7 +2319,7 @@ download
 open
 </font>>
 </u></b></font>
-Da la semántica de una ventana modal, de un diálogo. Por defecto está cerrada, a no ser que le pongamos el atributo
+Da la semántica de una [ventana modal](#modal), de un diálogo. Por defecto está cerrada, a no ser que le pongamos el atributo
 <font color ="#dd9b37"> 
 open.
 </font>
@@ -1925,7 +2332,7 @@ Viene configurado por defecto con el **position en absolute.**
 <font color ="#dd9b37"> 
 src alt</font>>
 </u></b></font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Imagen. 
 
 <font color ="#dd9b37"> 
@@ -1943,7 +2350,7 @@ es lo que se muestra cuando no carga. Es importante que describa bien la imagen 
 src autoplay controls loop muted
 </font>>
 </font></u></b>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Crea el video alojado en 
 <font color ="#dd9b37"> 
 src
@@ -2023,7 +2430,7 @@ Funciona igual que video con los mismos atributos.
 method
 </font>>
 </font></u></b>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Inicio de un formulario. Dentro irán las etiquetas input.
 </br>
 <font color ="#dd9b37"> 
@@ -2060,7 +2467,7 @@ type value list required name placeholder value minlength maxlength
 </font>
 >
 </font></u></b>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Recoge el input del usuario en función del tipo, que puede ser texto, fechas, números, etc.</br>
 <font color ="#dd9b37"> 
 value</font> es el texto por defecto. En un botón por ejemplo es el texto del botón. 
@@ -2468,28 +2875,28 @@ Algunos valores que le podemos dar son:
 <font color ="#54d398">
 <li>
 nofollow.
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Le dice al navegador que no muestre la página en los motores de búsqueda.
 </font>
 </li>
 </br>
 <li>
 nosnippet.
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Los navegadores modernos muestran una preview de las primeras páginas al buscar. Este valor hace que  cierta parte del contenido no la muestre en esta preview.
 </li>
 </font>
 </br>
 <li>
 noarchive.
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Impide que el navegador almacene una copia de nuestra web en caché. Se suele usar <b>si nuestra web tiene cambios constantes o depende de cambios</b> como, por ejemplo, una página web que muestra los cambios de divisa.
 </font>
 </li>
 </br>
 <li>
 noimageindex.
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Hace que las imágenes no aparezcan en los motores de búsqueda.
 </font>
 </li>
@@ -2551,12 +2958,56 @@ content =
 
 Conforman la preview de la página cuando se enlaza en redes sociales. Se pueden generar usando la página <a href = "https://metatags.io">metatags.io</a>
 </font>
+
+<font color ="#b61187"><u><b>
+
+< picture>
+</font></u></b>
+. Sirve para especificar distintas fuentes para una imagen. Dentro irían tanto las etiquetas 
+<font color ="#b61187">
+**< source>**
+</font>
+como la etiqueta
+<font color ="#b61187">
+**< img>.**
+</font>
+Seleccionará cuál aplica en base a las [media queries](#mq) que tengamos en la propiedad
+<font color ="#dd9b37">
+media
+</font> del source.
+<font color ="#b61187"><u><b>
+
+< source
+<font color ="#dd9b37">
+media type srcset
+</font>>.
+</font></u></b>
+En 
+<font color ="#dd9b37">
+media
+</font>
+ponemos la condición que se tiene que cumplir para que se elija como una [media-query](#mq) o elije un tipo de imagen preferente si el navegador lo soporta con
+<font color ="#dd9b37">
+type
+</font>
+, por ejemplo, si le ponemos
+<font color ="#54d398">
+type/webp
+</font>
+y el navegador soporta webp, elegirá esa imagen.
+</br>
+El
+<font color ="#dd9b37">
+srcset
+</font>
+es la imagen a elegir.
+
 </font><h2>Atributos importantes</h2>
 
 <font color ="#dd9b37">
 <b>title</b>
 </font>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
  crea un recuadro al pasar el ratón por el elemento y muestra el texto que le pongas como valor al atributo. <b>Se suele poner en las imágenes para describirlas y en los enlaces para decir a dónde llevan. También en los campos de los formularios y en los botones.</b>
 </br></br>
 <font color ="#dd9b37">
@@ -2578,7 +3029,7 @@ le dice al recurso cómo cargarlo.
 Puede ser
 <font color ="#5dffd4">
 lazy 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 o
 </font>
  eager.
@@ -2601,34 +3052,41 @@ indican de cara a la accesibilidad en algo con un role que implique varios eleme
 </font>
 
 <h2>Tags HTML para referenciar CSS</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
+
 <font color ="#b61187"><u><b>
+
 < span>
 </u></b></font>
 Se utiliza para seleccionar partes concretas de nuestro código.
 
 <font color ="#b61187"><u><b>
+
 < div>
 </b></u></font>
  Crea un elemento (o un box) vacío. No tiene ningún tipo de semántica.
 </font>
 </font>
+
 <h1>Listas</h1>
+
 Hay listas ordenadas y sin orden. Se pueden utilizar para menús navegables
+
 <h1>Reglas del buen programador</h1>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
+
 Como naming convention, se utiliza una similar a snake case, pero en lugar de barra baja, se utiliza el guión.
-</br></br>
+</br>
 
 Una web <b>debería ser navegable</b> usando la tecla TAB  y la tecla ENTER de la misma forma que si usáramos ratón por motivos de accesibilidad.
 
 Para <b>comprobar que la web es accesible</b> click derecho -> inspeccionar -> En las pestañas de debug está lighthouse, que se encarga de analizar <b>performance, accesibilidad, mejores prácticas y SEO.</b>
 </font>
 
-<font color ="#5999ee"> En HTML trabajamos de forma semántica y en CSS de forma estética. Es importante que a nivel de SEO nuestro HTML tenga cada tag cumpliendo el rol que se supone que cumple. Un ejemplo de esto es que premia usar < strong> en lugar de < b> y que no se suele usar < u>, sino que se subraya desde CSS.</font>
+<font color ="#a0c2f0"> En HTML trabajamos de forma semántica y en CSS de forma estética. Es importante que a nivel de SEO nuestro HTML tenga cada tag cumpliendo el rol que se supone que cumple. Un ejemplo de esto es que premia usar < strong> en lugar de < b> y que no se suele usar < u>, sino que se subraya desde CSS.</font>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 Cuando pongamos un link en 
 <font color ="#54d398">
@@ -2646,9 +3104,8 @@ rel ="noreferrer"
 ,que además bloquea los header, es decir, el sitio que se abre no sabe de qué página vino.
 </font>
 
-<font color ="#5999ee"> Cada párrafo debe describir algo, por ejemplo, en un blog sobre salud un párrafo puede describir los beneficios del ejercicio físico y otro puede hablar de salud mental.
+<font color ="#a0c2f0"> Cada párrafo debe describir algo, por ejemplo, en un blog sobre salud un párrafo puede describir los beneficios del ejercicio físico y otro puede hablar de salud mental.
 
-</br>
 Por tanto, se deben escribir las páginas con la estructura y la semántica en mente. Un ejemplo es esto:
 </br>
 <img src="imgs/Sin título-1.png"></img>
@@ -2659,8 +3116,6 @@ title </font> es muy recomendable usarlo para las <b>personas ciegas</b>, pues l
 
 En CSS, hay que tener en cuenta que los enlaces deben ser <b>muy reconocibles</b>.
 
-**NO** suele ser buena idea dar valores de **height fijos.** En su lugar, **se recomienda** dar un **min-height.**
-
 Además, los inputs suelen tener atributos height y width porcentuales para que se adapten al contenedor.
 
 Es importante <b>añadir algo de padding</b> a los elementos por motivos estéticos.
@@ -2670,10 +3125,44 @@ Las <b>sombras</b> son importantes porque añaden realismo, profundidad, crean u
 <b>NO </b>usar videos para meter audios en la web, ya que es ineficiente, pues tiene que cargar todo el video para usar solo el audio. Transformar el video en audio externamente mejor.
 
 Si nuestra web tiene que cargar muchos recursos, usar <b>lazy loading</b>.
+
+Si vamos a usar una característica experimental, es **MUY buena práctica** usar una [feature query](#fq).
+
+</font>
+<h2>Patrones de diseño</h2>
+
+<font color ="#a0c2f0">
+
+El usuario no debería tener la zona para leer que ocupe toda la pantalla porque cansa a la vista, es mejor tener una zona concreta de pantalla relativamente pequeña (aunque lo suficientemente grande para que se lea bien) y centrada.
+
+</font>
+
+<h3>Holy Grail</h3>
+
+<font color ="#a0c2f0">
+
+Se compone de tres etapas: un menú principal de navegación en el header, una sección main con el contenido de la web y dos columnas en los laterales. Una puede ser por ejemplo otro menú y la otra otras secciones de interés. Abajo tendremos el footer.
+
+El contenido principal está separado por dos barras principales e **idealmente tanto él como las columnas estarán centradas para permitir al usuario una zona pequeña para leer**.
+
+</font>
+
+<h3> Mobile First</h3>
+
+<font color ="#a0c2f0">
+
+Es una forma de pensar las webs en las que priorizamos que el diseño funcione correctamente en móviles y **después** nos centramos en resoluciones más grandes.
+
+Básicamente usamos [media-queries](#mq) para la min-width (en contraposición a **Desktop First**), que se utiliza la max-dith.
+
+Lo bueno que tiene es que nos da el reto de representar todo el contenido en resoluciones pequeñas.
+
+Es el enfoque principal hoy en día para webs generales, pero para webs específicas (por ejemplo, una web para que los médicos gestionen los medicamentes) se hace **Desktop First** porque se presupone que se va a trabajar desde un ordenador.
+
 </font>
 <h2>SEO</h2>
 
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 Es importante que <b>los tags que utilicemos cumplan el propósito para el que están pensados</b>, es decir, que usemos h2 para subtítulos y no para párrafos, etc.
 
@@ -2683,7 +3172,7 @@ Usar <b>bien las keywords </b>para que se encuentre en los motores de búsqueda.
 
 Poner el <b>nombre del autor (o propietario)</b> en la meta información da confiabilidad.
 
-Usar correctamente las <b>metatags OG </b> para crear previews para las <b>redes sociales</b> ayuda bastante.
+Usar correctamente las <b>[metatags OG](#meta)</b> para crear previews para las <b>redes sociales</b> ayuda bastante.
 
 Por página web <b>solo se utiliza un h1</b> debe ser lo más descriptivo posible. Se le da importancia a los h2 más que a los h3, etc.
 
@@ -2730,7 +3219,7 @@ th
 para los pie de tabla.
 </font>
 <h2>Accesibilidad</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 El flujo de una página web es el código HTML lo interpreta el navegador, este crea un DOM (Document Object Model), que es un árbol con las etiquetas HTML (se puede jugar con él en JS) y luego eso se traduce a lo visual.
 </br>
 </br>
@@ -2754,7 +3243,7 @@ aria-label.
 Si vamos a modificar el **outline**, que sea en **:focus-visible en lugar de en :focus**.
 </font>
 <h2>Colores</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 
 <b>NO</b> se suele usar el negro puro como color.
 
@@ -2781,7 +3270,7 @@ generador de paletas de colores.
 </font>
 
 <h2>Fonts</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 La tipología 
  <font color = "#fae48b"><b>
 sans-serif
@@ -2789,7 +3278,7 @@ sans-serif
 es buena para ver los cambios, se notan bastante.
 </font>
 <h2>Unidades</h2>
-<font color ="#5999ee">
+<font color ="#a0c2f0">
 Las <b>unidades fijas</b> son aquellas que tienen un tamaño determinado que no cambia en función de las dimensiones de la página, por lo que <b>no son adecuadas para diseños responsive, es decir, que se puedan ver en distintos dispositivos</b>.
 
 </br>
@@ -2884,6 +3373,7 @@ font size del elemento raíz, es decir, del tag html.
 </font>
 
 <font color ="#54d398">
+
 vh 
 </font>
 y
@@ -2895,7 +3385,7 @@ porcentaje de la altura y anchura del viewport disponible,
 </font>
 respectivamente. 
 </br>
-Se usa bastante para ventanas modales, es decir, que ocupan toda la pantalla.
+Se usa bastante para [ventanas modales](#modal), es decir, que ocupan toda la pantalla.
 
 <font color ="#54d398">
 vmax 
@@ -2909,4 +3399,113 @@ son el
 máximo y mínimo
 </font>
 entre vh y vw, respectivamente.
+</font>
+
+<h2>Responsive Design</h2>
+<font color ="#a0c2f0">
+
+**NO** suele ser buena idea dar valores de 
+<font color = "#fae48b">
+**height**
+</font>
+**o** 
+<font color = "#fae48b">
+**width**
+</font>
+**fijos.** En su lugar, **se recomienda** dar un 
+<font color = "#fae48b">
+**max-height**
+</font>
+**o**
+<font color = "#fae48b">
+**max-width.**
+</font>
+De esta forma, al hacer más pequeña la ventana se adaptará a la resolución en lugar de poner un scroll.
+
+Con 
+<font color = "#fae48b">
+**min-width**
+</font>
+decimos a partir de qué tamaño **ponemos scroll.**
+
+Usar **flexbox** ayuda mucho a la responsiveness.
+
+Podemos darle un
+<font color = "#fae48b">
+max-width
+</font>
+al **flexbox** en lugar de a los elementos para dejar que estos crezcan pero el bloque en sí ocupe un cierto espacio.
+
+Para imágenes pasa algo similar, lo ideal es darle un
+<font color = "#fae48b">
+max-width
+</font>
+del **100%** para que cuando haya mucho ancho disponible no ocupe toda la pantalla haciéndose demasiado grande, sino que ocupe toda la pantalla **cuando haya poco espacio.** El 
+<font color = "#fae48b">
+height
+</font>
+se suele poner en 
+<font color ="#5dffd4">
+auto.
+</font>
+
+Podemos hacer **LODS** con el atributo
+<font color = "#fae48b">
+srcset
+</font>,
+el cual recibe las imágenes a cargar y la resolución a la que se aplica cada imagen. Cada set se separa por comas. Un ejemplo de set pudede ser
+<font color ="#5dffd4">
+imagen.png 300w
+</font>
+,que significa que nos va a cargar la imagen cuando el ancho sea menor de 300 píxeles. 
+
+Complementariamente, podemos usar el atributo
+<font color = "#fae48b">
+sizes
+</font>, que es una [media-query](#mq) que le dice cuántos píxeles de ancho tiene que tener la imagen dependiendo de la
+<font color = "#fae48b">
+max-width
+</font>.
+Un ejemplo de la sintaxis es el siguiente:
+</br>
+<font color ="#5dffd4">
+(max-width: 400px) 300px, (max-width:600px) 500px, 900px
+</font>
+</br>
+Esto hace que en pantallas de hasta 400 píxeles de ancho, carga la imagen con un ancho más cercano a 300 píxeles, para pantallas de hasta 600, la imagen de 500 y para el resto la de 900.
+
+**Una alternativa a todo esto es usar** 
+<font color ="#b61187">
+**< picture>**
+</font>
+**y**
+<font color ="#b61187">
+**< source>.**
+</font>
+
+Para **vídeos**, se meten en un conenedor al que se le da la propiedad
+<font color = "#fae48b">
+aspect-ratio
+</font>
+con un valor de<font color ="#5dffd4">
+16/9.
+</font>
+y un
+<font color = "#fae48b">
+max-width
+</font>
+del 100%.
+</br>
+Al video se le puede dar un 
+<font color = "#fae48b">
+width
+</font>
+o un
+<font color = "#fae48b">
+max-width
+</font>
+del 100%.
+
+
+
 </font>

@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+div, body{
+    box-sizing: border-box;
+}
+
+.bloque{
+    display: inline-block;
+    min-width: 140px;
+    background-color: #7bf;
+    margin: auto;
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size: 12px;
+    padding: 10px;
+    margin: 4px;
+    
+}
+.flexbox{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: auto;
+
+    
+}

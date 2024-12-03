@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  p{
+      margin: 0;
+  }
+  
+  .grid{
+    display: grid;
+    grid-template-columns:  repeat(auto-fill,minmax(150px,1fr)) ;
+    gap: 10px;
+    grid-auto-flow: row;
+    margin-top: 20px;
+  }
+  .grid-item{
+    color: #fff;
+    min-height: 200px;
+    font-size: 30px;
+    border-radius: 20px;
+    background-image: url("https://img.freepik.com/vector-gratis/galleta-cuadrada-estilo-dibujos-animados-aislado_1308-64646.jpg?t=st=1732988452~exp=1732992052~hmac=57b4e3533defb3f348f26dd8b8dc51bb2dae42ae95b9490dafbea6a1f65df073&w=740");
+    background-size: cover;
+    background-position: center ;
+  }
+  .grid-item:hover{
+    opacity: .6;
+  }
+  .grid-item:first-child{
+    grid-column-start: 2;
+    grid-column-end: span 2;
+    grid-row-start: 2;
+    grid-row-end: span 2;
+  }
+  img{
+  }
