@@ -110,6 +110,16 @@ Da estilo a los elementos dependiendo de las características de su contenedor.
 wrapper.
 </b></font>
 Elemento cuya función es darle un estilo.
+<font id ="wire" color = "#fae48b">
+
+**Wireframe.**
+</font>
+Esquema de la distribución de los elementos de la página tanto en PC como en móviles.Ejemplo:
+PC:
+
+![PC](imgs/PC.png)
+
+![Mobile](imgs/Mobile.png)
 
 </font>
 
@@ -1210,7 +1220,17 @@ También podemos darle
 <font color ="#5dffd4">
 píxeles
 </font>
-como valor.</font>
+como valor.
+<font color = "#fae48b">
+
+**scroll-behavior**
+</font> Cambia el comportamiento del scroll, si queremos que afecte a toda la página habría que aplicarlo a *. Los valores son:
+<font color ="#5dffd4">
+
+smooth.
+</font>
+Suaviza el scroll y cuando **hacemos enlaces a seciones de la web** hace que **baje la barra** en lugar de "teletransportarse".
+</font>
 <h3>Fondos</h3>
 <font color ="#a0c2f0">
 
@@ -1221,7 +1241,7 @@ podemos usar varias funciones para darle valor. Con la función
 <font color = "#88a12c">
 url
 </font>
-le damos el valor de una imagen de internet, con la función 
+le damos el valor de una imagen, con la función 
 <font color = "#88a12c">
 linear-gradient
 </font>
@@ -1230,6 +1250,8 @@ o
 radial-gradient
 </font>
 le damos un degradado.
+
+Además, podemos poner **varias capas** separándolas por comas en orden descendiente, por ejemplo, una capa de degradado con un negro transparente y otra capa con una imagen para oscurecer la imagen
 
  <font color = "#fae48b"><b>
 background-size.
@@ -1810,6 +1832,19 @@ Igual que el [justify-items](#ji) pero en el eje vertical.
 **align-content.**
 </font>
 Igual que el [justify-content](#gjc) pero en el eje vertical.
+<font color = "#fae48b">
+
+**place-content.**
+</font>
+Es un [shorthand](#Shorthand) para
+<font color = "#fae48b">
+align-content
+</font>
+y
+<font color = "#fae48b">
+justify-content.
+</font>
+Se usa bastante para **centrar los elementos**.
 </font>
 <h3>Propiedades de los hijos</h3>
 <font color ="#a0c2f0">
@@ -3076,6 +3111,8 @@ Hay listas ordenadas y sin orden. Se pueden utilizar para menús navegables
 
 <font color ="#a0c2f0">
 
+**Antes** de hacer una página, hacer un [wireframe](#wire). Después, seleccionar una **paleta de colores adecuada.**
+
 Como naming convention, se utiliza una similar a snake case, pero en lugar de barra baja, se utiliza el guión.
 </br>
 
@@ -3320,7 +3357,7 @@ Las <b>unidades relativas</b> son aquellas que dependen de otro valor.
 
 </br>Son importantísimas para el 
 <font color ="#5dffd4">
-responsive design.
+[responsive design](#responsive).
 </font>
 
 La más común es el 
@@ -3401,7 +3438,7 @@ máximo y mínimo
 entre vh y vw, respectivamente.
 </font>
 
-<h2>Responsive Design</h2>
+<h2 id ="responsive">Responsive Design</h2>
 <font color ="#a0c2f0">
 
 **NO** suele ser buena idea dar valores de 
