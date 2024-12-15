@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    --box-height:300px;
+
+}
+*{
+    box-sizing: border-box;
+}
+.box{
+    padding: 0 40px;
+    font-size: clamp(2.4rem, 2.2vw,4rem);
+    border: 6px solid #000;
+    overflow: auto;
+}
+.box:first-child{
+    width: calc(50% + 500px);
+    height: var(--box-height);
+
+}
+.box:nth-child(2){
+    width: calc(100% -300px);
+    height: calc(100vh - var(--box-height)*1.3);
+}

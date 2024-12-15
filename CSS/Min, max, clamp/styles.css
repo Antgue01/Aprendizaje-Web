@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    padding: 10px;
+}
+*{
+    box-sizing: border-box;
+}
+.box{
+    background-color: #48e;
+    display: grid;
+    place-content: center;
+    color: #fff;
+    font-size: 20px;
+    margin: 30px auto;
+    padding: 0 20px;
+    font-size: clamp(1.2rem,2vw,5rem);
+}
+.--min{
+    width: min(900px, 100%);
+}
+.--max{
+    
+    width: max(900px,100%);
+}
+.--clamp{
+    width: clamp(500px,100%,800px);
+}
+h1{
+    font-size: 2.2em;
+    margin-bottom: 0;
+}

@@ -1,0 +1,200 @@
+body {
+  background-color: #222;
+  margin: 0;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn {
+  padding: 30px 100px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 30px;
+  border-radius: 12px;
+  letter-spacing: 3px;
+  position: relative;
+}
+/* Wave-Button */
+.btn-1 {
+  overflow: hidden;
+  border: 3px solid #48e;
+}
+.btn-1::before {
+  content: "";
+  background-color: #48e;
+  display: block;
+  height: 200%;
+  width: 140%;
+  z-index: -1;
+  position: absolute;
+  transition: top 0.3s, left 0.3s;
+  border-radius: 50%;
+  top: 100%;
+  left: 30%;
+}
+.btn-1:hover::before {
+  top: -35%;
+  left: -20%;
+}
+.btn-2::before {
+  content: "";
+  background-color: #48e;
+  display: block;
+  height: 2px;
+  width: 30%;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -44px;
+  opacity: 0;
+  transition: top .6s, opacity .6s ,width .2s;
+  animation: blinkLine 1s infinite alternate backwards;
+}
+.btn-2:hover::before {
+    opacity: 1;
+  width: 80%;
+  top: -12px;
+}
+.btn-2::after {
+    content: "";
+    background-color: #48e;
+    display: block;
+    height: 3px;
+    width: 20%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -64px;
+    opacity: 0;
+    transition: top .6s, opacity .6s, width .2s;
+    animation: blinkLine 1s infinite alternate-reverse backwards;
+  }
+  .btn-2:hover::after {
+      opacity: 1;
+    width: 70%;
+    top: -20px;
+  }
+.button-container:has(.btn-2) {
+  filter: drop-shadow(0 0 9px #95bdf8)
+   drop-shadow(0 0 4px #95bdf8);
+}
+.btn-2 {
+  border: 3px solid #fff3;
+  color: #fff3;
+}
+.btn-2:hover {
+  animation: blink 1s infinite alternate backwards;
+}
+
+@keyframes blink {
+  0% {
+    color: #fff3;
+    border: 1px solid #fff3;
+    text-shadow: none;
+    box-shadow: none;
+  }
+  25% {
+    border-color: #48e;
+    box-shadow: 0 0 6px #48e3, 0 0 16px #48e3;
+  }
+  30% {
+    color: #fff3;
+    border: 1px solid #fff3;
+    text-shadow: none;
+    box-shadow: none;
+  }
+  35% {
+    border-color: #48e;
+    color: #54b9f0;
+    box-shadow: 0 0 6px #48e3, 0 0 16px #48e3;
+    text-shadow: 0 0 9px #48ee, 0 0 3px #54b9f07a;
+  }
+  50% {
+    color: #fff3;
+    border: 1px solid #fff3;
+    text-shadow: none;
+    box-shadow: none;
+  }
+  46% {
+    color: #54b9f0;
+    text-shadow: 0 0 9px #48ee, 0 0 3px #54b9f07a;
+  }
+  60% {
+    color: #fff3;
+    border: 1px solid #fff3;
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  72% {
+    border-color: #48e;
+    box-shadow: 0 0 6px #48e3, 0 0 16px #48e3;
+  }
+  80% {
+    color: #fff3;
+    border: 1px solid #fff3;
+    text-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    color: #54b9f0;
+    text-shadow: 0 0 9px #48ee, 0 0 3px #54b9f07a;
+  }
+}
+@keyframes blinkLine {
+    0% {
+        background-color: #49e;
+        box-shadow: 0 0 6px #48e5,
+        0 0 16px #48e5;
+      }
+      25% {
+        background-color: #fff3;
+        box-shadow: none;
+      }
+      30% {
+        background-color: #fff3;
+        box-shadow: none;
+      }
+      35% {
+        background-color: #49e;
+        box-shadow: 0 0 6px #48e5,
+        0 0 16px #48e5;
+      }
+      50% {
+        background-color: #fff3;
+        box-shadow: none;
+      }
+      46% {
+        background-color: #49e;
+        box-shadow: 0 0 6px #48e5,
+        0 0 16px #48e5;
+      }
+      60% {
+        background-color: #fff3;
+        box-shadow: none;
+      }
+    
+      72% {
+        background-color: #49e;
+        box-shadow: 0 0 6px #48e5,
+        0 0 16px #48e5;
+      }
+      80% {
+        background-color: #fff3;
+        box-shadow: none;
+      }
+      100% {
+        background-color: #49e;
+        box-shadow: 0 0 6px #48e5,
+        0 0 16px #48e5;
+      }
+}

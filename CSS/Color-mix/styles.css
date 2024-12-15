@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    width: 100%;
+    overflow: hidden;
+}
+
+.box{
+    font-size: 30px;
+    border: 2px solid #f44;
+    width: fit-content;
+    padding: 320px;
+    background-color: color-mix(in hsl, #f44 30%, #48e 30%);
+}

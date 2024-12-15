@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 100%;
+  margin: auto;
+}
+h2 {
+  font-size: 30px;
+  z-index: 2;
+}
+.box:first-child {
+  padding-top: 6px;
+}
+
+.box {
+  margin: auto;
+  padding: 10px 40px;
+  background-color: #48e;
+  border-radius: 19px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img {
+  max-width: 330px;
+}
+.blur {
+  transform: scaleX(3.5);
+}
+.ds {
+transform: skew(-20deg);
+}
+.br {
+transform: rotateZ(1350deg);
+}
+.ct {
+  transform: translate(90px,-120px);
+}

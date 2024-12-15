@@ -16,6 +16,10 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 
 [Meta tags](https://metatags.io)
 
+[Pruebas animaciones scroll](https://scroll-driven-animations.style/tools/view-timeline/ranges/#range-start-name=cover&range-start-percentage=0&range-end-name=cover&range-end-percentage=100&view-timeline-axis=block&view-timeline-inset=0&subject-size=smaller&subject-animation=reveal&interactivity=clicktodrag&show-areas=yes&show-fromto=yes&show-labels=yes)
+
+[Clip paths](https://bennettfeely.com/clippy/)
+
 <h1>Diccionario</h1>
 
 <font color ="#a0c2f0">
@@ -121,6 +125,22 @@ PC:
 
 ![Mobile](imgs/Mobile.png)
 
+<font id ="dominio" color = "#fae48b">
+
+**Dominio.**
+</font>
+Es el nombre de la página web, el que enmascara la IP.
+<font id ="SSL" color = "#fae48b">
+
+**SSL.**
+</font>
+Certificado que autentica la identidad del sitio web y habilita una conexión cifrada. Básicamente es lo que mira el navegador para ponerle un candado en la barra de búsqueda para decir que es segura.
+
+<font color = "#fae48b">
+
+**CDN.**
+</font>
+Almacena las copias del contenido estratégicamente alrededor de todos los servidores alrededor del mundo del host. Es decir, al hacer una solicitud, el servidor central va a elegir al más rápido según tu ubicación para servirte el contenido. **En resumen, aumenta la velocidad de carga y reduce la latencia.**. También es bueno para la seguridad, pues ayuda a proteger contra ataques DDOS, que consiste en sobrecargar el servidor.
 </font>
 
 <h1>CSS</h1>
@@ -166,7 +186,37 @@ El valor **unset** es no especificar nada y el valor **revert** es buscar el val
  
  Se redefinen en CSS con un **#** delante en lugar del punto que utilizamos en la clase.
 
+Podemos crear **variables** con 
+<font color="#AE8ECD">
+--nombre : valor ;
 </font>
+
+Y después la referenciamos con la función
+<font color = "#88a12c">
+**var( <font color = "#fae48b">nombre de la variable </font>).**
+</font>
+
+Las variables se pueden usar en **cualquier elemento** hijo del elemento en el que se creó, por lo que **lo normal es declararlas en el body** y si algún elemento y sus hijos se va a comportar diferente redefinirlo en ese elemento, pues sólo se van a ver afectados él y los hijos.
+ 
+ También podemos crear propiedades con esta sintaxis:
+ 
+<font color="#AE8ECD">
+
+@property --nombre{
+  </br>
+  syntax: "< tipo de la variable. Por ejemplo number>";
+  </br>
+  inherits: true o false;
+  </br>
+  initial-value: valor;
+  </br>
+}
+ </font>
+
+
+
+
+ </font>
  <h2>Cascada y especificidad</h2>
 
 <font color ="#a0c2f0">
@@ -627,6 +677,45 @@ color1, color2, color n
 </font>
 )
 </font></b>
+<font color = "#88a12c">
+
+**clamp (<font color ="#e6c925">min, ideal, max</font> ).**
+</font>
+Sobre todo se usa para anchuras o alturas. Si el elemento mide menos de <font color ="#e6c925">
+min
+</font>, se queda con 
+<font color ="#e6c925">
+min,
+</font>
+ si mide más de 
+ <font color ="#e6c925">
+ max,
+ </font> se queda con 
+ <font color ="#e6c925">
+ max.
+ </font> En caso contario se queda con 
+ <font color ="#e6c925">
+ ideal.
+ </font>
+
+ También se usa bastante para dar tamaño a **las fonts.** Se ponen las medidas mínimas y máximas en rem y las ideales en vw.
+
+<font color = "#88a12c">
+
+**calc().**
+</font>
+Permite realizar cálculos aritméticos con sumas, restas, multiplicaciones, divisiones y otras funciones.
+<font color = "#88a12c">
+
+**color-mix (<font color ="#e6c925"> method, color percentage, color percentage, etc </font>)**
+</font>.
+Mezcla los colores usando el método (puede ser 
+<font color ="#5dffd4">
+hsl, srgb,
+</font> entre otros).
+<font color ="#fff">
+<h3>Funciones de Filtro</h3>
+</font>
 <b><font color = "#88a12c">
 
 drop-shadow(
@@ -636,9 +725,77 @@ horizontal vertical size color
 ).
 </b></font>
 Filtro que aplica una sombra a las imágenes sin fondo basadas en los bordes de la misma usando un kernel. Útil para logos, por ejemplo.
+<font color = "#88a12c">
+
+**brightness(<font color ="#e6c925"> b </font>).**
+</font>
+Multiplica el brightness del elemento por 
+<font color ="#e6c925">
+b.
+<font color = "#88a12c">
+
+**contrast( <font color ="#e6c925">c</font> ).**</font>
+</font>
+Igual que el anterior pero con el contraste.
+<font color = "#88a12c">
+
+**saturate( <font color ="#e6c925">s</font> ).**
+</font>
+Igual que el anterior pero con la saturación.
+<font color = "#88a12c">
+
+**grayscale()**
+</font>
+Convierte el contenido a escala de grises.
+<font color = "#88a12c">
+
+**hue-rotate( <font color ="#e6c925">degs</font> ).**
+</font>
+Rota en el tono. Se utilizan grados, por lo que de 0 a 360.
+<font color = "#88a12c">
+
+**opacity ( <font color ="#e6c925">o</font> ).**
+</font>
+Aplica opacidad.
+<font color = "#88a12c">
+
+**invert().**
+</font>
+Invierte los colores.
+<font color = "#88a12c">
+
+**sepia()**
+</font>
+
+
 
 </font>
+<h3>Funciones de la propiedad Transform</h3>
+<font color ="#a0c2f0">
+
+<font color = "#88a12c">
+
+**scaleX(<font color ="#e6c925"> sc </font>).**
+</font>
+Escala en X. También lo hay en el resto de ejes y general.
+<font color = "#88a12c">
+
+**skew( <font color ="#e6c925">degs </font>).**
+</font>
+Le hace una transformación itálica.
+<font color = "#88a12c">
+
+**rotate(<font color ="#e6c925"> degs</font> ).**
+</font>
+Rota el elemento. Podemos hacer que sea como rotar un sprite en 3D si usamos las funciones del resto de ejes.
+<font color = "#88a12c">
+
+**translate(<font color ="#e6c925"> h , v </font>).**
+</font>
+Mueve el elmento.
+</font>
 <h2>Selectores avanzados</h2>
+
 <font color ="#a0c2f0">
 Los selectores se pueden encadenar unos con otros.
 </br>
@@ -881,6 +1038,9 @@ Los más importantes son:
 </b></font>
 .La primera letra del elemento.
 
+A esta le podemos dar la propiedad
+<font color ="#e6c925">**initial-letter.**</font>
+,que recibe dos valores, las líneas que va a ocupar de alto, y a partir de qué línea va a aparecer.
 <font color ="#e6c925"><b>
 
 ::first-line
@@ -949,13 +1109,14 @@ por ser muy ineficiente.
 
 transition-duration.
 </b></font>
+Podemos hacer que sea distinta en el estado al que estamos transicionando, lo que hará que dure distinto al pasar a ese estado que al volver de ese estado.
 
 <font color = "#e6c925"><b>
 
 Transition-delay.
 </b></font>
 
-<font color = "#e6c925"><b>
+<font id = "transitionFunction" color = "#e6c925"><b>
 
 transition-timing-function.
 </b></font>
@@ -969,6 +1130,11 @@ bezier.
 </font>
 Para ajustarlas visualmente usaremos la página [cubic bezier](https://cubic-bezier.com) o desde las herramientas del desarrollador de chrome.
 
+Otra opción es usar la función
+<font color = "#88a12c">
+steps()
+</font>, que nos permite darle un número de saltos en los que se dividirá la transición.
+
 El [shorthand](#Shorthand) para las transiciones es
 <font color = "#e6c925"><b>
 transition
@@ -980,6 +1146,212 @@ properties time function delay
 Se pueden separar por coma.
 
 </font>
+<h2>Animaciones</h2>
+<font color ="#a0c2f0">
+
+ La sintaxis es parecida a las [media queries](#mq). Sería:
+
+<font color="#AE8ECD">
+
+@keyframes
+</font>
+<font color ="#6d48f7">
+nombre
+</font>{</br>
+  0%{</br>
+    propiedad: valor;</br>
+    propiedad: valor;
+  }</br>
+  ...</br>
+  ...</br>
+  100% {</br>
+propiedad: valor</br>
+propiedad: valor</br>
+  }</br>
+}
+
+Para mostrar la animación, hay que darle valor a las siguientes propiedades:
+<font color = "#fae48b">
+
+**animation-name.**
+</font> El nombre que le hemos dado en la parte de arriba.
+
+<font color = "#fae48b">
+
+**animation-duration.**
+</font>
+
+Además, se pueden usar otras propiedades:
+<font color = "#fae48b">
+
+**animation-delay.** 
+</font>
+Un retardo en la animación.
+<font color = "#fae48b">
+ 
+ **animation-iteration-count.**
+ </font>
+ Número de iteracciones. Se puede usar el valor
+<font color ="#54d398"> 
+infinite.
+</font>
+<font color = "#fae48b">
+
+**animation-fill-mode.**
+</font>
+Cómo se queda la animación al terminar. Posibles valores:
+
+<font color ="#54d398"> 
+
+forwards.
+</font>
+Se queda igual que termina.
+<font color ="#54d398"> 
+
+backwards.
+</font>
+Se queda como al inicio.
+<font color ="#54d398"> 
+
+both.
+</font>
+Es como forwards pero por defecto toma los valores del primer estado en lugar de los definidos en el CSS normal. Esto se ve sobre todo si hay algún delay en la animación. **Es el que se suele usar.**
+<font color = "#fae48b">
+
+**animation-timing-function.**
+</font>
+La función que sigue para dar curvas. Igual que en las [transiciones.](#transitionFunction)
+<font color = "#fae48b">
+
+**animation-direction.**
+</font>
+<font color ="#54d398"> 
+
+reverse. 
+</font>
+La animación se reproduce al revés.
+<font color ="#54d398"> 
+
+alternate.
+</font>
+La animación se reproduce y cuando termina se reproduce otra vez al revés.
+<font color ="#54d398"> 
+
+alternate-reverse.
+</font>
+Se reproduce al revés y cuando termina se reproduce normal.
+
+<font color = "#fae48b">
+
+**animation-play-state.**
+</font>
+<font color ="#54d398"> 
+
+paused
+</font>
+o
+<font color ="#54d398"> 
+running.
+</font>
+<font color = "#fae48b">
+
+**animation-timeline.**
+</font>
+Disponible solo en algunos navegadores, permite controlar el avance de las animaciones con el scroll. **Si se usa no poner<font color = "#fae48b"> animation-iteration-count</font>. y el <font color = "#fae48b">position</font> en <font color ="#54d398"> fixed</font>.** Tiene varios valores:
+<font color ="#54d398"> 
+
+scroll().
+</font>
+Controlas la animación en base al scroll general de la página.
+
+Otra opción es usar el nombre del elemento de la página que queramos **(que no sea el body)**, en el cual habría que usar las propiedades <font color = "#fae48b">scroll-timeline-name</font> y <font color = "#fae48b">scroll-timeline-axis.</font>
+Para usar esta técnica es importante que **el contenido a animar sea mayor que el contenedor** y hay que poner el 
+<font color = "#fae48b">
+overflow
+</font>
+en 
+<font color ="#54d398"> 
+scroll.
+</font>
+<font id = "sctml" color = "#fae48b">
+
+**scroll-timeline-name**.
+</font>
+El nombre que le vamos a dar al elemento para usarlo de scroll
+<font color = "#fae48b">
+
+**scroll-timeline-axis.**
+</font>
+<font color ="#54d398"> 
+inline
+</font> es el eje horizontal y
+<font color ="#54d398"> 
+block
+</font>
+el vertical.
+
+El [shorthand](#Shorthand) para estos dos es 
+<font  color = "#fae48b">
+**scroll-timeline.**
+</font>
+<font color ="#54d398"> 
+
+view().
+</font>
+Controlas la animación en base al scroll general pero en la parte de la página en la que se ve, es decir, mientras vas haciendo scroll empieza a reproducirse cuando se empiece a ver el elemento hasta que salga de la vista. Obviamente, **aquí no tiene sentido usar <font color = "#fae48b">position</font> <font color ="#54d398"> fixed</font>.**
+
+Usando
+<font color = "#fae48b">
+
+**view-timeline**
+</font>
+con los mismos valores que [scroll-timeline](#sctml) en cualquier otro elemento, podemos hacer que la animación se reproduzca según la visibilidad de ese otro elemento.
+
+Podemos controlar los límites a partir de los cuales el elemento se considera que se se empieza y termina de ver (es decir, a partir de cuándo empieza y termina la animación) con 
+<font color = "#fae48b">
+
+**animation-range-start.**
+</font>
+Habría que decirle el comportamiento y el treshold en porcentaje a partir del cual empieza. P. ej. 
+<font color ="#54d398"> 
+cover 20%
+</font>.
+Los comportamientos más usados son:
+
+<font color ="#54d398"> 
+
+cover.
+</font>
+Cuando el elemento empieza a verse, aunque solo sea el borde.
+<font color ="#54d398"> 
+
+contain.
+</font>
+Cuando todo el elemento es visible.
+
+<font color ="#54d398"> 
+
+exit-crossing.
+</font>
+Cuando el elemento se está yendo de la pantalla.
+<font color = "#fae48b">
+
+**animation-range-end.**
+</font> Igual que el anterior pero cuando el elemento desaparece de pantalla.
+
+Ambos son compatibles con 
+<font color = "#fae48b">
+animation-fill-mode.
+</font>
+
+El [shorthand](#Shorthand) para ambos es
+<font color = "#fae48b">
+
+**animation-range.**
+</font>
+Podemos previsualizar y hacer pruebas [aquí](https://scroll-driven-animations.style/tools/view-timeline/ranges/#range-start-name=cover&range-start-percentage=0&range-end-name=cover&range-end-percentage=100&view-timeline-axis=block&view-timeline-inset=0&subject-size=smaller&subject-animation=reveal&interactivity=clicktodrag&show-areas=yes&show-fromto=yes&show-labels=yes)
+</font>
+
 
 <h2>Box Model</h2>
 <p>
@@ -1136,10 +1508,15 @@ content-box
 
 </br>
  <font color = "#fae48b"><b>
-filter
+
+filter.
 </b></font>
 Aplica filtros al elemento.
+<font color ="#fae48b">
 
+**backdrop-filter.**
+</font>
+Aplica filtros a lo que hay detrás del elemento.
  <font color = "#fae48b"><b>
 
 border-spacing.
@@ -1227,10 +1604,48 @@ como valor.
 </font> Cambia el comportamiento del scroll, si queremos que afecte a toda la página habría que aplicarlo a *. Los valores son:
 <font color ="#5dffd4">
 
+auto.
+</font>
+Valor por defecto, el scroll se desplaza inmediatamente.
+<font color ="#5dffd4">
+
 smooth.
 </font>
 Suaviza el scroll y cuando **hacemos enlaces a seciones de la web** hace que **baje la barra** en lugar de "teletransportarse".
+
+<font color = "#fae48b">
+
+
+**scrollbar-color.**
 </font>
+Color de la barra de scroll. Hay que darle **dos colores**, primero el foreground y luego el background.
+<font color = "#fae48b">
+
+**scrollbar-width.**
+</font>
+Tiene tres posibles valores:
+
+<font color ="#5dffd4">
+
+auto.
+</font>
+Tamaño normal.
+<font color ="#5dffd4">
+
+thin.
+</font>
+Más pequeña.
+
+<font color ="#5dffd4">
+
+none.
+</font>
+Invisible, permite hacer scroll con el ratón (o con el dedo en móviles).
+
+<font color = "#fae48b">
+
+**clip-path.**
+</font>Crea una máscara. Podemos personalizarla con un [generador](https://bennettfeely.com/clippy/).
 <h3>Fondos</h3>
 <font color ="#a0c2f0">
 
@@ -1577,7 +1992,7 @@ del padre. (No funciona con
 align-content</font>)
 
 </font>
-
+</font>
 <h2 id="grid">Grid</h2>
 
 <font color ="#a0c2f0">
@@ -1917,7 +2332,19 @@ es para dar estilos en pantalla.
 Se utiliza bastante para adaptar ciertas cosas a dispositivos móviles, haciendo una query sobre el ancho de la pantalla y reorganizando los flexbox en columnas, por ejemplo.
 
 </font>
+<h3>Expresiones comunes</h3>
+<font color ="#a0c2f0">
 
+<font color ="#9081db">
+
+**prefers-reduced-motion**.
+</font>
+Cuando tiene el valor
+<font color ="#9081db">
+reduce,
+</font>
+está pensado para personas epilépticas o con enfermedades que se dan al ver muchas animaciones o parpadeos rápidos. Lo que pongamos aquí debería tener pocas animaciones **Y** lentas.
+</font>
 <h2>Container Queries</h2>
 
 <font color ="#a0c2f0">
@@ -2004,6 +2431,181 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
  Ejemplo:
 
 <img src ="imgs/fonts.png" title="Configuración de una fuente">
+
+</font>
+
+<h2>Botones animados al hovear</h2>
+<h3>Fondo wave</h3>
+<font color ="#a0c2f0">
+
+en el 
+<font color = "#fae48b">
+::before
+</font>
+del botón le ponemos un 
+<font color = "#fae48b">
+background-color
+</font>
+y le damos dimensiones y
+<font color = "#fae48b">
+content =''
+</font>.
+Le damos un 
+<font color = "#fae48b">
+z-index
+</font> negativo para que aparezca por debajo del texto
+y
+<font color = "#fae48b">
+position
+</font>
+<font color ="#54d398"> 
+absolute
+</font>
+para desplazar el 
+<font color = "#fae48b">
+top
+</font>
+y el 
+<font color = "#fae48b">
+left
+</font>
+fuera del botón. **Usamos valores porcentuales.**.
+Podemos redondear incluso el 
+<font color = "#fae48b">
+::before.
+</font>
+
+En el botón le damos
+<font color = "#fae48b">
+overflow
+</font>
+<font color ="#54d398"> 
+hidden
+</font>
+y <font color = "#fae48b">
+position
+</font>
+<font color ="#54d398"> 
+relative
+</font> para que el before calcule su posición a partir de él.
+
+En el <font color = "#fae48b">
+:hover
+</font> 
+del <font color = "#fae48b">
+::before
+</font>
+ponemos los márgenes de forma que tape el botón.
+
+En el 
+<font color = "#fae48b">
+::before
+</font>
+configuramos la transición para el
+<font color = "#fae48b">
+**top**
+</font>
+y el 
+<font color = "#fae48b">
+**left.**
+</font>
+</font>
+<h3> Neón</h3>
+<font color ="#a0c2f0">
+
+Animamos alternativamente el color, las sombras y el borde entre colores apagados y colores brillantes de forma que parpadee. (Por ejemplo, 10% apagado 25% encendido 28% apagado 33% encendido, etc).
+
+Añadimos el filtro drop-shadow varias veces con distintas intensidades al contenedor.
+
+Además, podemos añadir líneas en el
+<font color = "#fae48b">
+::after
+</font>
+y el 
+<font color = "#fae48b">
+::before,
+</font>
+en las cuales podemos hacer transiciones del
+<font color = "#fae48b">
+top, width y opacity
+</font>
+y animar el 
+<font color = "#fae48b">
+background-color
+</font>
+y el 
+<font color = "#fae48b">
+box-shadow.
+</font>
+</font>
+<h2>Typewriting effect</h2>
+<font color ="#a0c2f0">
+
+Animamos el 
+<font color = "#fae48b">
+width
+</font>
+de un 
+<font color ="#54d398"> 
+0%
+</font>
+a un
+<font color ="#54d398"> 
+100%.
+</font>
+Ponemos el 
+<font color = "#fae48b">
+overflow
+</font>
+en
+<font color ="#54d398"> 
+hidden
+</font>
+y la 
+<font color = "#fae48b">
+position
+</font>
+en
+<font color ="#54d398"> 
+relative
+</font>
+para posteriormente modificar el
+<font color = "#fae48b">
+::after.
+</font>
+
+Le damos un pequeño ancho y un alto del 100%, le damos un
+<font color = "#fae48b">
+right
+</font>
+de 
+<font color ="#54d398"> 
+0.
+</font>
+y un
+<font color = "#fae48b">
+position
+</font>
+<font color ="#54d398"> 
+absolute
+</font>
+para que se coloque al final usando como referencia el texto que está en 
+<font color ="#54d398"> 
+relative.
+</font>
+
+Animamos entonces el 
+<font color = "#fae48b">
+opacity
+</font>
+de
+<font color ="#54d398"> 
+0
+</font>
+a
+<font color ="#54d398"> 
+1.
+</font>
 
 </font>
 <h2>Metodología BEM</h2>
@@ -3257,15 +3859,17 @@ para los pie de tabla.
 </font>
 <h2>Accesibilidad</h2>
 <font color ="#a0c2f0">
+
 El flujo de una página web es el código HTML lo interpreta el navegador, este crea un DOM (Document Object Model), que es un árbol con las etiquetas HTML (se puede jugar con él en JS) y luego eso se traduce a lo visual.
-</br>
-</br>
+
 
 En cambio, para personas que necesitan accesibilidad, se crea una copia del DOM que interpretan las tecnologías de accesibilidad antes de mostrarse el contenido.
 </br>
 Para <b>activar las funciones de accesibilidad en el navegador</b> Windows + Ctrl + Enter.
 
 Es importante que para que todo esto funcione correctamente, la página esté diseñada para poder ser usable usando únicamente las teclas TAB y ENTER.
+
+Si modificamos el **scroll**, no se recomienda hacerlo thin, pero si se hace, que sea de un color más llamativo de lo normal.
 
 Para <b>imágenes</b> tendríamos que usar el atributo
 <font color ="#dd9b37">
@@ -3287,12 +3891,10 @@ Si vamos a modificar el **outline**, que sea en **:focus-visible en lugar de en 
 Los colores pastel se caracterizan por tener <b>poca saturación</b> y <b>mucha iluminación</b>.
 
 
-</br>
-Los colores que usemos de <b>fondo</b> tienen que <b>contrastar</b> con los que usemos de <b>letra</b> para que se vea bien la letra. Por ejemplo, un color claro de fondo con uno oscuro de letra. 
-</br>
+Los colores que usemos de <b>fondo</b> tienen que <b>contrastar</b> con los que usemos de <b>letra</b> para que se vea bien la letra. Por ejemplo, un color claro de fondo con uno oscuro de letra. **ESTO ES ESPECIALMENTE IMPORTANTE SI CAMBIAMOS EL SCROLL**, ya que si ponemos el mismo color que el scroll pero desaturado, un daltónico podría no distinguirlo.
+
 Una forma de hacer esto es elegir el mismo color para fondo y letra y hacer uno de los dos más claro o más oscuro para que mantengan el mismo tema.
 
-</br>
 Otra forma bastante común es usar <b>gradientes</b> con uno de los colores en transparent, pues son bastante utilizados para dar <b>sombreado</b>. 
 </br>
 Ejemplo: </br>
@@ -3424,6 +4026,15 @@ respectivamente.
 </br>
 Se usa bastante para [ventanas modales](#modal), es decir, que ocupan toda la pantalla.
 
+En **dispositivos móviles pueden dar problemas**, ya que no tienen en cuenta menús desplegables del sistema, barras de búsqueda, teclados desplegables, etc. Por lo que se debe usar 
+<font color ="#54d398">
+**dvh**
+</font> o
+<font color ="#54d398">
+ **dvw,**
+ </font>
+ya que para PC son indistinguibles y en móviles nos arreglan el problema.
+
 <font color ="#54d398">
 vmax 
 </font>
@@ -3544,5 +4155,95 @@ max-width
 del 100%.
 
 
+</font>
+<h1> Hosting</h1>
+<font color ="#a0c2f0">
+Se trata de reservar espacio en la web para nuestra página.
+</font>
+<h2>Tipos de hosting</h2>
+<h3>Hosting compartido</h3>
+<font color ="#a0c2f0">
 
+Un solo servidor tiene muchas páginas web distintas y comparten todos los recursos, por lo que **el rendimiento depende** del resto de webs alojadas, por lo que **puede haber fluctuaciones en el rendimiento**. Suelen incluir un panel de control para gestionar el sitio web y el sistema de correo institucional entre otras cosas. **Salvo por esto, está gestionado por el proveedor.**
+
+Es la opción más **económica**, por lo que es ideal para tiendas pequeñas, páginas personales o en general **páginas con poco tráfico.**
+</font>
+<h3>VPS</h3>
+<font color ="#a0c2f0">
+
+Virtual Private Server. El servidor se divide para cada página web de forma similar a las máquinas virtuales. Si bien comparten el mismo hardware, actúan como servidores diferentes. Cada uno tiene unos recursos fijos, por lo que **el rendimiento NO depende del resto de webs alojadas.**
+
+Es **algo más caro**, por lo que es ideal para empresas medianas, con algo más de tráfico o que requieran ejecutar aplicaciones un poco más específicas.
+
+</font>
+<h3>Hosting dedicado</h3>
+<font color ="#a0c2f0">
+
+Un servidor exclusivo para una página web, por lo que dispone de todos los recursos del mismo.
+
+Es la **opción más cara**, pero es necesario para empresas grandes con mucho tráfico y que requieran mucho mantenimiento.
+</font>
+
+<h3>Cloud hosting</h3>
+<font color ="#a0c2f0">
+
+Distribuye el tráfico a través de una red de servidores, lo que hace que sea más **escalable y flexible.**
+
+Ideal para cosas que no se sabe bien el tráfico porque tiene épocas en las que aumenta mucho, como tiendas con eventos como el black friday.
+</font>
+<h3>Hosting especializado</h3>
+<font color ="#a0c2f0">
+
+Optimizado para cosas específicas.
+</font>
+<h2>Qué tener en cuenta a la hora de contratar un servicio</h2>
+<font color ="#a0c2f0">
+
+Suelen tener un [**dominio**](#dominio) gratuito, pero además, debemos buscar:
+<ul>
+
+  <li>
+  
+  **Soporte 24/7**. Que tenga un equipo que se encargue de solucionar nuestros problemas.
+  </li>
+  <li>
+
+  **Alto rendimiento.** Con centros de datos alrededor del mundo, con buen tiempo de carga.
+  </li>
+  <li>
+
+  **Confiabilidad.** Que sepamos que nuestra página web vaya a estar disponible la mayoría del tiempo (que no les salgan demasiados errores 500)
+  </li>
+  <li>
+
+  **Almacenamiento en estado sólido.** Es más rápido y dura más que los tradicionales. **NMVe es más rápido que SSD.**
+  </li>
+
+  <li>
+
+  **Diversidad de planes y flexibilidad.** Que podamos elegir e ir escalando y desescalando fácilmente.
+  </li>
+
+  <li>
+
+  **Posibilidad de backups automáticos.** 
+  </li>
+  <li>
+
+  **Fácil de usar.**
+  </li>
+</ul>
+
+Hostinger puede ser una buena opción, pues además tiene correos institucionales gratis, [certificado SSL](#SSL) ilimitado y garantía de devolución.
+
+El hecho de que tenga una IP dedicada es bueno si queremos desarrollar APIs, pues se suelen conectar a través de IPs, por lo que si va cambiando todo el tiempo no es fácil de mantener.
+
+Otra ventaja de esto es que si tenemos una IP que se comparte con varios desconocidos, si éstos hacen spam, los correos que mandemos nosotros a través del host compartido los va a meter también en la carpeta de spam de nuestros potenciales clientes.
+</font>
+<h2>FTP</h2>
+<font color ="#a0c2f0">
+
+Para gestionar archivos nos descargamos el cliente de **Filezilla.** (Con la primera opción es suficiente.)
+
+En la parte de arriba rellenamos los datos del servidor, nombre, etc, que suelen estar en un apartado de nuestro proveedor de host y nos conectamos.
 </font>
