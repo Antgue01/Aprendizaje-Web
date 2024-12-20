@@ -1,0 +1,94 @@
+*{
+    box-sizing:border-box;
+}
+body,div,ul,li,a,h1,h2,h3,h4,p{
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+}
+body{
+    --bg-color: color-mix(in srgb, #ecdf23 70%, #fff);
+    --card-color: #ffffff;
+    --card-bg-color: #ffff60;
+    --dark-color: #dbcd01;
+    --text-color:#444;
+    --perspective:1200px;
+background-color: var(--bg-color);
+}
+.card{
+    max-width: clamp(280px,50%,360px);
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    margin: 50px auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card__worker{
+    max-height: 150px;
+    overflow: hidden;
+    display: block;
+}
+.card__worker img{
+    width: 100%;
+}
+.card__data{
+    padding: 12px;
+}
+.card__data span{
+    font-size: 1.4rem;
+    margin: 6px 0;
+    display: block;
+}
+
+.card__back,.card__front{
+    backface-visibility: hidden;
+    transition: transform 1s;
+    background-color: var(--card-color);
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 6px;
+    
+}
+.card__back{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    transform: perspective(var(--perspective)) rotateY(180deg);
+}
+.card__back span{
+    font-size: 1.5rem;
+    margin: 6px 0; 
+}
+.skill-bar{
+    border: 4px solid var(--dark-color);
+    border-radius: 10px;
+    margin: 12px;
+    padding: 2px;
+}
+.skill-bar div{
+    width: 80%;
+    color: var(--text-color);
+    padding: 6px;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+}
+.skill-bar:last-child div{
+    width: 20%;
+}
+
+.skill-bar:nth-child(4) div{
+    width: 50%;
+}
+.card:hover .card__back{
+    transform: perspective(var(--perspective)) rotateY(0deg);
+    transition: transform 1s;
+
+}
+.card:hover .card__front{
+    transform: perspective(var(--perspective)) rotateY(180deg);
+    transition: transform 1s;
+
+}

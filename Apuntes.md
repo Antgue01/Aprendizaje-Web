@@ -793,6 +793,25 @@ Rota el elemento. Podemos hacer que sea como rotar un sprite en 3D si usamos las
 **translate(<font color ="#e6c925"> h , v </font>).**
 </font>
 Mueve el elmento.
+<font color = "#88a12c">
+
+**perspective( <font color ="#e6c925">px</font> ).**
+</font>
+Mueve el punto de fuga
+<font color ="#e6c925">
+px
+</font>
+píxeles hacia atrás.
+<font color = "#fae48b">
+
+**backface-visibility.**
+</font>
+Es si se ocultan o no las caras traseras en 3D. Por defecto se muestran.
+<font color = "#fae48b">
+
+**mix-blend-mode.**
+</font>
+Son los modos de fusión como los de Photoshop o Nuke.
 </font>
 <h2>Selectores avanzados</h2>
 
@@ -1379,7 +1398,7 @@ Width y Height.
 Padding y margin
 </b></font>
 </br>
-left, right, top y bottom
+left, right, top y bottom. **Si les damos el valor <font color ="#54d398"> auto </font>, se le dará como valor en esa dirección el espacio sobrante.**
 
 <font color ="#b7dafc"><b>
 Border
@@ -1646,6 +1665,10 @@ Invisible, permite hacer scroll con el ratón (o con el dedo en móviles).
 
 **clip-path.**
 </font>Crea una máscara. Podemos personalizarla con un [generador](https://bennettfeely.com/clippy/).
+<font color = "#fae48b">
+
+**user-select.**
+</font> Permite decidir si queremos que el usuario seleccione o no el elemento.
 <h3>Fondos</h3>
 <font color ="#a0c2f0">
 
@@ -2433,7 +2456,47 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
 <img src ="imgs/fonts.png" title="Configuración de una fuente">
 
 </font>
+<h2>Integrar librerías de iconos</h2>
+<font color ="#a0c2f0">
 
+Buscamos la librería que queramos y copiamos el tag < link> que tenga y lo pegamos en el html. Después, le daremos a un texto la clase que nos diga la documentación y pondremos el texto que representa al icono. En el caso de usar los de google, pondremos la clase 
+<font color ="#54d398"> 
+**material-symbols-outlined**
+</font>
+ o
+<font color ="#54d398"> 
+**material-icons.**
+</font>
+</font>
+<h2>Redondeado interno</h2>
+
+![alt text](imgs/red.png)
+<font color ="#a0c2f0">
+
+En el 
+del <font color = "#fae48b">
+::before 
+</font>
+y el
+del <font color = "#fae48b">
+::after
+</font>
+del elemento le ponemos un contenido y les ponemos 
+del <font color = "#fae48b">
+position
+</font>
+en 
+<font color ="#54d398"> 
+absolute
+</font>
+(el elemento en sí debe estar en 
+<font color ="#54d398"> 
+relative
+</font>
+).Ponemos uno de los dos encima con un color transparente, el borde de abajo a la derecha redondeado y le damos una **sombra** desplazada a la derecha y abajo con el color del fondo e intensidad 0, pero con un valor de grosor.
+
+Hacemos lo mismo con el otro pero lo ponemos abajo, redondeamos el otro borde y desplazamos la sombra arriba. 
+</font>
 <h2>Botones animados al hovear</h2>
 <h3>Fondo wave</h3>
 <font color ="#a0c2f0">
@@ -2836,8 +2899,12 @@ Se usa para encabezados. No confundir con
 <font color ="#b61187">
 < head>
 </font>
+<font color ="#b61187"><u> 
 
-<font color ="#b61187"><u><b> 
+**< i>**
+</u></font>.Icono.
+<font color ="#b61187"><u><b>
+
 < nav>
 </b></u></font>
 <font color ="#a0c2f0">

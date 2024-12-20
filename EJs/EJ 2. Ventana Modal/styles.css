@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+dialog{
+    background-color: #0009;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+.modal__title{
+    margin-top: 10px;
+}
+
+.modal__content{
+    background-color: #fff;
+    padding: 10px 20px;
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    position: relative;
+}
+
+.modal__text{
+    
+}
+/* .bg{
+    filter: blur(10px)
+} */
+.modal__close{
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    right: 0;
+    top: 0;
+    padding: 4px 12px;
+}

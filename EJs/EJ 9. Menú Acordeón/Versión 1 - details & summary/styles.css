@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+body,
+div,
+ul,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+}
+body {
+  --bg-color: color-mix(in srgb, #ecdf23 70%, #fff);
+  --faq-color: #f0f0f0;
+  --dark-color: #dbcd01;
+  --text-color:#444;
+  background-color: var(--bg-color);
+}
+.faq {
+  max-width: clamp(300px, 100%, 900px);
+  margin: auto;
+}
+details {
+  background-color: var(--faq-color);
+  margin: 7px;
+  padding: 7px;
+  max-height: 34px;
+  transition: max-height .9s;
+  overflow: hidden;
+}
+details[open]{
+  max-height: 400px;
+}
+details[open] .content{
+  animation: aparecer 2s .2s both;
+
+}
+summary{
+  user-select: none;
+  position: relative;
+}
+.content{
+    
+    padding: 5px 10px;
+    margin:  10px;
+    padding-top: 5px;
+    margin-bottom: 0;
+    border-top: 1px solid var(--bg-color);
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+details strong{
+  background-color: var(--dark-color); 
+  padding: 1px 3px;
+  color: #fff;
+  margin-right: 4px;
+}
+
+
+summary::marker{
+  content: '';
+  
+}
+summary::before{
+  color: var(--dark-color);
+  position: absolute;
+  right: 0;
+  content: '+';
+  font-weight: 700;
+}
+details[open] summary::before{
+content: '-';
+}
+
+@keyframes aparecer {
+  0%{
+    opacity: 0;
+    translate: 0 -20px;
+  }
+  90%{
+    border-top: 1px solid transparent;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@media screen and (max-width:900px) {
+.faq{
+  max-width: 100%;
+}
+}
