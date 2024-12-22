@@ -2468,6 +2468,91 @@ Buscamos la librería que queramos y copiamos el tag < link> que tenga y lo pega
 **material-icons.**
 </font>
 </font>
+<h2 id = "esconder">Ocultar al clickar</h2>
+<font color ="#a0c2f0">
+
+Después de nuestro elemento,pondremos un checkbox y un <font color ="#b61187">
+label,
+</font>
+que será nuestra barra que cierra.
+En un 
+<font color ="#b61187">span
+</font>
+ le pondremos el icono de apertura y en otro con una clase para cerrar pondremos el icono de cierre.
+
+En el CSS, mostraremos en 
+<font color = "#fae48b">
+display
+</font>
+<font color ="#54d398"> 
+flex
+</font>
+la clase de cierre y ocultaremos el primer span del label.
+
+Seleccionaremos el primer span cuando el checkbox esté marcado de la siguiente manera:
+<font color ="#e6c925">
+input[type="checkbox"]:checked
+</font>
+le pondremos
+<font color = "#fae48b">
+display
+</font>
+en 
+<font color ="#54d398"> 
+flex.
+</font>
+Seleccionamos de la misma manera el span de la clase de cierre y lo ocultamos con
+<font color = "#fae48b">
+display
+</font>
+<font color ="#54d398"> 
+none.
+</font>
+Seleccionamos nuestro elemento cuando está checkeado el checkbox también y le ponemos el 
+<font color = "#fae48b">
+width
+</font>
+en
+<font color ="#54d398"> 
+</font>
+</font>
+<h2>Sidebar que se esconde</h2>
+<font color ="#a0c2f0">
+
+Crearemos un contenedor que será 
+<font color ="#54d398"> 
+flex.
+</font>
+En él, pondremos nuestro 
+<font color ="#b61187">
+aside
+</font> con el sidebar y el
+<font color ="#b61187"> main
+</font>
+ con el contenido principal, el cual tendrá un
+<font color = "#fae48b">
+margin
+</font>
+<font color ="#54d398"> 
+0 auto
+</font>
+para que se adapte cuando se esconda.
+El sidebar tendrá dentro un label en el que usaremos la técnica de [esconder](#esconder). El sidebar tendrá
+<font color = "#fae48b">
+position
+</font>
+<font color ="#54d398"> 
+sticky
+</font>
+y 
+<font color = "#fae48b">
+top
+</font>
+<font color ="#54d398"> 
+0
+</font>
+para que se pegue pero siga ocupando espacio en la página y afecte al contenido.
+</font>
 <h2>Redondeado interno</h2>
 
 ![alt text](imgs/red.png)
