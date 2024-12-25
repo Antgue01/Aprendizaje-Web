@@ -11,6 +11,7 @@
 
 <body>
     <div class="main-wrapper">
+       <!-- #region Index -->
         <aside>
             <nav class="index">
                 <div class="index__search__ul__container">
@@ -21,11 +22,13 @@
                         <input type="search" class="index__search-bar">
                     </div>
                     <ul class="index__ul">
-                        <li class="index__lv1">
+                        <li class="index__lv1 index__item">
                             <a href="#Caracteristicas">Características</a>
                         </li>
-                        <li class="index__lv1">
-                            <a href="#Caracteristicas">Características</a>
+                        <li class="index__lv1 index__item">
+                            <details>fsefes
+                                <summary><a href="#Variables">Variables</a></summary>
+                            </details>
                         </li>
                     </ul>
                 </div>
@@ -41,12 +44,56 @@
                 </label>
             </nav>
         </aside>
+        <!-- #endregion -->
+         <!-- #region Main -->
         <main>
             <h1>Javascript</h1>
-            <div class="box">
+            <section id="Caracteristicas" >
+                <div class="box">
+
                 <h2 class="box__title">Características</h2>
+                <div class="box__text__container">
+                    <ul class="box__list">
+                        <li class="box__list__item">
+                            Interpretado
+                        </li>
+                        <li class="box__list__item">Orientado a Objetos</li>
+                        <li class="box__list__item"><details>
+                            Las instrucciones van línea por línea en lugar de esperar a que esté todo interpretado.                                
+                            <summary>
+                                Imperativo
+                            </summary>
+                        </details>
+                        </li>
+                        <li class="box__list__item">Case sensitive</li>
+                        <li class="box__list__item"><details>
+                            Los objetos creados van a estar creados en base aa otro objeto crado por el propio lenguaje
+                            <summary>
+                                Basado en prototipos / instancias / classless</li>
+
+                            </summary>
+                        </details>
+                        <li class="box__list__item">
+                            <details>
+                                El tipo de las variables puede cambiar
+                                <summary>Tipado débil</summary>
+                            </details></li>
+                        <li class="box__list__item">
+                            <details>El tipo se comprueba en tiempo de ejecución en lugar de en tiempo de interpretación</details>
+                            <summary>Lenguaje dinámico</summary></li>
+                    </ul>
+                </div>
             </div>
+
+            </section>
+            <section id="Variables">
+                <h2>Variables</h2>
+                <p>
+                    La diferencia entre <strong>var</strong> y <strong>let </strong> es que el scope de let es <strong> el bloque en el que lo ejecutamos</strong> y var es una <strong>variable global.</strong>
+                </p>
+            </section>
         </main>
+        <!-- #endregion -->
     </div>
 </body>
 

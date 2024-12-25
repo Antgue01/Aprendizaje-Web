@@ -2456,7 +2456,10 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
 <img src ="imgs/fonts.png" title="Configuración de una fuente">
 
 </font>
-<h2>Integrar librerías de iconos</h2>
+
+<h2>
+
+Integrar librerías de iconos</h2>
 <font color ="#a0c2f0">
 
 Buscamos la librería que queramos y copiamos el tag < link> que tenga y lo pegamos en el html. Después, le daremos a un texto la clase que nos diga la documentación y pondremos el texto que representa al icono. En el caso de usar los de google, pondremos la clase 
@@ -2466,6 +2469,23 @@ Buscamos la librería que queramos y copiamos el tag < link> que tenga y lo pega
  o
 <font color ="#54d398"> 
 **material-icons.**
+</font>
+</font>
+<h2> 
+
+controlar los canales de las variables de color</h2>
+<font color ="#a0c2f0">
+
+Para ello se puede usar la función 
+<font color = "#88a12c">
+**rgba( <font color ="#e6c925">from variable r g b / alpha</font>).**
+</font>
+Podemos intercambiar los canales o hacer operaciones con ellos. Antes del color hay que poner
+<font color ="#e6c925">
+from
+</font>
+y el alpha se pone siempre detrás de un 
+<font color ="#e6c925">/.
 </font>
 </font>
 <h2 id = "esconder">Ocultar al clickar</h2>
