@@ -2817,11 +2817,26 @@ ctrl + alt + flechas
 Cursor múltiple.
 
 <font color ="#b61187"><u><b>
+
 Windows + Ctrl + Enter.
 </u></b></font>
 En el navegador, activa las funciones de accesibilidad.
-</font>
 
+<font color ="#b61187"><u><b>
+
+Alt + L Alt +O.
+</u></b></font>
+Abre el html en el navegador en live server.
+</font>
+<h2> Snippets</h2>
+<font color ="#a0c2f0">
+
+En File->Preferences podemos editar los snippets. Además, podemos crear **snippets para un proyecto concreto** si en la carpeta .vscode creamos un archivo con la extensión **.code-snippets** en lugar de Json.
+
+En los snippets, usamos **$0** para situar el cursor después del snippet y el resto de números para autocompletar. También podemos ponerle una opción por defecto al autocompletar de esta forma:
+
+**${1:Lo que sea}**
+</font>
 <h2>Emmet</h2>
 
 <font color ="#a0c2f0">
