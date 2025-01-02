@@ -1,0 +1,91 @@
+{
+    "Documentation__box": {
+        "prefix": "box",
+        "body": "<div class=\"box\">\n\t<h2 class = \"box__title\">${1:Title} <\/h2>\n\t<div class =\"box__text__container\">\n\t\t<ul class = \"box__list\">\n\t\t\tli.box__list__item*${2:1}\n\t\t</ul>\n\t </div>\n</div>",
+        "description": "Documentation box with title and list",
+        "scope": "html"
+    },
+    "Documentation__box__selectable": {
+        "prefix": "boxsel",
+        "body": " <a href=\"#\" class=\"box__selectable\">${1:Title}</a>\n<div class=\"box__explanation\">${2:Content}</div>\n",
+        "description": "Documentation box list item",
+        "scope": "html"
+    },
+    "Documentation__index__item": {
+        "prefix": "index",
+        "body": "<!-- #region $1 -->\n<div class=\"index__item__container\">\n\t<div class=\"index__item\">\n\t\t<input type=\"checkbox\" id=\"${2:Checkbox__id}\">\n\t\t<label class=\"index__item__label\" for=\"$2\"></label>\n\t\t<a class=\"index__lv${4:2}\" href=\"#${3:section_id}\">${1:Section__name}</a>\n\t</div>\n</div>\n<!-- #endregion -->",
+        "description": "Documentation index item",
+        "scope": "html"
+    },
+    "Literal": {
+        "prefix": "lit",
+        "body": "<span class=\"literal\">\n\t${1:String}\n</span>$0",
+        "description": "Literal",
+        "scope": "html"
+    },
+    "String": {
+        "prefix": "str",
+        "body": "<span class=\"string\">\n\t${1:String}\n</span>$0",
+        "description": "String",
+        "scope": "html"
+    },
+    "Declaracion": {
+        "prefix": "dec",
+        "body": "<span class=\"decl\">${1:nombre variable}</span>",
+        "description": "Declaración",
+        "scope": "html"
+    },
+    "Var": {
+        "prefix": "var",
+        "body": "<span class=\"var\">${1:Variable}</span>",
+        "description": "variable",
+        "scope": "html"
+    },
+    "Val": {
+        "prefix": "val",
+        "body": "<span class=\"val\">${1:Variable}</span>",
+        "description": "a property value",
+        "scope": "html"
+    },
+    "Class": {
+        "prefix": "cl",
+        "body": "<span class=\"class\">${1:Clase}</span>",
+        "description": "Clase",
+        "scope": "html"
+    },
+    "let": {
+        "prefix": "let",
+        "body": "<span class=\"decl\">\n\tlet\n</span>",
+        "description": "variable",
+        "scope": "html"
+    },
+    "Funcion": {
+        "prefix": "func",
+        "body": "<span class=\"func\">${1:function name}()</span>",
+        "description": "Función",
+        "scope": "html"
+    },
+    "Funcion con argumentos": {
+        "prefix": "funcargs",
+        "body": "<span class=\"func\">${1:function name}(</span><span class =\"var\">${2:arguments}</span><span class=\"func\">)</span>",
+        "description": "Función con argumentos",
+        "scope": "html"
+    },
+    "Key_word": {
+        "prefix": "key",
+        "body": "<span class=\"key\">${1:Key word}</span>",
+        "description": "Key word",
+        "scope": "html"
+    },
+    "Code": {
+        "prefix": "cd",
+        "body": "<div class = \"code__box\">\n\t<code>\n\t\t${1:Code}\n\t</code>\n</div>$0",
+        "scope": "html"
+    },
+    "copy": {
+        "prefix": "cp",
+        "body": "<button class=\"code__box__copy material-symbols-outlined\">content_copy</button>\n<div class=\"code__box__copy__dialog\">\n\t¡Copiado!\n</div>",
+        "description": "Copy",
+        "scope": "html"
+    }
+}

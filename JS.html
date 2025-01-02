@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="JS.css">
+    <link rel="shortcut icon" href="JS/imgs/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
 </head>
@@ -92,6 +93,16 @@
                                         <label class="index__item__label" for="interfaces"></label>
                                         <a class="index__lv3" href="#Interfaces">Interfaces</a>
                                     </div>
+                                    <!-- #region DOM -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" id="dom">
+                                            <label class="index__item__label" for="dom"></label>
+                                            <a class="index__lv4" href="#DOM">DOM</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion -->
+
                                 </div>
                                 <!-- #endregion -->
                                 <!-- #endregion -->
@@ -112,6 +123,15 @@
                                         <a class="index__lv2" href="#Workflow">Workflow</a>
                                     </div>
                                 </div>
+                                <!-- #region Debug -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" id="Debg">
+                                        <label class="index__item__label" for="Debg"></label>
+                                        <a class="index__lv3" href="#Debug">Debug</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion -->
                                 <!-- #region String Format -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -121,6 +141,15 @@
                                     </div>
                                 </div>
                                 <!-- #endregion -->
+                                <!-- #endregion -->
+                                <!-- #region Random -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" id="rnd">
+                                        <label class="index__item__label" for="rnd"></label>
+                                        <a class="index__lv3" href="#Random">Random</a>
+                                    </div>
+                                </div>
                                 <!-- #endregion -->
                             </div>
                         </div>
@@ -190,6 +219,31 @@
                 </div>
             </section>
             <!-- #endregion -->
+            <p>Algunos de los conceptos de programación son los siguientes:</p>
+            <!-- #region Vocabulario -->
+            <div class="box">
+                <h2 class="box__title">Vocabulario </h2>
+                <div class="box__text__container">
+                    <ul class="box__list">
+                        <li class="box__list__item">
+                            <a href="#" class="box__selectable">Abstracción</a>
+                            <div class="box__explanation">Simplificar un sistema complejo ocultando los detalles
+                                innecesarios y mostrando solo las funcionalidades esenciales.
+                            </div>
+                        </li>
+                        <li class="box__list__item"> <a href="#" class="box__selectable">Encapsulamiento</a>
+                            <div class="box__explanation">Agrupar datos y métodos dentro de una clase, y restringir el
+                                acceso a algunos de los componentes.</div>
+                        </li>
+                        <li class="box__list__item">
+                            <a href="#" class="box__selectable">Modularidad</a>
+                            <div class="box__explanation">Dividir el problema en subproblemas más sencillos.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- #endregion -->
             <!-- #region Variables -->
             <section id="Variables">
                 <h2>Variables</h2>
@@ -251,6 +305,58 @@
             <!-- #region Clases -->
             <section id="Clases">
                 <h2>Clases</h2>
+                <p>
+                    Para crear clases, la sintaxis es la siguiente:
+                </p>
+                <div class="code__box">
+                    <code>
+                        <span class="key">
+                            class
+                        </span>
+                        nombre <span class="key">extends</span> padre{
+                                <br>
+                                &emsp;<span class="key">
+                                    constructor</span>(<span class="decl">parametros</span>){
+                                    <br>
+                                    &emsp; &emsp; super(<span class="decl">parametros</span>);<br>
+                                    &emsp; &emsp; code;
+                                    <br>
+                                &emsp;}
+                                <br>
+                                    &emsp;<span class="key">this</span>.var1 = valor;
+                                    <br>&emsp;<span class="key">function</span> nombreFuncion(){code;}
+                                    <br>&emsp;<span class="key">get</span> getAlgo(){code;}
+                                    <br>&emsp;<span class="key">set</span> setAlgo(<span class="decl">parametros</span>){code;}
+                                <br>
+                            }
+                    </code>
+                </div>
+                <p>
+                    Como podemos ver, dentro de las clases, las <strong>propiedades</strong> van precedidas siempre de
+                    <span class="var">
+                        this</span>, y las propias clases se instancian con la palabra clave <strong>new.</strong>
+                </p>
+                <p>
+                    Por otra parte, conviene declarar los objetos con <strong>const</strong> en lugar de
+                    <strong>let</strong> para evitar que se modifiquen, ya que de lo contrario podríamos asignarle otro
+                    valor, por ejemplo un número, y perderíamos el objeto.
+                </p>
+                <p>
+                    En cuanto a los <strong>getters</strong> y <strong>setters</strong>, se declaran con las palabras
+                    clave <span class="var">get</span> y <span class="var">set</span>.
+                    <br>A la hora de llamarlos, no se ponen paréntesis. Por ejemplo, para la clase anterior:
+                </p>
+                <div class="code__box">
+                    <code>
+                        <span class="decl">
+                            let
+                        </span>objeto = <span class="key">new</span> <span class="class">nombre</span>();
+                        <br><span class="decl">
+                            let
+                        </span>algo = objeto.<span class="func">getAlgo</span>;
+                        <br>objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>;
+                    </code>
+                </div>
                 <!-- #region Objetos -->
                 <section id="Objetos">
 
@@ -285,9 +391,166 @@
                                             class="var">number</span><span class="func">)</span></div>
 
                                 </li>
+                                <li class="box__list__item">
+                                    <a href="#" class="box__selectable"><span class="class">Array</span></a>
+                                    <div class="box__explanation"><span class="func">shift(</span><span
+                                            class="var">elem</span><span class="func">)</span>.Añade un elemento al
+                                        principio.
+                                        <br><span class="func">unshift(</span><span class="func">)</span>.Elimina el
+                                        primer elemento.
+                                        <br><span class="func">splice(</span><span class="var">start, how
+                                            many</span><span class="func">)</span>.Elimina del array <span
+                                            class="var">how many</span> elementos a partir de <span
+                                            class="var">start</span> y devuelve otro array con estos elementos.
+                                        <br><span class="func">filter(</span><span class="var">condition</span><span
+                                            class="func">)</span>Devuelve un array con todos los elementos que cumplan
+                                        la <span class="var"> condición</span>.
+                                </li>
                             </ul>
                         </div>
                     </div>
+                    <!-- #region DOM -->
+                    <section id="DOM">
+                        <h4>El DOM</h4>
+                        <p>
+                            El Document Object Model. Se compone de <strong>nodos</strong>, que son cada una de las
+                            <strong>etiquetas</strong> del html. Los <strong>atributos</strong> también se consideran
+                            nodos, aunque también pueden ser información del tipo de nodo <span
+                                class="class">Element</span>. Hay varios tipos de nodo:
+                        </p>
+                        <div class="box">
+                            <h2 class="box__title">Tipos de nodos </h2>
+                            <div class="box__text__container">
+                                <ul class="box__list">
+                                    <li class="box__list__item">
+                                        <a href="#" class="box__selectable"><span class="class">Document</span></a>
+                                        <div class="box__explanation">Nodo raíz a partir del cual derivan el resto de
+                                            nodos.</div>
+
+                                    </li>
+                                    <li class="box__list__item">
+                                        <a href="#" class="box__selectable"><span class="class">Element</span></a>
+                                        <div class="box__explanation">Son los nodos definidos por las etiquetas HTML.
+                                        </div>
+
+                                    </li>
+                                    <li class="box__list__item">
+                                        <a href="#" class="box__selectable"><span class="class">Text</span></a>
+                                        <div class="box__explanation">El texto dentro de un nodo <span
+                                                class="class">Element</span>.</div>
+
+                                    </li>
+                                    <li class="box__list__item">
+                                        <a href="#" class="box__selectable"><span class="class">Attribute</span></a>
+                                        <div class="box__explanation">Los atributos de las etiquetas HTML.</div>
+
+                                    </li>
+                                    <li class="box__list__item">
+                                        <span class="class">Comentarios y otros</span>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            Cada tipo tiene asociado un valor numérico que se puede consultar en la <a target="_blank"
+                                href="https://www.w3schools.com/jsreF/prop_node_nodetype.asp#midcontentadcontainer">documentación</a>.
+                            Para seleccionar elementos, tenemos varios métodos de la clase <span
+                                class="class">Document</span>:
+                        </p>
+                        <div class="box">
+                            <h2 class="box__title">Métodos de selección </h2>
+                            <div class="box__text__container">
+                                <ul class="box__list">
+                                    <li class="box__list__item"><span class="func">getElementById(</span><span
+                                            class="var">Id</span><span class="func">)</span></li>
+                                    <li class="box__list__item"><a href="#" class="box__selectable"><span
+                                                class="func">getElementsByTagName(</span><span
+                                                class="var">tag</span><span class="func">)</span></a>
+                                        <div class="box__explanation">Selecciona todos los nodos del mismo tag.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="func">querySelector(</span><span class="var">query</span><span
+                                                class="func">)</span></a>
+                                        <div class="box__explanation">Usa selectores de CSS y devuelve <strong>el
+                                                primero de los elementos que encuentra</strong>.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="func">queryAll(</span><span class="var">query</span><span
+                                                class="func">)</span></a>
+                                        <div class="box__explanation">Igual que el anterior pero devuelve <strong>todos
+                                                los que encuentre</strong>.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            Además, podemos jugar con los atributos de los tags con los siguientes métodos de la misma
+                            clase:
+                        </p>
+                        <div class="box">
+                            <h2 class="box__title">Métodos de atributos </h2>
+                            <div class="box__text__container">
+                                <ul class="box__list">
+                                    <li class="box__list__item"><span class="func">getAttribute(</span><span
+                                            class="var">attr</span><span class="func">)</span></li>
+                                    <li class="box__list__item"><span class="func">setAttribute(</span><span
+                                            class="var">attr, val</span><span class="func">)</span></li>
+                                    <li class="box__list__item"><span class="func">removeAttribute(</span><span
+                                            class="var">attr</span><span class="func">)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            Hay algunos atributos especialmente relevantes:
+                        </p>
+                        <div class="box">
+                            <h2 class = "box__title">Atributos especiales </h2>
+                            <div class ="box__text__container">
+                                <ul class = "box__list">
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">contentEditable</span></a>
+                                    <div class="box__explanation">Si el elemento se puede editar o no por el usuario.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">dir</span></a>
+                                    <div class="box__explanation">La dirección de lectura del texto. Puede ser <span class="val">rtl</span> o <span class="val">ltr</span>.</div>
+                                    </li>
+                                    <li class="box__list__item"><span class="var">hidden</span></li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">style</span></a>
+                                    <div class="box__explanation">Se usa para cambiar el estilo CSS.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">tabindex</span></a>
+                                    <div class="box__explanation">Si le damos un número <strong>negativo</strong> como valor, <strong>NO</strong> puede obtener el focus. 
+                                        <br><br>
+                                        Si le damos 0 o un <strong>positivo</strong> <strong>SÍ</strong>, siendo el número el orden en el que se lo va a encontrar la tecla <strong>tab</strong>.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">title</span></a>
+                                    <div class="box__explanation">Es lo que pondrá en el recuadro al pasar el ratón encima del elemento.</div>
+                                    </li>
+                                </ul>
+                             </div>
+                        </div>
+                        <p>
+                            Hay otros atributos que no necesitan el método <span class="func">getAttribute()</span> para ser accedidos, sino que son propiedades del objeto. La mayoría de ellos son para Inputs.
+                            <div class="box">
+                                <h2 class = "box__title">Atributos propiedad </h2>
+                                <div class ="box__text__container">
+                                    <ul class = "box__list">
+                                        <li class="box__list__item"><span class="var">value</span></li>
+                                        <li class="box__list__item"><span class="var">type</span></li>
+                                        <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">accept</span></a>
+                                        <div class="box__explanation">Se utiliza sobre todo para archivos. Qué formatos acepta.
+                                            <br><br> Un ejemplo es <span class="val">"image/png"</span>.
+                                        </div>
+                                        </li>
+                                        <li class="box__list__item"></li>
+                                        <li class="box__list__item"></li>
+                                        <li class="box__list__item"></li>
+                                    </ul>
+                                 </div>
+                            </div>
+                        </p>
+                    </section>
+                    <!-- #endregion -->
                 </section>
                 <!-- #endregion -->
             </section>
@@ -356,16 +619,26 @@
 
                 </div>
                 <p>
-                    La diferencia entre ambos es que <strong>in</strong> recorre los <strong>índices</strong> del array, mientras que
+                    La diferencia entre ambos es que <strong>in</strong> recorre los <strong>índices</strong> del array,
+                    mientras que
                     <strong>of</strong> recorre los <strong>valores</strong>.
                 </p>
+                <div class="box">
+                    <h2 class="box__title">For each </h2>
+                    <div class="box__text__container --center --mw500">
+                        Existe otra forma de hacer un foreach, y es que los arrays tienen un método llamado forEach que
+                        recibe una función como argumento.
+                    </div>
+                </div>
                 <p>
                     Podemos nombrar los bucles simplemente poniendo el nombre seguido de dos puntos.
-                    Si tenemos <strong>bucles anidados</strong>, podemos poner el nombre del array que estamos recorriendo después un <strong>break</strong> o <strong>contiue</strong> para que afecte solo a ese bucle.
+                    Si tenemos <strong>bucles anidados</strong>, podemos poner el nombre del array que estamos
+                    recorriendo después un <strong>break</strong> o <strong>contiue</strong> para que afecte solo a ese
+                    bucle.
                     <br>
                     Un ejemplo de esto sería:
                 </p>
-                <div class = "code__box">
+                <div class="code__box">
                     <code>
                         nombre:<br>
                         <span class="key">
@@ -382,14 +655,15 @@
                     </code>
                 </div>
                 <p>
-                    En Javascript, las <strong>funciones</strong> se declaran precedidas de la palabra clave <span class="var">
+                    En Javascript, las <strong>funciones</strong> se declaran precedidas de la palabra clave <span
+                        class="var">
                         function
                     </span>y se ponen los argumentos sin especificar el tipo.
                     Estas se pueden incluso <strong>guardar en variables.</strong>
                     <br>
-                    También hay lambda functions, que se escriben así:
+                    También hay <strong>lambda functions</strong>, que se escriben así:
                 </p>
-                <div class = "code__box">
+                <div class="code__box">
                     <code>
                         (<span class="decl">parametros</span>)=>{<br>&emsp; code;<br>}
                     </code>
@@ -399,8 +673,34 @@
                     </div>
                 </div>
                 <p>
-                    Los <strong>objetos, arrays y funciones</strong> se pasan por <strong>referencia</strong>; el resto de tipos, por <strong>valor</strong>.
+                    Si sólo tienen una línea de código, además de ejecutarse, se retorna la función que se haya
+                    ejecutado.
                 </p>
+                <p>
+                    Los <strong>objetos, arrays y funciones</strong> se pasan por <strong>referencia</strong>; el resto
+                    de tipos, por <strong>valor</strong>.
+                </p>
+                <!-- #region Debug -->
+                <section id="Debug">
+                    <h3>Debug</h3>
+                    <p>
+                        Podemos printear por consola el estado de una variable con <span
+                            class="class">Console</span>.<span class="func">dir(</span><span
+                            class="var">variable</span><span class="func">)</span>.
+                        <br>
+                        Otra forma de debuggear es con el método <span class="class">Console</span>.<span
+                            class="func">count()</span> y el método <span class="class">Console</span>.<span
+                            class="func">countReset()</span>. El primero devuelve cuántas veces se ha llamado y el otro
+                        resetea el contador.
+                    </p>
+                    <p>
+                        Además, se pueden crear <strong>grupos</strong> para separar uos logs de otros con <span
+                            class="class">Console</span>.<span class="func">group(</span><span
+                            class="var">nombre</span><span class="func">)</span> y <span
+                            class="class">Console</span>.<span class="func">groupEnd()</span>.
+                    </p>
+                </section>
+                <!-- #endregion -->
                 <!-- #region Formateo de strings -->
                 <section id="strfmt">
                     <h3>Formateo de strings</h3>
@@ -427,7 +727,20 @@
                 <!-- #endregion -->
             </section>
             <!-- #endregion -->
+            <!-- #region Random -->
+            <section>
+                <h3 id="Random">Random</h3>
+                <p>
+                    Para generar un número aleatorio entre 0 y 1, se utiliza la función <span
+                        class="class">Math.</span><span class="func">Random()</span>.
+                    <br>
+                    Para hacerlo en un rango, multiplicamos por <strong>(max - min)</strong> y le sumamos
+                    <strong>min</strong>.
+                </p>
+            </section>
+            <!-- #endregion -->
         </main>
+
         <!-- #endregion -->
     </div>
 </body>
