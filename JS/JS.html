@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="JS.css">
-    <link rel="shortcut icon" href="JS/imgs/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
 </head>
@@ -39,15 +39,7 @@
                                     </label>
                                     <a class="index__lv2" href="#Caracteristicas">Características</a>
                                 </div>
-                                <div class="index__item__container">
-                                    <div class="index__item ">
-                                        <input type="checkbox" name="" id="index__try">
-                                        <label class="index__item__label " for="index__try">
-                                        </label>
-                                        <a class="index__lv3" href="#Caracteristicas">try</a>
-
-                                    </div>
-                                </div>
+                                
                                 <!--#endregion -->
                                 <!-- #region Variables -->
                                 <div class="index__item__container">
@@ -76,9 +68,7 @@
                                         <label class="index__item__label" for="objs"></label>
                                         <a class="index__lv2" href="#Clases">Clases</a>
                                     </div>
-                                </div>
-                                <!-- #endregion -->
-                                <!-- #region Objetos -->
+                                     <!-- #region Objetos -->
                                 <div class="index__item__container">
                                     <div class="index__item">
                                         <input type="checkbox" id="objs2">
@@ -105,6 +95,9 @@
 
                                 </div>
                                 <!-- #endregion -->
+                               
+                                </div>
+                                <!-- #endregion -->
                                 <!-- #endregion -->
                                 <!-- #region Trucos -->
                                 <div class="index__item__container">
@@ -122,8 +115,7 @@
                                         <label class="index__item__label" for="Workflow"></label>
                                         <a class="index__lv2" href="#Workflow">Workflow</a>
                                     </div>
-                                </div>
-                                <!-- #region Debug -->
+                                      <!-- #region Debug -->
                                 <div class="index__item__container">
                                     <div class="index__item">
                                         <input type="checkbox" id="Debg">
@@ -151,7 +143,9 @@
                                     </div>
                                 </div>
                                 <!-- #endregion -->
-                            </div>
+
+                                </div>
+                                                          </div>
                         </div>
                     </div>
                     <input type="checkbox" id="index-close">
@@ -168,9 +162,13 @@
             </nav>
         </aside>
         <!-- #endregion -->
+
         <!-- #region Main -->
         <main>
             <h1>Javascript</h1>
+            <p>
+                El código Javascript se ejecuta en el navegador del usuario, nunca en el servidor.
+            </p>
             <!-- #region Caracteristicas -->
             <section id="Caracteristicas">
                 <div class="box">
@@ -359,23 +357,8 @@
                 </div>
                 <!-- #region Objetos -->
                 <section id="Objetos">
-
                     <h3>Objetos</h3>
-                    <div class="box">
-                        <h2 class="box__title">Objetos Importantes </h2>
-                        <div class="box__text__container">
-                            <ul class="box__list">
-                                <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                            class="class">Document</span></a>
-                                    <div class="box__explanation"><span class="func">writeln(</span><span
-                                            class="var">content</span><span class="func">)</span>. Escribe en el
-                                        documento
-                                        HTML.
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
                     <!-- #endregion -->
                 </section>
                 <!-- #region Interfaces  -->
@@ -455,7 +438,13 @@
                         <p>
                             Cada tipo tiene asociado un valor numérico que se puede consultar en la <a target="_blank"
                                 href="https://www.w3schools.com/jsreF/prop_node_nodetype.asp#midcontentadcontainer">documentación</a>.
-                            Para seleccionar elementos, tenemos varios métodos de la clase <span
+                        </p>
+                        <p>
+                            Podemos <strong>escribir en la página</strong> con <span class="class">Document</span>.<span
+                                class="func">writeln(</span><span class="var">codigoHtml</span><span
+                                class="func">)</span>.
+                        </p>
+                        <p> Para seleccionar elementos, tenemos varios métodos de la clase <span
                                 class="class">Document</span>:
                         </p>
                         <div class="box">
@@ -505,50 +494,178 @@
                             Hay algunos atributos especialmente relevantes:
                         </p>
                         <div class="box">
-                            <h2 class = "box__title">Atributos especiales </h2>
-                            <div class ="box__text__container">
-                                <ul class = "box__list">
-                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">contentEditable</span></a>
-                                    <div class="box__explanation">Si el elemento se puede editar o no por el usuario.</div>
+                            <h2 class="box__title">Atributos especiales </h2>
+                            <div class="box__text__container">
+                                <ul class="box__list">
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">contentEditable</span></a>
+                                        <div class="box__explanation">Si el elemento se puede editar o no por el
+                                            usuario.</div>
                                     </li>
-                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">dir</span></a>
-                                    <div class="box__explanation">La dirección de lectura del texto. Puede ser <span class="val">rtl</span> o <span class="val">ltr</span>.</div>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">dir</span></a>
+                                        <div class="box__explanation">La dirección de lectura del texto. Puede ser <span
+                                                class="val">rtl</span> o <span class="val">ltr</span>.</div>
                                     </li>
                                     <li class="box__list__item"><span class="var">hidden</span></li>
-                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">style</span></a>
-                                    <div class="box__explanation">Se usa para cambiar el estilo CSS.</div>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">style</span></a>
+                                        <div class="box__explanation">Se usa para cambiar el estilo CSS.
+                                            <br><br>No se accede a través de la función <span
+                                                class="func">setAttribute()</span>, sino que es un
+                                            <strong>objeto</strong> y cada una de sus propiedades son las de CSS.
+                                        </div>
                                     </li>
-                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">tabindex</span></a>
-                                    <div class="box__explanation">Si le damos un número <strong>negativo</strong> como valor, <strong>NO</strong> puede obtener el focus. 
-                                        <br><br>
-                                        Si le damos 0 o un <strong>positivo</strong> <strong>SÍ</strong>, siendo el número el orden en el que se lo va a encontrar la tecla <strong>tab</strong>.</div>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">tabindex</span></a>
+                                        <div class="box__explanation">Si le damos un número <strong>negativo</strong>
+                                            como valor, <strong>NO</strong> puede obtener el focus.
+                                            <br><br>
+                                            Si le damos 0 o un <strong>positivo</strong> <strong>SÍ</strong>, siendo el
+                                            número el orden en el que se lo va a encontrar la tecla
+                                            <strong>tab</strong>.
+                                        </div>
                                     </li>
-                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">title</span></a>
-                                    <div class="box__explanation">Es lo que pondrá en el recuadro al pasar el ratón encima del elemento.</div>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">title</span></a>
+                                        <div class="box__explanation">Es lo que pondrá en el recuadro al pasar el ratón
+                                            encima del elemento.</div>
                                     </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            Hay otros atributos diseñados para Inputs.
+                        <div class="box">
+                            <h2 class="box__title">Atributos Input </h2>
+                            <div class="box__text__container">
+                                <ul class="box__list">
+                                    <li class="box__list__item"><a href="#" class="box__selectable"><span
+                                                class="var">value</span></a>
+                                        <div class="box__explanation">No es necesario el método <span
+                                                class="func">setAttribute()</span>, se puede usar como una variable.
+                                        </div>
+                                        </span>
+                                    </li>
+                                    <li class="box__list__item"><span class="var">type</span></li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">accept</span></a>
+                                        <div class="box__explanation">Se utiliza sobre todo para archivos. Qué formatos
+                                            acepta.
+                                            <br><br> Un ejemplo es <span class="val">"image/png"</span>.
+                                        </div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">form</span></a>
+                                        <div class="box__explanation">Nos permite enlazar un input con el id de un form
+                                            (Si el input está dentro del form ya están enlazados).</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">minLength</span></a>
+                                        <div class="box__explanation">El mínimo de caracteres del input.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="var">required</span></a>
+                                        <div class="box__explanation">Si un campo es obligatorio o no. También se puede
+                                            <strong>acceder como variable</strong>.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </p>
+                        <p>Con el objeto <span class="var">classList</span> de los elmentos, podemos <strong>añadir,
+                                quitar y modificar</strong> clases a los elementos seleccionados con los métodos
+                            correspondientes, entre otras funcionalidades.
+                        </p>
+                        <div class="box">
+                            <h2 class="box__title">Métodos de <span class="class">ClassList</span> </h2>
+                            <div class="box__text__container">
+                                <ul class="box__list">
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="func">item(</span><span class="var">position</span><span
+                                                class="func">)</span></a>
+                                        <div class="box__explanation">Devuelve el nombre de la clase en la <span
+                                                class="var">posición </span>dada.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="func">contains(</span><span class="var">clase</span><span
+                                                class="func">)</span></a>
+                                        <div class="box__explanation">Devuelve <span class="val">true</span> si el
+                                            elemento tiene esa <span class="var">clase</span> o <span class="val">false
+                                            </span>en caso contrario.</div>
+                                    </li>
+                                    <li class="box__list__item"> <a href="#" class="box__selectable"><span
+                                                class="func">toggle(</span><span class="var">clase, [force]</span><span
+                                                class="func">)</span></a>
+                                        <div class="box__explanation">Si tiene la <span class="var">clase</span>, la
+                                            quita, y si no la tiene, la añade.
+                                            <br><br>Si <span class="var">force </span>es true, no elimina la clase.
+                                        </div>
+                                    </li>
+                                    <li class="box__list__item"><span class="func">replace(</span><span
+                                            class="var">toClass, fromClass</span><span class="func">)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            Además, podemos acceder al contenido de los elementos con las propiedades <span
+                                class="var">textContent </span>, <span class="var">innerHtml </span>y <span
+                                class="var">outerHTML. </span>La diferencia es que la <strong>primera</strong> devuelve
+                            todo el <strong>texto</strong>,
+                            la <strong>segunda</strong> devuelve el <strong>texto con las etiquetas HTML</strong>, y la
+                            <strong>tercera</strong> devuelve el texto con las <strong>etiquetas HTML y sus
+                                alrededores</strong>.
+                        </p>
+                        <p>
+                            La forma de <strong>crear elementos</strong> es la siguiente:
+                        </p>
+                        <p>
+                            Con <span class="class">Document </span>.<span class="func">createElement(</span><span
+                                class="var">TAG</span><span class="func">)</span> creamos un elemento con el tag
+                            indicado (tenemos que ponerlo <strong> en mayúsculas y sin "<" y ">" </strong>).
+                                    <br>Para añadirle texto, podemos usar el método <span
+                                        class="func">createTextNode(</span><span class="var">texto</span><span
+                                        class="func">)</span> del elemento recién creado o bien la propiedad <span
+                                        class="var">innerHtml</span>.
+                                    <br>Una vez hecho eso, lo ponemos como hijo del nodo que queramos con el método
+                                    <span class="func">appendChild(</span><span class="var">hijo</span><span
+                                        class="func">)</span>.
+                        </p>
+                        <p>
+                            Si vamos a añadir muchos elementos, conviene mejor utilizar <span
+                                class="class">Document</span>.<span class="func">createDocumentFragment(</span><span
+                                class="var">htmlCode</span><span class="func">)</span>, añadir todos los elementos al
+                            fragmento y entonces añadir el fragmento a la página, ya que es <strong>más óptimo en
+                                recursos</strong>, pues de la otra forma destruye todo el DOM cada vez que añades un
+                            elemento y lo vuelve a repintar y de esta forma solo lo hace al añadir el fragmento.
+                        </p>
+                        <p>
+                            Por supuesto, podemos <strong>iterar</strong> y hacer operaciones con los <strong>padres e
+                                hijos</strong> de cada nodo usando propiedades y métodos como <span
+                                class="var">children, firstChild, firstElementChild, nextSibling, nextElementSibling,
+                            </span> <span class="func">replaceChild()</span>,etc.
+                        </p>
+                        <p>
+                            De estos métodos, uno bastante inportante es <span class="func">closest(</span><span
+                                class="var">query</span><span class="func">)</span>, que permite seleccionar el
+                            <strong>padre </strong>más cercano en la jerarquía que cumple el selector CSS de <span
+                                class="var">query. </span>
+                        </p>
+
+                        <p>
+                            Para <strong>añadir eventos</strong>, usamos la función <span
+                                class="func">addEventListener(</span><span class="var">evento, función</span><span
+                                class="func">)</span> del elemento al que queramos añadírselo. 
+                        </p>
+                        <div class="box">
+                            <h2 class = "box__title">Eventos más importantes </h2>
+                            <div class ="box__text__container">
+                                <ul class = "box__list">
+                                    <li class="box__list__item"><span class="val">click </span></li>
                                 </ul>
                              </div>
                         </div>
-                        <p>
-                            Hay otros atributos que no necesitan el método <span class="func">getAttribute()</span> para ser accedidos, sino que son propiedades del objeto. La mayoría de ellos son para Inputs.
-                            <div class="box">
-                                <h2 class = "box__title">Atributos propiedad </h2>
-                                <div class ="box__text__container">
-                                    <ul class = "box__list">
-                                        <li class="box__list__item"><span class="var">value</span></li>
-                                        <li class="box__list__item"><span class="var">type</span></li>
-                                        <li class="box__list__item"> <a href="#" class="box__selectable"><span class="var">accept</span></a>
-                                        <div class="box__explanation">Se utiliza sobre todo para archivos. Qué formatos acepta.
-                                            <br><br> Un ejemplo es <span class="val">"image/png"</span>.
-                                        </div>
-                                        </li>
-                                        <li class="box__list__item"></li>
-                                        <li class="box__list__item"></li>
-                                        <li class="box__list__item"></li>
-                                    </ul>
-                                 </div>
-                            </div>
-                        </p>
                     </section>
                     <!-- #endregion -->
                 </section>
@@ -743,6 +860,8 @@
 
         <!-- #endregion -->
     </div>
+    <script src="code.js"></script>
+
 </body>
 
 </html>

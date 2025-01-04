@@ -10,7 +10,8 @@ class Persona{
         this.nombre=nombre;
     }
 }
-// document.getElementById('saludo').onclick = ()=> saludar();
+
+// document.getElementById('saludo').onclick = ()=> saludar;
 let a =23;
 let b = '23';
 document.writeln(`${a} (number) = = ${b} (string) => ${a == b}</br>`);
@@ -49,3 +50,4 @@ const input = document.getElementById('input');
 
 input.value = 'Hola';
 document.writeln(input.value);
+input.va

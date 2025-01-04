@@ -1,0 +1,66 @@
+.key__container{
+    display: block;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 60dvw;
+    height: 20dvw;
+    margin: 0 auto;
+    background-color: #ddd;
+    
+}
+.key__container > label{
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+h1{
+    text-align: center;
+}
+fieldset{
+    display: block;
+    width: 100px;
+}
+.key__list{
+    overflow-x: scroll;
+    padding-inline: 0;
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    gap: 40px;
+}
+h3{
+    margin: 0;
+    margin-top: 10px;
+}
+.key{
+    padding-inline: 10px;
+    margin-block: 40px;
+    background-color: #ccc;
+    list-style: none;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: scale .2s;
+
+
+}
+.key:hover, .key:focus{
+    scale: 1.2;
+    transition: scale .2s;
+    background-color: #887b0a;
+    border: 2px solid #f0f348;
+    outline: none;
+    
+}
+.key img{
+    width: 60px;
+}
+.submit{
+    margin: 5px auto;
+    width: 100%;
+    display: block;
+}
+strong{
+    color: #ffee00;
+}

@@ -14,7 +14,7 @@ body {
       rgba(from var(--bg-color) r g b / 0.8),
       hsl(from var(--bg-color) h calc(s * 0.5) 20 /0.8)
     ),
-    url(imgs/code.png);
+    url(../imgs/code.png);
   margin: 0;
   padding: 0;
   font-family: var(--font);
@@ -35,12 +35,12 @@ body {
   --main-color: #ecf09d;
   --bg-color: #fcff41;
   --code-box-color: #222222;
-  --code-literal-color: #6b74d6;
   --links-color: #8a9715;
   --links-color-hovered: #cea800;
   /* Code  Colors*/
   --code-color: #f8f8f2;
   --decl-color: #40b5d0;
+  --code-literal-color: #6b74d6;
   --str-color: #ddda59;
   --val-color: #ff62d5;
   --code-keyword-color: #f08bc3;
@@ -61,15 +61,21 @@ strong {
 }
 h1 {
   margin: auto;
+  text-align: center;
 }
 main > section {
   display: flex;
   flex-direction: column;
 }
-main > h1,
 /*
   TODO: Hacer que los headers sean una pestañita
 */
+
+main  section > :is(h2,h3,h4,h5){
+
+}
+
+main > h1,
 main > section h2 {
   border-bottom: 2px solid hsl(from var(--bg-color) h s calc(l * 0.67));
   background-image: linear-gradient(
@@ -143,6 +149,7 @@ main {
 }
 p {
   color: var(--text-color);
+  overflow-wrap:pretty;
   font-size: clamp(0.3rem, 1rem, 3rem);
 }
 p a, .box__title a{
@@ -335,12 +342,7 @@ p a:hover, .box__title a:hover{
 /*
   TODO: Que se oculten los elementos del índice en JS
 */
-.index__item__container:has(input[type="checkbox"]:checked)
-  .index__item__container {
-  display: none;
-  color: #000;
-  background-color: #fff;
-}
+
 .index__item a {
   text-decoration: none;
   font-weight: 900;
@@ -466,7 +468,8 @@ p a:hover, .box__title a:hover{
   top: 3px;
 }
 .box__list__item:has(.box__selectable)::before{
-top: 0;}
+top: 0;
+}
 
 .box__text__container {
   padding: 10px 7px;

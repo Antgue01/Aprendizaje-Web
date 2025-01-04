@@ -37,19 +37,19 @@
     },
     "Var": {
         "prefix": "var",
-        "body": "<span class=\"var\">${1:Variable}</span>",
+        "body": "<span class=\"var\">${1:Variable} </span>",
         "description": "variable",
         "scope": "html"
     },
     "Val": {
         "prefix": "val",
-        "body": "<span class=\"val\">${1:Variable}</span>",
+        "body": "<span class=\"val\">${1:Variable} </span>",
         "description": "a property value",
         "scope": "html"
     },
     "Class": {
         "prefix": "cl",
-        "body": "<span class=\"class\">${1:Clase}</span>",
+        "body": "<span class=\"class\">${1:Clase} </span>",
         "description": "Clase",
         "scope": "html"
     },
