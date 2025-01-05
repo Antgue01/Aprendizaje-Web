@@ -23,14 +23,15 @@ body {
   /* Sizes */
   --max-sidebar-width: clamp(10dvw, 40dvw, 70dvw);
   /* Index */
-  --index-lv2-margin: 10px;
-  --index-lv3-margin: 20px;
-  --index-lv4-margin: 30px;
+  --index-lv2-width: 40px;
+  --index-lv3-width: 40px;
+  --index-lv4-width: 35px;
   --index-search-size: 1rem;
   --index-font-size: 0.8rem;
   --selectable--margin:.5rem;
   --index-gap: 5px;
-  --index-drop-down-width: 10px;
+  --index-drop-down-width: 20px;
+  --index-after-width: 2px;
   /* Colors */
   --main-color: #ecf09d;
   --bg-color: #fcff41;
@@ -71,12 +72,22 @@ main > section {
   TODO: Hacer que los headers sean una pestañita
 */
 
-main  section > :is(h2,h3,h4,h5){
-
+main  section > :is(h2,h3,h4,h5)::after{
+  position: relative;
+  content: "";
+  padding-block: 20px;
+  padding-inline: 70px;
+  margin-left: -70px;
+  z-index: 0;
 }
-
+section{
+  border: 1px solid #fff;
+}
 main > h1,
-main > section h2 {
+main > section ~ h2 {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
   border-bottom: 2px solid hsl(from var(--bg-color) h s calc(l * 0.67));
   background-image: linear-gradient(
     transparent 60%,
@@ -84,9 +95,10 @@ main > section h2 {
   );
   padding: 0px 20px 10px 20px;
   margin-bottom: 10px;
+  border: 1px solid #000;
 }
-main > section h3 {
-  display: block;
+main > section~ h3 {
+  position: relative;
   font-size: 1.2rem;
   text-indent: 50px;
   border-bottom: 2px solid hsl(from var(--bg-color) h s calc(l * 0.67));
@@ -97,8 +109,8 @@ main > section h3 {
   padding: 0px 20px 10px 20px;
   margin-bottom: 10px;
 }
-main > section h4 {
-  display: block;
+main > section~ h4 {
+  position: relative;
   font-size: 1.2rem;
   text-indent: 70px;
   border-bottom: 2px solid hsl(from var(--bg-color) h s calc(l * 0.67));
@@ -226,24 +238,23 @@ p a:hover, .box__title a:hover{
   display: flex;
   background-color: var(--main-color);
   flex-direction: column;
-  gap: var(--index-gap);
+  /* gap: 30px; */
   margin: 0;
   height: 100%;
-  padding: 0px 0px 0 10px;
+  padding: 0px 0px 0px 10px;
   list-style: none;
   overflow: hidden;
 }
 /* #region sections */
 .index__item__label {
-  content: "";
+  padding-right: var(--index-drop-down-width);
   height: 100%;
-  width: var(--index-drop-down-width);
   position: relative;
 }
 .index__item__label::before {
   background-color: var(--index-lines-color);
   width: 100%;
-  height: 2px;
+  height: var(--index-after-width);
   content: "";
   position: absolute;
   top: 0;
@@ -256,92 +267,83 @@ p a:hover, .box__title a:hover{
 }
 
 .index__item:has(.index__lv2) .index__item__label {
-  margin-left: calc(var(--index-lv2-margin) * 0.5);
-  width: calc(var(--index-drop-down-width) + var(--index-lv2-margin) * 2);
+  margin: 0;
+  margin-left: calc(.5 * var(--index-drop-down-width) + var(--index-after-width)*.5);
+  padding-right:  var(--index-lv2-width);
+
 }
-.index__lv2 {
-  justify-content: center;
+
+.last__index__item::after{
+  display: none;
+  }
+.last__index__item:has(.index__lv3)::after{
+  display: none;
 }
 .index__item::after {
   position: absolute;
   content: "";
-  --width: 2px;
-  width: var(--width);
+  width: var(--index-after-width);
   height: calc(100% + var(--index-gap));
   background-color: var(--index-lines-color);
-  /* top: calc(var(--index-gap) * -3 );
-  left: calc(0px - var(--index-lv2-margin) - var(--index-drop-down-width) );
-  left: 0; */
   top: 50%;
-  left: calc(var(--index-drop-down-width) * 0.5 - var(--width));
+  left: calc(var(--index-drop-down-width) * 0.5 - var(--index-after-width)*.5);
 }
-.index__item__container:last-child .index__item::after{
-  color: #000;
-}
-.index__item:last-child::after {
-  height: calc(50% + var(--index-gap) * 2);
-  top: calc(0px - var(--index-gap) * 2);
-}
+
+
+
 .index__item:has(.index__lv3) .index__item__label {
-  margin-left: calc(var(--index-lv3-margin));
-  width: calc(var(--index-drop-down-width) + var(--index-lv3-margin));
+
+  margin: 0;
+  margin-left: calc(.5* var(--index-drop-down-width) + .5*var(--index-lv2-width));
+  padding-right:  calc(var(--index-lv3-width));
 }
-.index__lv3 {
-  justify-content: center;
-}
-.index__lv3::before {
+
+
+.index__item:has(.index__lv3) .index__item__label::after {
   position: absolute;
-  --width: 2px;
-  width: var(--width);
-  height: calc(100% + var(--index-gap) * 0.5);
+  width: var(--index-after-width);
   content: "";
+  padding-bottom:calc(var(--index-gap) + 1rem);
+  bottom: 50%;
+  color: var(--index-lines-color);
   background-color: var(--index-lines-color);
-  top: calc(0px - 100% + var(--index-gap));
-  left: calc(
-    var(--index-drop-down-width) * 0.5 + 0.5 * var(--index-lv3-margin) +
-      var(--width)
-  );
 }
+
 .index__item:has(.index__lv4) .index__item__label {
-  margin-left: calc(var(--index-lv4-margin));
-  width: calc(var(--index-drop-down-width) + var(--index-lv4-margin));
+
+  margin: 0;
+  margin-left: calc(.5* var(--index-drop-down-width) + .5*var(--index-lv2-width) + .5*var(--index-lv3-width));
+  padding-right:  calc(var(--index-lv4-width));
 }
-.index__lv4 {
-  justify-content: center;
-  color: #000;
-}
-.index__lv4::before {
+
+
+.index__item:has(.index__lv4) .index__item__label::after {
   position: absolute;
-  --width: 2px;
-  width: var(--width);
-  height: calc(100% + var(--index-gap) * 0.5);
+  width: var(--index-after-width);
   content: "";
+  padding-bottom:calc(1rem);
+  bottom: 50%;
+  color: var(--index-lines-color);
   background-color: var(--index-lines-color);
-  top: calc(0px - 100% + var(--index-gap));
-  left: calc(
-    var(--index-drop-down-width) * 0.5 + 0.5 * var(--index-lv4-margin) +
-      var(--width)
-  );
 }
+
 
 .index__item__container {
   display: flex;
   flex-direction: column;
-  padding-top: 4px;
+  align-content: space-between;
   position: relative;
+  gap: var(--index-gap);
 }
 
 .index__item {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-items: stretch;
-  width: 100%;
+  display: inline-block;
   user-select: none;
+  height: fit-content;
 }
-/*
-  TODO: Que se oculten los elementos del índice en JS
-*/
+
+
 
 .index__item a {
   text-decoration: none;
@@ -524,7 +526,7 @@ top: 0;
   transition: background-color 0.3s;
 }
 /*
-  TODO: QUE CON JAVASCRIPT LO DETECTE CUANDO PASE EL RATÓN SOBRE EL ICONO  
+  TODO: QUE CON JAVASCRIPT LO DETECTE CUANDO PASE EL RATÓN SOBRE EL ICONO
 */
 .box__selectable:focus + .box__explanation {
   display: inline;

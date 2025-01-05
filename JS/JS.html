@@ -106,6 +106,15 @@
                                         <label class="index__item__label" for="Trucos"></label>
                                         <a class="index__lv2" href="#Trucos">Trucos</a>
                                     </div>
+                                    <!-- #region Editar pseudoelementos -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" id="epe">
+                                            <label class="index__item__label" for="epe"></label>
+                                            <a class="index__lv3" href="#editPseudo">Pseudoelementos</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion -->
                                 </div>
                                 <!-- #endregion -->
                                 <!-- #region Workflow -->
@@ -166,11 +175,11 @@
         <!-- #region Main -->
         <main>
             <h1>Javascript</h1>
+            <section id="Caracteristicas">
             <p>
                 El código Javascript se ejecuta en el navegador del usuario, nunca en el servidor.
             </p>
             <!-- #region Caracteristicas -->
-            <section id="Caracteristicas">
                 <div class="box">
                     <h2 class="box__title">Características</h2>
                     <div class="box__text__container">
@@ -215,7 +224,6 @@
                         </ul>
                     </div>
                 </div>
-            </section>
             <!-- #endregion -->
             <p>Algunos de los conceptos de programación son los siguientes:</p>
             <!-- #region Vocabulario -->
@@ -241,10 +249,11 @@
                     </ul>
                 </div>
             </div>
+        </section>
             <!-- #endregion -->
             <!-- #region Variables -->
+            <h2>Variables</h2>
             <section id="Variables">
-                <h2>Variables</h2>
                 <p>
                     La diferencia entre var y let es que <strong>var</strong> es una <strong>variable global</strong>,
                     mientras que el scope de <strong>let</strong> es <strong> el bloque en el que lo
@@ -260,8 +269,8 @@
             </section>
             <!-- #endregion -->
             <!-- #region Funciones -->
+            <h2>Funciones</h2>
             <section id="Funciones">
-                <h2>Funciones</h2>
                 <div class="box">
                     <h2 class="box__title">Funciones Comunes </h2>
                     <div class="box__text__container">
@@ -301,8 +310,8 @@
              TODO: Pensar una forma mejor de reprensentar las clases
            -->
             <!-- #region Clases -->
+            <h2>Clases</h2>
             <section id="Clases">
-                <h2>Clases</h2>
                 <p>
                     Para crear clases, la sintaxis es la siguiente:
                 </p>
@@ -362,8 +371,8 @@
                     <!-- #endregion -->
                 </section>
                 <!-- #region Interfaces  -->
+                <h3>Interfaces</h3>
                 <section id="Interfaces">
-                    <h3>Interfaces</h3>
                     <div class="box">
                         <h2 class="box__title">Interfaces Importantes </h2>
                         <div class="box__text__container">
@@ -393,8 +402,8 @@
                         </div>
                     </div>
                     <!-- #region DOM -->
+                    <h4>El DOM</h4>
                     <section id="DOM">
-                        <h4>El DOM</h4>
                         <p>
                             El Document Object Model. Se compone de <strong>nodos</strong>, que son cada una de las
                             <strong>etiquetas</strong> del html. Los <strong>atributos</strong> también se consideran
@@ -673,8 +682,8 @@
             </section>
             <!-- #endregion -->
             <!-- #region Trucos -->
+            <h2>Trucos</h2>
             <section id="Trucos">
-                <h2>Trucos</h2>
                 <p>
                     Debido al tipado dinámico, podemos concatenar números usando un string y el operador +. P. ej. este
                     código dará como resultado 22.
@@ -685,11 +694,17 @@
                         + <span class="literal">2</span>;
                     </code>
                 </div>
+                <h3>Editar Pseudo-elementos</h3>
+                <section id="editPseudo">
+                    <p>
+                        Para ello, en el <strong>CSS</strong> añadiremos una <strong>clase extra</strong> en la que le damos estilo al pseudo-elemento. En <strong>JS</strong>, <strong>añadiremos esa clase</strong> a la lista de clases del elemento que queramos, lo que modificará el pseudo-elemento debido a la cascada. También se puede reemplazar la clase original por la nueva. 
+                    </p>
+                </section>
             </section>
             <!-- #endregion -->
             <!-- #region Workflow -->
+            <h2>Workflow</h2>
             <section id="Workflow">
-                <h2>Workflow</h2>
                 <p>
                     En Javascript, también existen los foreach, cuya sintaxis es la siguiente:<br>
                 </p>
@@ -798,8 +813,8 @@
                     de tipos, por <strong>valor</strong>.
                 </p>
                 <!-- #region Debug -->
+                <h3>Debug</h3>
                 <section id="Debug">
-                    <h3>Debug</h3>
                     <p>
                         Podemos printear por consola el estado de una variable con <span
                             class="class">Console</span>.<span class="func">dir(</span><span
@@ -819,8 +834,8 @@
                 </section>
                 <!-- #endregion -->
                 <!-- #region Formateo de strings -->
+                <h3>Formateo de strings</h3>
                 <section id="strfmt">
-                    <h3>Formateo de strings</h3>
                     <p>
                         Para eso se utiliza el carácter <strong>`</strong>(en la misma tecla que el <strong>^</strong>)
                         en lugar de las comillas y para referenciar a las variables las pondremos <strong>precedidas de
@@ -845,8 +860,8 @@
             </section>
             <!-- #endregion -->
             <!-- #region Random -->
+            <h3 id="Random">Random</h3>
             <section>
-                <h3 id="Random">Random</h3>
                 <p>
                     Para generar un número aleatorio entre 0 y 1, se utiliza la función <span
                         class="class">Math.</span><span class="func">Random()</span>.
