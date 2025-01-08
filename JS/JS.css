@@ -28,7 +28,7 @@ body {
   --index-lv4-width: 35px;
   --index-search-size: 1rem;
   --index-font-size: 0.8rem;
-  --selectable--margin:.5rem;
+  --selectable--margin: 0.5rem;
   --index-gap: 5px;
   --index-drop-down-width: 20px;
   --index-after-width: 2px;
@@ -60,61 +60,116 @@ body {
 strong {
   font-weight: 900;
 }
-h1 {
-  margin: 0;
-}
+/* #region sections */
 main > section {
   display: flex;
   flex-direction: column;
 }
-/*
-  TODO: Hacer que los headers sean una pestañita
-*/
 
-main  section > :is(h2,h3,h4,h5)::after{
-  position: relative;
+section {
+  box-shadow: 0 -1px 30px 3px #0004;
+  background-color: var(--main-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+section:nth-of-type(n):not(:first-of-type):before {
   content: "";
-  padding-block: 20px;
-  padding-inline: 70px;
-  margin-left: -70px;
-  z-index: 0;
+  background-color: var(--main-color);
+  width: 100%;
+  height: 30px;
+  position: relative;
+  z-index: -1;
 }
-section{
-  box-shadow: 0 -10px 30px 3px #0004;
-}
-main > h1,
-main > section ~ :is(h1,h2,h3,h4) {
+/* #endregion */
+/* #region headers */
+.header__container :is(h1, h2, h3, h4) {
   position: relative;
   display: inline-block;
   width: fit-content;
-  padding: 5px;
+  padding: 5px 10px;
   padding-bottom: 0;
   margin-bottom: 0px;
-  
+
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
   background-color: var(--main-color);
-  filter: drop-shadow(0 -3px 2px #000);
+  /* filter: drop-shadow(0 0px 4px #0007); */
+  box-shadow: 0 0 14px #0007;
 }
-main > section ~ h2 {
-  margin-left:10px;
-  /* background-color: #aff; */
+h1 {
+  margin: 10px 0;
+  margin-left: 20px;
+  background-color: transparent;
+  font-size: 2.6rem;
+}
+.header__container {
+  background-color: var(--main-color);
+  overflow: hidden;
+  width: 100%;
+}
+.header__container :is(h1, h2, h3, h4, h5)::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: var(--main-color);
+  clip-path: polygon(100% 1%, 100% 100%, 0 100%, 13% 93%, 24% 89%, 33% 83%, 45% 78%, 57% 72%, 69% 63%, 75% 52%, 82% 42%, 88% 32%, 93% 21%, 96% 10%);  /* background-color: #fff; */
+  left: -14px;
+  bottom: -1px;
+}
+.header__container :is(h1, h2, h3, h4, h5)::after {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
 
+  bottom: 0px;
+  right: -15px;
+  clip-path: polygon(100% 1%, 100% 100%, 0 100%, 13% 93%, 24% 89%, 33% 83%, 45% 78%, 57% 72%, 69% 63%, 75% 52%, 82% 42%, 88% 32%, 93% 21%, 96% 10%);  transform: rotateY(180deg);
+  background-color: var(--main-color);
 }
-main > section ~ h3 {
-  font-size: 1.2rem;
-  margin-left: 50px;
- background-color: #fff;
+.header__container:has(h1) {
+  background-color: transparent;
 }
-main > section ~ h4 {
-  font-size: 1.2rem;
-  margin-left: 70px;
- background-color: #f5f;
+.header__container h2 {
+  margin-left: 45px;
+  font-size: 2.2rem;
+}
 
+.header__container h3 {
+  font-size: 1.7rem;
+  margin-left: 65px;
 }
+.header__container h3::after{
+  height: 10px;
+  width: 10px;
+  right: -10px;
+}
+.header__container h3::before{
+  height: 10px;
+  width: 10px;
+  left:  -9px;
+}
+.header__container > h4 {
+  font-size: 1.2rem;
+  margin-left: 85px;
+}
+
+.header__container h4::before{
+  height: 7px;
+  width: 7px;
+  left:  -6px;
+}
+
+.header__container h4::after{
+  height: 7px;
+  width: 7px;
+  right: -7px;
+}
+/* #endregion */
 main {
   margin: 0px auto;
-  background-color: var(--main-color);
   max-width: 50dvw;
   width: 100%;
   min-width: 500px;
@@ -132,7 +187,7 @@ main {
   color: var(--classes-color);
   font-weight: 900;
 }
-.val{
+.val {
   color: var(--val-color);
   font-weight: 900;
 }
@@ -152,15 +207,17 @@ main {
 }
 p {
   color: var(--text-color);
-  overflow-wrap:pretty;
+  overflow-wrap: pretty;
   font-size: clamp(0.3rem, 1rem, 3rem);
 }
-p a, .box__title a{
+p a,
+.box__title a {
   text-decoration: none;
   color: var(--links-color);
   font-weight: 700;
 }
-p a:hover, .box__title a:hover{
+p a:hover,
+.box__title a:hover {
   color: var(--links-color-hovered);
   transition: color 0.3s;
 }
@@ -259,15 +316,16 @@ p a:hover, .box__title a:hover{
 
 .index__item:has(.index__lv2) .index__item__label {
   margin: 0;
-  margin-left: calc(.5 * var(--index-drop-down-width) + var(--index-after-width)*.5);
-  padding-right:  var(--index-lv2-width);
-
+  margin-left: calc(
+    0.5 * var(--index-drop-down-width) + var(--index-after-width) * 0.5
+  );
+  padding-right: var(--index-lv2-width);
 }
 
-.last__index__item::after{
+.last__index__item::after {
   display: none;
-  }
-.last__index__item:has(.index__lv3)::after{
+}
+.last__index__item:has(.index__lv3)::after {
   display: none;
 }
 .index__item::after {
@@ -277,47 +335,47 @@ p a:hover, .box__title a:hover{
   height: calc(100% + var(--index-gap));
   background-color: var(--index-lines-color);
   top: 50%;
-  left: calc(var(--index-drop-down-width) * 0.5 - var(--index-after-width)*.5);
+  left: calc(
+    var(--index-drop-down-width) * 0.5 - var(--index-after-width) * 0.5
+  );
 }
-
-
 
 .index__item:has(.index__lv3) .index__item__label {
-
   margin: 0;
-  margin-left: calc(.5* var(--index-drop-down-width) + .5*var(--index-lv2-width));
-  padding-right:  calc(var(--index-lv3-width));
+  margin-left: calc(
+    0.5 * var(--index-drop-down-width) + 0.5 * var(--index-lv2-width)
+  );
+  padding-right: calc(var(--index-lv3-width));
 }
-
 
 .index__item:has(.index__lv3) .index__item__label::after {
   position: absolute;
   width: var(--index-after-width);
   content: "";
-  padding-bottom:calc(var(--index-gap) + 1rem);
+  padding-bottom: calc(var(--index-gap) + 1rem);
   bottom: 50%;
   color: var(--index-lines-color);
   background-color: var(--index-lines-color);
 }
 
 .index__item:has(.index__lv4) .index__item__label {
-
   margin: 0;
-  margin-left: calc(.5* var(--index-drop-down-width) + .5*var(--index-lv2-width) + .5*var(--index-lv3-width));
-  padding-right:  calc(var(--index-lv4-width));
+  margin-left: calc(
+    0.5 * var(--index-drop-down-width) + 0.5 * var(--index-lv2-width) + 0.5 *
+      var(--index-lv3-width)
+  );
+  padding-right: calc(var(--index-lv4-width));
 }
-
 
 .index__item:has(.index__lv4) .index__item__label::after {
   position: absolute;
   width: var(--index-after-width);
   content: "";
-  padding-bottom:calc(1rem);
+  padding-bottom: 1.3rem;
   bottom: 50%;
   color: var(--index-lines-color);
   background-color: var(--index-lines-color);
 }
-
 
 .index__item__container {
   display: flex;
@@ -333,8 +391,6 @@ p a:hover, .box__title a:hover{
   user-select: none;
   height: fit-content;
 }
-
-
 
 .index__item a {
   text-decoration: none;
@@ -460,8 +516,8 @@ p a:hover, .box__title a:hover{
   left: -1rem;
   top: 3px;
 }
-.box__list__item:has(.box__selectable)::before{
-top: 0;
+.box__list__item:has(.box__selectable)::before {
+  top: 0;
 }
 
 .box__text__container {
@@ -472,7 +528,7 @@ top: 0;
   position: relative;
   list-style: " ";
   text-decoration: none;
-  margin-top: calc( 0px - var(--selectable--margin));
+  margin-top: calc(0px - var(--selectable--margin));
 }
 
 .box__selectable:visited {
@@ -578,9 +634,7 @@ top: 0;
 .code__box__copy:active + .code__box__copy__dialog {
   animation: disappear 0.5s linear;
 }
-/*
-  TODO: En JS. Que al pulsar salga un mensaje con una animación
-*/
+
 .code__box__copy:active {
   border-bottom: 1px solid #fff;
   border-right: 1px solid #fff;

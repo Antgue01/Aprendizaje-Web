@@ -2573,6 +2573,26 @@ top
 </font>
 para que se pegue pero siga ocupando espacio en la página y afecte al contenido.
 </font>
+
+## Quitar sombra a un solo lado
+<font color ="#a0c2f0">
+
+Metemos el elemento en cuestión en un 
+<font color ="#b61187">
+**div**
+</font>
+con 
+<font color = "#fae48b">
+overflow
+</font>
+<font color ="#54d398"> 
+hidden
+</font>
+y hacemos que el lado en el que queremos quitar la sombra se salga del 
+<font color ="#b61187">
+**div**
+</font>.
+</font>
 <h2>Redondeado interno</h2>
 
 ![alt text](imgs/red.png)
