@@ -14,7 +14,7 @@ body {
       rgba(from var(--bg-color) r g b / 0.8),
       hsl(from var(--bg-color) h calc(s * 0.5) 20 /0.8)
     ),
-    url(imgs/code.png);
+    url(../imgs/code.png);
   margin: 0;
   padding: 0;
   font-family: var(--font);
@@ -23,24 +23,25 @@ body {
   /* Sizes */
   --max-sidebar-width: clamp(10dvw, 40dvw, 70dvw);
   /* Index */
-  --index-lv2-margin: 10px;
-  --index-lv3-margin: 20px;
-  --index-lv4-margin: 30px;
+  --index-lv2-width: 40px;
+  --index-lv3-width: 40px;
+  --index-lv4-width: 35px;
   --index-search-size: 1rem;
   --index-font-size: 0.8rem;
-  --selectable--margin:.5rem;
+  --selectable--margin: 0.5rem;
   --index-gap: 5px;
-  --index-drop-down-width: 10px;
+  --index-drop-down-width: 20px;
+  --index-after-width: 2px;
   /* Colors */
   --main-color: #ecf09d;
   --bg-color: #fcff41;
   --code-box-color: #222222;
-  --code-literal-color: #6b74d6;
   --links-color: #8a9715;
   --links-color-hovered: #cea800;
   /* Code  Colors*/
   --code-color: #f8f8f2;
   --decl-color: #40b5d0;
+  --code-literal-color: #6b74d6;
   --str-color: #ddda59;
   --val-color: #ff62d5;
   --code-keyword-color: #f08bc3;
@@ -59,53 +60,116 @@ body {
 strong {
   font-weight: 900;
 }
-h1 {
-  margin: auto;
-}
+/* #region sections */
 main > section {
   display: flex;
   flex-direction: column;
 }
-main > h1,
-/*
-  TODO: Hacer que los headers sean una pestañita
-*/
-main > section h2 {
-  border-bottom: 2px solid hsl(from var(--bg-color) h s calc(l * 0.67));
-  background-image: linear-gradient(
-    transparent 60%,
-    hsl(from var(--index-lines-color) h s calc(l * 0.3) / 0.2)
-  );
-  padding: 0px 20px 10px 20px;
-  margin-bottom: 10px;
+
+section {
+  box-shadow: 0 -1px 30px 3px #0004;
+  background-color: var(--main-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
-main > section h3 {
-  display: block;
+
+section:nth-of-type(n):not(:first-of-type):before {
+  content: "";
+  background-color: var(--main-color);
+  width: 100%;
+  height: 30px;
+  position: relative;
+  z-index: -1;
+}
+/* #endregion */
+/* #region headers */
+.header__container :is(h1, h2, h3, h4) {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  padding: 5px 10px;
+  padding-bottom: 0;
+  margin-bottom: 0px;
+
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  background-color: var(--main-color);
+  /* filter: drop-shadow(0 0px 4px #0007); */
+  box-shadow: 0 0 14px #0007;
+}
+h1 {
+  margin: 10px 0;
+  margin-left: 20px;
+  background-color: transparent;
+  font-size: 2.6rem;
+}
+.header__container {
+  background-color: var(--main-color);
+  overflow: hidden;
+  width: 100%;
+}
+.header__container :is(h1, h2, h3, h4, h5)::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: var(--main-color);
+  clip-path: polygon(100% 1%, 100% 100%, 0 100%, 13% 93%, 24% 89%, 33% 83%, 45% 78%, 57% 72%, 69% 63%, 75% 52%, 82% 42%, 88% 32%, 93% 21%, 96% 10%);  /* background-color: #fff; */
+  left: -14px;
+  bottom: -1px;
+}
+.header__container :is(h1, h2, h3, h4, h5)::after {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+
+  bottom: 0px;
+  right: -15px;
+  clip-path: polygon(100% 1%, 100% 100%, 0 100%, 13% 93%, 24% 89%, 33% 83%, 45% 78%, 57% 72%, 69% 63%, 75% 52%, 82% 42%, 88% 32%, 93% 21%, 96% 10%);  transform: rotateY(180deg);
+  background-color: var(--main-color);
+}
+.header__container:has(h1) {
+  background-color: transparent;
+}
+.header__container h2 {
+  margin-left: 45px;
+  font-size: 2.2rem;
+}
+
+.header__container h3 {
+  font-size: 1.7rem;
+  margin-left: 65px;
+}
+.header__container h3::after{
+  height: 10px;
+  width: 10px;
+  right: -10px;
+}
+.header__container h3::before{
+  height: 10px;
+  width: 10px;
+  left:  -9px;
+}
+.header__container > h4 {
   font-size: 1.2rem;
-  text-indent: 50px;
-  border-bottom: 2px solid hsl(from var(--bg-color) h s calc(l * 0.67));
-  background-image: linear-gradient(
-    transparent 60%,
-    hsl(from var(--index-lines-color) h s calc(l * 0.3) / 0.2)
-  );
-  padding: 0px 20px 10px 20px;
-  margin-bottom: 10px;
+  margin-left: 85px;
 }
-main > section h4 {
-  display: block;
-  font-size: 1.2rem;
-  text-indent: 70px;
-  border-bottom: 2px solid hsl(from var(--bg-color) h s calc(l * 0.67));
-  background-image: linear-gradient(
-    transparent 60%,
-    hsl(from var(--index-lines-color) h s calc(l * 0.3) / 0.2)
-  );
-  padding: 0px 20px 10px 20px;
-  margin-bottom: 10px;
+
+.header__container h4::before{
+  height: 7px;
+  width: 7px;
+  left:  -6px;
 }
+
+.header__container h4::after{
+  height: 7px;
+  width: 7px;
+  right: -7px;
+}
+/* #endregion */
 main {
   margin: 0px auto;
-  background-color: var(--main-color);
   max-width: 50dvw;
   width: 100%;
   min-width: 500px;
@@ -123,7 +187,7 @@ main {
   color: var(--classes-color);
   font-weight: 900;
 }
-.val{
+.val {
   color: var(--val-color);
   font-weight: 900;
 }
@@ -143,14 +207,17 @@ main {
 }
 p {
   color: var(--text-color);
+  overflow-wrap: pretty;
   font-size: clamp(0.3rem, 1rem, 3rem);
 }
-p a, .box__title a{
+p a,
+.box__title a {
   text-decoration: none;
   color: var(--links-color);
   font-weight: 700;
 }
-p a:hover, .box__title a:hover{
+p a:hover,
+.box__title a:hover {
   color: var(--links-color-hovered);
   transition: color 0.3s;
 }
@@ -219,24 +286,23 @@ p a:hover, .box__title a:hover{
   display: flex;
   background-color: var(--main-color);
   flex-direction: column;
-  gap: var(--index-gap);
+  /* gap: 30px; */
   margin: 0;
   height: 100%;
-  padding: 0px 0px 0 10px;
+  padding: 0px 0px 0px 10px;
   list-style: none;
   overflow: hidden;
 }
 /* #region sections */
 .index__item__label {
-  content: "";
+  padding-right: var(--index-drop-down-width);
   height: 100%;
-  width: var(--index-drop-down-width);
   position: relative;
 }
 .index__item__label::before {
   background-color: var(--index-lines-color);
   width: 100%;
-  height: 2px;
+  height: var(--index-after-width);
   content: "";
   position: absolute;
   top: 0;
@@ -249,98 +315,83 @@ p a:hover, .box__title a:hover{
 }
 
 .index__item:has(.index__lv2) .index__item__label {
-  margin-left: calc(var(--index-lv2-margin) * 0.5);
-  width: calc(var(--index-drop-down-width) + var(--index-lv2-margin) * 2);
+  margin: 0;
+  margin-left: calc(
+    0.5 * var(--index-drop-down-width) + var(--index-after-width) * 0.5
+  );
+  padding-right: var(--index-lv2-width);
 }
-.index__lv2 {
-  justify-content: center;
+
+.last__index__item::after {
+  display: none;
+}
+.last__index__item:has(.index__lv3)::after {
+  display: none;
 }
 .index__item::after {
   position: absolute;
   content: "";
-  --width: 2px;
-  width: var(--width);
+  width: var(--index-after-width);
   height: calc(100% + var(--index-gap));
   background-color: var(--index-lines-color);
-  /* top: calc(var(--index-gap) * -3 );
-  left: calc(0px - var(--index-lv2-margin) - var(--index-drop-down-width) );
-  left: 0; */
   top: 50%;
-  left: calc(var(--index-drop-down-width) * 0.5 - var(--width));
+  left: calc(
+    var(--index-drop-down-width) * 0.5 - var(--index-after-width) * 0.5
+  );
 }
-.index__item__container:last-child .index__item::after{
-  color: #000;
-}
-.index__item:last-child::after {
-  height: calc(50% + var(--index-gap) * 2);
-  top: calc(0px - var(--index-gap) * 2);
-}
+
 .index__item:has(.index__lv3) .index__item__label {
-  margin-left: calc(var(--index-lv3-margin));
-  width: calc(var(--index-drop-down-width) + var(--index-lv3-margin));
-}
-.index__lv3 {
-  justify-content: center;
-}
-.index__lv3::before {
-  position: absolute;
-  --width: 2px;
-  width: var(--width);
-  height: calc(100% + var(--index-gap) * 0.5);
-  content: "";
-  background-color: var(--index-lines-color);
-  top: calc(0px - 100% + var(--index-gap));
-  left: calc(
-    var(--index-drop-down-width) * 0.5 + 0.5 * var(--index-lv3-margin) +
-      var(--width)
+  margin: 0;
+  margin-left: calc(
+    0.5 * var(--index-drop-down-width) + 0.5 * var(--index-lv2-width)
   );
+  padding-right: calc(var(--index-lv3-width));
 }
+
+.index__item:has(.index__lv3) .index__item__label::after {
+  position: absolute;
+  width: var(--index-after-width);
+  content: "";
+  padding-bottom: calc(var(--index-gap) + 1rem);
+  bottom: 50%;
+  color: var(--index-lines-color);
+  background-color: var(--index-lines-color);
+}
+
 .index__item:has(.index__lv4) .index__item__label {
-  margin-left: calc(var(--index-lv4-margin));
-  width: calc(var(--index-drop-down-width) + var(--index-lv4-margin));
-}
-.index__lv4 {
-  justify-content: center;
-  color: #000;
-}
-.index__lv4::before {
-  position: absolute;
-  --width: 2px;
-  width: var(--width);
-  height: calc(100% + var(--index-gap) * 0.5);
-  content: "";
-  background-color: var(--index-lines-color);
-  top: calc(0px - 100% + var(--index-gap));
-  left: calc(
-    var(--index-drop-down-width) * 0.5 + 0.5 * var(--index-lv4-margin) +
-      var(--width)
+  margin: 0;
+  margin-left: calc(
+    0.5 * var(--index-drop-down-width) + 0.5 * var(--index-lv2-width) + 0.5 *
+      var(--index-lv3-width)
   );
+  padding-right: calc(var(--index-lv4-width));
+}
+
+.index__item:has(.index__lv4) .index__item__label::after {
+  position: absolute;
+  width: var(--index-after-width);
+  content: "";
+  padding-bottom: 1.3rem;
+  bottom: 50%;
+  color: var(--index-lines-color);
+  background-color: var(--index-lines-color);
 }
 
 .index__item__container {
   display: flex;
   flex-direction: column;
-  padding-top: 4px;
+  align-content: space-between;
   position: relative;
+  gap: var(--index-gap);
 }
 
 .index__item {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-items: stretch;
-  width: 100%;
+  display: inline-block;
   user-select: none;
+  height: fit-content;
 }
-/*
-  TODO: Que se oculten los elementos del índice en JS
-*/
-.index__item__container:has(input[type="checkbox"]:checked)
-  .index__item__container {
-  display: none;
-  color: #000;
-  background-color: #fff;
-}
+
 .index__item a {
   text-decoration: none;
   font-weight: 900;
@@ -465,8 +516,9 @@ p a:hover, .box__title a:hover{
   left: -1rem;
   top: 3px;
 }
-.box__list__item:has(.box__selectable)::before{
-top: 0;}
+.box__list__item:has(.box__selectable)::before {
+  top: 0;
+}
 
 .box__text__container {
   padding: 10px 7px;
@@ -476,7 +528,7 @@ top: 0;}
   position: relative;
   list-style: " ";
   text-decoration: none;
-  margin-top: calc( 0px - var(--selectable--margin));
+  margin-top: calc(0px - var(--selectable--margin));
 }
 
 .box__selectable:visited {
@@ -521,7 +573,7 @@ top: 0;}
   transition: background-color 0.3s;
 }
 /*
-  TODO: QUE CON JAVASCRIPT LO DETECTE CUANDO PASE EL RATÓN SOBRE EL ICONO  
+  TODO: QUE CON JAVASCRIPT LO DETECTE CUANDO PASE EL RATÓN SOBRE EL ICONO
 */
 .box__selectable:focus + .box__explanation {
   display: inline;
@@ -582,9 +634,7 @@ top: 0;}
 .code__box__copy:active + .code__box__copy__dialog {
   animation: disappear 0.5s linear;
 }
-/*
-  TODO: En JS. Que al pulsar salga un mensaje con una animación
-*/
+
 .code__box__copy:active {
   border-bottom: 1px solid #fff;
   border-right: 1px solid #fff;
