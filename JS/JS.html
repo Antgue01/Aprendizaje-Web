@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="JS.css">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +17,6 @@
 
 <body>
     <div class="main-wrapper">
-        <div class="back__shadow"></div>
         <!-- #region Index -->
         <aside>
             <nav class="index">
@@ -26,7 +30,7 @@
                     <div class="index__container">
                         <div class="index__item__container ">
                             <div class="index__item">
-                                <input type="checkbox" name="" id="index__index">
+                                <input hidden type="checkbox" name="" id="index__index">
                                 <label class="index__item__label " for="index__index">
                                 </label>
                                 <a class="index__lv1" href="#">Índice</a>
@@ -34,7 +38,7 @@
                             <!-- #region Características -->
                             <div class="index__item__container">
                                 <div class="index__item ">
-                                    <input type="checkbox" name="" id="index__caracteristicas">
+                                    <input hidden type="checkbox" name="" id="index__caracteristicas">
                                     <label class="index__item__label " for="index__caracteristicas">
                                     </label>
                                     <a class="index__lv2" href="#Caracteristicas">Características</a>
@@ -44,7 +48,7 @@
                                 <!-- #region Variables -->
                                 <div class="index__item__container">
                                     <div class="index__item ">
-                                        <input type="checkbox" name="" id="index__variables">
+                                        <input hidden type="checkbox" name="" id="index__variables">
                                         <label class="index__item__label " for="index__variables">
                                         </label>
                                         <a class="index__lv2" href="#Variables">Variables</a>
@@ -54,7 +58,7 @@
                                 <!-- #region Funciones -->
                                 <div class="index__item__container">
                                     <div class="index__item ">
-                                        <input type="checkbox" name="" id="index__funciones">
+                                        <input hidden type="checkbox" name="" id="index__funciones">
                                         <label class="index__item__label " for="index__funciones">
                                         </label>
                                         <a class="index__lv2" href="#Funciones">Funciones</a>
@@ -64,14 +68,14 @@
                                 <!-- #region Clases -->
                                 <div class="index__item__container">
                                     <div class="index__item">
-                                        <input type="checkbox" id="objs">
+                                        <input hidden type="checkbox" id="objs">
                                         <label class="index__item__label" for="objs"></label>
                                         <a class="index__lv2" href="#Clases">Clases</a>
                                     </div>
                                     <!-- #region Objetos -->
                                     <div class="index__item__container">
                                         <div class="index__item">
-                                            <input type="checkbox" id="objs2">
+                                            <input hidden type="checkbox" id="objs2">
                                             <label class="index__item__label" for="objs2"></label>
                                             <a class="index__lv3" href="#Objetos">Objetos</a>
                                         </div>
@@ -79,14 +83,14 @@
                                     <!-- #region Interfaces -->
                                     <div class="index__item__container">
                                         <div class="index__item">
-                                            <input type="checkbox" id="interfaces">
+                                            <input hidden type="checkbox" id="interfaces">
                                             <label class="index__item__label" for="interfaces"></label>
                                             <a class="index__lv3" href="#Interfaces">Interfaces</a>
                                         </div>
                                         <!-- #region DOM -->
                                         <div class="index__item__container">
                                             <div class="index__item">
-                                                <input type="checkbox" id="dom">
+                                                <input hidden type="checkbox" id="dom">
                                                 <label class="index__item__label" for="dom"></label>
                                                 <a class="index__lv4" href="#DOM">DOM</a>
                                             </div>
@@ -102,14 +106,14 @@
                                 <!-- #region Trucos -->
                                 <div class="index__item__container">
                                     <div class="index__item">
-                                        <input type="checkbox" id="Trucos">
+                                        <input hidden type="checkbox" id="Trucos">
                                         <label class="index__item__label" for="Trucos"></label>
                                         <a class="index__lv2" href="#Trucos">Trucos</a>
                                     </div>
                                     <!-- #region Editar pseudoelementos -->
                                     <div class="index__item__container">
                                         <div class="index__item">
-                                            <input type="checkbox" id="epe">
+                                            <input hidden type="checkbox" id="epe">
                                             <label class="index__item__label" for="epe"></label>
                                             <a class="index__lv3" href="#editPseudo">Pseudoelementos</a>
                                         </div>
@@ -120,14 +124,14 @@
                                 <!-- #region Workflow -->
                                 <div class="index__item__container">
                                     <div class="index__item">
-                                        <input type="checkbox" id="Workflow">
+                                        <input hidden type="checkbox" id="Workflow">
                                         <label class="index__item__label" for="Workflow"></label>
                                         <a class="index__lv2" href="#Workflow">Workflow</a>
                                     </div>
                                     <!-- #region Debug -->
                                     <div class="index__item__container">
                                         <div class="index__item">
-                                            <input type="checkbox" id="Debg">
+                                            <input hidden type="checkbox" id="Debg">
                                             <label class="index__item__label" for="Debg"></label>
                                             <a class="index__lv3" href="#Debug">Debug</a>
                                         </div>
@@ -136,7 +140,7 @@
                                     <!-- #region String Format -->
                                     <div class="index__item__container">
                                         <div class="index__item">
-                                            <input type="checkbox" id="StringFormat">
+                                            <input hidden type="checkbox" id="StringFormat">
                                             <label class="index__item__label" for="StringFormat"></label>
                                             <a class="index__lv3" href="#strfmt">String Format</a>
                                         </div>
@@ -146,7 +150,7 @@
                                     <!-- #region Random -->
                                     <div class="index__item__container">
                                         <div class="index__item">
-                                            <input type="checkbox" id="rnd">
+                                            <input hidden type="checkbox" id="rnd">
                                             <label class="index__item__label" for="rnd"></label>
                                             <a class="index__lv3" href="#Random">Random</a>
                                         </div>
@@ -157,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-                    <input type="checkbox" id="index-close">
+                    <input hidden type="checkbox" id="index-close">
                 </div>
                 <label class="material-symbols-outlined" for="index-close">
                     list
@@ -190,35 +194,42 @@
                                 Interpretado
                             </li>
                             <li class="box__list__item">Orientado a Objetos</li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable">Imperativo</a>
-                                <div class="box__explanation">
-                                    Las instrucciones van línea por línea en lugar de esperar a que esté todo
-                                    interpretado.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label>Imperativo
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Las instrucciones van línea por línea en lugar de esperar a que esté todo
+                                        interpretado.
+                                    </div>
+                                </label>
                             </li>
                             <li class="box__list__item">Case sensitive</li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"> Basado en prototipos / instancias / classless</a>
-                                <div class="box__explanation">
-
-                                    Los objetos van a estar creados en base a otro objeto creado por el propio
-                                    lenguaje.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label>Basado en prototipos / Instancias / classless
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Los objetos van a estar creados en base a otro objeto creado por el propio
+                                        lenguaje.
+                                    </div>
+                                </label>
                             </li>
 
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable">Tipado débil</a>
-                                <div class="box__explanation">
-                                    El tipo de las variables puede cambiar.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label>Tipado débil
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El tipo de las variables puede cambiar.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable">Lenguaje dinámico</a>
-                                <div class="box__explanation">
-                                    El tipo se comprueba en tiempo de ejecución en lugar de en tiempo de
-                                    interpretación.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label>Lenguaje dinámico
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El tipo se comprueba en tiempo de ejecución en lugar de en tiempo de
+                                        interpretación.
+                                    </div>
+                                </label>
                             </li>
                             <li class="box__list__item">
                                 Prefiere camelCase en lugar de snake_case
@@ -233,21 +244,32 @@
                     <h2 class="box__title">Vocabulario </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable">Abstracción</a>
-                                <div class="box__explanation">Simplificar un sistema complejo ocultando los detalles
-                                    innecesarios y mostrando solo las funcionalidades esenciales.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label>Abstracción
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Simplificar un sistema complejo ocultando los detalles
+                                        innecesarios y mostrando solo las funcionalidades esenciales.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable">Encapsulamiento</a>
-                                <div class="box__explanation">Agrupar datos y métodos dentro de una clase, y restringir
-                                    el
-                                    acceso a algunos de los componentes.</div>
+                            <li class="box__list__item --can-open">
+                                <label>Encapsulamiento
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Agrupar datos y métodos dentro de una clase, y restringir el acceso a algunos de
+                                        los componentes para evitar que los <strong> modificen con malas
+                                            intenciones.</strong>
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable">Modularidad</a>
-                                <div class="box__explanation">Dividir el problema en subproblemas más sencillos.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label>Modularidad
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Dividir el problema en subproblemas más sencillos.
+                                    </div>
+                                </label>
                             </li>
                         </ul>
                     </div>
@@ -282,31 +304,35 @@
                     <h2 class="box__title">Funciones Comunes </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="func">alert(</span><span
-                                        class="var">string</span><span class="func">)</span></a>
-                                <div class="box__explanation">Hace un print.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">alert(</span><span class="var">string</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Hace un print.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="func">prompt(</span><span
-                                        class="var">mensaje</span><span class="func">)</span></a>
-                                <div class="box__explanation">Pide input, poniendo un <span class="var">mensaje</span>
-                                    personalizado.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">prompt(</span><span class="var">mensaje</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Pide input, poniendo un <span class="var">mensaje</span>
+                                        personalizado.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="func">parseInt(</span><span
-                                        class="var">number</span><span class="func">)</span></a>
-                                <div class="box__explanation">Convierte un string a un Int, también existe <span
-                                        class="func">
-                                        parseFloat(
-                                    </span>
-                                    <span class="decl">
-                                        number
-                                    </span>
-                                    <span class="func">
-                                        )
-                                    </span>.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">parseInt(</span><span class="var">number</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Convierte un string a un Int, también existe <span
+                                            class="func">parseFloat(</span><span class="var">number</span><span
+                                            class="func">)</span>.
+                                    </div>
+                                </label>
                             </li>
                         </ul>
                     </div>
@@ -389,33 +415,63 @@
             </div>
             <section id="Interfaces">
                 <div class="box">
-                    <h2 class="box__title">Interfaces Importantes </h2>
+                    <h2 class="box__title"><span class="class">Number </span> </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
                             <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="class">Number</span></a>
-                                <div class="box__explanation"><span class="func">toString(</span><span
-                                        class="var">number</span><span class="func">)</span></div>
-
-                            </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="class">Array</span></a>
-                                <div class="box__explanation"><span class="func">shift(</span><span
-                                        class="var">elem</span><span class="func">)</span>.Añade un elemento al
-                                    principio.
-                                    <br><span class="func">unshift(</span><span class="func">)</span>.Elimina el
-                                    primer elemento.
-                                    <br><span class="func">splice(</span><span class="var">start, how
-                                        many</span><span class="func">)</span>.Elimina del array <span class="var">how
-                                        many</span> elementos a partir de <span class="var">start</span> y devuelve otro
-                                    array con estos elementos.
-                                    <br><span class="func">filter(</span><span class="var">condition</span><span
-                                        class="func">)</span>Devuelve un array con todos los elementos que cumplan
-                                    la <span class="var"> condición</span>.
+                                <span class="func">toString(</span><span class="var">number</span><span
+                                    class="func">)</span>
                             </li>
                         </ul>
                     </div>
                 </div>
+                <div class="box">
+                    <h2 class="box__title"><span class="class">Array </span></h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label>
+                                    <span class="func">shift(</span><span class="var">elem</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Inserta <span class="var">elem </span>en el array.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">unshift()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Elimina el primer elemento del array.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">splice(</span><span class="var">start, howMany</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Elmina <span class="var">howMany </span>elementos a
+                                        partir de <span class="var">start </span>y devuelve otro array con esos
+                                        elementos.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">filter(</span><span class="var">condition</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Devuelve un array con todos los elementos que cumplan
+                                        la <span class="var">condition </span>.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </section>
             <!-- #region DOM -->
             <div class="header__container">
@@ -432,30 +488,40 @@
                     <h2 class="box__title">Tipos de nodos </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="class">Document</span></a>
-                                <div class="box__explanation">Nodo raíz a partir del cual derivan el resto de
-                                    nodos.</div>
-
+                            <li class="box__list__item --can-open">
+                                <label><span class="class">Document</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Nodo raíz a partir del cual derivan el resto de
+                                        nodos.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="class">Element</span></a>
-                                <div class="box__explanation">Son los nodos definidos por las etiquetas HTML.
-                                </div>
-
+                            <li class="box__list__item --can-open">
+                                <label><span class="class">Element</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Son los nodos definidos por las etiquetas HTML.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="class">Text</span></a>
-                                <div class="box__explanation">El texto dentro de un nodo <span
-                                        class="class">Element</span>.</div>
-
+                            <li class="box__list__item --can-open">
+                                <label><span class="class">Text</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El texto dentro de un nodo <span class="class">Element</span>.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
-                                <a href="#" class="box__selectable"><span class="class">Attribute</span></a>
-                                <div class="box__explanation">Los atributos de las etiquetas HTML.</div>
-
+                            <li class="box__list__item --can-open">
+                                <label><span class="class">Attribute</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Los atributos de las etiquetas HTML.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item">
+                            <li class="box__list__item ">
                                 <span class="class">Comentarios y otros</span>
 
                             </li>
@@ -478,22 +544,34 @@
                         <ul class="box__list">
                             <li class="box__list__item"><span class="func">getElementById(</span><span
                                     class="var">Id</span><span class="func">)</span></li>
-                            <li class="box__list__item"><a href="#" class="box__selectable"><span
-                                        class="func">getElementsByTagName(</span><span class="var">tag</span><span
-                                        class="func">)</span></a>
-                                <div class="box__explanation">Selecciona todos los nodos del mismo tag.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">getElementsByTagName(</span><span class="var">tag</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Selecciona todos los nodos del mismo tag.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="func">querySelector(</span><span class="var">query</span><span
-                                        class="func">)</span></a>
-                                <div class="box__explanation">Usa selectores de CSS y devuelve <strong>el
-                                        primero de los elementos que encuentra</strong>.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">querySelector(</span><span class="var">query</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Usa selectores de CSS y devuelve <strong>el
+                                            primero de los elementos que encuentra</strong>.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="func">queryAll(</span><span class="var">query</span><span
-                                        class="func">)</span></a>
-                                <div class="box__explanation">Igual que el anterior pero devuelve <strong>todos
-                                        los que encuentre</strong>.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">queryAll(</span><span class="var">query</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Igual que el anterior pero devuelve <strong>todos
+                                            los que encuentre</strong>.
+                                    </div>
+                                </label>
                             </li>
                         </ul>
                     </div>
@@ -522,39 +600,58 @@
                     <h2 class="box__title">Atributos especiales </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">contentEditable</span></a>
-                                <div class="box__explanation">Si el elemento se puede editar o no por el
-                                    usuario.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">contentEditable</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Si el elemento se puede editar o no por el
+                                        usuario.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">dir</span></a>
-                                <div class="box__explanation">La dirección de lectura del texto. Puede ser <span
-                                        class="val">rtl</span> o <span class="val">ltr</span>.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">dir</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        La dirección de lectura del texto. Puede ser <span class="val">rtl</span> o
+                                        <span class="val">ltr</span>.
+                                    </div>
+                                </label>
                             </li>
                             <li class="box__list__item"><span class="var">hidden</span></li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">style</span></a>
-                                <div class="box__explanation">Se usa para cambiar el estilo CSS.
-                                    <br><br>No se accede a través de la función <span
-                                        class="func">setAttribute()</span>, sino que es un
-                                    <strong>objeto</strong> y cada una de sus propiedades son las de CSS.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">style</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Se usa para cambiar el estilo CSS.
+                                        <br><br>No se accede a través de la función <span
+                                            class="func">setAttribute()</span>, sino que es un
+                                        <strong>objeto</strong> y cada una de sus propiedades son las de CSS.
+
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">tabindex</span></a>
-                                <div class="box__explanation">Si le damos un número <strong>negativo</strong>
-                                    como valor, <strong>NO</strong> puede obtener el focus.
-                                    <br><br>
-                                    Si le damos 0 o un <strong>positivo</strong> <strong>SÍ</strong>, siendo el
-                                    número el orden en el que se lo va a encontrar la tecla
-                                    <strong>tab</strong>.
-                                </div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">tabindex</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Si le damos un número <strong>negativo</strong>
+                                        como valor, <strong>NO</strong> puede obtener el focus.
+                                        <br><br>
+                                        Si le damos 0 o un <strong>positivo</strong> <strong>SÍ</strong>, siendo el
+                                        número el orden en el que se lo va a encontrar la tecla
+                                        <strong>tab</strong>.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">title</span></a>
-                                <div class="box__explanation">Es lo que pondrá en el recuadro al pasar el ratón
-                                    encima del elemento.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">title</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Es lo que pondrá en el recuadro al pasar el ratón
+                                        encima del elemento.
+                                    </div>
+                                </label>
                             </li>
                         </ul>
                     </div>
@@ -565,35 +662,56 @@
                     <h2 class="box__title">Atributos Input </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item"><a href="#" class="box__selectable"><span
-                                        class="var">value</span></a>
-                                <div class="box__explanation">No es necesario el método <span
-                                        class="func">setAttribute()</span>, se puede usar como una variable.
-                                </div>
-                                </span>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">value</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        No es necesario el método <span class="func">setAttribute()</span>, se puede
+                                        usar como una variable.
+                                    </div>
+                                </label>
                             </li>
                             <li class="box__list__item"><span class="var">type</span></li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">accept</span></a>
-                                <div class="box__explanation">Se utiliza sobre todo para archivos. Qué formatos
+                            <li class="box__list__item --can-open"> 
+                                <label><span
+                                    class="var">accept</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Se utiliza sobre todo para archivos. Qué formatos
                                     acepta.
                                     <br><br> Un ejemplo es <span class="val">"image/png"</span>.
-                                </div>
+                                
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">form</span></a>
-                                <div class="box__explanation">Nos permite enlazar un input con el id de un form
-                                    (Si el input está dentro del form ya están enlazados).</div>
+                            <li class="box__list__item --can-open">
+                                <label><span
+                                    class="var">form</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Nos permite enlazar un input con el id de un form
+                                    (Si el input está dentro del form ya están enlazados).
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">minLength</span></a>
-                                <div class="box__explanation">El mínimo de caracteres del input.</div>
+                            <li class="box__list__item --can-open">
+                                <label><span
+                                    class="var">minLength</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El mínimo de caracteres del input.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="var">required</span></a>
-                                <div class="box__explanation">Si un campo es obligatorio o no. También se puede
+                            <li class="box__list__item --can-open">
+                                <label><span
+                                    class="var">required</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Si un campo es obligatorio o no. También se puede
                                     <strong>acceder como variable</strong>.
-                                </div>
+                                    </div>
+                                </label>
                             </li>
                         </ul>
                     </div>
@@ -607,26 +725,40 @@
                     <h2 class="box__title">Métodos de <span class="class">ClassList</span> </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="func">item(</span><span class="var">position</span><span
-                                        class="func">)</span></a>
-                                <div class="box__explanation">Devuelve el nombre de la clase en la <span
-                                        class="var">posición </span>dada.</div>
+                            <li class="box__list__item --can-open"> 
+                                <label><span
+                                    class="func">item(</span><span class="var">position</span><span
+                                    class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Devuelve el nombre de la clase en la <span
+                                        class="var">posición </span>dada.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="func">contains(</span><span class="var">clase</span><span
-                                        class="func">)</span></a>
-                                <div class="box__explanation">Devuelve <span class="val">true</span> si el
+                            <li class="box__list__item --can-open">
+                                <label><span
+                                    class="func">contains(</span><span class="var">clase</span><span
+                                    class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Devuelve <span class="val">true</span> si el
                                     elemento tiene esa <span class="var">clase</span> o <span class="val">false
-                                    </span>en caso contrario.</div>
+                                    </span>en caso contrario.
+                                    </div>
+                                </label>
                             </li>
-                            <li class="box__list__item"> <a href="#" class="box__selectable"><span
-                                        class="func">toggle(</span><span class="var">clase, [force]</span><span
-                                        class="func">)</span></a>
-                                <div class="box__explanation">Si tiene la <span class="var">clase</span>, la
+                            <li class="box__list__item --can-open">
+                                <label><span
+                                    class="func">toggle(</span><span class="var">clase, [force]</span><span
+                                    class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Si tiene la <span class="var">clase</span>, la
                                     quita, y si no la tiene, la añade.
                                     <br><br>Si <span class="var">force </span>es true, no elimina la clase.
-                                </div>
+                                    </div>
+                                </label>
                             </li>
                             <li class="box__list__item"><span class="func">replace(</span><span class="var">toClass,
                                     fromClass</span><span class="func">)</span></li>

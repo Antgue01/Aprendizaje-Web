@@ -7,7 +7,7 @@
     },
     "Documentation__box__selectable": {
         "prefix": "boxsel",
-        "body": " <a href=\"#\" class=\"box__selectable\">${1:Title}</a>\n<div class=\"box__explanation\">${2:Content}</div>\n",
+        "body": "<label>${1:Título}\n\t<input hidden type=\"checkbox\">\n\t<div class=\"box__explanation\">\n\t\t${2:Explicación}\n\t</div>\n</label>",
         "description": "Documentation box list item",
         "scope": "html"
     },
