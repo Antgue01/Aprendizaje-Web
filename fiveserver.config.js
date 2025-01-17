@@ -1,0 +1,3 @@
+module.exports = {
+    navigate: false,
+};

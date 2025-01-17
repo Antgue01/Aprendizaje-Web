@@ -1,4 +1,5 @@
 * {
+  scroll-behavior:smooth;
   box-sizing: border-box;
 }
 
@@ -38,6 +39,8 @@ body {
   --code-box-color: #222222;
   --links-color: #8a9715;
   --links-color-hovered: #cea800;
+  --box-separator-color:#8d7f00 ;
+
   /* Code  Colors*/
   --code-color: #f8f8f2;
   --decl-color: #40b5d0;
@@ -69,10 +72,11 @@ main>section {
 }
 
 section {
-  box-shadow: 0 -1px 30px 3px #0004;
+  box-shadow: 0 -1px 3px 0px #0002;
   background-color: var(--main-color);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  
 }
 
 section:nth-of-type(n):not(:first-of-type):before {
@@ -98,7 +102,7 @@ section:nth-of-type(n):not(:first-of-type):before {
   border-top-left-radius: 7px;
   background-color: var(--main-color);
   /* filter: drop-shadow(0 0px 4px #0007); */
-  box-shadow: 0 0 14px #0007;
+  box-shadow: 0 0 5px #0004;
 }
 
 h1 {
@@ -236,20 +240,23 @@ p {
 }
 
 p a,
-.box__title a {
+.box a {
   text-decoration: none;
   color: var(--links-color);
   font-weight: 700;
 }
 
 p a:hover,
-.box__title a:hover {
+.box a:hover {
   color: var(--links-color-hovered);
   transition: color 0.3s;
 }
 
 /* #endregion */
 /* #region index */
+/*
+  TODO: Arreglar el índice entre clases e interfaces
+*/
 .index {
   position: sticky;
   height: 100dvh;
@@ -530,7 +537,6 @@ p a:hover,
   border-top-right-radius: inherit;
   width: 100%;
   margin-block: 0;
-  background-color: var(--box--bg-color);
   padding: 5px 20px;
   background: var(--bg-color);
   border-bottom: 2px solid rgb(from var(--index-lines-color) r g b / 0.7);
@@ -540,11 +546,10 @@ p a:hover,
   list-style: " ";
   padding-block: 0;
   width: fit-content;
-  margin: 0 auto;
-  place-content: center;
+  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 7px;
 }
 
 .box__list__item {
@@ -602,8 +607,36 @@ p a:hover,
   padding-top: 0;
   overflow: hidden;
   font-weight: normal;
-  text-align: justify;
+  text-align: start;
   position: relative;
+  text-wrap: pretty;
+}
+.box__separator{
+  font-size: 1.3rem;
+  display: inline-flex;
+  place-content: center;
+  flex: 1 1 1;
+  width: 100%;
+  color: var(--box-separator-color);
+}
+
+.box__separator::before{
+  padding: 0 3px;
+  height: 1px;
+  margin: auto 5px;
+  margin-left: 0;
+  background-color: var(--box-separator-color);
+  content: '';
+  flex-grow: 2;
+}
+.box__separator::after{
+  padding: 0 3px;
+  height: 1px;
+  flex-grow: 2;
+  margin: auto 5px;
+  margin-right: 0;
+  background-color: var(--box-separator-color);
+  content: '';
 }
 
 /* Cuando se pueda abrir, el label de la lista tendrá un +, cuando se pueda cerrar, un - */
@@ -621,9 +654,6 @@ p a:hover,
 
 
 
-/*
-  TODO: QUE CON JAVASCRIPT LO DETECTE CUANDO PASE EL RATÓN SOBRE EL ICONO
-*/
 .box__selectable:focus+.box__explanation {
   display: inline;
   z-index: 1;

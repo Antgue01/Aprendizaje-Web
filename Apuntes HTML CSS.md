@@ -22,6 +22,51 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 
 <h1>Diccionario</h1>
 
+## General
+<font color ="#a0c2f0">
+
+<font id = "uri" color = "#fae48b">
+
+**URI.**
+</font>
+Dirección a un **recurso** o una **página web**.
+<font color = "#fae48b"><b>
+
+lazy loading.
+</b></font>
+Carga diferida, básicamente, la página va a ir cargando el contenido según lo vaya necesitando en lugar de cargarlo todo al principio.
+
+<font id ="wire" color = "#fae48b">
+
+**Wireframe.**
+</font>
+Esquema de la distribución de los elementos de la página tanto en PC como en móviles.Ejemplo:
+PC:
+
+![PC](imgs/PC.png)
+
+![Mobile](imgs/Mobile.png)
+
+<font id ="dominio" color = "#fae48b">
+
+**Dominio.**
+</font>
+Es el nombre de la página web, el que enmascara la IP.
+<font id ="SSL" color = "#fae48b">
+
+**SSL.**
+</font>
+Certificado que autentica la identidad del sitio web y habilita una conexión cifrada. Básicamente es lo que mira el navegador para ponerle un candado en la barra de búsqueda para decir que es segura.
+
+<font color = "#fae48b">
+
+**CDN.**
+</font>
+Almacena las copias del contenido estratégicamente alrededor de todos los servidores alrededor del mundo del host. Es decir, al hacer una solicitud, el servidor central va a elegir al más rápido según tu ubicación para servirte el contenido. **En resumen, aumenta la velocidad de carga y reduce la latencia.**. También es bueno para la seguridad, pues ayuda a proteger contra ataques DDOS, que consiste en sobrecargar el servidor.
+
+</font>
+
+## HTML/CSS
 <font color ="#a0c2f0">
 
 <font id="eli" color = "#fae48b"><b>
@@ -65,10 +110,6 @@ metatags.
 </b></font>
 Etiquetas que van en el <b>head</b> que se usan para dar información de cara al SEO. Importante hacerlas bien.
 
-<font color = "#fae48b"><b>
-lazy loading.
-</b></font>
-Carga diferida, básicamente, la página va a ir cargando el contenido según lo vaya necesitando en lugar de cargarlo todo al principio.
 
 <font color = "#fae48b"><b>
 
@@ -114,35 +155,7 @@ Da estilo a los elementos dependiendo de las características de su contenedor.
 wrapper.
 </b></font>
 Elemento cuya función es darle un estilo.
-<font id ="wire" color = "#fae48b">
-
-**Wireframe.**
 </font>
-Esquema de la distribución de los elementos de la página tanto en PC como en móviles.Ejemplo:
-PC:
-
-![PC](imgs/PC.png)
-
-![Mobile](imgs/Mobile.png)
-
-<font id ="dominio" color = "#fae48b">
-
-**Dominio.**
-</font>
-Es el nombre de la página web, el que enmascara la IP.
-<font id ="SSL" color = "#fae48b">
-
-**SSL.**
-</font>
-Certificado que autentica la identidad del sitio web y habilita una conexión cifrada. Básicamente es lo que mira el navegador para ponerle un candado en la barra de búsqueda para decir que es segura.
-
-<font color = "#fae48b">
-
-**CDN.**
-</font>
-Almacena las copias del contenido estratégicamente alrededor de todos los servidores alrededor del mundo del host. Es decir, al hacer una solicitud, el servidor central va a elegir al más rápido según tu ubicación para servirte el contenido. **En resumen, aumenta la velocidad de carga y reduce la latencia.**. También es bueno para la seguridad, pues ayuda a proteger contra ataques DDOS, que consiste en sobrecargar el servidor.
-</font>
-
 <h1>CSS</h1>
 <font color ="#a0c2f0">
 Para enlazar HTML con CSS se usa el tag link en el head con rel="stylesheet"
@@ -816,8 +829,10 @@ Son los modos de fusión como los de Photoshop o Nuke.
 <h2>Selectores avanzados</h2>
 
 <font color ="#a0c2f0">
-Los selectores se pueden encadenar unos con otros.
-</br>
+
+Una forma de conseguir selectores de un elemento es en inspeccionar->Elements->copy->copy selector.
+
+Por otra parte, los selectores se pueden encadenar unos con otros:
 </br>
 
 <font color ="#e6c925"><b>
@@ -1810,6 +1825,8 @@ inline-flex.
 </br></br>
 De esta forma, las cajas contenedoras se comportarán en bloque, pero sus hijos **directos** serán flexibles.
 
+Si vamos a hacer **mails** en HTML, **NO** está soportado. Usar [tablas](#tables) en su lugar.
+
 Los elementos flexibles apuntan todos en una misma dirección, que se puede definir y hay dos ejes, el **main axis**, que es si están en horizontal o vertical, y el **cross axis**, que es el orden.
 
 Los hijos toman por defecto el tamaño para ocupar todo el **cross axis.**
@@ -2018,9 +2035,11 @@ align-content</font>)
 </font>
 <h2 id="grid">Grid</h2>
 
-<font color ="#a0c2f0">
+<font color ="#a0c2f0">V
 
 Al igual que flexbox, es modelo de cajas, en este caso tenemos una grid que tiene filas y columnas (dos direcciones). Por tanto, usaríamos **flexbox** cuando el layout esté pensado para algo vertical u horizontal, pero usaremos **grid** cuando el layout tenga forma de "tabla", es decir, tanto filas como columnas. 
+
+Si vamos a hacer **mails** en HTML, **NO** está soportado. Usar [tablas](#tables)en su lugar.
 
 Tenemos un **Grid container** que tendrá varios hijos, los **Grid items.**, que pueden ocupar una o más **Grid cells** de la cuadrícula. Además, tenemos las **líneas de la cuadrícula**, que se definen como bordes. Por otra parte, tenemos los **Grid tracks**, que son cada una de las filas o cada una de las columnas. Los **Grid cells** son las celdas, el espacio real de la cuadrícula. Finalmente tenemos los **Grid area**, que son celdas individuales o conjuntos de celdas delimitidas por cuatro líneas y que usamos para colocar elementos de forma más eficiente en la cuadrícula.
 
@@ -2457,6 +2476,46 @@ Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el 
 
 </font>
 
+## Debuggear
+<font color ="#a0c2f0">
+
+En inspeccionar elementos, en la pestaña **elements** podemos, con click derecho sobre un elemento:
+
+- Copiar selectores.
+
+- Forzar estados. Es decir, que el objeto esté active o hover permanentemente.
+
+- Si seleccionamos un elemento, está disponible en consola con **$0**. 
+<br>
+Por ejemplo, en consola podemos poner **console.dir($0)** y nos aparecerán todas las variables del elemento seleccionado.
+
+- Si pulsamos Ctrl + F en el panel, podemos buscar por texto, etiquetas, etc.
+
+En la pestaña **Resources/Sources** podemos trabajar con los archivos de la página. En él, podemos
+
+- Editar y guardar el html o css desde el navegador.
+
+- En la subpestaña **snippets** podemos guardar un pedazo de código javascript y ejecutarlo en cualquier momento con **ctrl + Enter.**
+
+En la pestaña **Network** podemos:
+
+- Ver los tiempos de carga de cada recurso en una timeline.
+
+- Ver información de cada recurso, como quién lo inicializa (Initiator), el tamaño, etc.
+
+- En la parte de abajo vemos cuánto tiempo total ha tardado en cargar, el peso de los recursos, el peso de lo que se transfiere, etc.
+
+- Si hacemos click derecho en los elementos podemos copiar **requests a esos elementos** en distintos frameworks como powershell o **Node.js.**
+
+En la pestaña **Performance/Timeline** podemos:
+
+ - Grabarnos interactuando y analizar el tiempo y el tamaño de los recursos que usa la web.
+
+ Con ctrl + shift + P podemos **ejecutar comandos** como:
+
+ - Show performance monitor.
+
+</font>
 <h2>
 
 Integrar librerías de iconos</h2>
@@ -3564,7 +3623,7 @@ En <b>CSS</b> podemos modificarlo cuando está abierto con
 details[open]
 </font>.
 
-<font color ="#b61187"><u><b>
+<font id="tables" color ="#b61187"><u><b>
 < table>
 </font></u></b>
 Crea una tabla. Para formar la tabla tenemos varias etiquetas que podemos poner dentro:

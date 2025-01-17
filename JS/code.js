@@ -2,7 +2,7 @@ function hideLevel(itemContainer) {
 
     let i = itemContainer.nextElementSibling;
     while (i != null) {
-        i.style.display === 'none' ? i.style.display = 'block' : i.style.display = 'none';
+        i.style.display === 'none' ? i.style.display = 'flex' : i.style.display = 'none';
         i = i.nextElementSibling;
     }
 }

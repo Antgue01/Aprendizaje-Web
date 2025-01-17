@@ -65,6 +65,24 @@
                                     </div>
                                 </div>
                                 <!-- #endregion -->
+                                 <!-- #region Timers -->
+                                 <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="tmrs">
+                                        <label class="index__item__label" for="tmrs"></label>
+                                        <a class="index__lv2" href="#Timers">Timers</a>
+                                    </div>
+                                 </div>
+                                 <!-- #endregion Timers-->
+                                <!-- #region Eventos -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="evts">
+                                        <label class="index__item__label" for="evts"></label>
+                                        <a class="index__lv2" href="#events">Eventos</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Eventos-->
                                 <!-- #region Clases -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -72,20 +90,13 @@
                                         <label class="index__item__label" for="objs"></label>
                                         <a class="index__lv2" href="#Clases">Clases</a>
                                     </div>
+
                                     <!-- #region Objetos -->
                                     <div class="index__item__container">
                                         <div class="index__item">
                                             <input hidden type="checkbox" id="objs2">
                                             <label class="index__item__label" for="objs2"></label>
                                             <a class="index__lv3" href="#Objetos">Objetos</a>
-                                        </div>
-                                    </div>
-                                    <!-- #region Interfaces -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input hidden type="checkbox" id="interfaces">
-                                            <label class="index__item__label" for="interfaces"></label>
-                                            <a class="index__lv3" href="#Interfaces">Interfaces</a>
                                         </div>
                                         <!-- #region DOM -->
                                         <div class="index__item__container">
@@ -96,18 +107,57 @@
                                             </div>
                                         </div>
                                         <!-- #endregion -->
+                                        <!-- #region Window -->
+                                        <div class="index__item__container">
+                                            <div class="index__item">
+                                                <input type="checkbox" hidden id="wd">
+                                                <label class="index__item__label" for="wd"></label>
+                                                <a class="index__lv4" href="#window">Window</a>
+                                            </div>
+                                        </div>
+                                        <!-- #endregion -->
+                                        <!-- #region Screen -->
+                                        <div class="index__item__container">
+                                            <div class="index__item">
+                                                <input type="checkbox" hidden id="scrEEn">
+                                                <label class="index__item__label" for="scrEEn"></label>
+                                                <a class="index__lv4" href="#screen">Screen</a>
+                                            </div>
+                                        </div>
+                                        <!-- #endregion Screen-->
+                                        <!-- #region Event -->
+                                        <div class="index__item__container">
+                                            <div class="index__item">
+                                                <input type="checkbox" hidden id="evt">
+                                                <label class="index__item__label" for="evt"></label>
+                                                <a class="index__lv4" href="#Event">Event</a>
+                                            </div>
+                                        </div>
+                                        <!-- #endregion Event-->
+                                        <!-- #endregion -->
+
+
+                                    </div>
+                                    <!-- #region Interfaces -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input hidden type="checkbox" id="interfaces">
+                                            <label class="index__item__label" for="interfaces"></label>
+                                            <a class="index__lv3" href="#Interfaces">Interfaces</a>
+                                        </div>
 
                                     </div>
                                     <!-- #endregion -->
 
+
                                 </div>
-                                <!-- #endregion -->
+
                                 <!-- #endregion -->
                                 <!-- #region Trucos -->
                                 <div class="index__item__container">
                                     <div class="index__item">
-                                        <input hidden type="checkbox" id="Trucos">
-                                        <label class="index__item__label" for="Trucos"></label>
+                                        <input hidden type="checkbox" id="Tricks">
+                                        <label class="index__item__label" for="Tricks"></label>
                                         <a class="index__lv2" href="#Trucos">Trucos</a>
                                     </div>
                                     <!-- #region Editar pseudoelementos -->
@@ -124,8 +174,8 @@
                                 <!-- #region Workflow -->
                                 <div class="index__item__container">
                                     <div class="index__item">
-                                        <input hidden type="checkbox" id="Workflow">
-                                        <label class="index__item__label" for="Workflow"></label>
+                                        <input hidden type="checkbox" id="wkfl">
+                                        <label class="index__item__label" for="wkfl"></label>
                                         <a class="index__lv2" href="#Workflow">Workflow</a>
                                     </div>
                                     <!-- #region Debug -->
@@ -178,10 +228,10 @@
 
         <!-- #region Main -->
         <main>
-            <div class="header__container">
+            <div id="Caracteristicas" class="header__container">
                 <h1>Javascript</h1>
             </div>
-            <section id="Caracteristicas">
+            <section>
                 <p>
                     El código Javascript se ejecuta en el navegador del usuario, nunca en el servidor.
                 </p>
@@ -277,10 +327,10 @@
             </section>
             <!-- #endregion -->
             <!-- #region Variables -->
-            <div class="header__container">
+            <div id="Variables" class="header__container">
                 <h2>Variables</h2>
             </div>
-            <section id="Variables">
+            <section>
                 <p>
                     La diferencia entre var y let es que <strong>var</strong> es una <strong>variable global</strong>,
                     mientras que el scope de <strong>let</strong> es <strong> el bloque en el que lo
@@ -296,10 +346,10 @@
             </section>
             <!-- #endregion -->
             <!-- #region Funciones -->
-            <div class="header__container">
+            <div id="Funciones" class="header__container">
                 <h2>Funciones</h2>
             </div>
-            <section id="Funciones">
+            <section>
                 <div class="box">
                     <h2 class="box__title">Funciones Comunes </h2>
                     <div class="box__text__container">
@@ -339,14 +389,206 @@
                 </div>
             </section>
             <!-- #endregion -->
-            <!--
-             TODO: Pensar una forma mejor de reprensentar las clases
-           -->
+             <!-- #region Timers -->
+              <div class="header__container" id="Timers">
+                <h2>Timers</h2>
+              </div>
+              <section>
+                <p>
+                    Sirven para ejecutar código tras pasar una determinada cantidad de tiempo <strong>en ms.</strong> 
+                    <br>
+                    Es importante saber que <strong>consumen bastantes recursos.</strong>
+                    
+                </p>
+                <p>
+                    Para establecer un timer, usamos la función <span class="func">setTimeout(</span><span class ="var">función, delay</span><span class="func">)</span>.
+                </p>
+                <p>
+                    También podemos quitarlos con la función <span class="func">clearTimeout(</span><span class ="var">temporizador</span><span class="func">)</span>.
+
+                </p>
+                <p>
+                    También podemos poner timers <strong>periódicos</strong>, es decir, que se ejecuten cada x ms con la función <span class="func">setInterval(</span><span class ="var">func, intervalo</span><span class="func">)</span>.
+                </p>
+                <div class="box">
+                    <h2 class = "box__title">Tip </h2>
+                    <div class ="box__text__container">
+                        Podemos ejecutar un intervalo <strong>un número determinado de veces</strong> si lo convinamos con un timer normal.
+
+                        <br><br>
+                        Para ello, como cada intervalo es regular, calculamos cuánto tiempo pasaría tras ejecutarlo X veces y ejecutamos un timer con ese tiempo cuya función sea eliminar el intervalo, de esta forma:
+
+                     </div>
+                     <div class = "code__box">
+                        <code>
+                            <span class="decl">const</span> intervalo = <span class="func">setInterval(</span><span class ="var">()=>document.<span class="func">write(<span class="string">
+                                "hola"</span>)</span>)</span><span class="func">,<span class="literal">2000</span>)</span>;
+                                <br><br>
+                                <span class="func">setTimeout(</span><span class ="var">(()=>{<span class="func">clearInterval(</span><span class ="var">intervalo</span><span class="func">)</span>;},<span class="literal">6000</span>)</span><span class="func">)</span>;
+                        </code>
+                        <button class="code__box__copy material-symbols-outlined">content_copy</button>
+
+                     </div>
+                </div>
+              </section>
+              <!-- #endregion Timers -->
+            <!-- #region Eventos -->
+            <div id="events" class="header__container">
+                <h2>Eventos</h2>
+            </div>
+            <section>
+                <p>
+                    Para <strong>añadir eventos</strong>, usamos la función <span
+                        class="func">addEventListener(</span><span class="var">evento, función, [flujo]</span><span
+                        class="func">)</span> del elemento al que queramos añadírselo.
+                </p>
+                <p> Si usamos una <strong>función lambda</strong>, podemos pasarle un argumento, que siempre se
+                    interpretará de tipo <a href="#Event" class="class">Event</a>.</p>
+                <div class="box">
+                    <h2 class="box__title">Eventos más importantes </h2>
+                    <div class="box__text__container">
+                        <div class="box__separator">Mouse</div>
+                        <ul class="box__list">
+                            <li class="box__list__item"><span class="val">click </span></li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">mouseup </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando se suelta cualquier click.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="val">dbclick </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">mouseover </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando se hace <strong>hover</strong> sobre el elemento <strong>o uno de sus hijos.</strong>
+                                    </div>
+                                </label>
+                            </li>
+                            
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">mouseout </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando el ratón deja de estar sobre un elemento(se pierde el hover) <strong>o uno de sus hijos.</strong>.
+                                    </div>
+                                </label>
+                            </li>
+                           
+                            <li class="box__list__item --can-open">
+                                <span class="val">mousemove </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">contextmenu </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Click derecho.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Teclado</div>
+                        <ul class="box__list">
+                            
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">keydown </span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El <strong>argumento</strong> del evento tendrá una variable <span class="var">key </span>con la tecla pulsada. Lo mismo para el resto de eventos de teclado
+                                    </div>
+                                </label>                                    
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="val">keypress </span>
+                            </li>
+                        
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">keyup </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Después de que los dos eventos anteriores hayan terminado consecutivamente.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Interfaz</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">error </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <strong>Error</strong> durante la carga de un <strong>archivo multimedia</strong>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item"><span class="val">load </span></li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">beforeunload </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Antes de que un <strong>documento</strong> se vaya a descargar (visitamos otra página en la misma pestaña).
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">unload </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando se descarga un <strong>documento</strong> (visitamos otra página en la misma pestaña).
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">resize </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando cambia el tamaño de vista del <strong>documento</strong> (la página). </span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item"><span class="val">scroll </span></li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">select </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando se selecciona texto <strong>en un input o textarea.</strong>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    La lista completa se puede encontrar en <a href="https://www.w3schools.com/jsref/obj_events.asp">esta página.</a>
+                </p>
+                <p>Los eventos también se pueden eliminar con <span class="func">removeEventListener(</span><span
+                        class="var">evento, función</span><span class="func">)</span>.
+                </p>
+                <p>
+                    Hay que tener en cuenta que esto solo funciona <strong>si le pasamos el nombre de una
+                        función</strong> en lugar de crear una función lambda.</p>
+                <p id="evtFlux">
+                    Hay dos tipos de eventos según orden de ejecución <strong>(flujo de eventos)</strong>: los <strong>burbuja</strong> (que son los que vinen por defecto) y los <strong>captura.</strong>
+                </p>
+                <p>
+                    Supongamos el evento <span class="val">click. </span>Cuando un contenedor y su hijo tienen ambos el evento, si son <strong>burbuja</strong> se ejecutará <strong>primero el más específico</strong>, es decir, el del hijo, y después los de los padres sucesivamente. 
+                </p>
+                <p>
+                    En cambio, si a uno o varios de los padres le ponemos el argumento <span class="var">flujo </span>a <span class="val">true, </span> serán <strong>captura</strong>, lo y se ejecutarán en <strong>orden inverso</strong> (primero los que sean captura en orden de padres a hijos).
+                </p>
+            </section>
+            <!-- #endregion Eventos   -->
+
             <!-- #region Clases -->
-            <div class="header__container">
+            <div id="Clases" class="header__container">
                 <h2>Clases</h2>
             </div>
-            <section id="Clases">
+            <section>
                 <p>
                     Para crear clases, la sintaxis es la siguiente:
                 </p>
@@ -402,82 +644,17 @@
             </section>
 
             <!-- #region Objetos -->
-            <div class="header__container">
+            <div id="Objetos" class="header__container">
                 <h3>Objetos</h3>
             </div>
-            <section id="Objetos">
-
-                <!-- #endregion -->
-            </section>
-            <!-- #region Interfaces  -->
-            <div class="header__container">
-                <h3>Interfaces</h3>
-            </div>
-            <section id="Interfaces">
-                <div class="box">
-                    <h2 class="box__title"><span class="class">Number </span> </h2>
-                    <div class="box__text__container">
-                        <ul class="box__list">
-                            <li class="box__list__item">
-                                <span class="func">toString(</span><span class="var">number</span><span
-                                    class="func">)</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="box">
-                    <h2 class="box__title"><span class="class">Array </span></h2>
-                    <div class="box__text__container">
-                        <ul class="box__list">
-                            <li class="box__list__item --can-open">
-                                <label>
-                                    <span class="func">shift(</span><span class="var">elem</span><span
-                                        class="func">)</span>
-                                    <input hidden type="checkbox">
-                                    <div class="box__explanation">
-                                        Inserta <span class="var">elem </span>en el array.
-                                    </div>
-                                </label>
-                            </li>
-                            <li class="box__list__item --can-open">
-                                <label><span class="func">unshift()</span>
-                                    <input hidden type="checkbox">
-                                    <div class="box__explanation">
-                                        Elimina el primer elemento del array.
-                                    </div>
-                                </label>
-                            </li>
-                            <li class="box__list__item --can-open">
-                                <label><span class="func">splice(</span><span class="var">start, howMany</span><span
-                                        class="func">)</span>
-                                    <input hidden type="checkbox">
-                                    <div class="box__explanation">
-                                        Elmina <span class="var">howMany </span>elementos a
-                                        partir de <span class="var">start </span>y devuelve otro array con esos
-                                        elementos.
-                                    </div>
-                                </label>
-                            </li>
-                            <li class="box__list__item --can-open">
-                                <label><span class="func">filter(</span><span class="var">condition</span><span
-                                        class="func">)</span>
-                                    <input hidden type="checkbox">
-                                    <div class="box__explanation">
-                                        Devuelve un array con todos los elementos que cumplan
-                                        la <span class="var">condition </span>.
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <section>
 
             </section>
             <!-- #region DOM -->
-            <div class="header__container">
+            <div id="DOM" class="header__container">
                 <h4>El DOM</h4>
             </div>
-            <section id="DOM">
+            <section>
                 <p>
                     El Document Object Model. Se compone de <strong>nodos</strong>, que son cada una de las
                     <strong>etiquetas</strong> del html. Los <strong>atributos</strong> también se consideran
@@ -672,31 +849,28 @@
                                 </label>
                             </li>
                             <li class="box__list__item"><span class="var">type</span></li>
-                            <li class="box__list__item --can-open"> 
-                                <label><span
-                                    class="var">accept</span>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">accept</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Se utiliza sobre todo para archivos. Qué formatos
-                                    acepta.
-                                    <br><br> Un ejemplo es <span class="val">"image/png"</span>.
-                                
+                                        acepta.
+                                        <br><br> Un ejemplo es <span class="val">"image/png"</span>.
+
                                     </div>
                                 </label>
                             </li>
                             <li class="box__list__item --can-open">
-                                <label><span
-                                    class="var">form</span>
+                                <label><span class="var">form</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Nos permite enlazar un input con el id de un form
-                                    (Si el input está dentro del form ya están enlazados).
+                                        (Si el input está dentro del form ya están enlazados).
                                     </div>
                                 </label>
                             </li>
                             <li class="box__list__item --can-open">
-                                <label><span
-                                    class="var">minLength</span>
+                                <label><span class="var">minLength</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         El mínimo de caracteres del input.
@@ -704,15 +878,16 @@
                                 </label>
                             </li>
                             <li class="box__list__item --can-open">
-                                <label><span
-                                    class="var">required</span>
+                                <label><span class="var">required</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Si un campo es obligatorio o no. También se puede
-                                    <strong>acceder como variable</strong>.
+                                        <strong>acceder como variable</strong>.
                                     </div>
                                 </label>
                             </li>
+                            <li class="box__list__item"><span class="var">selectionStart </span></li>
+                            <li class="box__list__item"><span class="var">selectionEnd </span></li>
                         </ul>
                     </div>
                 </div>
@@ -725,38 +900,34 @@
                     <h2 class="box__title">Métodos de <span class="class">ClassList</span> </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item --can-open"> 
-                                <label><span
-                                    class="func">item(</span><span class="var">position</span><span
-                                    class="func">)</span>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">item(</span><span class="var">position</span><span
+                                        class="func">)</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Devuelve el nombre de la clase en la <span
-                                        class="var">posición </span>dada.
+                                        Devuelve el nombre de la clase en la <span class="var">posición </span>dada.
                                     </div>
                                 </label>
                             </li>
                             <li class="box__list__item --can-open">
-                                <label><span
-                                    class="func">contains(</span><span class="var">clase</span><span
-                                    class="func">)</span>
+                                <label><span class="func">contains(</span><span class="var">clase</span><span
+                                        class="func">)</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Devuelve <span class="val">true</span> si el
-                                    elemento tiene esa <span class="var">clase</span> o <span class="val">false
-                                    </span>en caso contrario.
+                                        elemento tiene esa <span class="var">clase</span> o <span class="val">false
+                                        </span>en caso contrario.
                                     </div>
                                 </label>
                             </li>
                             <li class="box__list__item --can-open">
-                                <label><span
-                                    class="func">toggle(</span><span class="var">clase, [force]</span><span
-                                    class="func">)</span>
+                                <label><span class="func">toggle(</span><span class="var">clase, [force]</span><span
+                                        class="func">)</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Si tiene la <span class="var">clase</span>, la
-                                    quita, y si no la tiene, la añade.
-                                    <br><br>Si <span class="var">force </span>es true, no elimina la clase.
+                                        quita, y si no la tiene, la añade.
+                                        <br><br>Si <span class="var">force </span>es true, no elimina la clase.
                                     </div>
                                 </label>
                             </li>
@@ -810,28 +981,383 @@
                         class="var">query. </span>
                 </p>
 
+
+            </section>
+            <!-- #endregion -->
+            <!-- #region Window -->
+            <div id="window" class="header__container">
+                <h4>Window</h4>
+            </div>
+            <section>
                 <p>
-                    Para <strong>añadir eventos</strong>, usamos la función <span
-                        class="func">addEventListener(</span><span class="var">evento, función</span><span
-                        class="func">)</span> del elemento al que queramos añadírselo.
+                    <span class="class">Window </span>es el objeto que representa la ventana. <strong>Todos los demás
+                        dependen de él.</strong>Hereda de <strong><span class="class">EventTarget </span></strong>.
                 </p>
                 <div class="box">
-                    <h2 class="box__title">Eventos más importantes </h2>
+                    <h2 class="box__title">Métodos Principales </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
-                            <li class="box__list__item"><span class="val">click </span></li>
+                            <li class="box__list__item --can-open"><label><span class="func">open(</span><span
+                                        class="var">URI</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Abre una ventana nueva con la <span class="var">URI </span>proporcionada y
+                                        devuelve la ventana.
+                                    </div>
+                                </label></li>
+                            <li class="box__list__item">
+                                <span class="func">close()</span>
+                            </li>
+                            <li class="box__list__item --can-open"><label><span class="func">stop()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cancela el refresh de la página.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open"><label><span class="func">print()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Se conecta con la impresora y abre el diálogo de impresión.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open"><label><span class="func">confirm(</span><span
+                                        class="var">mensaje</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Abre un diálogo con el <span class="var">mensaje </span>y le ofrece al usuario
+                                        <strong>aceptar</strong> o <strong>cancelar</strong>, y devuelve un bool con la
+                                        elección del usuario.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">
+                            Métodos de scroll
+                        </div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open"><label><span class="func">scroll(</span><span
+                                        class="var">x, y</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Pone el scroll horizontal en <span class="var">x </span>y el vertical en <span
+                                            class="var">y</span>.
+                                    </div>
+                                </label></li>
+                            <li class="box__list__item --can-open"><label><span class="func">scrollBy(</span><span
+                                        class="var">x, y</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Desplaza el scroll en <span class="var">x </span>e <span class="var">y. </span>
+                                    </div>
+                            </li>
+                            <li class="box__list__item --can-open"></label><label><span
+                                        class="func">scrollByLines(</span><span class="var">x,y</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Desplaza el scroll <span class="var">x </span>líneas en horizontal e <span
+                                            class="var">y </span>líneas en vertical.
+                                    </div>
+                                </label></li>
+                            <li class="box__list__item --can-open">
+                                </label><label><span class="func">scrollByPages(</span><span class="var">x,y</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Desplaza el scroll <span class="var">x </span>páginas en horizontal e <span
+                                            class="var">y </span>páginas en vertical.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">
+                            Métodos de resizing
+                        </div>
+                        Estos métodos solo funcionan si se respeta la política Same Origin.
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">resizeBy(</span><span class="var">deltaX, deltaY</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Añade <span class="var">deltaX </span>y <span class="var">deltaY </span>al
+                                        tamaño de la ventana.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">resizeTo(</span><span class="var">sizeX, sizeY</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Reescala de forma absoluta la ventana a <span class="var">sizeX </span>X <span
+                                            class="var">sizeY. </span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">moveBy(</span><span class="var">deltaX, deltaY</span><span
+                                    class="func">)</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">moveTo(</span><span class="var">deltaX,deltaY</span><span
+                                    class="func">)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Además de estos métodos, existen ciertos atributos que conviene conocer.
+                </p>
+                <div class="box">
+                    <h2 class="box__title" --can-open>Atributos Principales </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open"><label><span class="var">closed </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Indica si está cerrada o no la ventana.
+                                    </div>
+                                </label></li>
+                            <li class="box__list__item"><span class="var">screen </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">innerWidth </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Ancho disponible de la ventana, es decir, <strong>descuenta elementos externos</strong> como las herramientas del desarrollador.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">outerWidth </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Ancho total de la ventana, <strong>incluyendo elementos externos</strong> como las herramientas del desarrollador.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item"><span class="var">innerHeight </span></li>
+                            <li class="box__list__item"><span class="var">outerHeight </span></li>
+                        </ul>
+                        <div class="box__separator">struct window. <span class="var">location </span> </div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">href </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        URI completa de la página.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var">hostname </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">pathname </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Path dentro del dominio.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var">protocol </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">assign(</span><span class="var">url</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Carga la página que pasemos en <span class="var">url. </span>
+                                    </div>
+                                </label>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
+            <!-- #endregion Window -->
+
+            <!-- #region Screen -->
+            <div id="screen" class="header__container">
+                <h4>Screen</h4>
+            </div>
+            <section>
+                <p>
+                    <span class="class">Screen </span>es el objeto que representa la pantalla en sí. Cuenta entre otras
+                    cosas con las <strong>dimensiones</strong> reales y disponibles de la misma.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Atributos Principales </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open"><span class="var">width </span></li>
+                            <li class="box__list__item --can-open"><label><span class="var">availWidth </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Ancho máximo de la ventana, es decir, cuando está maximizada.
+                                    </div>
+                                </label></li>
+                            <li class="box__list__item --can-open"><span class="var">height </span></li>
+                            <li class="box__list__item --can-open"><span class="var">availHeihgt </span></li>
+                            <li class="box__list__item --can-open">
+                                <label> <span class="var">screenLeft </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Devuelve cuántos píxeles entre el borde izquierdo del <strong>navegador</strong>
+                                        y el de la <strong>ventana</strong>.
+                                        <br><br>
+                                        Básicamente el <strong>offset</strong> izquierdo de la ventana cuando no está en
+                                        pantalla completa.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var">screenRight </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var">screenTop </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var">screenBottom </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">scrollX </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Devuelve la posición del scroll en píxeles.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var"> scrollY
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+            <!-- #endregion Screen -->
+            <!-- #region Event -->
+            <div id="Event" class="header__container">
+                <h4>Event</h4>
+            </div>
+            <section>
+                <p>
+
+                    <span class="class">Event </span>es la clase que describe el evento que se está ejecutando ahora
+                    mismo dentro de la función lambda del mismo.
+                </p>
+                <p>
+                    Tiene varios atributos que da información del mismo, y métodos que permiten controlar el flujo:
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Atributos y Métodos </h2>
+                    <div class="box__text__container">
+                        <div class="box__separator">Atributos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open"><label><span class="var">target </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Objeto que desencadenó el evento.
+                                    </div>
+                                </label></li>
+                        </ul>
+                        <div class="box__separator">Métodos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">stopPropagation()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Detiene el <a href="#evtFlux">flujo de ejecución de eventos</a>, es decir, si un padre o un hijo tiene un evento que aún no se ha ejecutado, no se ejecutará.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Event -->
+            <!-- #endregion Objetos-->
+
+            <!-- #region Interfaces  -->
+            <div id="Interfaces" class="header__container">
+                <h3>Interfaces</h3>
+            </div>
+
+            <section>
+                <div class="box">
+                    <h2 class="box__title"><span class="class">Number </span> </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item">
+                                <span class="func">toString(</span><span class="var">number</span><span
+                                    class="func">)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <h2 class="box__title"><span class="class">Array </span></h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label>
+                                    <span class="func">shift(</span><span class="var">elem</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Inserta <span class="var">elem </span>en el array.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">unshift()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Elimina el primer elemento del array.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">splice(</span><span class="var">start, howMany</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Elmina <span class="var">howMany </span>elementos a
+                                        partir de <span class="var">start </span>y devuelve otro array con esos
+                                        elementos.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">filter(</span><span class="var">condition</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Devuelve un array con todos los elementos que cumplan
+                                        la <span class="var">condition </span>.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
             <!-- #endregion -->
-            <!-- #endregion -->
-            <!-- #endregion -->
+
+            <!-- #endregion Clases-->
+
             <!-- #region Trucos -->
-            <div class="header__container">
+            <div id="Trucos" class="header__container">
                 <h2>Trucos</h2>
             </div>
-            <section id="Trucos">
+            <section>
                 <p>
                     Debido al tipado dinámico, podemos concatenar números usando un string y el operador +. P. ej. este
                     código dará como resultado 22.
@@ -843,10 +1369,10 @@
                     </code>
                 </div>
             </section>
-            <div class="header__container">
+            <div id="editPseudo" class="header__container">
                 <h3>Editar Pseudo-elementos</h3>
             </div>
-            <section id="editPseudo">
+            <section>
                 <p>
                     Para ello, en el <strong>CSS</strong> añadiremos una <strong>clase extra</strong> en la que le
                     damos estilo al pseudo-elemento. En <strong>JS</strong>, <strong>añadiremos esa clase</strong> a
@@ -856,10 +1382,10 @@
             </section>
             <!-- #endregion -->
             <!-- #region Workflow -->
-            <div class="header__container">
+            <div id="Workflow" class="header__container">
                 <h2>Workflow</h2>
             </div>
-            <section id="Workflow">
+            <section>
                 <p>
                     En Javascript, también existen los foreach, cuya sintaxis es la siguiente:<br>
                 </p>
@@ -970,10 +1496,10 @@
             </section>
 
             <!-- #region Debug -->
-            <div class="header__container">
+            <div id="Debug" class="header__container">
                 <h3>Debug</h3>
             </div>
-            <section id="Debug">
+            <section>
                 <p>
                     Podemos printear por consola el estado de una variable con <span class="class">Console</span>.<span
                         class="func">dir(</span><span class="var">variable</span><span class="func">)</span>.
@@ -992,10 +1518,10 @@
             </section>
             <!-- #endregion -->
             <!-- #region Formateo de strings -->
-            <div class="header__container">
+            <div id="strfmt" class="header__container">
                 <h3>Formateo de strings</h3>
             </div>
-            <section id="strfmt">
+            <section>
                 <p>
                     Para eso se utiliza el carácter <strong>`</strong>(en la misma tecla que el <strong>^</strong>)
                     en lugar de las comillas y para referenciar a las variables las pondremos <strong>precedidas de
