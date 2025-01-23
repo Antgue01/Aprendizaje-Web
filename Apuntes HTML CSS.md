@@ -3330,7 +3330,7 @@ Funciona igual que video con los mismos atributos.
 <font color ="#b61187"><u><b></br>
 < form
 <font color ="#dd9b37"> 
-method
+method autocomplete
 </font>>
 </font></u></b>
 <font color ="#a0c2f0">
@@ -3362,6 +3362,18 @@ y **el form** tiene un
 < button>
 </font>
 dentro, cierra el diálogo.
+
+
+<font color ="#dd9b37"> 
+
+autocomplete
+</font>
+puede ser 
+<font color ="#54d398">
+on
+</font>u 
+<font color ="#54d398">
+off.</font>
 
 <font color ="#b61187"><u><b>
 </br>< input

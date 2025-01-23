@@ -1,0 +1,32 @@
+.grid__container {
+    display: grid;
+    margin: auto;
+    grid-template-rows: 50px;
+    grid-template-columns: repeat(4, minmax(min-content, max-content));
+    grid-auto-rows: 50px;
+    /* gap: 20px; */
+}
+
+.grid__container .grid__item {
+    padding: 10px;
+    margin-block: 5px;
+}
+
+.grid__container .grid__item:nth-child(2n) {
+    background-color: #8dbef0;
+}
+
+.grid__container .grid__item:nth-child(2n +1) {
+    background-color: #abcdf3;
+}
+
+#boton__confirmar {
+    background-color: #48e;
+    color: #fff;
+    border: none;
+    padding: 10px;
+}
+
+#boton__confirmar:active {
+  box-shadow: 0px 0px 20px #0004 inset;
+}

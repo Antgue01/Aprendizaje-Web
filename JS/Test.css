@@ -32,6 +32,7 @@ body {
     position: relative;
     margin-inline: auto;
     overflow: hidden;
+    margin-block: 10px;
 }
 .img__container:hover{
     cursor: pointer;

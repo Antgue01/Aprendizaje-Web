@@ -45,6 +45,15 @@
                                 </div>
 
                                 <!--#endregion -->
+                                <!-- #region Vocabulario -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="vc">
+                                        <label class="index__item__label" for="vc"></label>
+                                        <a class="index__lv2" href="#vcblr">Vocabulario</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Vocabulario-->
                                 <!-- #region Variables -->
                                 <div class="index__item__container">
                                     <div class="index__item ">
@@ -64,16 +73,34 @@
                                         <a class="index__lv2" href="#Funciones">Funciones</a>
                                     </div>
                                 </div>
+                                <!-- #region Callbacks -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="cllbcks">
+                                        <label class="index__item__label" for="cllbcks"></label>
+                                        <a class="index__lv3" href="#Callbacks">Callbacks</a>
+                                    </div>
+                                </div>
+                                <!-- #region Async/Await -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="asy">
+                                        <label class="index__item__label" for="asy"></label>
+                                        <a class="index__lv4" href="#Async">Async/Await</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Async/Await-->
+                                <!-- #endregion Callbacks-->
                                 <!-- #endregion -->
-                                 <!-- #region Timers -->
-                                 <div class="index__item__container">
+                                <!-- #region Timers -->
+                                <div class="index__item__container">
                                     <div class="index__item">
                                         <input type="checkbox" hidden id="tmrs">
                                         <label class="index__item__label" for="tmrs"></label>
                                         <a class="index__lv2" href="#Timers">Timers</a>
                                     </div>
-                                 </div>
-                                 <!-- #endregion Timers-->
+                                </div>
+                                <!-- #endregion Timers-->
                                 <!-- #region Eventos -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -147,12 +174,48 @@
                                         </div>
 
                                     </div>
+                                    <!-- #region Number -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="nbr">
+                                            <label class="index__item__label" for="nbr"></label>
+                                            <a class="index__lv4" href="#Number">Number</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Number-->
+                                     <!-- #region Array -->
+                                     <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="arr">
+                                            <label class="index__item__label" for="arr"></label>
+                                            <a class="index__lv4" href="#Array">Array</a>
+                                        </div>
+                                     </div>
+                                     <!-- #endregion Array-->
                                     <!-- #endregion -->
 
 
                                 </div>
 
                                 <!-- #endregion -->
+                                 <!-- #region Peticiones HTTP -->
+                                 <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="ptcion">
+                                        <label class="index__item__label" for="ptcion"></label>
+                                        <a class="index__lv2" href="#peticiones">Peticiones HTTP</a>
+                                    </div>
+                                 </div>
+                                 <!-- #region AJAX -->
+                                 <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="ajx">
+                                        <label class="index__item__label" for="ajx"></label>
+                                        <a class="index__lv3" href="#Ajax">AJAX</a>
+                                    </div>
+                                 </div>
+                                 <!-- #endregion AJAX-->
+                                 <!-- #endregion Peticiones HTTP-->
                                 <!-- #region Trucos -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -178,6 +241,15 @@
                                         <label class="index__item__label" for="wkfl"></label>
                                         <a class="index__lv2" href="#Workflow">Workflow</a>
                                     </div>
+                                    <!-- #region Excepciones -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="excpt">
+                                            <label class="index__item__label" for="excpt"></label>
+                                            <a class="index__lv3" href="#Excepciones">Excepciones</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Excepciones-->
                                     <!-- #region Debug -->
                                     <div class="index__item__container">
                                         <div class="index__item">
@@ -196,7 +268,6 @@
                                         </div>
                                     </div>
                                     <!-- #endregion -->
-                                    <!-- #endregion -->
                                     <!-- #region Random -->
                                     <div class="index__item__container">
                                         <div class="index__item">
@@ -206,7 +277,16 @@
                                         </div>
                                     </div>
                                     <!-- #endregion -->
-
+                                    <!-- #endregion -->
+                                    <!-- #region Preguntas Entrevistas de Trabajo -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="etr">
+                                            <label class="index__item__label" for="etr"></label>
+                                            <a class="index__lv2" href="#Preguntas">Preguntas Entrevistas de Trabajo</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Preguntas Entrevistas de Trabajo-->
                                 </div>
                             </div>
                         </div>
@@ -284,6 +364,18 @@
                             <li class="box__list__item">
                                 Prefiere camelCase en lugar de snake_case
                             </li>
+                            <li id="unhilo" class="box__list__item --can-open">
+                                <label>Un solo hilo
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <!--
+                                          TODO: En JS, al seguir un enlace a vocabulario, que se abra la explicación
+                                        -->
+                                        No permite <strong><a href="#concurrent"> programación concurrente</a>, pero sí <a href="#prsin">asíncrona</a>, </strong>ya que tiene internamente una lista de tareas, y si tiene que esperar a algo, lo adelanta en la lista.
+                                    </div>
+                                </label>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -291,7 +383,7 @@
                 <p>Algunos de los conceptos de programación son los siguientes:</p>
                 <!-- #region Vocabulario -->
                 <div class="box">
-                    <h2 class="box__title">Vocabulario </h2>
+                    <h2 id="vcblr" class="box__title">Vocabulario </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
                             <li class="box__list__item --can-open">
@@ -321,9 +413,48 @@
                                     </div>
                                 </label>
                             </li>
+                            <li class="box__list__item --can-open" id="concurrent">
+                                <label>Programación Concurrente
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Programación con varios <strong>hilos</strong> que se ejecutan <strong>a la vez</strong>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open" id="prsin">
+                                <label>Programación asíncrona
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Programación en la que <strong>se puede esperar por algo</strong>(por ejemplo que un recurso esté disponible). 
+                                        <br><br><strong>NO necesariamente</strong> tiene por qué ser concurrente.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label>Polyfill
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Implementación "a mano" de una función o característica del lenguaje para que se pueda usar en <strong>navegadores antiguos</strong>. Se pueden encontrar en internet.
+                                    </div>
+                                </label>
+                            </li>
                         </ul>
                     </div>
                 </div>
+                <p>
+                    Hay que tener cuidado con el tipado dinámico de JS, pues en un <span class="func">if(</span><span
+                        class="literal"><strong> "string"</strong></span><span class="func">)</span> va a traducir el
+                    string a un valor booleano, que será <span class="val">true </span>siempre que no sea un string
+                    vacío.
+
+                </p>
+                <p>
+                    Sin embargo, <span class="func">if(</span><span class="literal"><strong> "String"</strong></span>
+                    <span class="var">== true</span><span class="func">)</span> va a traducir los dos a <span
+                        class="class">Number</span>, siendo el primero <span class="val">NaN </span>y el segundo 1. Sin
+                    embargo, podemos forzar la conversión a <span class="class">boolean</span> con <strong>!!.</strong>
+                </p>
+
             </section>
             <!-- #endregion -->
             <!-- #region Variables -->
@@ -388,38 +519,113 @@
                     </div>
                 </div>
             </section>
-            <!-- #endregion -->
-             <!-- #region Timers -->
-              <div class="header__container" id="Timers">
-                <h2>Timers</h2>
-              </div>
-              <section>
+            <!-- #region Callbacks y Promesas -->
+            <div class="header__container" id="Callbacks">
+                <h3>Callbacks y Promesas</h3>
+            </div>
+            <section>
                 <p>
-                    Sirven para ejecutar código tras pasar una determinada cantidad de tiempo <strong>en ms.</strong> 
-                    <br>
-                    Es importante saber que <strong>consumen bastantes recursos.</strong>
-                    
+                    Los <strong>callbacks</strong> son <strong>funciones que se llaman dentro de otras
+                        funciones.</strong>
                 </p>
                 <p>
-                    Para establecer un timer, usamos la función <span class="func">setTimeout(</span><span class ="var">función, delay</span><span class="func">)</span>.
+                    Las <strong>promesas</strong> son un objeto que <strong>reciben</strong> por constructor <strong>una
+                        función. </strong>Son <strong><a href="#Async">asíncronas</a></strong> y una de las funciones principales para las
+                    que están pensadas para responder al <strong>recibir algo del servidor.</strong>
                 </p>
                 <p>
-                    También podemos quitarlos con la función <span class="func">clearTimeout(</span><span class ="var">temporizador</span><span class="func">)</span>.
+                    Esta función a su vez <strong>debe tener dos argumentos</strong>, que son un callback
+                    <strong>resolve</strong> y otro <strong>reject</strong>.
 
                 </p>
                 <p>
-                    También podemos poner timers <strong>periódicos</strong>, es decir, que se ejecuten cada x ms con la función <span class="func">setInterval(</span><span class ="var">func, intervalo</span><span class="func">)</span>.
+                    En esta función, llamaremos a <strong>reject</strong> en caso de que queramos devolver un error. Le
+                    podemos pasar un mensaje de error.
+                </p>
+                <p>
+                    Por otra parte, llamaremos a <strong>resolve</strong> cuando la función haya tenido éxito, y podemos
+                    pasarle un argumento con lo que queramos devolver.
                 </p>
                 <div class="box">
-                    <h2 class = "box__title">Tip </h2>
-                    <div class ="box__text__container">
-                        Podemos ejecutar un intervalo <strong>un número determinado de veces</strong> si lo convinamos con un timer normal.
+                    <h2 class="box__title">Tip </h2>
+                    <div class="box__text__container">
+                        Es similar a cuando en <strong>C++ devolvemos 0 </strong> si no hay ningún error <strong>o un
+                            código de error</strong> si hay algo mal en una función, pero <strong>en lugar de
+                            eso</strong> llamamos a los callbacks <strong>resolve</strong> o <strong>reject.</strong>
+                    </div>
+                </div>
+                <p>
+                    Una vez se construye el objeto, la función que le hemos pasado se ejecuta y se guarda el estado de
+                    la misma.
+                </p>
+                <p>
+                    Si queremos hacer algo, ejecutaremos la función <span class="func">then(</span><span
+                        class="var">callback</span><span class="func">)</span>, que <strong>en caso de</strong> haber
+                    habido un <strong>error</strong> levantará una excepción con el parámetro que le pasamos a
+                    <strong>reject</strong> (el cual se puede capturar si le definimos el callback
+                    <strong>catch</strong>), mientras que <strong>si no ha habido errores</strong>, ejecutará el
+                    callback <strong>resolve.</strong>
+                </p>
+            </section>
+            <!-- #region Async / Await -->
+            <div class="header__container" id="Async">
+                <h4>Async / Await</h4>
+            </div>
+            <section>
+                <p>Las funciones asíncronas son aquellas que permiten <strong>esperar</strong> a que se completen operaciones que pueden <strong>tardar</strong>, como una <strong>llamada a servidor</strong>, bloqueando el <a href="#unhilo">"hilo principal"</a>.</p>
+                
+                <p>
+                    La diferencia con simplemente usar <a href="#Callbacks">promesas</a> es que estas actúan nada más llega el recurso, mientras que en una función <strong>asíncrona</strong> tú puedes hacer que <strong>se ejecuten</strong> en <strong>el orden que quieras</strong>, ya que esperarán cuando lo necesites.
+                </p>
+                
+                <p>
+                    Se marcan con <strong><span class="decl">async</span></strong> y dentro de ellas, <strong>cuando queremos esperar</strong> a una de de estas funciones <strong>que tardan</strong>, lo hacemos poniendo delante de la llamada la palabra clave <strong><span class="decl">await</span></strong>, que recoge el <strong>resultado devuelto</strong>, por lo que <strong>si</strong> se ha usado con una <strong>promesa</strong>, recoge lo que <strong>devuelva</strong> el <strong>resolve</strong> o el <strong>reject</strong>.
+
+                </p>
+                <p>Las funciones asíncronas <strong>siempre</strong> que devuelvan algo será  una <a href="#Callbacks">promesa.</a></p>
+            </section>
+
+            <!-- #endregion Async / Await -->
+            <!-- #endregion Callbacks y Promesas -->
+            <!-- #endregion -->
+            <!-- #region Timers -->
+            <div class="header__container" id="Timers">
+                <h2>Timers</h2>
+            </div>
+            <section>
+                <p>
+                    Sirven para ejecutar código tras pasar una determinada cantidad de tiempo <strong>en ms.</strong>
+                    <br>
+                    Es importante saber que <strong>consumen bastantes recursos.</strong>
+
+                </p>
+                <p>
+                    Para establecer un timer, usamos la función <span class="func">setTimeout(</span><span
+                        class="var">función, delay</span><span class="func">)</span>.
+                </p>
+                <p>
+                    También podemos quitarlos con la función <span class="func">clearTimeout(</span><span
+                        class="var">temporizador</span><span class="func">)</span>.
+
+                </p>
+                <p>
+                    También podemos poner timers <strong>periódicos</strong>, es decir, que se ejecuten cada x ms con la
+                    función <span class="func">setInterval(</span><span class="var">func, intervalo</span><span
+                        class="func">)</span>.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Tip </h2>
+                    <div class="box__text__container">
+                        Podemos ejecutar un intervalo <strong>un número determinado de veces</strong> si lo convinamos
+                        con un timer normal.
 
                         <br><br>
-                        Para ello, como cada intervalo es regular, calculamos cuánto tiempo pasaría tras ejecutarlo X veces y ejecutamos un timer con ese tiempo cuya función sea eliminar el intervalo, de esta forma:
+                        Para ello, como cada intervalo es regular, calculamos cuánto tiempo pasaría tras ejecutarlo X
+                        veces y ejecutamos un timer con ese tiempo cuya función sea eliminar el intervalo, de esta
+                        forma:
 
-                     </div>
-                     <div class = "code__box">
+                    </div>
+                    <div class="code__box">
                         <code>
                             <span class="decl">const</span> intervalo = <span class="func">setInterval(</span><span class ="var">()=>document.<span class="func">write(<span class="string">
                                 "hola"</span>)</span>)</span><span class="func">,<span class="literal">2000</span>)</span>;
@@ -428,10 +634,10 @@
                         </code>
                         <button class="code__box__copy material-symbols-outlined">content_copy</button>
 
-                     </div>
+                    </div>
                 </div>
-              </section>
-              <!-- #endregion Timers -->
+            </section>
+            <!-- #endregion Timers -->
             <!-- #region Eventos -->
             <div id="events" class="header__container">
                 <h2>Eventos</h2>
@@ -465,20 +671,22 @@
                                 <label><span class="val">mouseover </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Cuando se hace <strong>hover</strong> sobre el elemento <strong>o uno de sus hijos.</strong>
+                                        Cuando se hace <strong>hover</strong> sobre el elemento <strong>o uno de sus
+                                            hijos.</strong>
                                     </div>
                                 </label>
                             </li>
-                            
+
                             <li class="box__list__item --can-open">
                                 <label><span class="val">mouseout </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Cuando el ratón deja de estar sobre un elemento(se pierde el hover) <strong>o uno de sus hijos.</strong>.
+                                        Cuando el ratón deja de estar sobre un elemento(se pierde el hover) <strong>o
+                                            uno de sus hijos.</strong>.
                                     </div>
                                 </label>
                             </li>
-                           
+
                             <li class="box__list__item --can-open">
                                 <span class="val">mousemove </span>
                             </li>
@@ -493,20 +701,22 @@
                         </ul>
                         <div class="box__separator">Teclado</div>
                         <ul class="box__list">
-                            
+
                             <li class="box__list__item --can-open">
                                 <label><span class="val">keydown </span>
 
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        El <strong>argumento</strong> del evento tendrá una variable <span class="var">key </span>con la tecla pulsada. Lo mismo para el resto de eventos de teclado
+                                        El <strong>argumento</strong> del evento tendrá una variable <span
+                                            class="var">key </span>con la tecla pulsada. Lo mismo para el resto de
+                                        eventos de teclado
                                     </div>
-                                </label>                                    
+                                </label>
                             </li>
                             <li class="box__list__item --can-open">
                                 <span class="val">keypress </span>
                             </li>
-                        
+
                             <li class="box__list__item --can-open">
                                 <label><span class="val">keyup </span>
                                     <input hidden type="checkbox">
@@ -522,7 +732,8 @@
                                 <label><span class="val">error </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        <strong>Error</strong> durante la carga de un <strong>archivo multimedia</strong>.
+                                        <strong>Error</strong> durante la carga de un <strong>archivo
+                                            multimedia</strong>.
                                     </div>
                                 </label>
                             </li>
@@ -531,7 +742,8 @@
                                 <label><span class="val">beforeunload </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Antes de que un <strong>documento</strong> se vaya a descargar (visitamos otra página en la misma pestaña).
+                                        Antes de que un <strong>documento</strong> se vaya a descargar (visitamos otra
+                                        página en la misma pestaña).
                                     </div>
                                 </label>
                             </li>
@@ -539,7 +751,8 @@
                                 <label><span class="val">unload </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Cuando se descarga un <strong>documento</strong> (visitamos otra página en la misma pestaña).
+                                        Cuando se descarga un <strong>documento</strong> (visitamos otra página en la
+                                        misma pestaña).
                                     </div>
                                 </label>
                             </li>
@@ -547,7 +760,8 @@
                                 <label><span class="val">resize </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Cuando cambia el tamaño de vista del <strong>documento</strong> (la página). </span>
+                                        Cuando cambia el tamaño de vista del <strong>documento</strong> (la página).
+                                        </span>
                                     </div>
                                 </label>
                             </li>
@@ -564,7 +778,8 @@
                     </div>
                 </div>
                 <p>
-                    La lista completa se puede encontrar en <a href="https://www.w3schools.com/jsref/obj_events.asp">esta página.</a>
+                    La lista completa se puede encontrar en <a
+                        href="https://www.w3schools.com/jsref/obj_events.asp">esta página.</a>
                 </p>
                 <p>Los eventos también se pueden eliminar con <span class="func">removeEventListener(</span><span
                         class="var">evento, función</span><span class="func">)</span>.
@@ -573,13 +788,18 @@
                     Hay que tener en cuenta que esto solo funciona <strong>si le pasamos el nombre de una
                         función</strong> en lugar de crear una función lambda.</p>
                 <p id="evtFlux">
-                    Hay dos tipos de eventos según orden de ejecución <strong>(flujo de eventos)</strong>: los <strong>burbuja</strong> (que son los que vinen por defecto) y los <strong>captura.</strong>
+                    Hay dos tipos de eventos según orden de ejecución <strong>(flujo de eventos)</strong>: los
+                    <strong>burbuja</strong> (que son los que vinen por defecto) y los <strong>captura.</strong>
                 </p>
                 <p>
-                    Supongamos el evento <span class="val">click. </span>Cuando un contenedor y su hijo tienen ambos el evento, si son <strong>burbuja</strong> se ejecutará <strong>primero el más específico</strong>, es decir, el del hijo, y después los de los padres sucesivamente. 
+                    Supongamos el evento <span class="val">click. </span>Cuando un contenedor y su hijo tienen ambos el
+                    evento, si son <strong>burbuja</strong> se ejecutará <strong>primero el más específico</strong>, es
+                    decir, el del hijo, y después los de los padres sucesivamente.
                 </p>
                 <p>
-                    En cambio, si a uno o varios de los padres le ponemos el argumento <span class="var">flujo </span>a <span class="val">true, </span> serán <strong>captura</strong>, lo y se ejecutarán en <strong>orden inverso</strong> (primero los que sean captura en orden de padres a hijos).
+                    En cambio, si a uno o varios de los padres le ponemos el argumento <span class="var">flujo </span>a
+                    <span class="val">true, </span> serán <strong>captura</strong>, lo y se ejecutarán en <strong>orden
+                        inverso</strong> (primero los que sean captura en orden de padres a hijos).
                 </p>
             </section>
             <!-- #endregion Eventos   -->
@@ -1127,7 +1347,8 @@
                                 <label><span class="var">innerWidth </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Ancho disponible de la ventana, es decir, <strong>descuenta elementos externos</strong> como las herramientas del desarrollador.
+                                        Ancho disponible de la ventana, es decir, <strong>descuenta elementos
+                                            externos</strong> como las herramientas del desarrollador.
                                     </div>
                                 </label>
                             </li>
@@ -1135,7 +1356,8 @@
                                 <label><span class="var">outerWidth </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Ancho total de la ventana, <strong>incluyendo elementos externos</strong> como las herramientas del desarrollador.
+                                        Ancho total de la ventana, <strong>incluyendo elementos externos</strong> como
+                                        las herramientas del desarrollador.
                                     </div>
                                 </label>
                             </li>
@@ -1273,7 +1495,17 @@
                                 <label><span class="func">stopPropagation()</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Detiene el <a href="#evtFlux">flujo de ejecución de eventos</a>, es decir, si un padre o un hijo tiene un evento que aún no se ha ejecutado, no se ejecutará.
+                                        Detiene el <a href="#evtFlux">flujo de ejecución de eventos</a>, es decir, si un
+                                        padre o un hijo tiene un evento que aún no se ha ejecutado, no se ejecutará.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">preventDefault()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <strong>Evita</strong> que se haga una solicitud <strong>get</strong> o
+                                        <strong>post.</strong>
                                     </div>
                                 </label>
                             </li>
@@ -1290,8 +1522,9 @@
             </div>
 
             <section>
+                <!-- #region Number -->
                 <div class="box">
-                    <h2 class="box__title"><span class="class">Number </span> </h2>
+                    <h2 id ="Number" class="box__title"><span class="class">Number </span> </h2>
                     <div class="box__text__container">
                         <ul class="box__list">
                             <li class="box__list__item">
@@ -1301,8 +1534,10 @@
                         </ul>
                     </div>
                 </div>
+                <!-- #endregion Number -->
+                 <!-- #region Array -->
                 <div class="box">
-                    <h2 class="box__title"><span class="class">Array </span></h2>
+                    <h2 id="Array" class="box__title"><span class="class">Array </span></h2>
                     <div class="box__text__container">
                         <ul class="box__list">
                             <li class="box__list__item --can-open">
@@ -1347,12 +1582,63 @@
                         </ul>
                     </div>
                 </div>
-
+                <!-- #endregion Array -->
+                 <!-- #region JSON -->
+                  <div class="box">
+                    <h2 class = "box__title"><span class="class">JSON </span> </h2>
+                    <div class ="box__text__container">
+                        <ul class = "box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">stringify(<span class="var">JSON</span>)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Serializa el JSON.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">parse(</span><span class ="var">JSON</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Deserializa el JSON
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- #endregion JSON -->
             </section>
             <!-- #endregion -->
 
             <!-- #endregion Clases-->
+<!-- #region Peticiones HTTP -->
+ <div id="peticiones" class="header__container">
+    <h2>Peticiones HTTP</h2>
+ </div>
+ <section>
+    <p>
+        Son peticiones que hacemos a <strong>servidores externos</strong> para recibir una <strong>información</strong>.
+    </p>
+    <p>
+        No guardan información, es decir, no dejan rastro (no van a aparecer en el historial de navegación).
+    </p>
+    
+    <p>
+       Utilizamos <strong>JSON</strong> para comunicarnos con el servidor y un JSON SIEMPRE tiene tanto el <strong>nombre</strong> de las variables como el <strong>valor</strong> entre <strong>comillas</strong>, ya que de lo contrario <strong>NO se considera JSON</strong> y el servidor puede <strong>NO interpretar correctamente</strong> el objeto.
+    </p>
+ </section>
+ <!-- #region AJAX -->
+  <div id="Ajax" class="header__container">
+    <h3>AJAX</h3>
+  </div>
+  <section>
+    <p>
 
+    </p>
+  </section>
+ <!-- #endregion AJAX -->
+<!-- #endregion Peticiones HTTP -->
             <!-- #region Trucos -->
             <div id="Trucos" class="header__container">
                 <h2>Trucos</h2>
@@ -1367,6 +1653,38 @@
                         <span class="decl">let</span> text = <span class="string">""</span> + <span class="literal">2</span>
                         + <span class="literal">2</span>;
                     </code>
+                </div>
+                <div class="box">
+                    <h2 class="box__title">Contains </h2>
+                    <div class="box__text__container">
+                        La función <span class="func">indexOf()</span> nos puede servir para saber si el string o array
+                        <strong>contiene un elemento</strong>, pues en caso contrario devuelve <span class="val">-1.
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <div class="box">
+                    <h2 class="box__title" id="op!!">Operador !! </h2>
+                    <div class="box__text__container">
+                        Nos permite convertir una variable o literal a booleano. por ejemplo, mientras que
+                    </div>
+                    <div class="code__box">
+                        <code>
+                            <span class="string">"String"</span> == <span class="literal">true</span>;
+                        </code>
+                    </div>
+                    <div class="box__text__container">
+                        devolverá <span class="val">false </span>, ya que <strong>transformará ambas partes</strong> de
+                        la expresión en número y la izquierda será <span class="val">NaN </span>, el código
+                    </div>
+                    <div class="code__box">
+                        <code>
+                            !!<span class="string">"String"</span> == <span class="literal">true</span>;
+                        </code>
+                    </div>
+                    <div class="box__text__container">devolverá <span class="val">true </span>porque <strong>convertirá
+                            el string en un booleano</strong>, que será <span class="val">true </span>si no está vacía
+                        la cadena.</div>
                 </div>
             </section>
             <div id="editPseudo" class="header__container">
@@ -1493,8 +1811,35 @@
                     Los <strong>objetos, arrays y funciones</strong> se pasan por <strong>referencia</strong>; el resto
                     de tipos, por <strong>valor</strong>.
                 </p>
+                <p>
+                    En cuanto a los <strong>if/else</strong> vs los <strong>switch/case/default</strong>, los primeros
+                    son más rápidos.
+                </p>
             </section>
 
+            <!-- #region Excepciones -->
+            <div id="Excepciones" class="header__container">
+                <h3>Excepciones</h3>
+            </div>
+            <section>
+                <p>
+                    Se manejan con los bloques <strong>try</strong> y <strong>catch (error).</strong>
+                </p>
+                <p>
+                    Con el objeto error se pueden hacer varias cosas, como usar la palabra clave <span
+                        class="decl"><strong> typeof</strong></span> para imprimir el tipo en consola.
+                </p>
+                <p>
+                    Por otra parte, si usamos un bloque <strong><span class="decl">finally</span></strong>, éste se va a
+                    ejecutar sí o sí, haya o no errores, <strong>incluso saltándose el flujo</strong>, es decir, si hay
+                    un return antes, va a ejecutarse igual.
+                </p>
+                <p>
+                    Podemos lanzar errores con la palabra reservada <strong><span class="decl">throw</span></strong>.
+                    Podemos lanzar strings o incluso clases de error que definamos nosotros.
+                </p>
+            </section>
+            <!-- #endregion Excepciones -->
             <!-- #region Debug -->
             <div id="Debug" class="header__container">
                 <h3>Debug</h3>
@@ -1558,6 +1903,34 @@
                 </p>
             </section>
             <!-- #endregion -->
+            <!-- #region Preguntas entrevistas de trabajo -->
+            <div class="header__container" id="Preguntas">
+                <h2>Preguntas de Entrevistas de trabajo</h2>
+            </div>
+            <section>
+                <div class="box">
+                    <h2 class="box__title">¿Qué hace este código? </h2>
+                    <div class="box__text__container">
+                        <div class="code__box">
+                            <code>
+                                console.<span class="func">log(</span><span class ="var">[]==![]</span><span class="func">)</span>;
+                            </code>
+                        </div>
+                        Esto devuelve <span class="val">true </span>, ya que está creando una lista vacía y <strong>está
+                            comprobando si es igual a una lista vacía</strong>.
+                        <br><br>
+                        En caso de que la parte izquierda de la igualdad tuviera algo devolvería por tanto <span
+                            class="val">false </span>, o si se llamara con <span
+                            class="literal"><strong>===</strong></span>
+                        también devolvería false tanto si está vacía como si no.
+                    </div>
+
+                </div>
+                <p>
+                    También pueden preguntar sobre el <a href="#op!!">Operador !!</a>
+                </p>
+            </section>
+            <!-- #endregion Preguntas entrevistas de trabajo -->
         </main>
 
         <!-- #endregion -->

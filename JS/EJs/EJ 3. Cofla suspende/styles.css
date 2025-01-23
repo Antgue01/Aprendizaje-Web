@@ -1,0 +1,18 @@
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    gap: 10px;
+    padding: 20px;
+    background-color: #ddd;
+    outline: 1px solid #0006;
+    border-radius: 10px;
+}
+
+.--error{
+    color: #f00;
+}
+
+.--success{
+    color: #0f0;
+}
