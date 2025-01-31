@@ -24,11 +24,6 @@ while (!label[iterator].nextElementSibling.classList.contains("index__lv2")) {
 label[iterator].parentElement.classList.add("last__index__item");
 
 const copyButtons = document.querySelectorAll(".code__box__copy");
-// for (let i = 0; i < copyButtons.length; i++) {
-//     const button = copyButtons[i];
-//     button.addEventListener("click", () => copy(button));
-
-// }
 
 for (const button of copyButtons) {
     button.addEventListener("click", () => {
@@ -43,6 +38,7 @@ for (const button of copyButtons) {
             {
                 opacity: 1,
             },
+
             {
                 opacity: 0,
                 translate: "0 -10px",
@@ -51,9 +47,24 @@ for (const button of copyButtons) {
             }],
             {
                 duration: 500,
-                easing: "ease-out"
+                easing: "ease-out",
+                
             }
         );
     });
+};
+
+//Get all links starting with "#"
+const links = document.querySelectorAll(`a[href^="#"]`);
+// For every link to a box list item, we open it.  
+for (const link of links) {
+    link.addEventListener("click", () => {
+        const ref = document.getElementById(link.getAttribute("href").substring(1));
+        //The input which is child of the label which is child of the item.
+        if (ref.classList.contains("--can-open") && !ref.children[0].children[0].checked) {
+            ref.children[0].children[0].checked = true;
+        }
+    });
+    
 }
 

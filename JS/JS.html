@@ -331,6 +331,15 @@
                                         </div>
                                     </div>
                                     <!-- #endregion -->
+                                    <!-- #region Animaciones -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="animsindx">
+                                            <label class="index__item__label" for="animsindx"></label>
+                                            <a class="index__lv3" href="#anims">Animaciones</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Animaciones-->
                                     <!-- #region String Format -->
                                     <div class="index__item__container">
                                         <div class="index__item">
@@ -441,9 +450,6 @@
                                 <label>Un solo hilo
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        <!--
-                                          TODO: En JS, al seguir un enlace a vocabulario, que se abra la explicación
-                                        -->
                                         No permite <strong><a href="#concurrent"> programación concurrente</a>, pero sí
                                             <a href="#prsin">asíncrona</a>, </strong>ya que tiene internamente una lista
                                         de tareas, y si tiene que esperar a algo, lo adelanta en la lista.
@@ -1066,6 +1072,11 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 <div class="box">
                     <h2 class="box__title">Métodos de atributos </h2>
                     <div class="box__text__container">
+                        <p>
+                            Hay que tener en cuenta que estos métodos <strong>actúan sobre el HTML</strong>, si lo que
+                            queremos es <strong>actuar sobre el valor javascript</strong> de los atributos, estos
+                            atributos suelen tener un equivalente en Javascript.
+                        </p>
                         <ul class="box__list">
                             <li class="box__list__item"><span class="func">getAttribute(</span><span
                                     class="var">attr</span><span class="func">)</span></li>
@@ -2420,6 +2431,46 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </p>
                 </section>
                 <!-- #endregion -->
+                <!-- #region Animaciones -->
+                <div id="anims" class="header__container">
+                    <h3>Animaciones</h3>
+                </div>
+                <section>
+                    <p>
+                        Podemos animar un elemento con el método <span class="func">animate(</span><span
+                            class="var">keyframes, options</span><span class="func">)</span>.
+                    </p>
+                    <p>
+                        Los <span class="var">keyframes </span>es un array de objetos con la siguiente estructura:
+                    </p>
+                    <div class="code__box">
+                        <code>{
+    propiedadCssSimple: <span class="literal">valor</span>,
+    propiedadCssCompleja: <span class="string">"valor 1 valor 2 valor 3"</span>,
+    offset: <span class="literal">0</span> <span class = "comments">//entre 0 y 1. Posición en la "timeline". Es OPCIONAL</span>
+}</code>
+                        <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
+                    </div>
+                    <p>
+                        Las <span class="var">opciones </span>son un objeto opcional con las siguientes propiedades, todas opcionales:
+
+                    </p>
+                    <div class = "code__box">
+                        <code>{
+    duration: <span class="literal">1</span>, <span class = "comments">//En ms</span>
+    easing: <span class="string">"linear"</span>,
+    iterations: <span class="literal">1</span>, <span class = "comments">//También admite Infinity</span>                            
+    direction: <span class="string">"reverse"</span>
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+<div class="code__box__copy__dialog">
+    ¡Copiado!
+</div>
+                    </div>
+                </section>
+                <!-- #endregion Animaciones -->
                 <!-- #region Formateo de strings -->
                 <div id="strfmt" class="header__container">
                     <h3>Formateo de strings</h3>
@@ -2430,9 +2481,6 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         en lugar de las comillas y para referenciar a las variables las pondremos <strong>precedidas de
                             $ y entre paréntesis</strong>.
                     </p>
-                    <!--
-                      TODO: Que en JS copie el código que nos interese y haga la animación
-                    -->
                     <div class="code__box">
                         <code><span class="decl">let</span> nombre = <span class="string">"Pepe"</span>;
 <span class="decl">let</span> concat = <span class="string">`¡Hola </span>${nombre}<span class="string">!`</span>;</code>

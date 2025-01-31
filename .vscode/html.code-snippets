@@ -92,7 +92,7 @@
     },
     "Code": {
         "prefix": "cd",
-        "body": "<div class = \"code__box\">\n\t<code>\n\t\t${1:Code}\n\t</code>\n</div>$0",
+        "body": "<div class = \"code__box\">\n\t<code>${1:Code}</code>\n</div>$0",
         "scope": "html"
     },
     "copy": {
