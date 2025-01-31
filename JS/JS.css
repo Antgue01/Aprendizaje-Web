@@ -48,6 +48,7 @@ body {
   --str-color: #ddda59;
   --val-color: #e27bc7;
   --code-keyword-color: #f08bc3;
+  --code-comments-color:#c3ff9e;
   /* Index */
   --index-color: #eef775;
   --index-lines-color: #a6a619;
@@ -223,6 +224,10 @@ main {
 
 .literal {
   color: var(--code-literal-color);
+}
+
+.comments{
+  color: var(--code-comments-color);
 }
 
 .key {
@@ -551,7 +556,10 @@ p a:hover,
   flex-direction: column;
   gap: 7px;
 }
-
+/* Listas secundarias */
+.box__list ul li{
+  padding-block: 4px;
+}
 .box__list__item {
   position: relative;
   width: fit-content;
@@ -667,6 +675,7 @@ p a:hover,
   display: flex;
   flex-direction: row;
   width: fit-content;
+  max-width: 90%;
   margin: 0 auto;
   position: relative;
   padding-inline: 15px;
@@ -682,6 +691,13 @@ p a:hover,
   box-shadow: 0 0 4px 0px #000;
   border: 1px solid #dadadae0;
   border-top: none;
+
+  
+}
+
+.code__box code{
+
+  white-space: pre;
 }
 
 .code__box__copy {
@@ -704,6 +720,7 @@ p a:hover,
 
 .code__box__copy__dialog {
   position: absolute;
+  z-index: -1;
   top: -10px;
   right: 0;
   padding: 6px 10px;
@@ -715,9 +732,7 @@ p a:hover,
   cursor: default;
 }
 
-.code__box__copy:active+.code__box__copy__dialog {
-  animation: disappear 0.5s linear;
-}
+
 
 .code__box__copy:active {
   border-bottom: 1px solid #fff;
@@ -727,7 +742,12 @@ p a:hover,
 
 code {
   font-size: 1rem;
+  max-width: 100%;
+  white-space:nowrap;
+  overflow: auto;
+  scrollbar-color: #444 transparent;
 }
+
 
 /* #endregion */
 /* #region grid */
@@ -740,7 +760,7 @@ code {
 /* #endregion */
 /* #region modificadores */
 .--2cols {
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .--center {
@@ -752,6 +772,11 @@ code {
 }
 
 /* #endregion */
+
+/*
+  TODO: Resoluciones estrechas
+*/
+
 @keyframes float {
   0% {
     translate: 0 -10px;
@@ -792,6 +817,7 @@ code {
 
 @keyframes disappear {
   0% {
+    z-index: 1;
     opacity: 1;
     translate: 0 0;
   }

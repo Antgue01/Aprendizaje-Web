@@ -1,0 +1,47 @@
+body {
+    background-color: #111;
+}
+
+.qa {
+    max-width: 700px;
+    width: fit-content;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 30px;
+    margin: 200px auto;
+    display: grid;
+    grid-template: "button button button"
+                  "answer answer answer";
+    gap: 10px;
+    
+    border-radius: 15px;
+}
+
+.aprobado{
+    color: #4bfc51;
+}
+.suspenso{
+    color: #e94747;
+}
+.total{
+    color: #eca63c;
+}
+.qa button {
+    grid-area: "button";
+    padding-block: 10px;
+    padding-inline: 5px;
+    border-radius: 10px;
+    transition: background-color .2s;
+    background-color: #e7915f;
+}
+.qa button:hover{
+    background-color: #e76712;
+    transition: background-color .2s;
+}
+.qa .answer {
+    grid-area: "answer";
+    grid-column-start: span 3;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}

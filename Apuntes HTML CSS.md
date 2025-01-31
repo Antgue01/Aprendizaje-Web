@@ -64,6 +64,12 @@ Certificado que autentica la identidad del sitio web y habilita una conexión ci
 </font>
 Almacena las copias del contenido estratégicamente alrededor de todos los servidores alrededor del mundo del host. Es decir, al hacer una solicitud, el servidor central va a elegir al más rápido según tu ubicación para servirte el contenido. **En resumen, aumenta la velocidad de carga y reduce la latencia.**. También es bueno para la seguridad, pues ayuda a proteger contra ataques DDOS, que consiste en sobrecargar el servidor.
 
+
+<font id="Framework" color = "#fae48b">
+
+**Framework.**
+</font>
+Conjunto de librerías para trabajar en un determinado entorno.
 </font>
 
 ## HTML/CSS
@@ -2150,7 +2156,7 @@ auto-fill.
 </font>
 
 Esto, unido al uso de 
-<font color = "#88a12c">
+<font color = "#88a12c">minmax
 </font>, (que podemos darle un tamaño fijo en píxeles como mínimo y en fr como máximo para que ocupe un mínimo de espacio determinado) hace que según cambia la resolución, va metiendo columnas o filas nuevas cuando van cabiendo.
 minmax
 La diferencia entre ambos es que si tenemos menos elementos que filas y columnas, 
@@ -2161,6 +2167,15 @@ auto-fill
 auto-fill
 </font>
 va a ajustar el tamaño de las filas o columnas que ya haya. 
+
+Un ejemplo sería 
+<font color ="#fae48b"> 
+**repeat(**</font><font color ="#54d398">**auto-fit**
+</font>**,**<font color = "#88a12c">**minmax(<font color ="#fae48b">200px, 1fr</font>)</font>**.
+
+Esto lo que hace es que con <font color ="#fae48b">**repeat(**</font><font color ="#54d398">**auto-fit**
+</font> le decimos que ponga tantas columnas/filas como haga falta para ocupar todo el espacio y con <font color = "#88a12c">**minmax(<font color ="#fae48b">200px, 1fr</font>)</font>** le decimos que cada elemento tiene que tener **mínimo 200px** se ancho/alto y **máximo 1fr**.
+
 <font color = "#fae48b">
 
 **grid-auto-columns / grid-auto-rows.**
@@ -2427,6 +2442,12 @@ código CSS.
 <h1>Workflow</h1>
 
 <font color ="#a0c2f0">
+
+Los scripts que sean **muy importantes** y/o que queramos **que se ejecuten nada más el usuario entre** en la página se ponen en el 
+<font color="#b61187">
+**< head>**
+</font>, ya que de contrario, podría no ejecutarse el script hasta que se cargue la página.
+
 Para <b>crear un menú navegable </b>creamos una lista sin orden y en cada elemento ponemos un enlace a la página que deseemos.
 </br>
 </br>

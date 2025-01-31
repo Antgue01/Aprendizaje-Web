@@ -42,6 +42,12 @@
         "description": "Declaración",
         "scope": "html"
     },
+    "comments":{
+        "prefix": "comment",
+        "body": "<span class = \"comments\">${1:comentario}</span>",
+        "description": "Un comentario",
+        "scope": "html"
+    },
     "Var": {
         "prefix": "var",
         "body": "<span class=\"var\">${1:Variable} </span>",

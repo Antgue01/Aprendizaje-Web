@@ -52,6 +52,12 @@ body {
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr;
+    
+}
+.obj img{
+    grid-column: span 2;
+    margin: auto;
+    max-width: 100%;
 }
 
 .obj button:last-child {
