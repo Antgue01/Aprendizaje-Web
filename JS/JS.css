@@ -596,14 +596,6 @@ p a:hover,
   animation: float-low 2s linear infinite both;
 }
 
-/*
-  TODO: En JS, que se haga una transición del height o max-heihgt leyendo los valores en px, ya que si se pone auto o 100% no se puede hacer transición
-*/
-.box input[type="checkbox"]:checked~.box__explanation {
-  height: auto;
-  color: var(--text-color);
-  transition: height .2s ;
-}
 
 .box__explanation {
   display: block;

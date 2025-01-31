@@ -11,6 +11,43 @@ function copy(btn) {
     navigator.clipboard.writeText(code);
 
 }
+function boxExplanationInteract(label) {
+    //get elements
+    const explanation = label.querySelector(".box__explanation");
+    const checkbox = label.querySelector("input");
+    const dur = 200;
+    
+    //unfold to calc height
+    explanation.style.height = "auto";
+    const calcHeight = explanation.scrollHeight;
+
+    //fold animation
+    if (!checkbox.checked) {
+        explanation.animate([
+            { height: `${calcHeight}px` },
+            { height: 0 },
+        ], {
+            duration: dur,
+            easing: "linear"
+        });
+        //keep folded
+        explanation.style.height = 0;
+    }
+    //unfold animation
+    else {
+
+        explanation.animate([
+            { height: `${calcHeight}px` },
+            { height: 0 },
+        ],
+            {
+                duration: dur,
+                direction: "reverse",
+                easing: "linear"
+
+            });
+    }
+}
 const label = document.querySelectorAll('.index__item__label');
 for (let element of label) {
     element.addEventListener('click', () => hideLevel(element.parentElement));
@@ -48,7 +85,7 @@ for (const button of copyButtons) {
             {
                 duration: 500,
                 easing: "ease-out",
-                
+
             }
         );
     });
@@ -65,6 +102,11 @@ for (const link of links) {
             ref.children[0].children[0].checked = true;
         }
     });
-    
+
 }
 
+//Box explanations
+const boxLabels = document.querySelectorAll(`.box label`);
+for (const label of boxLabels) {
+    label.addEventListener(`click`, () => boxExplanationInteract(label));
+}
