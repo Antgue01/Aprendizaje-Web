@@ -384,6 +384,10 @@ rtl
 </font>
 (right to left).
 
+<font color = "#fae48b">**writing-mode**</font>. Permite poner el texto en vertical o en horizontal.
+
+<font color = "#fae48b">**text-orientation**</font>. En <font color ="#5dffd4">upright</font> pone un carácter por línea combinándolo con <font color = "#fae48b">**writing-mode.**</font>
+
 <font color = "#fae48b"><b>
 
 white-space.

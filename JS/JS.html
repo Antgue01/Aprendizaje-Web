@@ -25,6 +25,9 @@
                         <span class="index__search__icon material-symbols-outlined">
                             search
                         </span>
+                        <!--
+                          TODO: Búsqueda del índice
+                        -->
                         <input type="search" class="index__search-bar">
                     </div>
                     <div class="index__container">
@@ -72,25 +75,27 @@
                                         </label>
                                         <a class="index__lv2" href="#Funciones">Funciones</a>
                                     </div>
-                                </div>
-                                <!-- #region Callbacks -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input type="checkbox" hidden id="cllbcks">
-                                        <label class="index__item__label" for="cllbcks"></label>
-                                        <a class="index__lv3" href="#Callbacks">Callbacks</a>
+
+                                    <!-- #region Callbacks -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="cllbcks">
+                                            <label class="index__item__label" for="cllbcks"></label>
+                                            <a class="index__lv3" href="#Callbacks">Callbacks</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- #region Async/Await -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input type="checkbox" hidden id="asy">
-                                        <label class="index__item__label" for="asy"></label>
-                                        <a class="index__lv4" href="#Async">Async/Await</a>
+                                    <!-- #region Async/Await -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="asy">
+                                            <label class="index__item__label" for="asy"></label>
+                                            <a class="index__lv4" href="#Async">Async/Await</a>
+                                        </div>
                                     </div>
+                                    <!-- #endregion Async/Await-->
+                                    <!-- #endregion Callbacks-->
+
                                 </div>
-                                <!-- #endregion Async/Await-->
-                                <!-- #endregion Callbacks-->
                                 <!-- #endregion -->
                                 <!-- #region Timers -->
                                 <div class="index__item__container">
@@ -131,15 +136,18 @@
                                                 <input hidden type="checkbox" id="dom">
                                                 <label class="index__item__label" for="dom"></label>
                                                 <a class="index__lv4" href="#DOM">DOM</a>
+                                                <div class="index__item__bar"></div>
                                             </div>
                                         </div>
                                         <!-- #endregion -->
+
                                         <!-- #region Window -->
                                         <div class="index__item__container">
                                             <div class="index__item">
                                                 <input type="checkbox" hidden id="wd">
                                                 <label class="index__item__label" for="wd"></label>
                                                 <a class="index__lv4" href="#window">Window</a>
+                                                <div class="index__item__bar"></div>
                                             </div>
                                         </div>
                                         <!-- #endregion -->
@@ -149,6 +157,7 @@
                                                 <input type="checkbox" hidden id="scrEEn">
                                                 <label class="index__item__label" for="scrEEn"></label>
                                                 <a class="index__lv4" href="#screen">Screen</a>
+                                                <div class="index__item__bar"></div>
                                             </div>
                                         </div>
                                         <!-- #endregion Screen-->
@@ -158,6 +167,7 @@
                                                 <input type="checkbox" hidden id="evt">
                                                 <label class="index__item__label" for="evt"></label>
                                                 <a class="index__lv4" href="#Event">Event</a>
+                                                <div class="index__item__bar"></div>
                                             </div>
                                         </div>
                                         <!-- #endregion Event-->
@@ -167,6 +177,7 @@
                                                 <input type="checkbox" hidden id="xmlhttp">
                                                 <label class="index__item__label" for="xmlhttp"></label>
                                                 <a class="index__lv4" href="#XMLHttpRequest">XMLHttpRequest</a>
+                                                <div class="index__item__bar"></div>
                                             </div>
                                         </div>
                                         <!-- #endregion XMLHttpRequest-->
@@ -359,17 +370,17 @@
                                     </div>
                                     <!-- #endregion -->
                                 </div>
+                                <!-- #region Preguntas Entrevistas de Trabajo -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="etr">
+                                        <label class="index__item__label" for="etr"></label>
+                                        <a class="index__lv2" href="#Preguntas">Preguntas Entrevistas de Trabajo</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Preguntas Entrevistas de Trabajo-->
                             </div>
                             <!-- #endregion -->
-                            <!-- #region Preguntas Entrevistas de Trabajo -->
-                            <div class="index__item__container">
-                                <div class="index__item">
-                                    <input type="checkbox" hidden id="etr">
-                                    <label class="index__item__label" for="etr"></label>
-                                    <a class="index__lv2" href="#Preguntas">Preguntas Entrevistas de Trabajo</a>
-                                </div>
-                            </div>
-                            <!-- #endregion Preguntas Entrevistas de Trabajo-->
 
                         </div>
                     </div>
@@ -381,7 +392,7 @@
                         Arrow_forward_ios
                     </span>
                     <span class="index__close__button material-symbols-outlined">
-                        Arrow_back_IOs
+                        Arrow_back_ios
                     </span>
                 </label>
             </nav>
@@ -635,9 +646,14 @@
                 <div class="box">
                     <h2 class="box__title">Tip </h2>
                     <div class="box__text__container">
-                        Es similar a cuando en <strong>C++ devolvemos 0 </strong> si no hay ningún error <strong>o un
-                            código de error</strong> si hay algo mal en una función, pero <strong>en lugar de
-                            eso</strong> llamamos a los callbacks <strong>resolve</strong> o <strong>reject.</strong>
+                        <p>
+
+                            Es similar a cuando en <strong>C++ devolvemos 0 </strong> si no hay ningún error <strong>o
+                                un
+                                código de error</strong> si hay algo mal en una función, pero <strong>en lugar de
+                                eso</strong> llamamos a los callbacks <strong>resolve</strong> o
+                            <strong>reject.</strong>
+                        </p>
                     </div>
                 </div>
                 <p>
@@ -713,13 +729,18 @@
                 <div class="box">
                     <h2 class="box__title">Tip </h2>
                     <div class="box__text__container">
-                        Podemos ejecutar un intervalo <strong>un número determinado de veces</strong> si lo convinamos
-                        con un timer normal.
+                        <p>
 
-                        <br><br>
-                        Para ello, como cada intervalo es regular, calculamos cuánto tiempo pasaría tras ejecutarlo X
-                        veces y ejecutamos un timer con ese tiempo cuya función sea eliminar el intervalo, de esta
-                        forma:
+                            Podemos ejecutar un intervalo <strong>un número determinado de veces</strong> si lo
+                            convinamos
+                            con un timer normal.
+
+                            <br><br>
+                            Para ello, como cada intervalo es regular, calculamos cuánto tiempo pasaría tras ejecutarlo
+                            X
+                            veces y ejecutamos un timer con ese tiempo cuya función sea eliminar el intervalo, de esta
+                            forma:
+                        </p>
 
                     </div>
                     <div class="code__box">
@@ -1144,6 +1165,16 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                     <div class="box__explanation">
                                         Es lo que pondrá en el recuadro al pasar el ratón
                                         encima del elemento.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">scrollHeight </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        valor de <span class="var">height </span>cuando está en <span
+                                            class="val">auto</span>, <span class="val">fit-content</span>, etc, o bien
+                                        tiene <strong>overflow</strong>.
                                     </div>
                                 </label>
                             </li>
@@ -2232,35 +2263,49 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     <div class="box">
                         <h2 class="box__title">Contains </h2>
                         <div class="box__text__container">
-                            La función <span class="func">indexOf()</span> nos puede servir para saber si el string o
-                            array
-                            <strong>contiene un elemento</strong>, pues en caso contrario devuelve <span class="val">-1.
-                            </span>
+                            <p>
+                                La función <span class="func">indexOf()</span> nos puede servir para saber si el string
+                                o
+                                array
+                                <strong>contiene un elemento</strong>, pues en caso contrario devuelve <span
+                                    class="val">-1.
+                                </span>
+                            </p>
                         </div>
                     </div>
                     <br>
                     <div class="box">
                         <h2 class="box__title" id="op!!">Operador ! </h2>
                         <div class="box__text__container">
-                            Nos permite convertir una variable o literal a booleano. por ejemplo, mientras que
+                            <p>
+
+                                Nos permite convertir una variable o literal a booleano. por ejemplo, mientras que
+                            </p>
                         </div>
                         <div class="code__box">
                             <code><span class="string">"String"</span> == <span class="literal">true</span>;</code>
                         </div>
                         <div class="box__text__container">
-                            devolverá <span class="val">false </span>, ya que <strong>transformará ambas partes</strong>
-                            de
-                            la expresión en número y la izquierda será <span class="val">NaN </span>, el código
+                            <p>
+
+                                devolverá <span class="val">false </span>, ya que <strong>transformará ambas
+                                    partes</strong>
+                                de
+                                la expresión en número y la izquierda será <span class="val">NaN </span>, el código
+                            </p>
                         </div>
                         <div class="code__box">
                             <code>!<span class="string">"String"</span> == <span class="literal">true</span>;</code>
                         </div>
-                        <div class="box__text__container">devolverá también <span class="val">false </span>, pero porque
-                            <strong>convertirá
-                                el string en un booleano</strong>, que será <span class="val">true </span>si
-                            <strong>está
-                                vacía</strong>
-                            la cadena.
+                        <div class="box__text__container">
+                            <p>
+                                devolverá también <span class="val">false </span>, pero porque
+                                <strong>convertirá
+                                    el string en un booleano</strong>, que será <span class="val">true </span>si
+                                <strong>está
+                                    vacía</strong>
+                                la cadena.
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -2273,6 +2318,10 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         damos estilo al pseudo-elemento. En <strong>JS</strong>, <strong>añadiremos esa clase</strong> a
                         la lista de clases del elemento que queramos, lo que modificará el pseudo-elemento debido a la
                         cascada. También se puede reemplazar la clase original por la nueva.
+                    </p>
+                    <p>
+                        Esto puede no funcionar porque <strong>una de las clases ya esté editando el
+                            pseudo-elemento</strong>.
                     </p>
                 </section>
                 <!-- #endregion -->
@@ -2314,10 +2363,11 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </p>
                     <div class="box">
                         <h2 class="box__title">For each </h2>
-                        <div class="box__text__container --center --mw500">
-                            Existe otra forma de hacer un foreach, y es que los arrays tienen un método llamado forEach
-                            que
-                            recibe una función como argumento.
+                        <div class="box__text__container">
+                            <p>
+
+                                Existe otra forma de hacer un foreach, y es que los arrays tienen un método llamado forEach que recibe una función como argumento.
+                            </p>
                         </div>
                     </div>
                     <p>
@@ -2374,10 +2424,13 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     <div class="box">
                         <h2 class="box__title">Keys </h2>
                         <div class="box__text__container">
-                            En Javascript, para obtener las <strong>keys</strong> de los objetos, se utiliza el
-                            <strong>método estático</strong> <span class="class">Object.</span> <span
-                                class="func">keys(</span><span class="var">obj</span><span class="func">)</span>, ya que
-                            los objetos en sí no tienen accesibles las keys.
+                           <p>
+
+                               En Javascript, para obtener las <strong>keys</strong> de los objetos, se utiliza el
+                               <strong>método estático</strong> <span class="class">Object.</span> <span
+                                   class="func">keys(</span><span class="var">obj</span><span class="func">)</span>, ya que
+                               los objetos en sí no tienen accesibles las keys.
+                           </p>
                         </div>
                     </div>
                 </section>
@@ -2455,19 +2508,20 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         </div>
                     </div>
                     <p>
-                        Las <span class="var">opciones </span>son un objeto opcional con las siguientes propiedades, todas opcionales:
+                        Las <span class="var">opciones </span>son un objeto opcional con las siguientes propiedades,
+                        todas opcionales:
 
                     </p>
-                    <div class = "code__box">
+                    <div class="code__box">
                         <code>{
     duration: <span class="literal">1</span>, <span class = "comments">//En ms</span>
     easing: <span class="string">"linear"</span>,
     iterations: <span class="literal">1</span>, <span class = "comments">//También admite Infinity</span>                            
     direction: <span class="string">"reverse"</span>
 }</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
-<div class="code__box__copy__dialog">
-    ¡Copiado!
-</div>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
                     </div>
                 </section>
                 <!-- #endregion Animaciones -->
@@ -2517,14 +2571,17 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                             <div class="code__box">
                                 <code>console.<span class="func">log(</span><span class ="var">[]==![]</span><span class="func">)</span>;</code>
                             </div>
-                            Esto devuelve <span class="val">true </span>, ya que está creando una lista vacía y
-                            <strong>está
-                                comprobando si es igual a una lista vacía</strong>.
-                            <br><br>
-                            En caso de que la parte izquierda de la igualdad tuviera algo devolvería por tanto <span
-                                class="val">false </span>, o si se llamara con <span
-                                class="literal"><strong>===</strong></span>
-                            también devolvería false tanto si está vacía como si no.
+                            <p>
+
+                                Esto devuelve <span class="val">true </span>, ya que está creando una lista vacía y
+                                <strong>está
+                                    comprobando si es igual a una lista vacía</strong>.
+                                <br><br>
+                                En caso de que la parte izquierda de la igualdad tuviera algo devolvería por tanto <span
+                                    class="val">false </span>, o si se llamara con <span
+                                    class="literal"><strong>===</strong></span>
+                                también devolvería false tanto si está vacía como si no.
+                            </p>
                         </div>
 
                     </div>

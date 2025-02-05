@@ -1,9 +1,20 @@
+//#region Globals
+const MAX__WIDTH = 1250;
+//#endregion
+//#region Functions
 function hideLevel(itemContainer) {
 
     let i = itemContainer.nextElementSibling;
     while (i != null) {
         i.style.display === 'none' ? i.style.display = 'flex' : i.style.display = 'none';
         i = i.nextElementSibling;
+    }
+
+    //Fix for lv1's after not hiding when clicked
+    const lv1 = itemContainer.children[1].nextElementSibling;
+    if (lv1.classList.contains("index__lv1")) {
+        //if the auxiliar property of display is block, set none and vice versa.
+        itemContainer.style.getPropertyValue("--aux-display") === "block" ? itemContainer.style.setProperty("--aux-display", "none") : itemContainer.style.setProperty("--aux-display", "block");
     }
 }
 function copy(btn) {
@@ -16,7 +27,7 @@ function boxExplanationInteract(label) {
     const explanation = label.querySelector(".box__explanation");
     const checkbox = label.querySelector("input");
     const dur = 200;
-    
+
     //unfold to calc height
     explanation.style.height = "auto";
     const calcHeight = explanation.scrollHeight;
@@ -48,11 +59,31 @@ function boxExplanationInteract(label) {
             });
     }
 }
+function hideIndex(index) {
+    if (window.innerWidth <= MAX__WIDTH)
+        index.checked = true;
+}
+
+function mainMaxWidth(main) {
+    if (window.innerWidth <= MAX__WIDTH)
+        main.style.maxWidth = "none";
+    else
+        main.style.maxWidth = `${screen.width * .5}px`;
+
+}
+//#endregion Functions
+
+//#region Code
+
+//lv 1 after display fix
+document.querySelector(".index__item:has(.index__lv1)").style.setProperty("--aux-display", "block");
+
+//Index hide level events
 const label = document.querySelectorAll('.index__item__label');
 for (let element of label) {
     element.addEventListener('click', () => hideLevel(element.parentElement));
 }
-// Quitamos los after del último nivel.
+//Remove ::after from last level
 let iterator = label.length - 1;
 while (!label[iterator].nextElementSibling.classList.contains("index__lv2")) {
     label[iterator].parentElement.classList.add("last__index__item");
@@ -60,8 +91,8 @@ while (!label[iterator].nextElementSibling.classList.contains("index__lv2")) {
 }
 label[iterator].parentElement.classList.add("last__index__item");
 
+//Code box copy animation
 const copyButtons = document.querySelectorAll(".code__box__copy");
-
 for (const button of copyButtons) {
     button.addEventListener("click", () => {
         copy(button);
@@ -91,10 +122,12 @@ for (const button of copyButtons) {
     });
 };
 
+const indexChecker = document.getElementById("index-close");
 //Get all links starting with "#"
 const links = document.querySelectorAll(`a[href^="#"]`);
 // For every link to a box list item, we open it.  
 for (const link of links) {
+
     link.addEventListener("click", () => {
         const ref = document.getElementById(link.getAttribute("href").substring(1));
         //The input which is child of the label which is child of the item.
@@ -102,11 +135,26 @@ for (const link of links) {
             ref.children[0].children[0].checked = true;
         }
     });
-
+    // Close index when small resolutions
+    if (link.parentElement.classList.contains("index__item")) {
+        link.addEventListener("click", () => hideIndex(indexChecker));
+    }
 }
+
+
 
 //Box explanations
 const boxLabels = document.querySelectorAll(`.box label`);
 for (const label of boxLabels) {
     label.addEventListener(`click`, () => boxExplanationInteract(label));
 }
+
+//Main max-width
+const main = document.querySelector("main");
+window.addEventListener("resize", () => mainMaxWidth(main))
+main.style.maxWidth = `${screen.width * .5}px`;
+
+//media query
+
+//#endregion Code
+

@@ -20,7 +20,7 @@
     },
     "Documentation__index__item": {
         "prefix": "index",
-        "body": "<!-- #region $1 -->\n<div class=\"index__item__container\">\n\t<div class=\"index__item\">\n\t\t<input type=\"checkbox\" hidden id=\"${2:Checkbox__id}\">\n\t\t<label class=\"index__item__label\" for=\"$2\"></label>\n\t\t<a class=\"index__lv${4:2}\" href=\"#${3:section_id}\">${1:Section__name}</a>\n\t</div>\n</div>\n<!-- #endregion $1-->",
+        "body": "<!-- #region $1 -->\n<div class=\"index__item__container\">\n\t<div class=\"index__item\">\n\t\t<input type=\"checkbox\" hidden id=\"${2:Checkbox__id}\">\n\t\t<label class=\"index__item__label\" for=\"$2\"></label>\n\t\t<a class=\"index__lv${4:2}\" href=\"#${3:section_id}\">${1:Section__name}</a>\n\t\t<div class=\"index__item__bar\"></div>\n\t</div>\n</div>\n<!-- #endregion $1-->",
         "description": "Documentation index item",
         "scope": "html"
     },
