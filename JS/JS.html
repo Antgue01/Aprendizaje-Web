@@ -46,43 +46,60 @@
                                     </label>
                                     <a class="index__lv2" href="#Caracteristicas">Características</a>
                                 </div>
+                            </div>
 
-                                <!--#endregion -->
-                                <!-- #region Vocabulario -->
+                            <!--#endregion -->
+                            <!-- #region Vocabulario -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="vc">
+                                    <label class="index__item__label" for="vc"></label>
+                                    <a class="index__lv2" href="#vcblr">Vocabulario</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Vocabulario-->
+                            <!-- #region Variables -->
+                            <div class="index__item__container">
+                                <div class="index__item ">
+                                    <input hidden type="checkbox" name="" id="index__variables">
+                                    <label class="index__item__label " for="index__variables">
+                                    </label>
+                                    <a class="index__lv2" href="#Variables">Variables</a>
+                                </div>
+                            </div>
+                            <!-- #endregion -->
+                            <!-- #region Funciones -->
+                            <div class="index__item__container">
+                                <div class="index__item ">
+                                    <input hidden type="checkbox" name="" id="index__funciones">
+                                    <label class="index__item__label " for="index__funciones">
+                                    </label>
+                                    <a class="index__lv2" href="#Funciones">Funciones</a>
+                                </div>
+                                <!-- #region Spread Operator -->
                                 <div class="index__item__container">
                                     <div class="index__item">
-                                        <input type="checkbox" hidden id="vc">
-                                        <label class="index__item__label" for="vc"></label>
-                                        <a class="index__lv2" href="#vcblr">Vocabulario</a>
+                                        <input type="checkbox" hidden id="sprdindx">
+                                        <label class="index__item__label" for="sprdindx"></label>
+                                        <a class="index__lv3" href="#spreadOperator">Spread Operator</a>
                                     </div>
                                 </div>
-                                <!-- #endregion Vocabulario-->
-                                <!-- #region Variables -->
+                                <!-- #endregion Spread Operator-->
+                                <!-- #region Funciones Lambda -->
                                 <div class="index__item__container">
-                                    <div class="index__item ">
-                                        <input hidden type="checkbox" name="" id="index__variables">
-                                        <label class="index__item__label " for="index__variables">
-                                        </label>
-                                        <a class="index__lv2" href="#Variables">Variables</a>
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="lmbdindx">
+                                        <label class="index__item__label" for="lmbdindx"></label>
+                                        <a class="index__lv3" href="#LambdaFunctions">Funciones Lambda</a>
                                     </div>
                                 </div>
-                                <!-- #endregion -->
-                                <!-- #region Funciones -->
+                                <!-- #endregion Funciones Lambda-->
+                                <!-- #region Callbacks -->
                                 <div class="index__item__container">
-                                    <div class="index__item ">
-                                        <input hidden type="checkbox" name="" id="index__funciones">
-                                        <label class="index__item__label " for="index__funciones">
-                                        </label>
-                                        <a class="index__lv2" href="#Funciones">Funciones</a>
-                                    </div>
-
-                                    <!-- #region Callbacks -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input type="checkbox" hidden id="cllbcks">
-                                            <label class="index__item__label" for="cllbcks"></label>
-                                            <a class="index__lv3" href="#Callbacks">Callbacks</a>
-                                        </div>
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="cllbcks">
+                                        <label class="index__item__label" for="cllbcks"></label>
+                                        <a class="index__lv3" href="#Callbacks">Callbacks</a>
                                     </div>
                                     <!-- #region Async/Await -->
                                     <div class="index__item__container">
@@ -93,294 +110,383 @@
                                         </div>
                                     </div>
                                     <!-- #endregion Async/Await-->
-                                    <!-- #endregion Callbacks-->
 
                                 </div>
-                                <!-- #endregion -->
-                                <!-- #region Timers -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input type="checkbox" hidden id="tmrs">
-                                        <label class="index__item__label" for="tmrs"></label>
-                                        <a class="index__lv2" href="#Timers">Timers</a>
-                                    </div>
-                                </div>
-                                <!-- #endregion Timers-->
-                                <!-- #region Eventos -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input type="checkbox" hidden id="evts">
-                                        <label class="index__item__label" for="evts"></label>
-                                        <a class="index__lv2" href="#events">Eventos</a>
-                                    </div>
-                                </div>
-                                <!-- #endregion Eventos-->
-                                <!-- #region Clases -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input hidden type="checkbox" id="objs">
-                                        <label class="index__item__label" for="objs"></label>
-                                        <a class="index__lv2" href="#Clases">Clases</a>
-                                    </div>
+                                <!-- #endregion Callbacks-->
 
-                                    <!-- #region Objetos -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input hidden type="checkbox" id="objs2">
-                                            <label class="index__item__label" for="objs2"></label>
-                                            <a class="index__lv3" href="#Objetos">Objetos</a>
-                                        </div>
-                                        <!-- #region DOM -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input hidden type="checkbox" id="dom">
-                                                <label class="index__item__label" for="dom"></label>
-                                                <a class="index__lv4" href="#DOM">DOM</a>
-                                                <div class="index__item__bar"></div>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion -->
-
-                                        <!-- #region Window -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="wd">
-                                                <label class="index__item__label" for="wd"></label>
-                                                <a class="index__lv4" href="#window">Window</a>
-                                                <div class="index__item__bar"></div>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion -->
-                                        <!-- #region Screen -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="scrEEn">
-                                                <label class="index__item__label" for="scrEEn"></label>
-                                                <a class="index__lv4" href="#screen">Screen</a>
-                                                <div class="index__item__bar"></div>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion Screen-->
-                                        <!-- #region Event -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="evt">
-                                                <label class="index__item__label" for="evt"></label>
-                                                <a class="index__lv4" href="#Event">Event</a>
-                                                <div class="index__item__bar"></div>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion Event-->
-                                        <!-- #region XMLHttpRequest -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="xmlhttp">
-                                                <label class="index__item__label" for="xmlhttp"></label>
-                                                <a class="index__lv4" href="#XMLHttpRequest">XMLHttpRequest</a>
-                                                <div class="index__item__bar"></div>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion XMLHttpRequest-->
-                                        <!-- #endregion -->
-
-
-                                    </div>
-                                    <!-- #region Interfaces -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input hidden type="checkbox" id="interfaces">
-                                            <label class="index__item__label" for="interfaces"></label>
-                                            <a class="index__lv3" href="#Interfaces">Interfaces</a>
-                                        </div>
-                                        <!-- #region Number -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="nbr">
-                                                <label class="index__item__label" for="nbr"></label>
-                                                <a class="index__lv4" href="#Number">Number</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion Number-->
-                                        <!-- #region Array -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="arr">
-                                                <label class="index__item__label" for="arr"></label>
-                                                <a class="index__lv4" href="#Array">Array</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion Array-->
-                                        <!-- #region JSON -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="jsn">
-                                                <label class="index__item__label" for="jsn"></label>
-                                                <a class="index__lv4" href="#jsonClass">JSON</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion JSON-->
-                                        <!-- #region URL -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="urliindex">
-                                                <label class="index__item__label" for="urliindex"></label>
-                                                <a class="index__lv4" href="#URLS">URL</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion URL-->
-                                        <!-- #region FormData -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="fdtaindex">
-                                                <label class="index__item__label" for="fdtaindex"></label>
-                                                <a class="index__lv4" href="#fdata">FormData</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion FormData-->
-                                        <!-- #region Clipboard -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="clipboardindx">
-                                                <label class="index__item__label" for="clipboardindx"></label>
-                                                <a class="index__lv4" href="#Clipboard">Clipboard</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion Clipboard-->
-                                    </div>
-                                    <!-- #endregion -->
-
-
-                                </div>
-
-                                <!-- #endregion -->
-                                <!-- #region Peticiones HTTP -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input type="checkbox" hidden id="ptdsacion">
-                                        <label class="index__item__label" for="ptdsacion"></label>
-                                        <a class="index__lv2" href="#peticiones">Peticiones HTTP</a>
-                                    </div>
-                                    <!-- #region GET Vs POST -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input type="checkbox" hidden id="gvp">
-                                            <label class="index__item__label" for="gvp"></label>
-                                            <a class="index__lv3" href="#getvspost">GET Vs POST</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion GET Vs POST-->
-                                    <!-- #region AJAX -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input type="checkbox" hidden id="ajx">
-                                            <label class="index__item__label" for="ajx"></label>
-                                            <a class="index__lv3" href="#Ajax">AJAX</a>
-                                        </div>
-                                        <!-- #region Fetch -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="ft">
-                                                <label class="index__item__label" for="ft"></label>
-                                                <a class="index__lv4" href="#Fetch">Fetch</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion Fetch-->
-                                        <!-- #region Axios -->
-                                        <div class="index__item__container">
-                                            <div class="index__item">
-                                                <input type="checkbox" hidden id="axiosindex">
-                                                <label class="index__item__label" for="axiosindex"></label>
-                                                <a class="index__lv4" href="#Axios">Axios</a>
-                                            </div>
-                                        </div>
-                                        <!-- #endregion Axios-->
-                                    </div>
-                                    <!-- #endregion AJAX-->
-
-                                </div>
-                                <!-- #endregion Peticiones HTTP-->
-                                <!-- #region Trucos -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input hidden type="checkbox" id="Tricks">
-                                        <label class="index__item__label" for="Tricks"></label>
-                                        <a class="index__lv2" href="#Trucos">Trucos</a>
-                                    </div>
-                                    <!-- #region Editar pseudoelementos -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input hidden type="checkbox" id="epe">
-                                            <label class="index__item__label" for="epe"></label>
-                                            <a class="index__lv3" href="#editPseudo">Pseudoelementos</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion -->
-                                </div>
-                                <!-- #endregion -->
-                                <!-- #region Workflow -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input hidden type="checkbox" id="wkfl">
-                                        <label class="index__item__label" for="wkfl"></label>
-                                        <a class="index__lv2" href="#Workflow">Workflow</a>
-                                    </div>
-                                    <!-- #region Excepciones -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input type="checkbox" hidden id="excpt">
-                                            <label class="index__item__label" for="excpt"></label>
-                                            <a class="index__lv3" href="#Excepciones">Excepciones</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion Excepciones-->
-                                    <!-- #region Debug -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input hidden type="checkbox" id="Debg">
-                                            <label class="index__item__label" for="Debg"></label>
-                                            <a class="index__lv3" href="#Debug">Debug</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion -->
-                                    <!-- #region Animaciones -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input type="checkbox" hidden id="animsindx">
-                                            <label class="index__item__label" for="animsindx"></label>
-                                            <a class="index__lv3" href="#anims">Animaciones</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion Animaciones-->
-                                    <!-- #region String Format -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input hidden type="checkbox" id="StringFormat">
-                                            <label class="index__item__label" for="StringFormat"></label>
-                                            <a class="index__lv3" href="#strfmt">String Format</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion -->
-                                    <!-- #region Random -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input hidden type="checkbox" id="rnd">
-                                            <label class="index__item__label" for="rnd"></label>
-                                            <a class="index__lv3" href="#Random">Random</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion -->
-                                </div>
-                                <!-- #region Preguntas Entrevistas de Trabajo -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input type="checkbox" hidden id="etr">
-                                        <label class="index__item__label" for="etr"></label>
-                                        <a class="index__lv2" href="#Preguntas">Preguntas Entrevistas de Trabajo</a>
-                                    </div>
-                                </div>
-                                <!-- #endregion Preguntas Entrevistas de Trabajo-->
                             </div>
                             <!-- #endregion -->
+                            <!-- #region Timers -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="tmrs">
+                                    <label class="index__item__label" for="tmrs"></label>
+                                    <a class="index__lv2" href="#Timers">Timers</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Timers-->
+                            <!-- #region Eventos -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="evts">
+                                    <label class="index__item__label" for="evts"></label>
+                                    <a class="index__lv2" href="#events">Eventos</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Eventos-->
+                            <!-- #region Clases -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input hidden type="checkbox" id="objs">
+                                    <label class="index__item__label" for="objs"></label>
+                                    <a class="index__lv2" href="#Clases">Clases</a>
+                                </div>
+
+                                <!-- #region Objetos -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" id="objs2">
+                                        <label class="index__item__label" for="objs2"></label>
+                                        <a class="index__lv3" href="#Objetos">Objetos</a>
+                                    </div>
+                                    <!-- #region DOM -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input hidden type="checkbox" id="dom">
+                                            <label class="index__item__label" for="dom"></label>
+                                            <a class="index__lv4" href="#DOM">DOM</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion -->
+
+                                    <!-- #region Window -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="wd">
+                                            <label class="index__item__label" for="wd"></label>
+                                            <a class="index__lv4" href="#window">Window</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion -->
+                                    <!-- #region Screen -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="scrEEn">
+                                            <label class="index__item__label" for="scrEEn"></label>
+                                            <a class="index__lv4" href="#screen">Screen</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Screen-->
+                                    <!-- #region Event -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="evt">
+                                            <label class="index__item__label" for="evt"></label>
+                                            <a class="index__lv4" href="#Event">Event</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Event-->
+                                    <!-- #region XMLHttpRequest -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="xmlhttp">
+                                            <label class="index__item__label" for="xmlhttp"></label>
+                                            <a class="index__lv4" href="#XMLHttpRequest">XMLHttpRequest</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion XMLHttpRequest-->
+                                    <!-- #region Date -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="dateindx">
+                                            <label class="index__item__label" for="dateindx"></label>
+                                            <a class="index__lv4" href="#Date">Date</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Date-->
+                                    <!-- #region localStorage y sessionStorage -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="strgindx">
+                                            <label class="index__item__label" for="strgindx"></label>
+                                            <a class="index__lv4" href="#Storage">localStorage y sessionStorage</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion localStorage y sessionStorage-->
+                                    <!-- #region Drag & Drop -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="dragindx">
+                                            <label class="index__item__label" for="dragindx"></label>
+                                            <a class="index__lv4" href="#Drag">Drag & Drop</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Drag & Drop-->
+                                    <!-- #region Geolocalization -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="geoindx">
+                                            <label class="index__item__label" for="geoindx"></label>
+                                            <a class="index__lv4" href="#Geoloc">Geolocalization</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Geolocalization-->
+                                    <!-- #region Historial -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="historyindx">
+                                            <label class="index__item__label" for="historyindx"></label>
+                                            <a class="index__lv4" href="#History">Historial</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Historial-->
+                                    <!-- #region fileReader -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="frdrindx">
+                                            <label class="index__item__label" for="frdrindx"></label>
+                                            <a class="index__lv4" href="#FileReader">FileReader</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion fileReader-->
+                                    <!-- #region IndexedDB -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="indbind">
+                                            <label class="index__item__label" for="indbind"></label>
+                                            <a class="index__lv4" href="#IndxDB">IndexedDB</a>
+                                    		<div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion IndexedDB-->
+                                    <!-- #endregion -->
+
+
+                                </div>
+                                <!-- #region Interfaces -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" id="interfaces">
+                                        <label class="index__item__label" for="interfaces"></label>
+                                        <a class="index__lv3" href="#Interfaces">Interfaces</a>
+                                    </div>
+                                    <!-- #region Object -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="objindx">
+                                            <label class="index__item__label" for="objindx"></label>
+                                            <a class="index__lv4" href="#objIntfc">Object</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Object-->
+                                    <!-- #region Number -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="nbr">
+                                            <label class="index__item__label" for="nbr"></label>
+                                            <a class="index__lv4" href="#Number">Number</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Number-->
+                                    <!-- #region Array -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="arr">
+                                            <label class="index__item__label" for="arr"></label>
+                                            <a class="index__lv4" href="#Array">Array</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Array-->
+                                    <!-- #region JSON -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="jsn">
+                                            <label class="index__item__label" for="jsn"></label>
+                                            <a class="index__lv4" href="#jsonClass">JSON</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion JSON-->
+                                    <!-- #region URL -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="urliindex">
+                                            <label class="index__item__label" for="urliindex"></label>
+                                            <a class="index__lv4" href="#URLS">URL</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion URL-->
+                                    <!-- #region FormData -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="fdtaindex">
+                                            <label class="index__item__label" for="fdtaindex"></label>
+                                            <a class="index__lv4" href="#fdata">FormData</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion FormData-->
+                                    <!-- #region Clipboard -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="clipboardindx">
+                                            <label class="index__item__label" for="clipboardindx"></label>
+                                            <a class="index__lv4" href="#Clipboard">Clipboard</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Clipboard-->
+                                </div>
+                                <!-- #endregion -->
+
+
+                            </div>
+
+                            <!-- #endregion -->
+                            <!-- #region Peticiones HTTP -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="ptdsacion">
+                                    <label class="index__item__label" for="ptdsacion"></label>
+                                    <a class="index__lv2" href="#peticiones">Peticiones HTTP</a>
+                                </div>
+                                <!-- #region GET Vs POST -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="gvp">
+                                        <label class="index__item__label" for="gvp"></label>
+                                        <a class="index__lv3" href="#getvspost">GET Vs POST</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion GET Vs POST-->
+                                <!-- #region AJAX -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="ajx">
+                                        <label class="index__item__label" for="ajx"></label>
+                                        <a class="index__lv3" href="#Ajax">AJAX</a>
+                                    </div>
+                                    <!-- #region Fetch -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="ft">
+                                            <label class="index__item__label" for="ft"></label>
+                                            <a class="index__lv4" href="#Fetch">Fetch</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Fetch-->
+                                    <!-- #region Axios -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="axiosindex">
+                                            <label class="index__item__label" for="axiosindex"></label>
+                                            <a class="index__lv4" href="#Axios">Axios</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Axios-->
+                                </div>
+                                <!-- #endregion AJAX-->
+
+                            </div>
+                            <!-- #endregion Peticiones HTTP-->
+                            <!-- #region Trucos -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input hidden type="checkbox" id="Tricks">
+                                    <label class="index__item__label" for="Tricks"></label>
+                                    <a class="index__lv2" href="#Trucos">Trucos</a>
+                                </div>
+                                <!-- #region Editar pseudoelementos -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" id="epe">
+                                        <label class="index__item__label" for="epe"></label>
+                                        <a class="index__lv3" href="#editPseudo">Pseudoelementos</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion -->
+                            </div>
+                            <!-- #endregion -->
+                            <!-- #region Workflow -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input hidden type="checkbox" id="wkfl">
+                                    <label class="index__item__label" for="wkfl"></label>
+                                    <a class="index__lv2" href="#Workflow">Workflow</a>
+                                </div>
+                                <!-- #region Excepciones -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="excpt">
+                                        <label class="index__item__label" for="excpt"></label>
+                                        <a class="index__lv3" href="#Excepciones">Excepciones</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Excepciones-->
+                                <!-- #region Debug -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" id="Debg">
+                                        <label class="index__item__label" for="Debg"></label>
+                                        <a class="index__lv3" href="#Debug">Debug</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion -->
+                                <!-- #region Animaciones -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="animsindx">
+                                        <label class="index__item__label" for="animsindx"></label>
+                                        <a class="index__lv3" href="#anims">Animaciones</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Animaciones-->
+                                <!-- #region String Format -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" id="StringFormat">
+                                        <label class="index__item__label" for="StringFormat"></label>
+                                        <a class="index__lv3" href="#strfmt">String Format</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion -->
+                                <!-- #region Random -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" id="rnd">
+                                        <label class="index__item__label" for="rnd"></label>
+                                        <a class="index__lv3" href="#Random">Random</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion -->
+                            </div>
+                            <!-- #region Videos y DataTransfer -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="vddtindx">
+                                    <label class="index__item__label" for="vddtindx"></label>
+                                    <a class="index__lv3" href="#VideosYDataTransfer">Videos y DataTransfer</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Videos y DataTransfer-->
+                            <!-- #endregion -->
+                            <!-- #region Preguntas Entrevistas de Trabajo -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="etr">
+                                    <label class="index__item__label" for="etr"></label>
+                                    <a class="index__lv2" href="#Preguntas">Preguntas Entrevistas de Trabajo</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Preguntas Entrevistas de Trabajo-->
 
                         </div>
                     </div>
@@ -428,11 +534,16 @@
                             </li>
                             <li class="box__list__item">Case sensitive</li>
                             <li class="box__list__item --can-open">
-                                <label>Basado en prototipos / Instancias / classless
+                                <label>Basado en prototipos / classless
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Los objetos van a estar creados en base a otro objeto creado por el propio
-                                        lenguaje.
+                                        lenguaje en lugar de por instanciación. Esto permite que <strong>las clases en
+                                            sí mismas puedan ser modificadas en tiempo de ejecución</strong>.
+                                        Esto puede hacerse si en el <strong>__proto__</strong> cambiamos el valor de una
+                                        función por otra función (ya que las funciones son objetos también);
+                                        <br><br>Además, los prototipos <strong>existen</strong> por sí mismos <strong>en
+                                            memoria</strong> a diferencia de las clases.
                                     </div>
                                 </label>
                             </li>
@@ -551,6 +662,34 @@
                     embargo, podemos forzar la conversión a <span class="class">boolean</span> con <strong>!!.</strong>
                 </p>
 
+                <p>
+                    Por otra parte, Javascript tiene lo que se llama el <strong>modo estricto</strong>, que cuando
+                    <strong>detecta malas prácticas</strong> en el código (como no declarar una variable con <span
+                        class="decl">let</span>) <strong>lanza excepciones</strong>.
+                </p>
+                <p>
+                    Para activarlo, basta con escribir al principio del archivo .js lo siguiente:
+                </p>
+                <div class="code__box">
+                    <code><span class="string">"use strict"</span>;</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <div class="box">
+                    <h2 class="box__title">This </h2>
+                    <div class="box__text__container">
+                        <p>
+                            El <strong><span class="decl">this</span></strong> depende del contexto. Por ejemplo, en una
+                            función es el objeto que llama a la función.
+                        </p>
+                        <p>
+                            En el <strong>contexto general, <span class="decl">this</span></strong> es el objeto <span
+                                class="var">window </span>.
+                        </p>
+                    </div>
+                </div>
             </section>
             <!-- #endregion -->
             <!-- #region Variables -->
@@ -577,6 +716,18 @@
                 <h2>Funciones</h2>
             </div>
             <section>
+                <p>
+                    Para tener argumentos por defecto, usamos el =. Un ejemplo sería:
+                </p>
+                <div class="code__box">
+                    <code><span class="decl">function </span><span class="func">suma(</span><span class ="var">a </span>= <span class="literal">1</span>, <span class="var">b </span>= <span class="literal">2</span><span class="func">)</span> {
+    console.<span class="func">log(</span><span class ="var">a + b</span><span class="func">)</span>;
+}</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
                 <div class="box">
                     <h2 class="box__title">Funciones Comunes </h2>
                     <div class="box__text__container">
@@ -614,7 +765,111 @@
                         </ul>
                     </div>
                 </div>
+                <p>
+                    Hay un tipo especial de función que son las <strong>cláusulas (o closures)</strong>, que no son más
+                    que <strong>funciones que devuelven otra función</strong>.
+                </p>
+                <p>
+                    Como las funciones que devuelven las cláusulas <strong>pueden usar los argumentos de las
+                        cláusulas</strong>, podemos <strong>almacenar</strong> en variables <strong>las cláusulas con
+                        los argumentos ya dados</strong>, (pues lo que devolverá será la función que usa ese argumento)
+                    y usar esas variables, por ejemplo, como callbacks. Un ejemplo de uso sería el siguiente:
+                </p>
+                <div class="code__box">
+                    <code><span class="decl">function </span><span class="func">cambiarTamano(</span><span class ="var">tamano</span><span class="func">)</span> {
+    <span class="decl">return </span>() => {
+        document.<span class="func">querySelector(</span><span class ="var"><span class="string">".texto"</span></span><span class="func">)</span>.style.fontSize = <span class="string">`</span>${tamano}<span class="string"> px`</span>;
+    }
+}
+
+<span class="decl">let</span> px12 = <span class="func">cambiarTamano(</span><span class ="var">12</span><span class="func">)</span>;
+<span class="decl">let</span> px14 = <span class="func">cambiarTamano(</span><span class ="var">14</span><span class="func">)</span>;
+<span class="decl">let</span> px16 = <span class="func">cambiarTamano(</span><span class ="var">16</span><span class="func">)</span>;
+
+document.<span class="func">querySelector(</span><span class ="var"><span class="string">"boton12px"</span></span><span class="func">)</span>.<span class="func">addEventListener(</span><span class ="var"><span class="string">"click"</span>, px12</span><span class="func">)</span>;
+document.<span class="func">querySelector(</span><span class ="var"><span class="string">"boton14px"</span></span><span class="func">)</span>.<span class="func">addEventListener(</span><span class ="var"><span class="string">"click"</span>, px14</span><span class="func">)</span>;
+document.<span class="func">querySelector(</span><span class ="var"><span class="string">"boton16px"</span></span><span class="func">)</span>.<span class="func">addEventListener(</span><span class ="var"><span class="string">"click"</span>, px16</span><span class="func">)</span>;</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    De esta forma, en lugar de crear una lambda en el EventListener, le pasamos una variable con la
+                    función <strong>que tiene ya los argumentos dados.</strong>
+                </p>
             </section>
+            <!-- #region Spread Operator -->
+            <div class="header__container" id="spreadOperator">
+                <h3>Spread Operator</h3>
+            </div>
+            <section>
+                <p>
+                    Es el operador que nos permite darle tantos argumentos como queramos a la función. En javascript, se
+                    llama <strong>Rest</strong> y se escribe como <strong>último parámetro de la función</strong>. Se
+                    escribe así: <strong>...</strong>, y dentro de la función se trata como un <strong>array</strong>.
+                </p>
+                <p>
+                    Un ejemplo sería:
+                </p>
+                <div class="code__box">
+                    <code><span class="decl">function </span><span class="func">suma(</span><span class ="var">frase, ...nums</span><span class="func">)</span> {
+    <span class="decl">let</span> resultado = <span class="literal">0</span>;
+    <span class="decl">for </span>(<span class="decl">let</span> i = <span class="literal">0</span>; i < nums.length; i++) {
+        resultado += nums[i];     
+    }
+    console.<span class="func">log(</span><span class="string">`</span>${frase} ${resultado}<span class="string">`</span><span class="func">)</span>;
+}
+
+<span class="func">suma(</span><span class="string">"El resultado es "</span>, <span class="literal">12</span>, <span class="literal">25</span>, <span class="literal">62</span>, <span class="literal">98</span><span class="func">)</span>;
+<span class = "comments">//Esto pondrá en consola 197</span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Este operador también sirve para <strong>separar un array en sus componentes</strong>, por ejemplo:
+                </p>
+                <div class="code__box">
+                    <code><span class="decl">let</span> arr = [<span class="literal">1</span>, <span class="literal">2, </span><span class="literal">3</span>];
+console.<span class="func">log(</span><span class ="var">...arr</span><span class="func">)</span>;
+<span class = "comments">//es lo mismo que poner console.log(1, 2, 3);</span></code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Spread Operator -->
+            <!-- #region Funciones Lambda -->
+            <div class="header__container" id="LambdaFunctions">
+                <h3>Funciones Lambda</h3>
+            </div>
+            <section>
+                <p>
+                    La sintaxis es la siguiente:
+                </p>
+                <div class="code__box">
+                    <code>(<span class="decl">parametros</span>) => {
+<span class = "comments">//code;</span>
+}</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Si no se usan bloques de código (una sola línea) y dentro lo que hay es una expresión,
+                    <strong>devuelve la expresión</strong> aunque no haya return.
+                </p>
+                <p>
+                    El <strong><span class="decl">this</span></strong> de las funciones lambda <strong>NO</strong> es el
+                    <strong>objeto que las llama</strong>, sino el objeto <strong>que llama a ese objeto.</strong>
+                </p>
+            </section>
+            <!-- #endregion Funciones Lambda -->
+
             <!-- #region Callbacks y Promesas -->
             <div class="header__container" id="Callbacks">
                 <h3>Callbacks y Promesas</h3>
@@ -934,11 +1189,14 @@
 <span class="key">class</span> nombre <span class="key">extends</span> padre{
     <span class="key">constructor</span>(<span class="decl">parametros</span>){
         super(<span class="decl">parametros</span>);
-        code;
+        <span class = "comments">//code;</span>
         }
     
+    <span class="key">this</span>.#privateVar = valor;
     <span class="key">this</span>.var1 = valor;
-    <span class="key">function</span> nombreFuncion(){code;}
+    <span class="func">nombreFuncion()</span>{code;}
+    <span class = "comments">//Podemos crear funciones o campos privados con #</span>
+    <span class="func">#privateFunction()</span>{code;}
     <span class="key">get</span> getAlgo(){code;}
     <span class="key">set</span> setAlgo(<span class="decl">parametros</span>){code;}
     }
@@ -948,6 +1206,9 @@
                     Como podemos ver, dentro de las clases, las <strong>propiedades</strong> van precedidas siempre de
                     <span class="var">
                         this</span>, y las propias clases se instancian con la palabra clave <strong>new.</strong>
+                </p>
+                <p>
+                    Además, los campos y funciones privados, van precedidos de <strong>#</strong>.
                 </p>
                 <p>
                     Por otra parte, conviene declarar los objetos con <strong>const</strong> en lugar de
@@ -981,6 +1242,10 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 <p>
                     No pasa lo mismo con <strong>variables normales</strong>, que <strong>si no están
                         definidas</strong>, sí que levantarán una <strong>excepción.</strong>
+                </p>
+                <p>
+                    Podemos usar la palabra clave <span class="decl"><strong>delete</strong></span> para eliminar
+                    <strong>propiedades</strong> de objetos.
                 </p>
             </section>
             <!-- #region DOM -->
@@ -1293,6 +1558,17 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     <strong>tercera</strong> devuelve el texto con las <strong>etiquetas HTML y sus
                         alrededores</strong>.
                 </p>
+                <div class="box">
+                    <h2 class="box__title">Aclaración importante </h2>
+                    <div class="box__text__container">
+                        <p>
+
+                            Si <strong>modificamos</strong> el <span class="var">innerHTML </span> o el <span
+                                class="var">outerHTML </span>, <strong>eliminamos</strong> los eventos que tuvieran esos
+                            elementos.
+                        </p>
+                    </div>
+                </div>
                 <p>
                     La forma de <strong>crear elementos</strong> es la siguiente:
                 </p>
@@ -1628,12 +1904,16 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                     </div>
                                 </label>
                             </li>
-                            <li class="box__list__item --can-open">
+                            <li id="preventdefault" class="box__list__item --can-open">
                                 <label><span class="func">preventDefault()</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        <strong>Evita</strong> que se haga una solicitud <strong>get</strong> o
+                                        Sobre <strong>inputs de formulario, </strong><strong>evita</strong> que se haga
+                                        una solicitud <strong>get</strong> o
                                         <strong>post.</strong>
+                                        <br><br>
+                                        Sobre <strong>objetos drag & drop</strong>, <strong>permite</strong> que se
+                                        pueda <strong>soltar</strong> sobre una zona.
                                     </div>
                                 </label>
                             </li>
@@ -1771,6 +2051,443 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 </p>
             </section>
             <!-- #endregion XMLHttpRequest -->
+            <!-- #region Date -->
+            <div class="header__container" id="Date">
+                <h4>Date</h4>
+            </div>
+            <section>
+                <p>
+                    <span class="class">Date </span>es un objeto para manejar fechas y horas. Necesitamos <strong>llamar
+                        al constructor y guardarlo en una variable</strong> para usarlo:
+                </p>
+                <div class="code__box">
+                    <code><span class="decl">const </span>date = <span class="decl">new </span><span class="func">Date()</span>;</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Este constructor devuelve la fecha y hora actuales <strong>en milisegundos.</strong>
+                </p>
+                <p>Los meses empiezan en 0 y terminan en 11.</p>
+                <div class="box">
+                    <h2 class="box__title">Métodos y funciones </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">constructor(</span><span class="var"> [año, mes, día]
+                                    </span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Si no se le pasa alguno de los argumentos, que son opcionales, utiliza los de la
+                                        fecha actual.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">getFullYear()</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">getMonth()</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">getDate()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Da el día del mes.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">getDay()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Da el día de la semana. <strong>Empieza en domingo.</strong>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">valueOf()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Da el tiempo en milisegundos desde 1970 (Tiempo Unix).
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Estáticos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <span class="func">now()</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Date -->
+            <!-- #region localStorage y sessionStorage -->
+            <div id="Storage" class="header__container">
+                <h4>LocalStorage y SessionStorage</h4>
+            </div>
+            <section>
+                <p>
+                    Sirven para <strong>almacenar información</strong> en forma de pares <strong>clave-valor</strong>,
+                    la cual se puede ver desde las <strong>herramientas del desarrollador</strong> en el apartado
+                    <strong>Application -> Storage</strong>. La diferencia es que <span class="class">SessionStorage
+                    </span>almacena en la sesión, es decir, la información <strong>desaparece al cerrar la
+                        ventana.</strong>
+                </p>
+                <p>
+                    Ambos son accesibles a través de las variables globales <span class="var">localStorage </span>y
+                    <span class="var">sessionStorage</span>, respectivamente.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Métodos y Funciones </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">setItem(</span><span class="var">key, value</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Almacena un item.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">getItem(</span><span class="var">key</span><span
+                                    class="func">)</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">removeItem(</span><span class="var">key</span><span
+                                    class="func">)</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">clear()</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+            <!-- #endregion localStorage y sessionStorage -->
+            <!-- #region Drag & Drop -->
+            <div id="Drag" class="header__container">
+                <h4>Drag & Drop</h4>
+            </div>
+            <section>
+                <p>
+                    El Drag & Drop funciona en base a eventos. La idea es que la <strong>zona </strong> sobre la que se
+                    suelta el objeto <strong>pregunte</strong> sus propiedades <strong>al objeto</strong> en su evento
+                    <span class="val">drop </span>.
+                </p>
+                <p>
+                    Por defecto, <strong>ninguna zona permite drop</strong>,pero si usamos el método <a
+                        href="#preventdefault">preventDefault</a> del objeto evento en el <span class="val">dragover
+                    </span> de la <strong>zona</strong>, sí permitimos que se pueda soltar en la zona.
+                </p>
+                <p>
+                    El <strong>objeto evento</strong> de los eventos mencionados debajo tiene una propiedad llamada
+                    <span class="var">dataTransfer</span>, que es a la que hay que <strong>verter la
+                        información</strong> en los eventos del <strong>objeto</strong> y de la que hay que
+                    <strong>tomarla</strong> en los de la <strong> zona</strong>.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Eventos </h2>
+                    <div class="box__text__container">
+                        <div class="box__separator">
+                            Del objeto que arrastramos
+                        </div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <span class="val">dragstart </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="val">drag </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="val">dragend </span>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Del objeto sobre el que soltamos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <span class="val">dragenter </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">dragover </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El objeto que estamos arrastrando se está moviendo por la zona.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">dragleave </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El objeto ha dejado la zona pero no se ha soltado.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="val">drop </span>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Métodos dataTransfer</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label> <span class="func">setData(</span><span class="var">type, value</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El <span class="var">tipo </span>es para identificar el recurso. Lo ideal es
+                                        nombrarlo como los tipos de recursos web, por ejemplo, si
+                                        es texto, tomará el valor <span class="val">"text-plain" </span>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <span class="func">getData(</span><span class="var">type</span><span
+                                        class="func">)</span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Te da toda la información del <span class="var">tipo </span> que le pediste.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Campos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <span class="var">files </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Drag & Drop -->
+            <!-- #region Geolocalization -->
+            <div id="Geoloc" class="header__container">
+                <h4>Geolocalization</h4>
+            </div>
+            <section>
+                <p>
+                    Para usarlo, se accede a la variable <span class="var">navigator.geolocation </span>.
+                </p>
+                <p>
+                    Algunos métodos interesantes pueden ser:
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Métodos interesanets </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">getCurrentPosition(</span><span class="var">callback, error,
+                                        options</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Recibe un <span class="var">callback,</span> el cual puede recibir un argumento
+                                        donde se van a almacenar los datos de posición.
+                                        <br><br><span class="var">error </span>es otro callback en el que tenemos que
+                                        manejar los errores. También recibe un argumento.
+                                        <br><br>Las <span class="var">opciones </span>son un objeto, y pueden ser:
+                                        <ul>
+                                            <li>
+                                                <span class="var">maximumAge:</span> El tiempo máximo que permanecerá la
+                                                info en caché. Si le damos <span class="val">0</span>, nos dará la
+                                                ubicación en <strong>tiempo real</strong>, ya que no usará la caché.
+                                            </li>
+                                            <li><span class="var">timeout: </span>El tiempo que queremos que tarde en
+                                                darnos la ubicación.</li>
+                                            <li>
+                                                <span class="var">enableHighAccuracy</span>.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">watchPosition(</span><span class="var">func</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Ejecuta la <span class="var">función </span>cada vez que detecta que nos hemos
+                                        movido.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">clearWatchPosition()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Deja de ejecutar la función de <span class="func">watchPosition()</span>.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Geolocalization -->
+            <!-- #region Historial -->
+            <div id="History" class="header__container">
+                <h4>Historial</h4>
+            </div>
+            <section>
+                <p>
+                    Para usar esta API, usamos la variable <span class="var">history</span>. Esta variable se refiere al
+                    historial de la propia pestaña.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Métodos </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">back()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Vuelve a la página anterior.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">forward()</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">go(</span><span class="var">offset</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Va a la página que está a una distancia de <span class="var">offset </span>en el
+                                        historial. Si es <strong>negativo,</strong> va hacia <strong>atrás</strong>, y
+                                        si es <strong>positivo</strong>, hacia <strong>adelante</strong>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">pushState(</span><span class="var">data, unused,
+                                        url</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        En la barra de la URL, <strong>añade al dominio</strong> lo que tengamos en
+                                        <span class="var">url, </span>de forma que añade un elemento al historial y
+                                        cuando se llame al método <span class="func">go()</span> se irá a la página
+                                        habiéndole cambiado el estado con los <span class="var">datos</span>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">replaceState(</span><span class="var">data, unused,
+                                        url</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Lo mismo que el anterior pero <strong>NO añade una nueva entrada</strong> al
+                                        historial.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Eventos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">popstate </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cada vez que se cambia de estado. El callback recibe un argumento con el estado
+                                        nuevo.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Historial -->
+            <!-- #region fileReader -->
+            <div id="FileReader" class="header__container">
+                <h4>
+                    FileReader
+                </h4>
+            </div>
+            <section>
+                <p>
+                    Para usarlo, hay que crear un nuevo objeto de tipo <span class="class">FileReader</span>. Se trabaja
+                    con <strong>eventos</strong>.
+                </p>
+                <p>
+                    En un input de tipo file, tendríamos que suscribir el evento <span class="val">change</span>, y el
+                    callback tendrá una variable <span class="var">target.files</span>, que es donde está cada archivo.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Funciones y Eventos </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">readAsText(</span><span class="var">file</span><span
+                                        class="func">)</span></span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Lee un archivo, pero para procesarlo usamos los eventos.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">readAsDataURL(</span><span class="var">file</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Es para leer otro tipo de archivos, como <strong>imágenes, videos, etc.</strong>
+                                        Cuando lo procesemos en su evento, el <span class="var">result </span>tendrá una
+                                        <strong>URL</strong> con el contenido del archivo.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Eventos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label> <span class="val">load </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando se ha leido un archivo. El callback recibe un argumento, que tiene el
+                                        contenido del archivo en la variable <span class="var">target.result</span>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="val">loadstart </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="val">loadend </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">progress </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cada vez que hace progreso en la carga. Si queremos hacer <strong>una barra de carga</strong> actualizarla aquí. 
+                                        <br><br>
+                                        El objeto del evento tendrá una propiedad <span class="var">loaded </span> que es <strong>cuántos bytes ha cargado</strong>. Para saber el peso total, el archivo tiene una variable <span class="var">size</span>.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion fileReader -->
+             <!-- #region IndexedDB -->
+              <div id="IndxDB" class="header__container">
+                <h4>IndexedDB</h4>
+              </div>
+              <section>
+                <p>
+                    Es una base de datos No SQL, por tanto, usa pares de clave-valor. Además, es <strong>asíncrona</strong>, por lo que <strong>no hay que recargar la página</strong> para ver los cambios. Por otra parte, <strong>trabaja con eventos del DOM</strong>.
+                </p>
+              </section>
+             <!-- #endregion IndexedDB -->
             <!-- #endregion Objetos-->
 
             <!-- #region Interfaces  -->
@@ -1778,7 +2495,37 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 <h3>Interfaces</h3>
             </div>
 
-            <section>
+            <section class="box__container">
+                <div id="objIntfc" class="box">
+                    <h2 class="box__title"><span class="class">Object </span></h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">defineProperty(</span><span class="var">obj, prop,
+                                        descriptor</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Define la propiedad <span class="var">property </span>al objeto <span
+                                            class="var">obj </span> y usa el <span class="var">descriptor </span> , que
+                                        es un objeto que debe tener la propiedad <strong>value</strong> y puede tener la
+                                        propiedad <strong>writeable</strong>, que es un booleano que dice si se puede
+                                        modificar.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">preventExtensions(</span><span class="var">obj</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Hace que no puedas añadir más propiedades al objeto <span
+                                            class="var">obj</span>.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <!-- #region Number -->
                 <div class="box">
                     <h2 id="Number" class="box__title"><span class="class">Number </span> </h2>
@@ -2321,8 +3068,27 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </p>
                     <p>
                         Esto puede no funcionar porque <strong>una de las clases ya esté editando el
-                            pseudo-elemento</strong>.
+                            pseudo-elemento</strong>. En este caso, lo que se puede hacer es crear una variable dentro
+                        la regla de ese elemento , por ejemplo:
                     </p>
+                    <div class="code__box">
+                        <code>elem::after{
+    color : <span class="func">var(</span><span class ="var">--aux-color, #fff</span><span class="func">)</span>
+}
+                        </code>
+                    </div>
+                    <p>
+                        Y después en javascript, seleccionar el elemento <strong>(normal, sin el pseudo elemento)
+                        </strong>y en su objeto <span class="var">style </span>usar la función <span
+                            class="func">setProperty()</span>. Por ejemplo:
+                    </p>
+                    <div class="code__box">
+                        <code>document.<span class="func">querySelector(</span><span class ="var"><span class="string">"elem"</span></span><span class="func">)</span>.<span class="var">style.</span><span class="func">setProperty(</span><span class ="var"><span class="string">"--aux-color"</span>,<span class="string">"#f0f"</span></span><span class="func">)</span>;</code>
+                        <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
+                    </div>
                 </section>
                 <!-- #endregion -->
                 <!-- #region Workflow -->
@@ -2366,7 +3132,8 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         <div class="box__text__container">
                             <p>
 
-                                Existe otra forma de hacer un foreach, y es que los arrays tienen un método llamado forEach que recibe una función como argumento.
+                                Existe otra forma de hacer un foreach, y es que los arrays tienen un método llamado
+                                forEach que recibe una función como argumento.
                             </p>
                         </div>
                     </div>
@@ -2396,17 +3163,7 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         </span>y se ponen los argumentos sin especificar el tipo.
                         Estas se pueden incluso <strong>guardar en variables.</strong>
                         <br>
-                        También hay <strong>lambda functions</strong>, que se escriben así:
                     </p>
-                    <div class="code__box">
-                        <code>(<span class="decl">parametros</span>) => {
-    <span class = "comments">//code;</span>
-}</code>
-                        <button class="code__box__copy material-symbols-outlined">content_copy</button>
-                        <div class="code__box__copy__dialog">
-                            ¡Copiado!
-                        </div>
-                    </div>
                     <p>
                         Si sólo tienen una línea de código, además de ejecutarse, se retorna la función que se haya
                         ejecutado.
@@ -2418,19 +3175,19 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </p>
                     <p>
                         En cuanto a los <strong>if/else</strong> vs los <strong>switch/case/default</strong>, los
-                        primeros
-                        son más rápidos.
+                        primeros son más rápidos, pero el más rápido es el <strong>operador ternario</strong>.
                     </p>
                     <div class="box">
                         <h2 class="box__title">Keys </h2>
                         <div class="box__text__container">
-                           <p>
+                            <p>
 
-                               En Javascript, para obtener las <strong>keys</strong> de los objetos, se utiliza el
-                               <strong>método estático</strong> <span class="class">Object.</span> <span
-                                   class="func">keys(</span><span class="var">obj</span><span class="func">)</span>, ya que
-                               los objetos en sí no tienen accesibles las keys.
-                           </p>
+                                En Javascript, para obtener las <strong>keys</strong> de los objetos, se utiliza el
+                                <strong>método estático</strong> <span class="class">Object.</span> <span
+                                    class="func">keys(</span><span class="var">obj</span><span class="func">)</span>, ya
+                                que
+                                los objetos en sí no tienen accesibles las keys.
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -2545,7 +3302,6 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </div>
                 </section>
                 <!-- #endregion -->
-                <!-- #endregion -->
                 <!-- #region Random -->
                 <div class="header__container">
                     <h3 id="Random">Random</h3>
@@ -2559,6 +3315,32 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         <strong>min</strong>.
                     </p>
                 </section>
+                <!-- #endregion -->
+                <!-- #region Videos Y DataTransfer -->
+                <div id="VideosYDataTransfer" class="header__container">
+                    <h3>Videos y DataTransfer</h3>
+                </div>
+                <section>
+                    <p>
+                        Cuando leamos con <a href="#FileReader">FileReader</a>, debemos usar <span class="func">readAsArrayBuffer()</span> y en el evento <span class="val">load</span> crearemos un nuevo <span class="class">Blob</span>, que necesita un <strong>array de </strong><span class="class">Uint8Array </span> y las opciones, que le digan el tipo. Después se creará una <strong>URL</strong> y se creará un elemento video.
+                    </p>
+                    <div class = "code__box">
+                        <code><span class="decl">const</span> reader = <span class="decl">new</span> <span class="class">FileReader()</span>;
+reader.<span class="func">readAsArrayBuffer(</span><span class ="var">file</span><span class="func">)</span>;
+reader.<span class="func">addEventListener(</span><span class ="var"><span class="string">"load"</span>, e => </span>{
+    <span class="decl">let</span> video = <span class="decl">new</span> <span class="class">Blob</span>([<span class="decl">new</span> <span class="class">Uint8Array</span>(e.currentTarget.result)], { type: <span class="string">"video/*"</span> });
+    <span class="decl">let</span> url = <span class="class">URL.</span><span class="func">createObjectURL(</span><span class ="var">video</span><span class="func">)</span>;
+    <span class="decl">let</span> videoEl = document.<span class="func">createElement(</span><span class ="var"><span class="string">"VIDEO"</span></span><span class="func">)</span>;
+    videoEl.<span class="func">setAttribute(</span><span class ="var"><span class="string">"src"</span>, url</span><span class="func">)</span>;
+    document.<span class="func">appendChild(</span><span class ="var">videoEl</span><span class="func">)</span>;
+    videoEl.<span class="func">play()</span>;
+}<span class="func">)</span>;  </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+<div class="code__box__copy__dialog">
+    ¡Copiado!
+</div>
+                    </div>
+                </section>
+                <!-- #endregion Videos y DataTransfer -->
                 <!-- #endregion -->
                 <!-- #region Preguntas entrevistas de trabajo -->
                 <div class="header__container" id="Preguntas">
@@ -2596,6 +3378,15 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </p>
                     <div class="code__box">
                         <code><span class="func">alert</span>(<span class="var">window.XMLHttpRequest</span>);</code>
+                    </div>
+                    <div class="box">
+                        <h2 class="box__title">¿Qué heredan todos los objetos?</h2>
+                        <div class="box__text__container">
+                            <p>El <strong>prototipo Object</strong> y, si es un tipo básico de javascript, el
+                                <strong>prototipo de ese tipo</strong>, por ejemplo Number para los números, Array,
+                                String, etc.
+                            </p>
+                        </div>
                     </div>
                 </section>
                 <!-- #endregion Preguntas entrevistas de trabajo -->

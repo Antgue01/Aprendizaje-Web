@@ -23,6 +23,7 @@ body {
   --font: "Lato";
   /* Sizes */
   --max-sidebar-width: clamp(10dvw, 40dvw, 70dvw);
+  --max-box-width: 80%;
   /* Index */
   --index-lv2-width: 40px;
   --index-lv3-width: 40px;
@@ -387,8 +388,9 @@ p a:hover,
   left: calc(var(--index-drop-down-width) * 0.5 - var(--index-after-width) * 0.5);
 
 }
-.index__item:has(.index__lv1)::after{
-  display: var(--aux-display,block);
+
+.index__item:has(.index__lv1)::after {
+  display: var(--aux-display, block);
 }
 
 .index__item:has(.index__lv3) .index__item__label {
@@ -459,8 +461,9 @@ p a:hover,
   font-weight: 900;
   width: 100%;
   color: var(--index-text-color);
+  padding: 5px;
+  padding-left: 0;
   border-radius: 6px;
-  padding-right: 10 px;
 }
 
 .index__item a:hover {
@@ -479,7 +482,7 @@ p a:hover,
   border-left: 1px solid color-mix(in srgb, var(--index-lines-color) 70%, #fff 30%);
 }
 
-.index label:last-child{
+.index label:last-child {
   background-color: var(--index-color);
 }
 
@@ -542,6 +545,10 @@ p a:hover,
 
 /* #endregion */
 /* #region box */
+.box__container .box {
+  width: var(--max-box-width);
+}
+
 .box {
   position: relative;
   border-radius: 30px;
@@ -549,7 +556,7 @@ p a:hover,
       rgba(from var(--box--bg-color) r g b / 0.7),
       rgba(from var(--box--bg-color) r g b / 0.9) 60%),
     url(../imgs/code.png);
-  max-width: 80%;
+  max-width: var(--max-box-width);
   width: auto;
   box-shadow: 0 0 5px #0002, 0 0 10px 2px #0001;
   margin: 0 auto;
@@ -861,7 +868,9 @@ code {
   .main-wrapper {
     flex-direction: column-reverse;
   }
-
+  main{
+    max-width: 50dvw;
+  }
   aside {
     position: fixed;
     bottom: 0;
@@ -877,7 +886,7 @@ code {
     min-width: 0;
     min-height: 200px;
     max-width: initial;
-    
+
   }
 
   /* #region Open/Close */
@@ -942,8 +951,8 @@ code {
   }
 
   .index__item {
-    text-orientation:sideways;
-    writing-mode:sideways-rl;
+    text-orientation: sideways;
+    writing-mode: sideways-rl;
     /* text-orientation: upright; */
     /* letter-spacing: -4px; */
     height: initial;
@@ -954,15 +963,19 @@ code {
   .index__item a {
     width: initial;
     height: 100%;
+    padding-top: 0;
+    padding-left: 5px;
+
   }
 
-  .index__item:has(.index__lv1){
+  .index__item:has(.index__lv1) {
     width: auto;
     display: flex;
   }
+
   .index__item:has(.index__lv1) .index__item__label {
     background-color: var(--index-lines-color);
-    height:20px;
+    height: 20px;
     width: var(--index-after-width);
     padding-right: 0;
     margin: 0 auto;
@@ -1017,16 +1030,22 @@ code {
     bottom: initial;
     left: 50%;
   }
-  main section > p{
+
+  main section>p {
     max-width: 85dvw;
     margin-inline: 15dvw;
     margin-block: 15px;
   }
 
-  .box{
+  .box {
     max-width: 85dvw;
     margin-inline: 15dvw;
   }
+
+  .box__container .box {
+    margin-inline: auto;
+  }
+
 
   /* #endregion */
 

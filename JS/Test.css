@@ -34,27 +34,32 @@ body {
     overflow: hidden;
     margin-block: 10px;
 }
-.img__container:hover{
+
+.img__container:hover {
     cursor: pointer;
 }
+
 .img__container img {
     object-fit: cover;
     width: 100%;
     transition: scale .2s, filter .2s;
     user-select: none;
 }
-.img__container img:active{
+
+.img__container img:active {
     scale: 1.2;
-    filter:contrast(2.2);
+    filter: contrast(2.2);
     transition: scale .2s, filter .2s;
 }
+
 .obj {
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr;
-    
+
 }
-.obj img{
+
+.obj img {
     grid-column: span 2;
     margin: auto;
     max-width: 100%;
@@ -62,4 +67,80 @@ body {
 
 .obj button:last-child {
     grid-column: span 2;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: #00f;
+    padding: 30px;
+    display: inline-block;
+
+}
+
+.drag-zone {
+    padding: 60px;
+    background-color: #ddd;
+    border: 3px dashed #aaa;
+    width: 300px;
+    margin: 0px auto;
+    font-size: 30px;
+    color: #222;
+    box-sizing: border-box;
+
+}
+
+.texturizer {
+    margin: 20px auto;
+    max-width: 80dvw;
+    width: 80%;
+    --size: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.samples__bar {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    gap: 10px;
+}
+
+.samples__imgs {
+    flex-grow: 1;
+    gap: 5px;
+    overflow-x: auto;
+    padding: 0 0;
+    margin: 0 0;
+    display: flex;
+    justify-content: center; 
+
+}
+
+.samples__bar label:has(input[type="file"])  {
+    flex-grow: auto;
+    background-color: #d6d6d6;
+    width: auto;
+    padding-inline: 2px;
+    align-content: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.samples__bar img {
+    width: var(--size);
+    height: var(--size);
+    padding: 5px; 
+}
+
+.texturizer .drag-zone {
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: 60px;
+    -webkit-text-stroke: #da1919 2px;
+    font-family: lato;
+    padding-inline: initial;
+    width: 100%;
 }

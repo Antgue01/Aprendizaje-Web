@@ -1,7 +1,7 @@
 {
     "Documentation__box": {
         "prefix": "box",
-        "body": "<div class=\"box\">\n\t<h2 class = \"box__title\">${1:Title} <\/h2>\n\t<div class =\"box__text__container\">\n\t\t<ul class = \"box__list\">\n\t\t\tli.box__list__item*${2:1}\n\t\t</ul>\n\t </div>\n</div>",
+        "body": "<div class=\"box\">\n\t<h2 class = \"box__title\">${1:Title} <\/h2>\n\t<div class =\"box__text__container\">\n\t\t<ul class = \"box__list\">\n\t\t\t${0}\n\t\t</ul>\n\t </div>\n</div>",
         "description": "Documentation box with title and list",
         "scope": "html"
     },
@@ -20,7 +20,7 @@
     },
     "Documentation__index__item": {
         "prefix": "index",
-        "body": "<!-- #region $1 -->\n<div class=\"index__item__container\">\n\t<div class=\"index__item\">\n\t\t<input type=\"checkbox\" hidden id=\"${2:Checkbox__id}\">\n\t\t<label class=\"index__item__label\" for=\"$2\"></label>\n\t\t<a class=\"index__lv${4:2}\" href=\"#${3:section_id}\">${1:Section__name}</a>\n\t\t<div class=\"index__item__bar\"></div>\n\t</div>\n</div>\n<!-- #endregion $1-->",
+        "body": "<!-- #region $1 -->\n<div class=\"index__item__container\">\n\t<div class=\"index__item\">\n\t\t<input type=\"checkbox\" hidden id=\"${2:Checkbox__id}\">\n\t\t<label class=\"index__item__label\" for=\"$2\"></label>\n\t\t<a class=\"index__lv${4:2}\" href=\"#${3:section_id}\">${1:Section__name}</a>\n${5:\t\t<div class=\"index__item__bar\"></div>\n\t}</div>\n</div>\n<!-- #endregion $1-->",
         "description": "Documentation index item",
         "scope": "html"
     },
@@ -68,7 +68,7 @@
     },
     "let": {
         "prefix": "let",
-        "body": "<span class=\"decl\">\n\tlet\n</span>",
+        "body": "<span class=\"decl\">let</span>",
         "description": "variable",
         "scope": "html"
     },

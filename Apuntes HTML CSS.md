@@ -1815,7 +1815,7 @@ Igual que el anterior pero <b>sin</b>
 longitud o separación.
 </font>
 </font>
-
+</font>
 <h2>Flexbox</h2>
 
 <font color ="#a0c2f0">
@@ -3411,46 +3411,28 @@ type value list required name placeholder value minlength maxlength
 Recoge el input del usuario en función del tipo, que puede ser texto, fechas, números, etc.</br>
 <font color ="#dd9b37"> 
 value</font> es el texto por defecto. En un botón por ejemplo es el texto del botón. 
-</br> Los tipos más comunes son:
-<ul>
-<li>
-<font color ="#54d398">
-text.
+
+
+Los tipos más comunes son:
+
+- <font color ="#54d398">text.
 </font>
-</li>
-<li>
-<font color ="#54d398">
-email.
+- <font color ="#54d398">email.
 </font>
 Los inputs de tipo submit no lo van a aceptar hasta que no tenga el formato correcto.
-</li>
-<li>
-<font color ="#54d398">
-password.
+- <font color ="#54d398">password.
 </font>
 Oculta con puntos lo que escriba el usuario.
-</li>
-<li>
-<font color ="#54d398">
-checkbox.
+- <font color ="#54d398">checkbox.
 </font>
 Un bool.
-</li>
-<li>
-<font color ="#54d398">
-radio.
+- <font color ="#54d398">radio.
 </font>
 Un círculo para seleccionar una opción.
-</li>
-<li>
-<font color ="#54d398">
-file.
+- <font color ="#54d398">file.
 </font>
-Archivo de disco.
-</li>
-<li>
-<font color ="#54d398">
-date.
+Archivo de disco. Podemos añadirle el atributo <font color ="#dd9b37"> **multiple**</font> para permitir seleccionar varios archivos.
+- <font color ="#54d398">date.
 </font>
 Una fecha de calentario.
 </li>
@@ -3961,6 +3943,8 @@ le dice al tag que pertenece a una clase de CSS.
 id
 </b></font> 
 identifica a la propiedad de cara a <b>Javascript</b> o <b>enlaces</b>.
+
+<font color ="#dd9b37">**draggable**</font> si es <font color ="#5dffd4"> true </font> permite arrastrar el elemento y **crea la sombra del elemento que sigue al ratón.**
 
 <font color ="#dd9b37"><b>
 loading

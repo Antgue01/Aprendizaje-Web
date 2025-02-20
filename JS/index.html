@@ -31,8 +31,8 @@
     <button id="resize">Cambia el tamaño</button>
     <button id="mouseup">Mouse up</button>
     <input type="text" placeholder="Mira la consola" id="keys">
-    <div class="img__container">
-        <img id = "img" src="https://wallpapercave.com/wp/wp4662734.jpg" alt="">
+    <div draggable="false" class="img__container">
+        <img draggable="false" id = "img" src="https://wallpapercave.com/wp/wp4662734.jpg" alt="">
     </div>
     <button id="preg">!!"asf" == true</button>
     <button id="async">Probar Async / Await</button>
@@ -50,6 +50,25 @@
     <button id="apipost">Hacer POST a un API.</button>
     <button id="apirnd">Pedir persona random a un API.</button>
     <button id="blob">Petición blob</button>
+    <br><br>
+    <button  translate="no" id="cumple">Tiempo desde mi cumpleaños</button>
+    <br><br>
+    <div draggable="true" class="circle"></div>
+    <div class="drag-zone"> Arrastra el círculo aquí</div>
+    <div class="texturizer">
+        <div class="samples__bar" >
+            <div id="samples" class="samples__imgs" draggable="false">
+                <img  src="imgs/tex1.jpg" alt="agua" id="texture1">
+                <img src="imgs/tex2.jpg" alt="madera" id="texture2">
+                <img src="imgs/tex3.jpg" alt="hojas" id="texture3">
+            </div>
+            <label>
+                +
+                <input hidden type="file"  accept="image/*" id="texturizerAdd" multiple>
+            </label>
+        </div>
+        <div translate="no" id="Texturizer" class="drag-zone">Texturízame</div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="Test.js"></script>   
 </body>

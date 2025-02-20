@@ -1,3 +1,4 @@
+"use strict";
 //#region Globals
 const MAX__WIDTH = 1250;
 //#endregion
@@ -131,8 +132,9 @@ for (const link of links) {
     link.addEventListener("click", () => {
         const ref = document.getElementById(link.getAttribute("href").substring(1));
         //The input which is child of the label which is child of the item.
-        if (ref.classList.contains("--can-open") && !ref.children[0].children[0].checked) {
-            ref.children[0].children[0].checked = true;
+        const checkbox = ref.querySelector("input[type=checkbox]");
+        if (ref.classList.contains("--can-open") && !checkbox.checked) {
+            checkbox.click();
         }
     });
     // Close index when small resolutions
@@ -151,10 +153,7 @@ for (const label of boxLabels) {
 
 //Main max-width
 const main = document.querySelector("main");
+mainMaxWidth(main);
 window.addEventListener("resize", () => mainMaxWidth(main))
-main.style.maxWidth = `${screen.width * .5}px`;
-
-//media query
-
 //#endregion Code
 
