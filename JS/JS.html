@@ -266,7 +266,7 @@
                                             <input type="checkbox" hidden id="indbind">
                                             <label class="index__item__label" for="indbind"></label>
                                             <a class="index__lv4" href="#IndxDB">IndexedDB</a>
-                                    		<div class="index__item__bar"></div>
+                                            <div class="index__item__bar"></div>
                                         </div>
                                     </div>
                                     <!-- #endregion IndexedDB-->
@@ -2467,9 +2467,12 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                 <label><span class="val">progress </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Cada vez que hace progreso en la carga. Si queremos hacer <strong>una barra de carga</strong> actualizarla aquí. 
+                                        Cada vez que hace progreso en la carga. Si queremos hacer <strong>una barra de
+                                            carga</strong> actualizarla aquí.
                                         <br><br>
-                                        El objeto del evento tendrá una propiedad <span class="var">loaded </span> que es <strong>cuántos bytes ha cargado</strong>. Para saber el peso total, el archivo tiene una variable <span class="var">size</span>.
+                                        El objeto del evento tendrá una propiedad <span class="var">loaded </span> que
+                                        es <strong>cuántos bytes ha cargado</strong>. Para saber el peso total, el
+                                        archivo tiene una variable <span class="var">size</span>.
                                     </div>
                                 </label>
                             </li>
@@ -2478,16 +2481,217 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 </div>
             </section>
             <!-- #endregion fileReader -->
-             <!-- #region IndexedDB -->
-              <div id="IndxDB" class="header__container">
+            <!-- #region IndexedDB -->
+            <div id="IndxDB" class="header__container">
                 <h4>IndexedDB</h4>
-              </div>
-              <section>
+            </div>
+            <section>
                 <p>
-                    Es una base de datos No SQL, por tanto, usa pares de clave-valor. Además, es <strong>asíncrona</strong>, por lo que <strong>no hay que recargar la página</strong> para ver los cambios. Por otra parte, <strong>trabaja con eventos del DOM</strong>.
+                    Es una base de datos No SQL, por tanto, usa pares de clave-valor. Además, es
+                    <strong>asíncrona</strong>, por lo que <strong>no hay que recargar la página</strong> para ver los
+                    cambios. Por otra parte, <strong>trabaja con eventos del DOM</strong>. Los datos se ven en las
+                    <strong>herramientas del desarrollador -> Application -> En la barra lateral menú Storage.</strong>
                 </p>
-              </section>
-             <!-- #endregion IndexedDB -->
+                <p>Se usa directamente desde la variable <span class="var">indexedDB</span>(o <span
+                        class="var">window.indexedDB</span>). Entonces creamos una base de datos con el método <span
+                        class="func">open()</span> y agregamos el contenido de la tabla en el evento <a
+                        href="#updateneeded">updateneeded</a>. La información se crea como <strong>Object
+                        stores</strong>, que es una arquitectura para almacenar los datos en forma de objeto usando
+                    <strong>transacciones</strong>, que es una forma de representar operaciones sobre la base de datos.
+                </p>
+                <p>
+                    En el evento mencionado antes,<strong>creamos un ObjectStore</strong>, después <strong>creamos una
+                        transacción</strong> para el ObjectStore y se lo pedimos a la transacción, ya que <strong>todas
+                        las operaciones se harán a través del ObjectStore de la transacción</strong>.
+                </p>
+                <p>
+                    Para <strong>leer</strong>, necesitamos crear un cursor en el ObjectStore que queramos consultar y
+                    en su evento <a href="#bdcrscss">success</a> consultamos el <span
+                        class="var">cursor.result.value</span>.
+                </p>
+                <p id="dbk">
+                    Una vez está poblada la base de datos, si la consultamos en las <strong>herramientas del
+                        desarrollador</strong>, veremos tres valores, <strong>#</strong> es el <strong>índice</strong>,
+                    que se comporta igual que en los arrays (Si eliminamos alguno los de delante se decrementan), la
+                    <strong>key</strong>, que se comporta según el método <a href="#createobjectstore">Create Object
+                        Store</a>, y el <strong>valor</strong>, que es la información.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Métodos </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li id="idbopen" class="box__list__item --can-open">
+                                <label><span class="func">open(</span><span class="var">nombre, version</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Si la base de datos con el <span class="var">nombre </span>especificado no
+                                        existe, la crea. En caso contrario, la abre. <strong>Devuelve una solicitud de
+                                            la base de datos.</strong>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Métodos de la base de datos</div>
+                        <ul class="box__list">
+                            <li id="createobjectstore" class="box__list__item --can-open">
+                                <label><span class="func">createObjectStore(</span><span class="var">nombre,
+                                        key</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Crea un object store con el <span class="var">nombre </span>seleccionado. La
+                                        <span class="var">key </span> es un objeto de configuración para la <a
+                                            href="#dbk">key</a> de la
+                                        base de datos. Entre las opciones
+                                        que podemos darle están:
+                                        <ul>
+                                            <li><strong>autoIncrement.</strong> <span class="val">true </span>si
+                                                queremos que en cada entrada, su valor sea 1 más que en la anterior.
+                                                <br><br>Si borramos una entrada, <strong>la siguiente key</strong>
+                                                también será 1 más que la última key, es decir, <strong>se incrementa
+                                                    aunque borremos datos</strong>.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">transaction(</span><span class="var">ObjcetStore,
+                                        mode</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Crea y devuelve un objeto que reperesenta una operación sobre el <span
+                                            class="var">ObjcetStore </span>seleccionado.
+                                        <br><br>
+                                        El <span class="var">mode </span>puede ser:
+                                        <ul>
+                                            <li>
+                                                <span class="val">readwrite </span>
+                                            </li>
+                                            <li><span class="val">readonly </span></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Métodos de la transacción</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">ObjcetStore(</span><span class="var">nombre</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Devuelve el objectStore con el <span class="var">nombre </span>dado. Sirve para
+                                        confirmar que está trabajando sobre el mismo ObjectStore dado.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Métodos del ObjectStore</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <span class="func">add(</span><span class="var">object</span><span class="func">)</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">put(</span><span class ="var">object, key</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Actualiza la <span class="var">key </span>con el <span class="var">objeto </span> dado.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">delete()</span>
+                            </li>
+                            <li id="bdopcrs" class="box__list__item --can-open">
+                                <label><span class="func">openCursor()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Crea una petición de creación de cursor al principio del ObjectStore para leer.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Métodos del cursor</div>
+                        <p>Este cursor es el almacenado en <a href="#bdresult">result</a>. </p>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">continue()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Lee el siguiente dato del ObjectStore.
+                                        <br><br> Si se ejecuta en el evento <span class="val">success</span>, se va a ejecutar <strong>recursivamente</strong>, ya que al leer con éxito se va a ejecutar el evento otra vez.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Variables de la solicitud</div>
+                        <ul class="box__list">
+                            <li id="bdresult" class="box__list__item --can-open">
+                                <label><span class="var">result </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        En el caso de un <a href="#idbopen">open</a>, contiene la base de datos.
+                                        <br><br>En el caso de un  <a href="#bdopcrs">OpenCursor()</a>, contiene el cursor.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Eventos del cursor</div>
+                        <ul class="box__list">
+                            <li id="bdcrscss" class="box__list__item --can-open">
+                                <label> <span class="val">success </span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Accedemos a la información a través del <span class="var">result.value </span> de la variable en la que almacenamos el cursor.
+                                        <br><br>Si queremos <strong>seguir leyendo</strong>, usamos <span class="var">result.value.</span><span class="func">continue()</span>.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Eventos de la solicitud</div>
+                        <ul class="box__list">
+                            <li id="updateneeded" class="box__list__item --can-open">
+                                <label><span class="val">updateneeded </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        La base de datos no existe. <strong>Aquí se agrega la información a la
+                                            tabla.</strong>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <span class="val">success </span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Al crear la base de datos si no ha habido errores.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <span class="val">error </span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Al crear la base de datos si ha habido algún error.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">complete </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cuando se completa una operación sobre la base de datos.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion IndexedDB -->
             <!-- #endregion Objetos-->
 
             <!-- #region Interfaces  -->
@@ -3322,9 +3526,13 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 </div>
                 <section>
                     <p>
-                        Cuando leamos con <a href="#FileReader">FileReader</a>, debemos usar <span class="func">readAsArrayBuffer()</span> y en el evento <span class="val">load</span> crearemos un nuevo <span class="class">Blob</span>, que necesita un <strong>array de </strong><span class="class">Uint8Array </span> y las opciones, que le digan el tipo. Después se creará una <strong>URL</strong> y se creará un elemento video.
+                        Cuando leamos con <a href="#FileReader">FileReader</a>, debemos usar <span
+                            class="func">readAsArrayBuffer()</span> y en el evento <span class="val">load</span>
+                        crearemos un nuevo <span class="class">Blob</span>, que necesita un <strong>array de
+                        </strong><span class="class">Uint8Array </span> y las opciones, que le digan el tipo. Después se
+                        creará una <strong>URL</strong> y se creará un elemento video.
                     </p>
-                    <div class = "code__box">
+                    <div class="code__box">
                         <code><span class="decl">const</span> reader = <span class="decl">new</span> <span class="class">FileReader()</span>;
 reader.<span class="func">readAsArrayBuffer(</span><span class ="var">file</span><span class="func">)</span>;
 reader.<span class="func">addEventListener(</span><span class ="var"><span class="string">"load"</span>, e => </span>{
@@ -3335,9 +3543,9 @@ reader.<span class="func">addEventListener(</span><span class ="var"><span class
     document.<span class="func">appendChild(</span><span class ="var">videoEl</span><span class="func">)</span>;
     videoEl.<span class="func">play()</span>;
 }<span class="func">)</span>;  </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
-<div class="code__box__copy__dialog">
-    ¡Copiado!
-</div>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
                     </div>
                 </section>
                 <!-- #endregion Videos y DataTransfer -->

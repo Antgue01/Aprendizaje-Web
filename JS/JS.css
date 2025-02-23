@@ -11,7 +11,9 @@ p {
 span {
   display: inline;
 }
-
+/*
+  TODO: Que la imagen de fondo esté en escala de grises y se le aplique el color de la página
+*/
 body {
   background: linear-gradient(rgba(from var(--bg-color) r g b / 0.8),
       hsl(from var(--bg-color) h calc(s * 0.5) 20 /0.8)),
