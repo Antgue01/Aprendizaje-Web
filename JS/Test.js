@@ -251,8 +251,9 @@ function tiempoCumple() {
 
 }
 
-function readImages(images, texturizer) {
-
+function bdAddData(bd, so, object) {
+    const transaction = bd.transaction(so, "readwrite");
+    transaction.objectStore(so).add(object);
 }
 
 const asAlert = (text, timeout) => {
@@ -281,6 +282,7 @@ const asyncFuncNoAwait = async () => {
     setTimeout(() => alert("Hago el inter, espero 1s hasta que me llegue el 2 y lo escribo y espero otro 1s (lo que me queda hasta los 2s que tenía puestos) y me llega el 2 y lo escribo, por lo que no soy bloqueante"), 2001);
 
 }
+
 //#endregion Functions
 
 //#region Buttons
@@ -346,4 +348,45 @@ const texturizer = new Texturizer();
 //Texturizer add images button
 const addImgsButton = document.getElementById("texturizerAdd");
 addImgsButton.addEventListener("change", e => texturizer.addImages(e.currentTarget.files));
+
+//IndexDB
+
+const nombresDBReq = indexedDB.open("nombres", 1);
+nombresDBReq.addEventListener("upgradeneeded", () => {
+    //Create table
+    const nombresOS = nombresDBReq.result.createObjectStore("nombres", { autoIncrement: true });
+});
+
+const nombresContainer = document.querySelector(".nombres__container");
+const newName = (name) => {
+    return `<div class="nombres__nombre__container">
+            <h2 class="nombre__nombre">${name}</h2>
+            <div class="nombre__options">
+                <button class="posible">Guardar</button>
+                <button class="delete">Eliminar</button>
+            </div>
+        </div>`;
+}
+//Add all keys to UI
+nombresDBReq.addEventListener("success", () => {
+    const transaction = nombresDBReq.result.transaction("nombres", "readonly");
+    const oS = transaction.objectStore("nombres");
+    const keysRequest = oS.getAllKeys();
+    keysRequest.addEventListener("success", () => {
+        for (const key of keysRequest.result) {
+            const keyReq = oS.get(key);
+            keyReq.addEventListener("success", () => {
+                nombresContainer.innerHTML += newName(keyReq.result.name)})
+        }
+    })
+})
+//Add button
+const addNombre = document.getElementById("addnombres-name");
+document.getElementById("add-nombres-add").addEventListener("click", () => {
+    if (addNombre.value !== "") {
+        bdAddData(nombresDBReq.result, "nombres", { "name": addNombre.value });
+        nombresContainer.innerHTML += newName(addNombre.value);
+    }
+});
+
 //#endregion Buttons

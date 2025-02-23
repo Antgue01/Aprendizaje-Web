@@ -2495,7 +2495,7 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 <p>Se usa directamente desde la variable <span class="var">indexedDB</span>(o <span
                         class="var">window.indexedDB</span>). Entonces creamos una base de datos con el método <span
                         class="func">open()</span> y agregamos el contenido de la tabla en el evento <a
-                        href="#updateneeded">updateneeded</a>. La información se crea como <strong>Object
+                        href="#upgradeneeded">upgradeneeded</a>. La información se crea como <strong>Object
                         stores</strong>, que es una arquitectura para almacenar los datos en forma de objeto usando
                     <strong>transacciones</strong>, que es una forma de representar operaciones sobre la base de datos.
                 </p>
@@ -2652,8 +2652,8 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         </ul>
                         <div class="box__separator">Eventos de la solicitud</div>
                         <ul class="box__list">
-                            <li id="updateneeded" class="box__list__item --can-open">
-                                <label><span class="val">updateneeded </span>
+                            <li id="upgradeneeded" class="box__list__item --can-open">
+                                <label><span class="val">upgradeneeded </span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         La base de datos no existe. <strong>Aquí se agrega la información a la
