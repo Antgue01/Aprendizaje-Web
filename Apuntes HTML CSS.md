@@ -4,11 +4,16 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 </font>
 <h1>Recursos</h1>
 
-<h2>Extensiones interesantes VSCode</h2>
+<h2>Extensiones VSCode</h2>
 
 <font color ="#b61187"><u><b>Image Preview</u></b></font></br>
 <font color ="#b61187"><u><b>Live server</u></b></font>
 <font color ="#a0c2f0"> Permite ver tu página web en tiempo real. En la parte de abajo de vsCode (al lado de las líneas) pone un botón Go Live, que abre la página.</font>
+
+## Extensiones Web
+<font color ="#b61187"><u><b>Whatruns</u></b></font>.<font color ="#a0c2f0">
+Te dice las librerías que utiliza una página.</font>
+
 
 <h2>Webs</h2>
 
@@ -22,6 +27,9 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 
 [Paletas de colores](https://color.adobe.com/es/create/color-wheel)
 
+[Awwwards](https://www.awwwards.com/). Tiene páginas con buen diseño de las que se pueden obtener referencias.
+
+[Pexels](https://www.pexels.com/es-es/). Banco de imágenes.
 <h1>Diccionario</h1>
 
 ## General
@@ -4066,6 +4074,14 @@ Si vamos a usar una característica experimental, es **MUY buena práctica** usa
 
 <font color ="#a0c2f0C">
 
+**"No se trata de que le guste a tu cliente, sino a los clientes de tu cliente."**
+
+</font>
+
+### Zona de lectura
+
+<font color ="#a0c2f0">
+
 El usuario no debería tener la zona para leer que ocupe toda la pantalla porque cansa a la vista, es mejor tener una zona concreta de pantalla relativamente pequeña (aunque lo suficientemente grande para que se lea bien) y centrada.
 
 </font>
@@ -4077,6 +4093,30 @@ Consiste de una imagen (o video ) que ocupa una gran parte del espacio y por enc
 
 ![alt text](image-1.png)
 
+</font>
+### Puntos de atención
+
+<font color ="#a0c2f0">
+
+Son algo llamativo que capture la atención del usuario.
+</font>
+
+### Sensación de rapidez
+
+<font color ="#a0c2f0">
+
+Para dar sensación de rapidez hay varios trucos: 
+ - Tipografías con poco espaciado, al ser compactas dan la sensación de velocidad.
+ 
+ - Tipografías con "trails".
+
+</font>
+
+### Direccionalidad
+
+<font color ="#a0c2f0">
+
+Con elementos que marquen la direccionalidad ayudamos con la legibilidad de la página. Por ejemplo, barras verticales cuando queramos indicar que se scrollee
 </font>
 <h3>Holy Grail</h3>
 
