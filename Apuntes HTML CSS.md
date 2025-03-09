@@ -2460,6 +2460,8 @@ código CSS.
 
 <font color ="#a0c2f0">
 
+Suele ser buena idea hacer la **hoja de estilos principal** teniendo en mente la página **más compleja** de nuestra web.
+
 Los scripts que sean **muy importantes** y/o que queramos **que se ejecuten nada más el usuario entre** en la página se ponen en el 
 <font color="#b61187">
 **< head>**
@@ -4072,7 +4074,7 @@ Si vamos a usar una característica experimental, es **MUY buena práctica** usa
 </font>
 <h2>Patrones de diseño</h2>
 
-<font color ="#a0c2f0C">
+<font color ="#a0c2f0">
 
 **"No se trata de que le guste a tu cliente, sino a los clientes de tu cliente."**
 
@@ -4087,13 +4089,14 @@ El usuario no debería tener la zona para leer que ocupe toda la pantalla porque
 </font>
 
 ### Text Hero
-<font color ="#a0c2f0C">
+<font color ="#a0c2f0">
 
 Consiste de una imagen (o video ) que ocupa una gran parte del espacio y por encima un texto corto con una fuente muy grande. Se usa mucho en landing pages.
 
 ![alt text](image-1.png)
 
 </font>
+
 ### Puntos de atención
 
 <font color ="#a0c2f0">
