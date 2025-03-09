@@ -20,6 +20,8 @@ Los mails leen HTML y CSS, por lo que si copiamos y pegamos contenido de una pá
 
 [Clip paths](https://bennettfeely.com/clippy/)
 
+[Paletas de colores](https://color.adobe.com/es/create/color-wheel)
+
 <h1>Diccionario</h1>
 
 ## General
@@ -1536,11 +1538,15 @@ y los valores de anchura, estilo y color en el mismo orden.
 </br>
 Lo mismo sucede con los radios, pudiendo hacer formas redondeadas un poco más personalizadas.
 
+<font color = "#fae48b">
+
+**border-image**. 
+</font>
+Crea un borde a partir de una imagen. **NO** se suelen usar, ya que se suelen **cargar 4 veces la misma imagen**, que unas repitan solo en horizontal y otras en vertical, y posicionarlas con <font color = "#fae48b">**background-position**</font> formando un borde.
+
  <font color = "#fae48b"><b>
 box-sizing.
 </b></font>
-
-
 <font color ="#54d398"> 
 border-box
 </font>
@@ -1550,7 +1556,6 @@ content-box
 </font>
 .
 
-</br>
  <font color = "#fae48b"><b>
 
 filter.
@@ -2492,6 +2497,8 @@ background-color
 con un color con alpha.
 
 <b>Para vincular fuentes de google</b>, nos vamos a google fonts, seleccionamos las que queramos y nos aparece el código html para ponerlo en el head.
+
+Las fuentes se almacenan en la **cache del navegador**, por lo que funcionan aunque no tengas internet siempre que la página la hayas visto al menos una vez.
 
 Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el que definimos la propiedad <b>@font-face</b>, a la cual hay que darle un nombre, el <b>font-family</b> y un <b>src</b>, que sería utilizar la función <b>url</b> con la ruta a la fuente en cuestión y, para que el navegador la cargue más rápido, le decimos el formato con la función <b>format</b>. Si queremos configurar variantes de la misma fuente, cramos diferentes <b>@font-face</b> con la misma family y distintas propiedades.
 
@@ -4057,12 +4064,20 @@ Si vamos a usar una característica experimental, es **MUY buena práctica** usa
 </font>
 <h2>Patrones de diseño</h2>
 
-<font color ="#a0c2f0">
+<font color ="#a0c2f0C">
 
 El usuario no debería tener la zona para leer que ocupe toda la pantalla porque cansa a la vista, es mejor tener una zona concreta de pantalla relativamente pequeña (aunque lo suficientemente grande para que se lea bien) y centrada.
 
 </font>
 
+### Text Hero
+<font color ="#a0c2f0C">
+
+Consiste de una imagen (o video ) que ocupa una gran parte del espacio y por encima un texto corto con una fuente muy grande. Se usa mucho en landing pages.
+
+![alt text](image-1.png)
+
+</font>
 <h3>Holy Grail</h3>
 
 <font color ="#a0c2f0">
