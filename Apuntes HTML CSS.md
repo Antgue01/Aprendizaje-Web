@@ -3271,6 +3271,16 @@ open.
 </br>
 Viene configurado por defecto con el **position en absolute.**
 
+<font color ="#b61187">
+
+**<u>< figure></u>**
+</font> Imagen con información relacionada a la misma.
+
+<font color ="#b61187">
+
+**<u>< figcaption></u>**
+</font> Es la información relacionada a la figure. **NO necesariamente** es un pie de foto.
+
 <font color ="#b61187"><u><b>
 </br>
 < img 
@@ -4253,6 +4263,12 @@ generador de paletas de colores.
 </br>Una sombra bastante utilizada en diseño es la que tiene 0 de vertical y horizontal, bastante blur, como unos 40px, 0 de longitud y algo de transparencia.
 </font>
 
+### Colores en Móviles
+
+<font color ="#a0c2f0">
+
+Conviene que en móviles, el **color de fondo cambie** (aunque sea ligeramente) entre una sección y otra.
+</font>
 <h2>Fonts</h2>
 <font color ="#a0c2f0">
 La tipología 
