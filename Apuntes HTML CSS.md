@@ -2589,6 +2589,14 @@ y el alpha se pone siempre detrás de un
 <font color ="#e6c925">/.
 </font>
 </font>
+
+## Flecha que te devuelve al inicio de la página
+
+<font color ="#a0c2f0">
+
+Al poner la <font color = "#fae48b"> posición </font> en <font color ="#54d398"> sticky</font>, necesitamos poner la flecha en un lugar del HTML que esté cerca del fin del viewport. Como es posible que se vea antes de tener que hacer scroll, podemos hacer una animación sobre el translate y usando **<font color = "#fae48b">animation-timeline</font> en <font color ="#54d398">scroll()</font>.**
+
+</font>
 <h2 id = "esconder">Ocultar al clickar</h2>
 <font color ="#a0c2f0">
 
