@@ -30,6 +30,21 @@ Te dice las librerías que utiliza una página.</font>
 [Awwwards](https://www.awwwards.com/). Tiene páginas con buen diseño de las que se pueden obtener referencias.
 
 [Pexels](https://www.pexels.com/es-es/). Banco de imágenes.
+
+[CanIUse](https://caniuse.com/). Te dice qué etiquetas y propiedades CSS se pueden usar en cada navegador
+
+[Lorem Picsum](https://picsum.photos/). API Rest con imágenes placeholder de cualquier tamaño. La consulta es https://picsum.photos/ancho/alto.
+
+[Font Aweasome](https://fontawesome.com/). Banco de fuentes e **iconos**. Tiene una versión en CDN para usarlos directamente en el HTML.
+
+[Font Squirrel](https://www.fontsquirrel.com/) Banco con bastantes fuentes gratis.
+
+[Transfonter](https://transfonter.org/). Transforma las fuentes a un formato adecuado para la web.
+
+[Pingdom Tools](https://tools.pingdom.com/). Mide el rendimiento de las páginas web, tanto en tiempo como en memoria.
+
+[Kraken.io](https://kraken.io/web-interface). Comprime las imágenes hasta el punto mínimo de la percepción humana. Es decir, todo lo posible antes de que empiece a notarse la pérdida de calidad.
+
 <h1>Diccionario</h1>
 
 ## General
@@ -2058,7 +2073,7 @@ align-content</font>)
 </font>
 <h2 id="grid">Grid</h2>
 
-<font color ="#a0c2f0">V
+<font color ="#a0c2f0">
 
 Al igual que flexbox, es modelo de cajas, en este caso tenemos una grid que tiene filas y columnas (dos direcciones). Por tanto, usaríamos **flexbox** cuando el layout esté pensado para algo vertical u horizontal, pero usaremos **grid** cuando el layout tenga forma de "tabla", es decir, tanto filas como columnas. 
 
@@ -2512,6 +2527,8 @@ Las fuentes se almacenan en la **cache del navegador**, por lo que funcionan aun
 
 Para <b> configurar nuestras propias fuentes</b> creamos otro archivo css en el que definimos la propiedad <b>@font-face</b>, a la cual hay que darle un nombre, el <b>font-family</b> y un <b>src</b>, que sería utilizar la función <b>url</b> con la ruta a la fuente en cuestión y, para que el navegador la cargue más rápido, le decimos el formato con la función <b>format</b>. Si queremos configurar variantes de la misma fuente, cramos diferentes <b>@font-face</b> con la misma family y distintas propiedades.
 
+Ttf **NO** es el mejor formato para la web.
+
  Ejemplo:
 
 <img src ="imgs/fonts.png" title="Configuración de una fuente">
@@ -2558,6 +2575,16 @@ En la pestaña **Performance/Timeline** podemos:
  - Show performance monitor.
 
 </font>
+
+## Debuggear divisiones HTML
+
+<font color ="#a0c2f0">
+
+Podemos poner en CSS el * con un **background color** con transparencia, de forma que podemos saber por superposición de alphas, qué elementos están dentro de cuáles
+
+</font>
+
+
 <h2>
 
 Integrar librerías de iconos</h2>
@@ -4515,6 +4542,10 @@ max-width
 </font>
 del 100%.
 
+Para **imágenes**, se suele usar 
+<font color = "#fae48b">
+width
+</font> en <font color ="#5dffd4">100%</font> y el <font color = "#fae48b">height</font> en <font color ="#5dffd4">auto.</font>
 
 </font>
 <h1> Hosting</h1>

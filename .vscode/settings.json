@@ -3,5 +3,6 @@
         "configurations": [],
         "compounds": []
     },
-    "liveServer.settings.multiRootWorkspaceName": "Aprendizaje-Web"
+    "liveServer.settings.multiRootWorkspaceName": "Aprendizaje-Web",
+    "liveServer.settings.port": 5501
 }
