@@ -45,6 +45,27 @@ Te dice las librerías que utiliza una página.</font>
 
 [Kraken.io](https://kraken.io/web-interface). Comprime las imágenes hasta el punto mínimo de la percepción humana. Es decir, todo lo posible antes de que empiece a notarse la pérdida de calidad.
 
+## Librerías
+
+### Bootstrap
+<font color ="#a0c2f0">
+
+**Primero cargamos Bootstrap y luego nuestra hoja de estilos**. Esto se hace para poder sobreescribir los estilos de bootstrap por los nuestros propios. 
+
+**Esto probablemente haga que necesitemos usar !Important en nuestros estilos.**
+
+Se buscan los elementos que queremos en la documentación y se copia el código, modificándolo a nuestro gusto.
+</font>
+
+#### Media Queries
+<font color ="#a0c2f0">
+
+Bootstrap es bastante potente para las media queries, ya que tiene seis breakpoints (sm, lg, etc) y tiene una disposición en 12 columnas, de forma que formamos la clase añadiendo guiones con la disposición, el breakpoint y el número de columnas o filas que queremos que ocupen los elementos.
+
+Por ejemplo, si tenemos varios elementos y queremos que se posicionen en 3 columnas por ejemplo, dividiremos 12 entre 3, dándonos 4 y usaremos la clase **col-xxl-4**. 
+
+Si queremos que al achicar la pantalla se dispongan en 2, dividimos 12 entre 2, dándonos 6 y usaríamos la clase **col-md-6**
+</font>
 <h1>Diccionario</h1>
 
 ## General
