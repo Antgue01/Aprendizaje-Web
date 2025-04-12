@@ -45,6 +45,10 @@ Te dice las librerías que utiliza una página.</font>
 
 [Kraken.io](https://kraken.io/web-interface). Comprime las imágenes hasta el punto mínimo de la percepción humana. Es decir, todo lo posible antes de que empiece a notarse la pérdida de calidad.
 
+[Statcounter](https://statcounter.com/). Sitio con distintas estadísticas a nivel nacional e internacional relacionadas con la web, como navegadores que más se usan, motores de búsqueda, Sistemas operativos, **redes sociales**, etc.
+
+[Google Trends](https://trends.google.es/trends/) Tendencias de lo que busca la gente. Tener en cuenta de cara a campañas de **márketing, SEO, etc**. Permite también comparar tendencias para saber cuáles temas son más interesantes de hablar.
+
 ## Librerías
 
 ### Bootstrap
@@ -2556,6 +2560,7 @@ Ttf **NO** es el mejor formato para la web.
 
 </font>
 
+
 ## Debuggear
 <font color ="#a0c2f0">
 
@@ -3438,7 +3443,7 @@ Funciona igual que video con los mismos atributos.
 <font color ="#b61187"><u><b></br>
 < form
 <font color ="#dd9b37"> 
-method autocomplete
+method autocomplete action
 </font>>
 </font></u></b>
 <font color ="#a0c2f0">
@@ -3482,6 +3487,10 @@ on
 </font>u 
 <font color ="#54d398">
 off.</font>
+<font color ="#dd9b37"> 
+
+action</font> es el archivo php que lo gestiona.
+
 
 <font color ="#b61187"><u><b>
 </br>< input
@@ -4579,7 +4588,11 @@ width
 </font>
 <h1> Hosting</h1>
 <font color ="#a0c2f0">
+
 Se trata de reservar espacio en la web para nuestra página.
+
+Si tenemos una página con mucha **concurrencia**, puede ser buena idea **contratar servicios de servidores externos** auxiliares para el contenido multimedia, aliviando la carga de los servidores principales.
+
 </font>
 <h2>Tipos de hosting</h2>
 <h3>Hosting compartido</h3>
