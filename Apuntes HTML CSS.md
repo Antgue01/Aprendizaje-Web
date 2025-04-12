@@ -4196,6 +4196,16 @@ Para dar sensación de rapidez hay varios trucos:
 
 Con elementos que marquen la direccionalidad ayudamos con la legibilidad de la página. Por ejemplo, barras verticales cuando queramos indicar que se scrollee
 </font>
+
+### Formularios
+
+<font color ="#a0c2f0">
+
+Por usabilidad, lo ideal es pedir **4 o 5 datos**, entre los cuales estén los de **contacto.** Entonces se le piden por mail el resto.
+
+Un ejemplo son las tiendas online, que primero te hacen rellenar el carrito y no se rellenan los datos de pago **hasta que no se vaya a pagar.**
+</font>
+
 <h3>Holy Grail</h3>
 
 <font color ="#a0c2f0">
@@ -4666,13 +4676,23 @@ Suelen tener un [**dominio**](#dominio) gratuito, pero además, debemos buscar:
 
   **Fácil de usar.**
   </li>
+
+ <li>
+ 
+ **No escatimar** en gastos en backups ni antivirus. Al menos 1 backup al día y guardar por 10 días </li>  
+
+ <li>
+
+**EVITAR los hosting o dominios demasiado baratos**
+ </li>
 </ul>
 
-Hostinger puede ser una buena opción, pues además tiene correos institucionales gratis, [certificado SSL](#SSL) ilimitado y garantía de devolución.
 
 El hecho de que tenga una IP dedicada es bueno si queremos desarrollar APIs, pues se suelen conectar a través de IPs, por lo que si va cambiando todo el tiempo no es fácil de mantener.
 
 Otra ventaja de esto es que si tenemos una IP que se comparte con varios desconocidos, si éstos hacen spam, los correos que mandemos nosotros a través del host compartido los va a meter también en la carpeta de spam de nuestros potenciales clientes.
+
+Por otra parte, los servidores es preferible instalarlos en **Europa** para evitar problemas con datos, ya que en Europa las **leyes de protección de datos son más estrictas.**
 </font>
 <h2>FTP</h2>
 <font color ="#a0c2f0">
