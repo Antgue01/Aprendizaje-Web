@@ -173,3 +173,14 @@ body {
     color: #ffa2a2;
  }
 
+#match-media-box{
+    max-width: 300px;
+    background-color: #6e4;
+    margin: auto;
+    padding-block: 30px;
+    margin-block: 30px;
+    text-align: center;
+    place-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}

@@ -49,6 +49,8 @@ Te dice las librerías que utiliza una página.</font>
 
 [Google Trends](https://trends.google.es/trends/) Tendencias de lo que busca la gente. Tener en cuenta de cara a campañas de **márketing, SEO, etc**. Permite también comparar tendencias para saber cuáles temas son más interesantes de hablar.
 
+[Animaciones](https://keyframes.app/animate). Te permite crear animaciones CSS con una línea de tiempo
+
 ## Librerías
 
 ### Bootstrap

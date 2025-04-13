@@ -376,7 +376,8 @@ nombresDBReq.addEventListener("success", () => {
         for (const key of keysRequest.result) {
             const keyReq = oS.get(key);
             keyReq.addEventListener("success", () => {
-                nombresContainer.innerHTML += newName(keyReq.result.name)})
+                nombresContainer.innerHTML += newName(keyReq.result.name)
+            })
         }
     })
 })
@@ -389,4 +390,56 @@ document.getElementById("add-nombres-add").addEventListener("click", () => {
     }
 });
 
+
+//Match Media
+
+const query500 = matchMedia("(max-width: 500px)");
+query500.addEventListener("change", (obj) => {
+    if (obj.matches && !document.getElementById("match-media-box")) {
+        const box = document.createElement("DIV");
+        box.innerHTML = `<div id="match-media-box">
+                                <h2>Aparezco en 500px</h2>
+                                </div>`;
+        console.log(box);
+        document.getElementById("media-box-container").appendChild(box);
+        box.animate([
+            {
+                opacity: 0,
+                translate: "0 -50px"
+            },
+            {
+                opacity: 1,
+                translate: "0 0"
+            }
+
+        ],
+            {
+                duration: 500,
+                fill: "forwards"
+            }
+        )
+    }
+    else {
+        const box = document.getElementById("match-media-box");
+        if (box !== null) {
+            box.animate([
+                {
+                    opacity: 1,
+                    translate: "0 0"
+                },
+                {
+                    opacity: 0,
+                    translate: "0 -50px"
+                }
+
+            ],
+                {
+                    duration: 500,
+                    fill: "forwards"
+                }
+            )
+            setTimeout(() => box.remove(), 500);
+        }
+    }
+})
 //#endregion Buttons

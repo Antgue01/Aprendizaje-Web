@@ -270,8 +270,17 @@
                                         </div>
                                     </div>
                                     <!-- #endregion IndexedDB-->
+                                    <!-- #region matchMedia -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="mmdindx">
+                                            <label class="index__item__label" for="mmdindx"></label>
+                                            <a class="index__lv4" href="#MatchMedia">matchMedia</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion matchMedia-->
                                     <!-- #endregion -->
-
 
                                 </div>
                                 <!-- #region Interfaces -->
@@ -2593,10 +2602,12 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                 <span class="func">add(</span><span class="var">object</span><span class="func">)</span>
                             </li>
                             <li class="box__list__item --can-open">
-                                <label><span class="func">put(</span><span class ="var">object, key</span><span class="func">)</span>
+                                <label><span class="func">put(</span><span class="var">object, key</span><span
+                                        class="func">)</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Actualiza la <span class="var">key </span>con el <span class="var">objeto </span> dado.
+                                        Actualiza la <span class="var">key </span>con el <span class="var">objeto
+                                        </span> dado.
                                     </div>
                                 </label>
                             </li>
@@ -2620,7 +2631,9 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Lee el siguiente dato del ObjectStore.
-                                        <br><br> Si se ejecuta en el evento <span class="val">success</span>, se va a ejecutar <strong>recursivamente</strong>, ya que al leer con éxito se va a ejecutar el evento otra vez.
+                                        <br><br> Si se ejecuta en el evento <span class="val">success</span>, se va a
+                                        ejecutar <strong>recursivamente</strong>, ya que al leer con éxito se va a
+                                        ejecutar el evento otra vez.
                                     </div>
                                 </label>
                             </li>
@@ -2632,7 +2645,8 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         En el caso de un <a href="#idbopen">open</a>, contiene la base de datos.
-                                        <br><br>En el caso de un  <a href="#bdopcrs">OpenCursor()</a>, contiene el cursor.
+                                        <br><br>En el caso de un <a href="#bdopcrs">OpenCursor()</a>, contiene el
+                                        cursor.
                                     </div>
                                 </label>
                             </li>
@@ -2644,8 +2658,10 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
 
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Accedemos a la información a través del <span class="var">result.value </span> de la variable en la que almacenamos el cursor.
-                                        <br><br>Si queremos <strong>seguir leyendo</strong>, usamos <span class="var">result.value.</span><span class="func">continue()</span>.
+                                        Accedemos a la información a través del <span class="var">result.value </span>
+                                        de la variable en la que almacenamos el cursor.
+                                        <br><br>Si queremos <strong>seguir leyendo</strong>, usamos <span
+                                            class="var">result.value.</span><span class="func">continue()</span>.
                                     </div>
                                 </label>
                             </li>
@@ -2692,6 +2708,58 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 </div>
             </section>
             <!-- #endregion IndexedDB -->
+            <div id="MatchMedia" class="header__container">
+                <h4>MatchMedia</h4>
+            </div>
+            <section>
+                <p>
+                    Es una API que nos permite saber si se cumplen ciertas condiciones de CSS. Se usa para hacer
+                    <strong>media queries</strong> en JavaScript.
+
+                </p>
+                <p>Se accede a través de la función <span class="func">matchMedia()</span> o <span
+                        class="var">window.</span><span class="func">matchMedia()</span>, que devuelve un objeto con la información de la query.</p>
+<p>
+    <strong>NO</strong> se usa para dar estilos, sino para <strong>dar comportamientos</strong> específicos en distintas resoluciones o para <strong>añadir o quitar clases</strong>. 
+</p>
+                <div class="box">
+                    <h2 class="box__title">Funciones de la API </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">matchMedia(</span><span class="var">query</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            <span class="var">query </span>es un string que contiene la media query que
+                                            queremos, por ejemplo, <span class="val">"(max-width: 500px)"</span>.
+                                        </p>
+                                        <p>
+                                            La función devuelve un objeto con la propiedad <span
+                                                class="var">matches</span>, que es un booleano que nos dice si se cumple
+                                            la media query o no.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Eventos del objeto</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">change </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Cada vez que se cambia el estado de <span class="var">matches</span>. La idea es en este evento comprobar el estado de <span class="var">matches </span> y hacer cambios en base a eso.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
             <!-- #endregion Objetos-->
 
             <!-- #region Interfaces  -->
