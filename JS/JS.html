@@ -280,6 +280,16 @@
                                         </div>
                                     </div>
                                     <!-- #endregion matchMedia-->
+                                    <!-- #region Intersection Observer -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="inobrindx">
+                                            <label class="index__item__label" for="inobrindx"></label>
+                                            <a class="index__lv4" href="#inobr">Intersection Observer</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Intersection Observer-->
                                     <!-- #endregion -->
 
                                 </div>
@@ -431,6 +441,15 @@
                                     <label class="index__item__label" for="wkfl"></label>
                                     <a class="index__lv2" href="#Workflow">Workflow</a>
                                 </div>
+                                <!-- #region Librerías -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="libreriasindx">
+                                        <label class="index__item__label" for="libreriasindx"></label>
+                                        <a class="index__lv3" href="#librerias">Librerías</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Librerías-->
                                 <!-- #region Excepciones -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -486,6 +505,24 @@
                                 </div>
                             </div>
                             <!-- #endregion Videos y DataTransfer-->
+                            <!-- #region Cargar más publicaciones -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="morepublicindx">
+                                    <label class="index__item__label" for="morepublicindx"></label>
+                                    <a class="index__lv3" href="#morepublic">Cargar más publicaciones</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Cargar más publicaciones-->
+                             <!-- #region Detectar cambios de pestaña -->
+                             <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="cmptnindx">
+                                    <label class="index__item__label" for="cmptnindx"></label>
+                                    <a class="index__lv3" href="#cmptn">Detectar cambios de pestaña</a>
+                             </div>
+                             </div>
+                             <!-- #endregion Detectar cambios de pestaña-->
                             <!-- #endregion -->
                             <!-- #region Preguntas Entrevistas de Trabajo -->
                             <div class="index__item__container">
@@ -2708,6 +2745,7 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 </div>
             </section>
             <!-- #endregion IndexedDB -->
+            <!-- #region Match Media -->
             <div id="MatchMedia" class="header__container">
                 <h4>MatchMedia</h4>
             </div>
@@ -2718,10 +2756,12 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
 
                 </p>
                 <p>Se accede a través de la función <span class="func">matchMedia()</span> o <span
-                        class="var">window.</span><span class="func">matchMedia()</span>, que devuelve un objeto con la información de la query.</p>
-<p>
-    <strong>NO</strong> se usa para dar estilos, sino para <strong>dar comportamientos</strong> específicos en distintas resoluciones o para <strong>añadir o quitar clases</strong>. 
-</p>
+                        class="var">window.</span><span class="func">matchMedia()</span>, que devuelve un objeto con la
+                    información de la query.</p>
+                <p>
+                    <strong>NO</strong> se usa para dar estilos, sino para <strong>dar comportamientos</strong>
+                    específicos en distintas resoluciones o para <strong>añadir o quitar clases</strong>.
+                </p>
                 <div class="box">
                     <h2 class="box__title">Funciones de la API </h2>
                     <div class="box__text__container">
@@ -2751,7 +2791,9 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         <p>
-                                            Cada vez que se cambia el estado de <span class="var">matches</span>. La idea es en este evento comprobar el estado de <span class="var">matches </span> y hacer cambios en base a eso.
+                                            Cada vez que se cambia el estado de <span class="var">matches</span>. La
+                                            idea es en este evento comprobar el estado de <span class="var">matches
+                                            </span> y hacer cambios en base a eso.
                                         </p>
                                     </div>
                                 </label>
@@ -2760,6 +2802,105 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </div>
                 </div>
             </section>
+            <!-- #endregion Match Media -->
+            <!-- #region Intersection Observer   -->
+            <div id="inobr" class="header__container">
+                <h3>Intersection Observer</h3>
+            </div>
+            <section>
+                <p>Sirve para saber cuándo van apareciendo los elementos en el viewport conforme se hace scroll.</p>
+                <p>Para usarlo <strong>se crea un objeto de tipo <span class="class">IntersectionObsever</span></strong>
+                    y se le dicen los objetos que tiene que observar.
+                <p>
+                    Al crear el Observer, se le pasa un callback, que se ejecuta cada vez que un <strong>elemento
+                        observado</strong> entra o sale del viewport, y un objeto de opciones.
+                </p>
+                <p>
+                    El callback recibe un argumento, que es un array con información sobre los objetos observados, y es
+                    a partir de aquí que hacemos lo necesario con ellos.
+                </p>
+
+                <div class="box">
+                    <h2 class="box__title">Funciones Importantes </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">IntersectionObsever(</span><span class="var">callback,
+                                        opciones</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El <span class="var">callback </span>es el que controla qué se hace cuando
+                                        aparece o
+                                        desaparece un objeto trackeado. Recibe un array de entries.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <span class="func">observe(</span><span class="var">elemento</span><span
+                                        class="func">)</span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Se empieza a trackear el <span class="var">elemento.</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item ">
+                                <span class="func">unobserve(</span><span class="var">elemento</span><span
+                                    class="func">)</span>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Propiedades del objeto entry</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">target </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El objeto en sí que se está trackeando.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">isIntersecting </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Si está dentro del viewport o no.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Opciones del objeto options</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">root</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Objeto que se usa como viewport. Por defecto está el propio viewport.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">rootMargin </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Offset sobre cuándo se considera que el objeto está dentro del viewport.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">treshold </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Entre 0 y 1, es el porcentaje del objeto que tiene que estar dentro del viewport
+                                        para que salte el callback.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Intersection Observer   -->
             <!-- #endregion Objetos-->
 
             <!-- #region Interfaces  -->
@@ -3464,6 +3605,16 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </div>
                 </section>
 
+                <!-- #region Librerias -->
+                <div id="librerias" class="header__container">
+                    <h3>Uso de librerías</h3>
+                </div>
+                <section>
+                    <p>Para usar librerías, usamos el import de la librería correspondiente en nuestro código
+                        javascript, pero <strong>además, para que funcione</strong>, en el HTML, en la etiqueta script
+                        de nuestro código, hay que ponerle el atributo <strong>type = "module"</strong>.</p>
+                </section>
+                <!-- #endregion Librerias -->
                 <!-- #region Excepciones -->
                 <div id="Excepciones" class="header__container">
                     <h3>Excepciones</h3>
@@ -3617,6 +3768,76 @@ reader.<span class="func">addEventListener(</span><span class ="var"><span class
                     </div>
                 </section>
                 <!-- #endregion Videos y DataTransfer -->
+                <!-- #region Cargar más publicaciones -->
+                <div id="morepublic" class="header__container">
+                    <h3>Cargar más publicaciones al llegar al final del scroll</h3>
+                </div>
+                <section>
+                    <p>
+                        Para ello, usaremos la API <a href="#inobr"> IntersectionObserver</a>. Usaremos un elemento
+                        invisible al cual observaremos y cuando entre en la vista, se ejecutará el código que queramos.
+                        En este caso, haremos una <a href="#Fetch">petición</a> a nuestros servidores y seleccionaremos
+                        publicaciones según nuestro critero.
+                    </p>
+
+                    <p>
+                        Una opción es tener un contador que se incremente cada vez que se carguen publicaciones y cuando
+                        se haga una petición se cargue la publicación siguiente a ese número. Después, crearemos los elementos HTML con la publicación y los añadiremos <strong>antes</strong> del elemento invisible.
+                        Ejemplo:
+                    </p>
+                    <div class = "code__box">
+                        <code><span class="decl">const</span> numLoadPublications = <span class="literal">3</span>;
+<span class="decl">let</span> publications = <span class="literal">0</span>;
+<span class="decl">const</span> boxsContainer = document.<span class="func">querySelector</span>(<span class="string">".box__publications .box__container"</span>);
+
+<span class = "comments">//Función asíncrona para cargar más publicaciones</span>
+<span class="decl">const</span> loadBoxes = <span class="decl">async</span> () => {
+<span class="decl">const</span> request = <span class="decl">await</span> <span class="func">fetch(</span><span class="var">"Files/boxes.json"</span><span class="func">)</span>;
+<span class="decl">const</span> json = <span class="decl">await</span> request.<span class="func">json()</span>;
+<span class="decl">for</span> (<span class="decl">let</span> i <span class="decl">=</span> <span class="literal">0</span>; i <span class="decl"><</span> numLoadPublications; i++) {
+    <span class="decl">if</span> (publications <span class="decl"><</span> json[<span class="string">"content"</span>].length) {
+        <span class="decl">const</span> box = document.createElement(<span class="string">"div"</span>);
+        box.classList.add(<span class="string">"box"</span>);
+        box.textContent = json[<span class="string">"content"</span>][publications].text;
+        <span class="decl">const</span> color = json[<span class="string">"content"</span>][publications].color;
+        <span class="decl">const</span> colorObj = <span class="decl">new</span> <span class="class">Color</span>(color);
+        colorObj.<span class="func">lighten</span>(<span class="literal">-0.2</span>);
+        box.style.backgroundColor = color;
+        box.style.borderColor = colorObj.<span class="func">toString()</span>;
+        boxsContainer.<span class="func">appendChild</span>(box);
+        publications++;
+            }
+        }
+    }
+
+<span class = "comments">//Creamos el observador</span>    
+<span class="decl">const</span> intersection = <span class="decl">new</span> <span class="class">IntersectionObserver</span>((entries) => {
+    <span class="decl">if</span> (entries[<span class="literal">0</span>].isIntersecting) {
+        <span class = "comments">//lo hacemos asíncrono para asegurar que lleguen en orden</span>
+        <span class="func">loadBoxes()</span>;
+    }
+});
+<span class="decl">const</span> next = document.<span class="func">querySelector</span>(<span class="string">".box__publications .next"</span>);
+intersection.<span class="func">observe</span>(next);
+
+</code>
+                        <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
+                    </div>
+                </section>
+                <!-- #endregion Cargar más publicaciones -->
+                 <!-- #region Cambios Pestañas -->
+                 <div id="cmptn" class="header__container">
+                    <h3>Detectar Cambios de pestaña</h3>
+                 </div>
+                 <section>
+                    <p>
+                        Para detectar cambios de pestaña, podemos usar el evento <span class="var">visibilitychange</span> de <span class="class">document </span> y comprobar si el estado de la pestaña es visible o no. Para ello, usaremos el objeto <span class="class">document</span> y su propiedad <span class="var">visibilityState</span>. Si es visible, se ejecutará el código que queramos.
+                    </p>
+                 </section>
+                 <!-- #endregion Cambios Pestañas -->
                 <!-- #endregion -->
                 <!-- #region Preguntas entrevistas de trabajo -->
                 <div class="header__container" id="Preguntas">

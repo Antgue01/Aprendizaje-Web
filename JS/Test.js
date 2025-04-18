@@ -1,4 +1,5 @@
 "use strict";
+import Color from "https://colorjs.io/dist/color.js";
 class Persona {
     constructor(nombre, edad) {
         this.nombre = nombre;
@@ -19,6 +20,7 @@ class Persona {
 
     }
 }
+
 //#region  Classes
 class Texturizer {
     constructor() {
@@ -283,6 +285,25 @@ const asyncFuncNoAwait = async () => {
 
 }
 
+const loadBoxes = async () => {
+    const request = await fetch("Files/boxes.json");
+    const json = await request.json();
+    //Creamos la caja
+    for (let i = 0; i < numLoadPublications; i++) {
+        if (publications < json["content"].length) {
+            const box = document.createElement("div");
+            box.classList.add("box");
+            box.textContent = json["content"][publications].text;
+            const color = json["content"][publications].color;
+            const colorObj = new Color(color);
+            colorObj.lighten(-0.2);
+            box.style.backgroundColor = color;
+            box.style.borderColor = colorObj.toString();
+            boxsContainer.appendChild(box);
+            publications++;
+        }
+    }
+}
 //#endregion Functions
 
 //#region Buttons
@@ -441,5 +462,19 @@ query500.addEventListener("change", (obj) => {
             setTimeout(() => box.remove(), 500);
         }
     }
-})
+
+});
+//Intersection Observer
+let publications = 0;
+const numLoadPublications = 3;
+
+const boxsContainer = document.querySelector(".box__publications .box__container");
+const intersection = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+        //lo hacemos asíncrono para asegurar que lleguen en orden
+        loadBoxes();
+    }
+});
+const next = document.querySelector(".box__publications .next");
+intersection.observe(next);
 //#endregion Buttons

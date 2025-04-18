@@ -184,3 +184,40 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
+
+.box__container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.box__container .box{
+    width: 300px;
+    max-width: 300px;
+    height: 300px;
+    background-color: #48e;
+    display: block;
+    border: 4px dashed #248;
+    padding-inline: 20px;
+    text-shadow: 0 0 9px #000;
+    color: #fff;  
+    box-sizing: border-box;
+    align-content: center;
+}
+.box__container .box:nth-child(2){
+    background-color: #e84;
+    border-color: #842;
+}
+.box__container .box:nth-child(3){
+    background-color: #8e4;
+    border-color: #482;
+}
+.box__container .box:nth-child(4){
+    background-color: #e48;
+    border-color: #824;
+}
+.box__publications .next{
+    height: 10px;
+    width: 100%;
+}
