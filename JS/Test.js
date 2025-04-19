@@ -356,6 +356,7 @@ document.getElementById("Notificame").addEventListener('click', () => {
                 silent: false
 
             });
+            navigator.vibrate([200, 100, 200, 100, 200, 100, 200, 100, 200, 300, 200]);
         }
     });
 });
