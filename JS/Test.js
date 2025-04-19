@@ -345,7 +345,10 @@ flag.addEventListener('click', () => blob(flag));
 document.getElementById("cumple").addEventListener('click', tiempoCumple);
 document.getElementById("Notificame").addEventListener('click', () => {
     if ("vibrate" in navigator)
+    {
         navigator.vibrate([200, 100, 200, 100, 200, 100, 200, 100, 200, 300, 200]);
+        alert("El dispositivo SÍ que vibra");
+    }
     else alert("El dispositivo no puede vibrar");
     Notification.requestPermission(() => {
         if (Notification.permission == "granted") {
