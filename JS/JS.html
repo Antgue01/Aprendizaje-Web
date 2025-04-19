@@ -290,6 +290,16 @@
                                         </div>
                                     </div>
                                     <!-- #endregion Intersection Observer-->
+                                    <!-- #region Notification -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="Ntfyindx">
+                                            <label class="index__item__label" for="Ntfyindx"></label>
+                                            <a class="index__lv4" href="#Ntfy">Notification</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Notification-->
                                     <!-- #endregion -->
 
                                 </div>
@@ -514,15 +524,15 @@
                                 </div>
                             </div>
                             <!-- #endregion Cargar más publicaciones-->
-                             <!-- #region Detectar cambios de pestaña -->
-                             <div class="index__item__container">
+                            <!-- #region Detectar cambios de pestaña -->
+                            <div class="index__item__container">
                                 <div class="index__item">
                                     <input type="checkbox" hidden id="cmptnindx">
                                     <label class="index__item__label" for="cmptnindx"></label>
                                     <a class="index__lv3" href="#cmptn">Detectar cambios de pestaña</a>
-                             </div>
-                             </div>
-                             <!-- #endregion Detectar cambios de pestaña-->
+                                </div>
+                            </div>
+                            <!-- #endregion Detectar cambios de pestaña-->
                             <!-- #endregion -->
                             <!-- #region Preguntas Entrevistas de Trabajo -->
                             <div class="index__item__container">
@@ -2901,6 +2911,70 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                 </div>
             </section>
             <!-- #endregion Intersection Observer   -->
+            <!-- #region Notificaciones -->
+            <div id="Ntfy" class="header__container">
+                <h3>Notificaciones</h3>
+            </div>
+            <section>
+                <p>
+                    Hay que comprobar si el navegador soporta la API de notificaciones. Para ello, comprobamos si está
+                    en <span class="var">window. </span>
+                </p>
+                <div class="code__box">
+                    <code><span class="decl">if </span>(<span class="string">'Notification'</span> <span class="decl">in</span> window)
+    console.<span class="func">log(</span><span class ="string">"Las notificaciones funcionan"</span><span class="func">)</span>;</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Lo primero que hay que hacer es <strong>pedir permiso para las notificaciones</strong> con la función <span class="class">Notification.</span><span class="func">requestPermission()</span>. Esta función recibe un <strong>callback</strong> que se ejecuta cuando el usuario elige qué hacer. Ahí tenemos que preguntar por el atributo <span class="class">Notification.</span><span class="var">permission</span>, que puede tomar tres valores: <span class="val">granted, denied</span> o <span class="val">default</span>.</p>
+                
+                <p>Entonces, si tenemos permiso, para mandar una notificación, es tan simple como crear una instancia de la clase <span class="class">Notification </span>, a la que le pasaremos por constructor el texto a mostrar.</p>
+                <p> En caso de que no funcione, <strong>el navegador puede estar bloqueándolas</strong> por no ser https o que no estén habilitadas en los ajustes del sistema.</p>
+            <div class="box">
+                <h2 class = "box__title">Notificaciones </h2>
+                <div class ="box__text__container">
+                    <div class="box__separator">Métodos y atributos estáticos</div>
+                    <ul class = "box__list">
+                        <li class="box__list__item --can-open">
+                            <label><span class="func">requestPermission(<span class="var">Callback </span>)</span>
+                                <input hidden type="checkbox">
+                                <div class="box__explanation">
+                                    Pide permiso para mostrar notificaciones. Recibe un callback que se ejecuta cuando el usuario acepta o deniega el permiso. 
+                                </div>
+                            </label>
+                        </li>
+                        <li class="box__list__item --can-open">
+                            <label><span class="var">permission </span>
+                                <input hidden type="checkbox">
+                                <div class="box__explanation">
+                                    Puede tomar el valor <span class="val">granted</span>, <span class="val">denied</span> o <span class="val">default</span>, que es que el usuario aún no ha decidido.
+                                </div>
+                            </label>
+                        </li>
+                        <div class="box__separator">Constructor</div>
+                        <li class="box__list__item --can-open">
+                            <label><span class="class">Notification(</span><span class="var">title, options</span><span class="class">)</span>
+                                <input hidden type="checkbox">
+                                <div class="box__explanation">
+                                    <p>El <span class="var">title </span>es el texto que se va a mostrar en la notificación.</p>
+                                    <p>El <span class="var">options </span>es un objeto con las opciones de la notificación. Entre ellas están:</p>
+                                    <ul>
+                                        <li><strong>body</strong>: Texto que se muestra en la notificación.</li>
+                                        <li><strong>icon</strong>: Icono que se muestra en la notificación.</li>
+                                        <li><strong>image</strong>: Imagen que se muestra en la notificación.</li>
+                                        <li><strong>badge</strong>: Icono que se muestra en la barra de tareas.</li>
+                                        <li><strong>requireInteraction</strong>: Si la notificación debería permanecer visible hasta que el usuario interactúe con ella</li>
+                                        <li><strong>silent</strong>: Si el móvil va a vibrar y hacer ruido o no.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                    </ul>
+                 </div>
+            </div>
+            </section>
+            <!-- #endregion Notificaciones -->
             <!-- #endregion Objetos-->
 
             <!-- #region Interfaces  -->
@@ -3782,10 +3856,12 @@ reader.<span class="func">addEventListener(</span><span class ="var"><span class
 
                     <p>
                         Una opción es tener un contador que se incremente cada vez que se carguen publicaciones y cuando
-                        se haga una petición se cargue la publicación siguiente a ese número. Después, crearemos los elementos HTML con la publicación y los añadiremos <strong>antes</strong> del elemento invisible.
+                        se haga una petición se cargue la publicación siguiente a ese número. Después, crearemos los
+                        elementos HTML con la publicación y los añadiremos <strong>antes</strong> del elemento
+                        invisible.
                         Ejemplo:
                     </p>
-                    <div class = "code__box">
+                    <div class="code__box">
                         <code><span class="decl">const</span> numLoadPublications = <span class="literal">3</span>;
 <span class="decl">let</span> publications = <span class="literal">0</span>;
 <span class="decl">const</span> boxsContainer = document.<span class="func">querySelector</span>(<span class="string">".box__publications .box__container"</span>);
@@ -3828,16 +3904,20 @@ intersection.<span class="func">observe</span>(next);
                     </div>
                 </section>
                 <!-- #endregion Cargar más publicaciones -->
-                 <!-- #region Cambios Pestañas -->
-                 <div id="cmptn" class="header__container">
+                <!-- #region Cambios Pestañas -->
+                <div id="cmptn" class="header__container">
                     <h3>Detectar Cambios de pestaña</h3>
-                 </div>
-                 <section>
+                </div>
+                <section>
                     <p>
-                        Para detectar cambios de pestaña, podemos usar el evento <span class="var">visibilitychange</span> de <span class="class">document </span> y comprobar si el estado de la pestaña es visible o no. Para ello, usaremos el objeto <span class="class">document</span> y su propiedad <span class="var">visibilityState</span>. Si es visible, se ejecutará el código que queramos.
+                        Para detectar cambios de pestaña, podemos usar el evento <span
+                            class="var">visibilitychange</span> de <span class="class">document </span> y comprobar si
+                        el estado de la pestaña es visible o no. Para ello, usaremos el objeto <span
+                            class="class">document</span> y su propiedad <span class="var">visibilityState</span>. Si es
+                        visible, se ejecutará el código que queramos.
                     </p>
-                 </section>
-                 <!-- #endregion Cambios Pestañas -->
+                </section>
+                <!-- #endregion Cambios Pestañas -->
                 <!-- #endregion -->
                 <!-- #region Preguntas entrevistas de trabajo -->
                 <div class="header__container" id="Preguntas">

@@ -304,6 +304,9 @@ const loadBoxes = async () => {
         }
     }
 }
+function Notify() {
+
+}
 //#endregion Functions
 
 //#region Buttons
@@ -340,7 +343,27 @@ const flag = document.getElementById("blob");
 flag.addEventListener('click', () => blob(flag));
 
 document.getElementById("cumple").addEventListener('click', tiempoCumple);
+document.getElementById("Notificame").addEventListener('click', () => {
+    Notification.requestPermission(() => {
+        if (Notification.permission == "granted") {
 
+            new Notification("Acuérdate de lavarte los dientes", {
+                badge: "imgs/flag.jpg",
+                icon: "imgs/toothbrush.png",
+                image: "imgs/tooth.jpg",
+                body: "Es bueno para la salud",
+                vibrate: [200, 100, 200, 100, 200, 100, 200, 100, 200, 300, 200],
+                silent: false
+
+            });
+        }
+    });
+});
+
+
+//#endregion Buttons
+
+//#region Complex Elements
 //drag-drop
 const circle = document.querySelector(".circle");
 const dragZone = document.querySelector(".drag-zone");
@@ -477,4 +500,4 @@ const intersection = new IntersectionObserver((entries) => {
 });
 const next = document.querySelector(".box__publications .next");
 intersection.observe(next);
-//#endregion Buttons
+//#endregion Complex Elements
