@@ -356,7 +356,9 @@ document.getElementById("Notificame").addEventListener('click', () => {
                 silent: false
 
             });
-            navigator.vibrate([200, 100, 200, 100, 200, 100, 200, 100, 200, 300, 200]);
+            if ("vibrate" in navigator)
+                navigator.vibrate([200, 100, 200, 100, 200, 100, 200, 100, 200, 300, 200]);
+            else alert("El dispositivo no puede vibrar");
         }
     });
 });
