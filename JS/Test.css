@@ -221,3 +221,32 @@ body {
     height: 10px;
     width: 100%;
 }
+ .box{
+    max-width: 300px;
+    height: 20px;
+    background-color: #48e;
+    border: 3px dashed #268c;
+    color: #fff;  
+    text-shadow: 0 0 9px #000;
+
+
+}
+.cursor__tracker{
+    background-color: #0099ff00;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    backdrop-filter:  invert()  ;
+    z-index: 100;
+    transition: width .4s, height .4s, border-radius .4s;
+    pointer-events: none;
+}
+*:has(*:active) .cursor__tracker{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    transition: width .4s, height .4s, border-radius .4s;
+}

@@ -304,12 +304,56 @@ const loadBoxes = async () => {
         }
     }
 }
-function Notify() {
+
+const loadWebWorkerFile = async () => {
+    let i = 0;
+    while (i < 1e6) {
+        console.log(i);
+        i++;
+    }
 
 }
 //#endregion Functions
 
 //#region Buttons
+
+const tracker = document.getElementById("cursor__tracker");
+const style = tracker.computedStyleMap();
+
+// -----------------------Opción 1 ----------------------------
+let offset = 0;
+addEventListener("mousemove", (e) => {
+    setTimeout(() => {
+        tracker.style.left = `${e.x - style.get("width").value * .5}px`;
+        tracker.style.top = `${e.y - style.get("height").value * .5}px`;
+    }, offset);
+
+});
+addEventListener("wheel", (e) => {
+    offset=Math.min(offset-Math.sign(e.deltaY)*5,500);
+
+});
+
+// ----------------------Opción 2 ----------------------------------
+// let offset = [undefined, undefined];
+// let speed = 1.0;
+// addEventListener("mousemove", (e) => {
+//     if (offset[0] == undefined)
+//         offset[0] = e.x;
+//     if (offset[1] == undefined)
+//         offset[1] = e.y;
+//     offset[0] += (e.movementX) * speed;
+//     offset[1] += (e.movementY) * speed;
+//     tracker.style.left = `${offset[0] - style.get("width").value * .5}px`;
+//     tracker.style.top = `${offset[1] - style.get("height").value * .5}px`;
+// });
+
+// addEventListener("wheel", (e) => {
+//     speed = Math.max(0,Math.min( speed + Math.sign(e.deltaY) * .1, 3));
+//     console.log(speed)
+
+// });
+
 document.getElementById('Saludo').addEventListener('click', saludar);
 document.getElementById('check').addEventListener('click', check);
 document.getElementById('count').addEventListener('click', countAndSplice);
@@ -344,8 +388,7 @@ flag.addEventListener('click', () => blob(flag));
 
 document.getElementById("cumple").addEventListener('click', tiempoCumple);
 document.getElementById("Notificame").addEventListener('click', () => {
-    if ("vibrate" in navigator)
-    {
+    if ("vibrate" in navigator) {
         navigator.vibrate([200, 100, 200, 100, 200, 100, 200, 100, 200, 300, 200]);
         alert("El dispositivo SÍ que vibra");
     }
@@ -364,6 +407,21 @@ document.getElementById("Notificame").addEventListener('click', () => {
             });
         }
     });
+});
+
+document.getElementById("noww").addEventListener("click", () => loadWebWorkerFile());
+const worker = new Worker("../scripts/workerExample.js");
+document.getElementById("stop-worker").addEventListener("click", () => worker.terminate());
+//terminate when ended
+worker.addEventListener("message", (msg) => {
+    if (msg.data == "terminate") {
+        worker.terminate();
+        console.log("terminated");
+    }
+});
+
+document.getElementById("conww").addEventListener("click", () => {
+    worker.postMessage("start");
 });
 
 

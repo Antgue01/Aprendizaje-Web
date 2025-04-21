@@ -28,6 +28,9 @@
                         <!--
                           TODO: Búsqueda del índice
                         -->
+                        <!--
+                            TODO: Que se memorize qué elementos del índice están colapsados y cuáles no (probablemente con Index-DB o localStorage)
+                          -->
                         <input type="search" class="index__search-bar">
                     </div>
                     <div class="index__container">
@@ -220,6 +223,16 @@
                                         </div>
                                     </div>
                                     <!-- #endregion localStorage y sessionStorage-->
+                                    <!-- #region Cache -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="cacheindx">
+                                            <label class="index__item__label" for="cacheindx"></label>
+                                            <a class="index__lv4" href="#cache">Cache</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Cache-->
                                     <!-- #region Drag & Drop -->
                                     <div class="index__item__container">
                                         <div class="index__item">
@@ -444,6 +457,24 @@
                                 <!-- #endregion -->
                             </div>
                             <!-- #endregion -->
+                            <!-- #region Patrones de Diseño -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="dsingpttnsindx">
+                                    <label class="index__item__label" for="dsingpttnsindx"></label>
+                                    <a class="index__lv2" href="#dsingpttns">Patrones de Diseño</a>
+                                </div>
+                                <!-- #region Memoizer -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="memoizerindx">
+                                        <label class="index__item__label" for="memoizerindx"></label>
+                                        <a class="index__lv3" href="#memoizer">Memoizer</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Memoizer-->
+                            </div>
+                            <!-- #endregion Patrones de Diseño-->
                             <!-- #region Workflow -->
                             <div class="index__item__container">
                                 <div class="index__item">
@@ -505,35 +536,54 @@
                                     </div>
                                 </div>
                                 <!-- #endregion -->
-                            </div>
-                            <!-- #region Videos y DataTransfer -->
-                            <div class="index__item__container">
-                                <div class="index__item">
-                                    <input type="checkbox" hidden id="vddtindx">
-                                    <label class="index__item__label" for="vddtindx"></label>
-                                    <a class="index__lv3" href="#VideosYDataTransfer">Videos y DataTransfer</a>
+                                <!-- #region Videos y DataTransfer -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="vddtindx">
+                                        <label class="index__item__label" for="vddtindx"></label>
+                                        <a class="index__lv3" href="#VideosYDataTransfer">Videos y DataTransfer</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- #endregion Videos y DataTransfer-->
-                            <!-- #region Cargar más publicaciones -->
-                            <div class="index__item__container">
-                                <div class="index__item">
-                                    <input type="checkbox" hidden id="morepublicindx">
-                                    <label class="index__item__label" for="morepublicindx"></label>
-                                    <a class="index__lv3" href="#morepublic">Cargar más publicaciones</a>
+                                <!-- #endregion Videos y DataTransfer-->
+                                <!-- #region Web Workers -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="wwksindx">
+                                        <label class="index__item__label" for="wwksindx"></label>
+                                        <a class="index__lv3" href="#wwks">Web Workers</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- #endregion Cargar más publicaciones-->
-                            <!-- #region Detectar cambios de pestaña -->
-                            <div class="index__item__container">
-                                <div class="index__item">
-                                    <input type="checkbox" hidden id="cmptnindx">
-                                    <label class="index__item__label" for="cmptnindx"></label>
-                                    <a class="index__lv3" href="#cmptn">Detectar cambios de pestaña</a>
+                                <!-- #endregion Web Workers-->
+                                <!-- #region Cómo hacer -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="howtoindx">
+                                        <label class="index__item__label" for="howtoindx"></label>
+                                        <a class="index__lv3" href="#Workflow">Cómo hacer</a>
+                                    </div>
+                                    <!-- #region Cargar más publicaciones -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="morepublicindx">
+                                            <label class="index__item__label" for="morepublicindx"></label>
+                                            <a class="index__lv4" href="#morepublic">Cargar más publicaciones</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Cargar más publicaciones-->
+                                    <!-- #region Detectar cambios de pestaña -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="cmptnindx">
+                                            <label class="index__item__label" for="cmptnindx"></label>
+                                            <a class="index__lv4" href="#cmptn">Detectar cambios de pestaña</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Detectar cambios de pestaña-->
+
                                 </div>
+                                <!-- #endregion Cómo hacer-->
                             </div>
-                            <!-- #endregion Detectar cambios de pestaña-->
-                            <!-- #endregion -->
+                            <!-- #endregion Workflow -->
                             <!-- #region Preguntas Entrevistas de Trabajo -->
                             <div class="index__item__container">
                                 <div class="index__item">
@@ -2228,6 +2278,120 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
 
             </section>
             <!-- #endregion localStorage y sessionStorage -->
+            <!-- #region Cache -->
+            <div id="cache" class="header__container">
+                <h4>Cache</h4>
+            </div>
+            <section>
+                <p>
+                    Para usar la cache, accedemos a través del objeto <span class="var">caches</span> y reservamos un
+                    espacio con un nombre usando la función <span class="func">open()</span>, y a partir de ahí
+                    trabajamos con <strong>promesas</strong>.
+                </p>
+                <div class="box">
+                    <h2 class="box__title"><span class="class">Caché </span></h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">open(</span><span class="var">name</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p> Abrimos un espacio en la caché. <strong>Devuelve una promesa con el objeto
+                                                sobre el que trabajaremos. </strong></p>
+
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">add(</span><span class="var">URI</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Guarda en caché el <strong>recurso</strong> asociado a la <span
+                                                class="var">URI</span>.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">addAll(</span><span class="var">array de URIs</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Igual que <span class="func">add()</span> pero con un array de requests.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">put(</span><span class="var">archivo, respuesta</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>Actualiza el <span class="var">archivo.</span></p>
+                                        <p>Está pensado para usarse en conjunto con <span class="func">fetch()</span> de
+                                            la siguiente forma:</p>
+                                        <div class="code__box">
+                                            <code><span class="func">fetch(</span><span class ="string">"index.html"</span><span class="func">)</span>.<span class="func">then(</span>cache => {
+    cache.<span class="func">put(</span><span class ="string">"index.html"</span>, res<span class="func">)</span>;
+}<span class="func">)</span>;</code>
+                                            <button
+                                                class="code__box__copy material-symbols-outlined">content_copy</button>
+                                            <div class="code__box__copy__dialog">
+                                                ¡Copiado!
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">match(</span><span class="var">archivo</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Devuelve una promesa cuyo callback contiene un objeto con los datos de la
+                                            primera ocurrencia del <span class="var">archivo </span>pedido.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">matchAll(</span><span class="var">archivo</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Como <span class="func">match()</span> pero si tenemos varios archivos con
+                                            el
+                                            mismo nombre pero <strong>de distinto origen</strong> (por ejemplo, un
+                                            index.html de nuestra web y un index.html de otra web), en la promesa
+                                            encontraremos los dos.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">delete(</span><span class="var">archivo</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Además de borrar el archivo, <strong>devuelve una promesa</strong> por si
+                                            queremos hacer algo después de borrar.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Cache -->
             <!-- #region Drag & Drop -->
             <div id="Drag" class="header__container">
                 <h4>Drag & Drop</h4>
@@ -2928,51 +3092,68 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         ¡Copiado!
                     </div>
                 </div>
-                <p>Lo primero que hay que hacer es <strong>pedir permiso para las notificaciones</strong> con la función <span class="class">Notification.</span><span class="func">requestPermission()</span>. Esta función recibe un <strong>callback</strong> que se ejecuta cuando el usuario elige qué hacer. Ahí tenemos que preguntar por el atributo <span class="class">Notification.</span><span class="var">permission</span>, que puede tomar tres valores: <span class="val">granted, denied</span> o <span class="val">default</span>.</p>
-                
-                <p>Entonces, si tenemos permiso, para mandar una notificación, es tan simple como crear una instancia de la clase <span class="class">Notification </span>, a la que le pasaremos por constructor el texto a mostrar.</p>
-                <p> En caso de que no funcione, <strong>el navegador puede estar bloqueándolas</strong> por no ser https o que no estén habilitadas en los ajustes del sistema.</p>
-            <div class="box">
-                <h2 class = "box__title">Notificaciones </h2>
-                <div class ="box__text__container">
-                    <div class="box__separator">Métodos y atributos estáticos</div>
-                    <ul class = "box__list">
-                        <li class="box__list__item --can-open">
-                            <label><span class="func">requestPermission(<span class="var">Callback </span>)</span>
-                                <input hidden type="checkbox">
-                                <div class="box__explanation">
-                                    Pide permiso para mostrar notificaciones. Recibe un callback que se ejecuta cuando el usuario acepta o deniega el permiso. 
-                                </div>
-                            </label>
-                        </li>
-                        <li class="box__list__item --can-open">
-                            <label><span class="var">permission </span>
-                                <input hidden type="checkbox">
-                                <div class="box__explanation">
-                                    Puede tomar el valor <span class="val">granted</span>, <span class="val">denied</span> o <span class="val">default</span>, que es que el usuario aún no ha decidido.
-                                </div>
-                            </label>
-                        </li>
-                        <div class="box__separator">Constructor</div>
-                        <li class="box__list__item --can-open">
-                            <label><span class="class">Notification(</span><span class="var">title, options</span><span class="class">)</span>
-                                <input hidden type="checkbox">
-                                <div class="box__explanation">
-                                    <p>El <span class="var">title </span>es el texto que se va a mostrar en la notificación.</p>
-                                    <p>El <span class="var">options </span>es un objeto con las opciones de la notificación. Entre ellas están:</p>
-                                    <ul>
-                                        <li><strong>body</strong>: Texto que se muestra en la notificación.</li>
-                                        <li><strong>icon</strong>: Icono que se muestra en la notificación.</li>
-                                        <li><strong>image</strong>: Imagen que se muestra en la notificación.</li>
-                                        <li><strong>badge</strong>: Icono que se muestra en la barra de tareas.</li>
-                                        <li><strong>requireInteraction</strong>: Si la notificación debería permanecer visible hasta que el usuario interactúe con ella.</li>
-                                        <li><strong>silent</strong>: Si el móvil va a vibrar y hacer ruido o no.</li>
-                                    </ul>
-                                </div>
-                            </label>
-                    </ul>
-                 </div>
-            </div>
+                <p>Lo primero que hay que hacer es <strong>pedir permiso para las notificaciones</strong> con la función
+                    <span class="class">Notification.</span><span class="func">requestPermission()</span>. Esta función
+                    recibe un <strong>callback</strong> que se ejecuta cuando el usuario elige qué hacer. Ahí tenemos
+                    que preguntar por el atributo <span class="class">Notification.</span><span
+                        class="var">permission</span>, que puede tomar tres valores: <span class="val">granted,
+                        denied</span> o <span class="val">default</span>.
+                </p>
+
+                <p>Entonces, si tenemos permiso, para mandar una notificación, es tan simple como crear una instancia de
+                    la clase <span class="class">Notification </span>, a la que le pasaremos por constructor el texto a
+                    mostrar.</p>
+                <p> En caso de que no funcione, <strong>el navegador puede estar bloqueándolas</strong> por no ser https
+                    o que no estén habilitadas en los ajustes del sistema.</p>
+                <div class="box">
+                    <h2 class="box__title">Notificaciones </h2>
+                    <div class="box__text__container">
+                        <div class="box__separator">Métodos y atributos estáticos</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">requestPermission(<span class="var">Callback </span>)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Pide permiso para mostrar notificaciones. Recibe un callback que se ejecuta
+                                        cuando el usuario acepta o deniega el permiso.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">permission </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Puede tomar el valor <span class="val">granted</span>, <span
+                                            class="val">denied</span> o <span class="val">default</span>, que es que el
+                                        usuario aún no ha decidido.
+                                    </div>
+                                </label>
+                            </li>
+                            <div class="box__separator">Constructor</div>
+                            <li class="box__list__item --can-open">
+                                <label><span class="class">Notification(</span><span class="var">title,
+                                        options</span><span class="class">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>El <span class="var">title </span>es el texto que se va a mostrar en la
+                                            notificación.</p>
+                                        <p>El <span class="var">options </span>es un objeto con las opciones de la
+                                            notificación. Entre ellas están:</p>
+                                        <ul>
+                                            <li><strong>body</strong>: Texto que se muestra en la notificación.</li>
+                                            <li><strong>icon</strong>: Icono que se muestra en la notificación.</li>
+                                            <li><strong>image</strong>: Imagen que se muestra en la notificación.</li>
+                                            <li><strong>badge</strong>: Icono que se muestra en la barra de tareas.</li>
+                                            <li><strong>requireInteraction</strong>: Si la notificación debería
+                                                permanecer visible hasta que el usuario interactúe con ella.</li>
+                                            <li><strong>silent</strong>: Si el móvil va a vibrar y hacer ruido o no.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </label>
+                        </ul>
+                    </div>
+                </div>
             </section>
             <!-- #endregion Notificaciones -->
             <!-- #endregion Objetos-->
@@ -3578,6 +3759,63 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                     </div>
                 </section>
                 <!-- #endregion -->
+                <!-- #region Patrones de Diseño -->
+                <div id="dsingpttns" class="header__container">
+                    <h2>Patrones de Diseño</h2>
+                </div>
+                <section>
+                    <p></p>
+                </section>
+                <div id="memoizer" class="header__container">
+                    <h3>Memoizer</h3>
+                </div>
+                <section>
+                    <p>
+                        Consiste en meter en un diccionario los resultados previos de las operaciones realizadas. Se usa
+                        <strong>cuando se prevee que se reutilicen datos ya calculados</strong> mediante operaciones
+                        extensas.
+                    </p>
+                    <p>
+                        Como Javascript admite <a href="#Callbacks">Callbacks</a>, es relativamente fácil implementarlo
+                        de forma que al usarlo sea bastante legible.
+                    </p>
+                    <div class="code__box">
+                        <code><span class="decl">let</span> cache = {};
+<span class="decl">const</span> memoizer = (func) => {
+    <span class="decl">return</span> (arg) => {
+        <span class="decl">const </span>index = arg.<span class="func">toString()</span>;
+        <span class="decl">if</span> (cache[index] == <span class="decl">undefined</span>) {
+            cache[index] = <span class="func">func(<span class="var">arg</span>)</span>;
+        }
+    }
+}</code>
+                        <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
+                    </div>
+                    <p>
+                        Para usarlo es tan fácil como crear una variable en la que a <span
+                            class="func">memoizer()</span> le pases como argumento tu función, y cada vez que queramos
+                        usar la función usemos la variable en su lugar. Por ejemplo:
+                    </p>
+                    <div class="code__box">
+                        <code><span class="decl">function</span> <span class="func">foo(</span><span class ="var">arg</span><span class="func">)</span> {
+<span class = "comments">//Hacemos lo que sea que tarda mucho</span>
+}
+<br>
+<span class="decl">const</span> fooMemoizer = <span class="func">memoizer(</span><span class ="var">foo</span><span class="func">)</span>;
+<span class="func">fooMemoizer(</span><span class ="var">10</span><span class="func">)</span>;
+<span class="func">fooMemoizer(</span><span class ="var">200</span><span class="func">)</span>;
+<span class = "comments">//Esto va a ser O(log(N)) porque va a estar cacheado en un diccionario</span>
+<span class="func">fooMemoizer(</span><span class ="var">10</span><span class="func">)</span>;</code>
+                        <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
+                    </div>
+                </section>
+                <!-- #endregion Patrones de Diseño -->
                 <!-- #region Workflow -->
                 <div id="Workflow" class="header__container">
                     <h2>Workflow</h2>
@@ -3842,6 +4080,91 @@ reader.<span class="func">addEventListener(</span><span class ="var"><span class
                     </div>
                 </section>
                 <!-- #endregion Videos y DataTransfer -->
+
+                <!-- #region Web Workers -->
+                <div id="wwks" class="header__container">
+                    <h3>Web Workers</h3>
+                </div>
+                <section>
+                    <p>
+                        Sirven para ejecutar acciones <strong>mientras se está llevando a cabo un proceso relativamente
+                            largo</strong>, como la subida de un video por parte del usario. Son <strong>estas acciones
+                            largas</strong> las que se ejecutarán <strong>en el worker</strong>
+                    </p>
+                    <p>
+                        Para crear un web worker, simplemente cramos una instancia de la clase <span
+                            class="class">Worker</span>, pasándole al <strong>constructor la ruta del archivo
+                            Javascript</strong> en el que está el código del worker.
+                    </p>
+                    <p> Hay que tener en cuenta que los web workers <strong>NO tienen acceso a <span
+                                class="var">window</span></strong>, aunque sí a <span class="var">console </span>. </p>
+                    <p>
+                        Para
+                        comunicarse entre nuestro código y el worker, se usan la función del worker <span
+                            class="func">postMessage(</span><span class="var">data</span><span class="func">)</span> y
+                        el evento <span class="val">message</span> dentro del archivo del worker. Los datos deben estar
+                        <strong>serializados en JSON.</strong>
+                    </p>
+                    <p>
+                        Una opción para trabajar con workers es que el worker en sí no tenga código, <strong>sino
+                            funciones</strong> y que en el evento <span class="val">message </span>se ejecute una u otra
+                        dependiendo de la <span class="var">data </span>que nos llegue.
+                    </p>
+                    <p><strong>NO SE NOS PUEDE OLVIDAR</strong> usar el método <span class="func">terminate()</span> en
+                        nuestra variable <span class="var">worker </span>para liberar los recursos cuando el worker
+                        acabe, lo que también <strong>evita que el worker se ejecute otra vez al darle al mismo
+                            botón.</strong> Se puede hacer haciendo un <span class="func">postMessage()</span>desde el
+                        worker con un contenido especial y que en el código principal si le llega ese mensaje acabe.
+                    </p>
+                    <p>
+                        Por razones de seguridad, los workers solo funcionan si provienen del mismo host en el mismo
+                        puerto usando el mismo protocolo web.
+                    </p>
+                    <div class="box">
+                        <h2 class="box__title">API Web Worker </h2>
+                        <div class="box__text__container">
+                            <ul class="box__list">
+                                <li class="box__list__item --can-open">
+                                    <label><span class="class">Worker(<span class="var">path</span>) </span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Constructor del Web Worker, el argumento <span class="var">path </span>es la
+                                            ruta al código del worker.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label> <span class="func">postMessage(</span><span class="var">data</span><span
+                                            class="func">)</span>
+
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            <p>
+                                                Le manda un mensaje al worker. <strong>No acepta objetos en sí</strong>,
+                                                así que hay que
+                                                <strong>serializarlos</strong> en JSON para que funcione.
+                                            </p>
+                                            <p>
+                                                Además, para recibir el mensaje, el worker debe suscribirse al evento
+                                                <span class="val">message</span>.
+                                            </p>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">terminate()</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Libera los recursos del worker, por lo que también <strong>deja de recibir
+                                                mensajes</strong>.
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- #endregion Web Workers -->
                 <!-- #region Cargar más publicaciones -->
                 <div id="morepublic" class="header__container">
                     <h3>Cargar más publicaciones al llegar al final del scroll</h3>
