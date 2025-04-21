@@ -554,6 +554,15 @@
                                     </div>
                                 </div>
                                 <!-- #endregion Web Workers-->
+                                <!-- #region Service Workers -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="srvwksindx">
+                                        <label class="index__item__label" for="srvwksindx"></label>
+                                        <a class="index__lv3" href="#srvcwk">Service Workers</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Service Workers-->
                                 <!-- #region Cómo hacer -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -4165,6 +4174,56 @@ reader.<span class="func">addEventListener(</span><span class ="var"><span class
                     </div>
                 </section>
                 <!-- #endregion Web Workers -->
+                <!-- #region Service Workers -->
+                <div id="srvcwk" class="header__container">
+                    <h4>Service Workers</h4>
+                </div>
+                <section>
+                    <p>
+                        Sirven como intermediarios entre el cliente y el servidor y se suelen usar a través de node.js.
+                        Una de las funciones que tienen es hacer cosas aunque la página esté cerrada, como producir
+                        notificaciones. Al igual que los web workers, el código está en un archivo aparte.
+                    </p>
+
+                    <p>
+                        Se acceden a través de la variable navigator.<span class="var">serviceWorker </span>.
+                    </p>
+
+                    <p>
+                        Antes que nada, hay que instalarlo con la función <span class="func">register(<span
+                                class="var">ruta al código</span>)</span>. Entonces, en el inspector, en el apartado de
+                        Application, aparecerá en el subapartado de Service Workers.
+                    </p>
+                    <p>
+                        En el código del Service Worker, usaremos <strong>self, una palabra reservada parecida a
+                            this</strong>. Los service workers funcionan en un <a
+                            href="https://web.dev/articles/service-worker-lifecycle" target="_blank">ciclo de vida</a>
+                        gestionado por eventos.
+
+                    </p>
+                    <p>
+                        La primera etapa es <span class="val">install</span>, que solo pasa una vez, después está <span
+                            class="val">activate </span>. También está el <span class="val">error</span>.
+                    </p>
+                    <p>
+                        Es ahora cuando se puede empezar a hacer de intermediario. Con el evento <span class="val">fetch
+                        </span>reaccionamos a las peticiones al servidor y a sus respuestas.
+                    </p>
+                    <p>
+                        Además, podemos mandar mensajes al worker.Para ello, en <strong>nuestro código</strong>,usamos
+                        la promesa <strong>ready</strong>, que recibe un objeto que en su variable <span
+                            class="var">active </span>guarda el service worker ya preparado, y en ese objeto usamos el
+                        método <span class="func">postMessage(</span><span class="var">información</span><span
+                            class="func">)</span> del worker, y después <strong>en el worker</strong> Con el evento
+                        <span class="val">message </span>hacemos algo cada vez que se reciba información.
+                    </p>
+                    <p>
+                        Es importante tener en cuenta que <strong>estos mensajes son del cliente hacia el servidor</strong>.
+                        Cuando <strong>en nuestro código</strong> a nuestra variable del service worker le definimos el
+                        evento <span class="val">message </span>estamos reaccionando a la respuesta del servidor al cliente.
+                    </p>
+                </section>
+                <!-- #endregion Service Workers -->
                 <!-- #region Cargar más publicaciones -->
                 <div id="morepublic" class="header__container">
                     <h3>Cargar más publicaciones al llegar al final del scroll</h3>

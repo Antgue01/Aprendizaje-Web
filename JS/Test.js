@@ -564,4 +564,18 @@ const intersection = new IntersectionObserver((entries) => {
 });
 const next = document.querySelector(".box__publications .next");
 intersection.observe(next);
+
+//Service Worker
+
+navigator.serviceWorker.register("Files/chatWorker.js");
+
+console.log(navigator.serviceWorker.controller)
+setTimeout(()=>console.log(navigator.serviceWorker.controller),5000) ;
+navigator.serviceWorker.ready.then(res=>{
+    console.log("res.active");
+    res.active.postMessage("connect");
+});
+navigator.serviceWorker.addEventListener("message", (event) => {
+    console.log("Respuesta del SW:", event.data);
+});
 //#endregion Complex Elements
