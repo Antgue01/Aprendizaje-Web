@@ -49,9 +49,17 @@ Te dice las librerías que utiliza una página.</font>
 
 [Google Trends](https://trends.google.es/trends/) Tendencias de lo que busca la gente. Tener en cuenta de cara a campañas de **márketing, SEO, etc**. Permite también comparar tendencias para saber cuáles temas son más interesantes de hablar.
 
-[Animaciones](https://keyframes.app/animate). Te permite crear animaciones CSS con una línea de tiempo
+[Animaciones](https://keyframes.app/animate). Te permite crear animaciones CSS con una línea de tiempo.
+
+[BestjQuery](https://www.bestjquery.com/). Web con varios plugins para jquery.
+
+[Notebook LM](https://notebooklm.google/). IA que te ayuda a condensar información a partir de las fuentes que tú le indiques **(Incluido videos)**.También se puede usar para pedirle ideas para webs o incluso páginas completas a partir de referencias. 
 
 ## Librerías
+
+[gsap](https://gsap.com/) Librería para crear animaciones 2d y 3d en el canvas.
+
+[animejs](https://animejs.com/) Otra librería para crear otros tipos de animaciones 2d y 3d en el canvas.
 
 ### Bootstrap
 <font color ="#a0c2f0">
