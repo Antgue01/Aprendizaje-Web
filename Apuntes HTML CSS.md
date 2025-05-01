@@ -59,7 +59,7 @@ Te dice las librerías que utiliza una página.</font>
 
 [gsap](https://gsap.com/) Librería para crear animaciones 2d y 3d en el canvas.
 
-[animejs](https://animejs.com/) Otra librería para crear otros tipos de animaciones 2d y 3d en el canvas.
+[animejs](https://animejs.com/) Otra librería para crear otros tipos de animaciones 2d como draggables o paths en SVG, dando la posibilidad incluso de crear timelines para sincronizarlas.
 
 ### Bootstrap
 <font color ="#a0c2f0">

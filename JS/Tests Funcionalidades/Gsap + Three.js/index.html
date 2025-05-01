@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo 3D con Distorsión UV</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Crear escena, cámara y renderizador
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x4488ee); 
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Cargar textura Perlin
+        const loader = new THREE.TextureLoader();
+        const perlinTexture = loader.load('Perlin.jpg', function (texture) {
+            texture.wrapS = THREE.RepeatWrapping; // Permite repetir en eje X
+            texture.wrapT = THREE.RepeatWrapping; // Permite repetir en eje Y
+        });
+
+
+        // Shader personalizado con distorsión UV
+        const vertexShader = `
+            varying vec2 vUv;
+            void main() {
+                vUv = uv;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `;
+
+        const fragmentShader = `
+            varying vec2 vUv;
+            uniform sampler2D perlinTexture;
+            uniform float time;
+
+            void main() {
+                vec2 distortedUv = vUv + (texture2D(perlinTexture, vUv ).rg ) * .3 * sin(time);
+                vec3 color = texture2D(perlinTexture, distortedUv).rgb;
+                if(color.r<.2)
+                    discard;
+                gl_FragColor = vec4(.2*color.r,.8*color.g,0, 1.0);
+            }
+        `;
+
+        // Crear material de shader
+        const shaderMaterial = new THREE.ShaderMaterial({
+            vertexShader: vertexShader,
+            fragmentShader: fragmentShader,
+            uniforms: {
+                perlinTexture: { value: perlinTexture },
+                time: { value: 0.0 }
+            }
+        });
+
+        // Crear cubo con el shader
+        const geometry = new THREE.BoxGeometry();
+        const cube = new THREE.Mesh(geometry, shaderMaterial);
+        scene.add(cube);
+
+        camera.position.z = 2;
+
+        // Animación con GSAP
+        gsap.to(cube.rotation, {
+            x: "+=6.28",
+            y: "+=6.28",
+            duration: 5,
+            repeat: -1,
+            ease: "linear"
+        });
+
+        // Animación de tiempo para distorsión UV
+        function animate() {
+            shaderMaterial.uniforms.time.value += 0.01;
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+
+</body>
+
+</html>
