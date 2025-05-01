@@ -1,5 +1,5 @@
 "use strict";
-import { stagger, utils, eases, animate, createTimeline } from 'https://cdn.jsdelivr.net/npm/animejs/+esm';
+import { stagger, utils, eases, createTimeline } from 'https://cdn.jsdelivr.net/npm/animejs/+esm';
 
 
 const treesDuration = 1000;
@@ -66,11 +66,11 @@ const timeline = createTimeline({
     duration: ballDuration,
     easing: 'linear',
 },ballDelay)
+//Trees strike 
 .add(trees, {
         keyframes: {
 
         '30%': {
-            // translateY: 0,
             rotate: 0
         },
         '65%': {
