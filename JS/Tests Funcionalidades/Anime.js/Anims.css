@@ -1,0 +1,66 @@
+
+.icon-SKULL{
+    font-size: 100px;
+    transition: font-size 0.3s;
+}
+.icon-SKULL:hover{
+    font-size: 1000px;
+    transition: font-size 0.3s;
+}
+
+.bowling__container {
+    --color: #88e7a5;
+    --size: 2rem;
+    --size-half: calc(var(--size) * .5);
+    max-width: 200px;
+    padding: 20px;
+    padding-bottom: calc(20px + 2* var(--size));
+
+    perspective: 100px;
+    text-align: center;
+    font-size: var(--size);
+    border: 3px var(--color) dashed;
+}
+
+.bowling__container .pins__container {
+    position: relative;
+    margin-top: var(--size);
+}
+
+.bowling__container .pins__container i {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.bowling__container i {
+
+    color: var(--color);
+    opacity: 0;
+}
+
+.bowling__container .pins__container i:nth-child(2) {
+    translate: var(--size-half) var(--size-half);
+}
+
+.bowling__container .pins__container i:nth-child(3) {
+    translate: calc(var(--size-half) * -1) var(--size-half);
+}
+
+.bowling__container .pins__container i:nth-child(4) {
+    translate: calc(var(--size) * -1) var(--size);
+}
+
+.bowling__container .pins__container i:nth-child(5) {
+    translate: calc(var(--size-half) * -.5) calc(var(--size-half)*2.5);
+}
+
+.bowling__container .pins__container i:nth-child(6) {
+    translate: calc(var(--size-half) *.5) calc(var(--size-half)*2.5);
+}
+
+.bowling__container .pins__container i:nth-child(7) {
+    translate: calc(var(--size)) var(--size);
+}
