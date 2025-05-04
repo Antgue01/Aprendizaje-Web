@@ -137,6 +137,15 @@
                                 </div>
                             </div>
                             <!-- #endregion Eventos-->
+                            <!-- #region Cookies -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="cookiesindx">
+                                    <label class="index__item__label" for="cookiesindx"></label>
+                                    <a class="index__lv2" href="#Cookies">Cookies</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Cookies-->
                             <!-- #region Clases -->
                             <div class="index__item__container">
                                 <div class="index__item">
@@ -183,6 +192,18 @@
                                         </div>
                                     </div>
                                     <!-- #endregion Screen-->
+                                    <!-- #region Canvas -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="canvasindx">
+                                            <label class="index__item__label" for="canvasindx"></label>
+                                            <a class="index__lv4" href="#Canvas">Canvas</a>
+                                            <div class="index__item__bar"></div>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Canvas-->
                                     <!-- #region Event -->
                                     <div class="index__item__container">
                                         <div class="index__item">
@@ -490,6 +511,16 @@
                                         <a class="index__lv3" href="#librerias">Librerías</a>
                                     </div>
                                 </div>
+                                <!-- #region Jquery -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="jqueryindx">
+                                        <label class="index__item__label" for="jqueryindx"></label>
+                                        <a class="index__lv4" href="#Jquery">Jquery</a>
+                                        <div class="index__item__bar"></div>
+                                    </div>
+                                </div>
+                                <!-- #endregion Jquery-->
                                 <!-- #endregion Librerías-->
                                 <!-- #region Excepciones -->
                                 <div class="index__item__container">
@@ -1290,7 +1321,27 @@ console.<span class="func">log(</span><span class ="var">...arr</span><span clas
                 </p>
             </section>
             <!-- #endregion Eventos   -->
-
+            <!-- #region Cookies -->
+            <div id="Cookies" class="header__container">
+                <h2>Cookies</h2>
+            </div>
+            <section>
+                <p>
+                    Son datos que se almacenan en el navegador del cliente. Para guardarlas, usamos el atributo <span
+                        class="var">document.cookie</span>, que es un string con el formato <span
+                        class="val">"clave=valor;atributo;atributo;atributo"</span>. Un ejemplo sería:
+                </p>
+                <div class="code__box">
+                    <code><span class="var">document.cookie</span><span class="literal"> = </span><span class="string">"user=antonio;expires=Mon 5 May 2025 12:00:00 UTC"</span>;</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Podemos consultarlas en las herramientas del desarrollador, en el apartado <strong>Application ->
+                        Storage -> Cookies</strong>.</p>
+            </section>
+            <!-- #endregion Cookies -->
             <!-- #region Clases -->
             <div id="Clases" class="header__container">
                 <h2>Clases</h2>
@@ -1983,6 +2034,139 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
 
             </section>
             <!-- #endregion Screen -->
+            <!-- #region Canvas -->
+            <div id="Canvas" class="header__container">
+                <h4>Canvas</h4>
+            </div>
+            <section>
+                <p>
+                    Deberíamos establecer el <strong>tamaño en el HTML</strong>, ya que en el CSS se modifica la escala.
+                </p>
+                <p>
+                    Lo primero es obtenerlo por una query o el id y obtener también el <strong>contexto</strong>, que
+                    puede ser 2D o 3D. Para ello, usamos la función <span class="var">canvas.</span><span
+                        class="func">getContext(</span><span class="val">"2d o 3d"</span><span class="func">)</span>.
+                </p>
+                <p>
+                    Por otra parte, el canvas tiene una serie de atributos de estilo, como el color, que es lo que hay
+                    que definir antes de dibujar. Por ejemplo, <strong>si queremos dibujar un rectángulo rojo encima de
+                        otro
+                        verde</strong>, primero hay que <strong>darle el color verde a la variable</strong>, dibujar el
+                    rectángulo,
+                    <strong>dar el color rojo a la variable</strong> y dibujar el otro.
+                </p>
+                <p> Los métodos más importantes para el canvas son:
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Canvas </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">getBoundingClientRect()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Te da las coordenadas del canvas en la pantalla, se usa para traducir las coordenadas de pantalla a las de canvas mediante una resta.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="box__separator">Variables de estilo</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="var">strokeStyle </span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Color de los bordes de los elementos.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var">fillStyle </span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="var">lineWidth </span>
+                            </li>
+                        </ul>
+                        <div class="box__separator">2D</div>
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">strokeRect(</span><span class="var">top, left, width,
+                                        height</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Crea un rectángulo sin relleno con el borde definido por los parámetros dados.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">fillRect(</span><span class="var">top, left, width,
+                                        height</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Crea un rectángulo relleno con la posición definida por los parámetros dados.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">lineTo(</span><span class="var">x, y</span><span
+                                        class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Define un punto de una línea, pero no la dibuja. <strong>Para
+                                            dibujarla</strong>, hay que dar dos puntos y usar la función <span
+                                            class="func">stroke()</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">stroke()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Dibuja un trazo definido por los puntos dados por la función <span
+                                            class="func">lineTo()</span>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <span class="func">closePath()</span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Cierra el polígono para poder empezar a dibujar en otro lado.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">beginPath()</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Crea un nuevo polígono.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <span class="func">arc(</span><span
+                                        class="var">x,y,radius,startAngle,endAngle</span><span class="func">)</span>
+
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Prepara un círculo con los parámetros dados, pero no lo dibuja. Para ello, usamos <span class="func">stroke()</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">moveTo(</span><span class ="var">x,y</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Empieza un nuevo trazo en la posición dada por los parámetros.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- #endregion Canvas -->
             <!-- #region Event -->
             <div id="Event" class="header__container">
                 <h4>Event</h4>
@@ -3936,6 +4120,125 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         de nuestro código, hay que ponerle el atributo <strong>type = "module"</strong>.</p>
                 </section>
                 <!-- #endregion Librerias -->
+                <!-- #region Jquery -->
+                <div id="Jquery" class="header__container">
+                    <h4>Jquery</h4>
+                </div>
+                <section>
+                    <p>Jquery nos acorta la gestión de los nodos. No se suele hacer nada hasta que el documento esté
+                        preparado, con el listener </p>
+                    <div class="code__box">
+                        <code>$(document).<span class="func">ready(</span><span class ="var">callback</span><span class="func">)</span>;</code><button
+                            class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
+                    </div>
+                    <p>
+                        Para usar selectores de CSS, se usa el símbolo <strong>$</strong> seguido del selector. Además,
+                        los listeners se añaden con la función <span class="func">on(<span class="val">"evento"
+                            </span><span class="var">, callback </span>)</span>.
+                    </p>
+                    <p>Hay que tener en cuenta que en Jquery <strong>nunca trabajamos con nodos</strong>, ni hay forma
+                        de conseguirlos, sino con un <strong>wrapper.</strong></p>
+
+                    <p>Por otra parte, tenemos otras funciones predefinidas para los elementos.</p>
+                    <div class="box">
+                        <h2 class="box__title">Jquery </h2>
+                        <div class="box__text__container">
+                            <ul class="box__list">
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">hide(</span><span class="var">tiempo</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Oculta el elemento. El parámetro <span class="var">tiempo</span> es opcional
+                                            y se usa para reproducir una animación de fade out. Se mide en milisegundos.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <span class="func">show(</span><span class="var">tiempo</span><span
+                                        class="func">)</span>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">toggle(</span><span class="var">tiempo</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Dependiendo de si el elemento es visible o no, llama a hide o show.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">attr(</span><span class="var">nombre, [valor]</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Si le pasamos el atributo opcional <span class="var">valor </span>, le
+                                            cambia el valor al atributo. En caso contrario, nos devuelve el valor del
+                                            atributo <span class="var">nombre</span>.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <span class="func">addClass(</span><span class="var">clase</span><span
+                                        class="func">)</span>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">css(</span><span class="var">atributo, [valor]</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Ambos argumentos son strings. Si le pasamos el segundo argumento, le cambia
+                                            el valor del atributo CSS. <strong>La notación es igual que en un archivo
+                                                CSS</strong>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">html(</span><span class="var">código</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Le cambia el HTML al elemento. Si no le pasamos nada, nos devuelve el HTML
+                                            del elemento.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">append(</span><span class="var">codigoHtml</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Añade el código HTML al final del elemento.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">prepend(</span><span class="var">codigoHtml</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Igual que append, pero al principio del elemento.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><span class="func">text(</span><span class="var">[ ]</span><span
+                                            class="func">)</span>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Devuelve el texto del elemento. Si le pasamos un argumento, le cambia el
+                                            texto al elemento.
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- #endregion Jquery -->
                 <!-- #region Excepciones -->
                 <div id="Excepciones" class="header__container">
                     <h3>Excepciones</h3>
@@ -4218,9 +4521,11 @@ reader.<span class="func">addEventListener(</span><span class ="var"><span class
                         <span class="val">message </span>hacemos algo cada vez que se reciba información.
                     </p>
                     <p>
-                        Es importante tener en cuenta que <strong>estos mensajes son del cliente hacia el servidor</strong>.
+                        Es importante tener en cuenta que <strong>estos mensajes son del cliente hacia el
+                            servidor</strong>.
                         Cuando <strong>en nuestro código</strong> a nuestra variable del service worker le definimos el
-                        evento <span class="val">message </span>estamos reaccionando a la respuesta del servidor al cliente.
+                        evento <span class="val">message </span>estamos reaccionando a la respuesta del servidor al
+                        cliente.
                     </p>
                 </section>
                 <!-- #endregion Service Workers -->

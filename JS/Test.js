@@ -330,7 +330,7 @@ addEventListener("mousemove", (e) => {
 
 });
 addEventListener("wheel", (e) => {
-    offset=Math.min(offset-Math.sign(e.deltaY)*5,500);
+    offset = Math.min(offset - Math.sign(e.deltaY) * 5, 500);
 
 });
 
@@ -570,12 +570,69 @@ intersection.observe(next);
 navigator.serviceWorker.register("Files/chatWorker.js");
 
 console.log(navigator.serviceWorker.controller)
-setTimeout(()=>console.log(navigator.serviceWorker.controller),5000) ;
-navigator.serviceWorker.ready.then(res=>{
+setTimeout(() => console.log(navigator.serviceWorker.controller), 5000);
+navigator.serviceWorker.ready.then(res => {
     console.log("res.active");
     res.active.postMessage("connect");
 });
 navigator.serviceWorker.addEventListener("message", (event) => {
     console.log("Respuesta del SW:", event.data);
 });
+
+//Canvas
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const TriangleOffset = .2;
+ctx.strokeStyle = "#48e";
+ctx.lineWidth = 2;
+
+for (let i = 0; i < 7; i++) {
+    ctx.lineTo(0 * TriangleOffset * i, 0 * TriangleOffset * i);
+    ctx.lineTo(100 * TriangleOffset * i, 50 * TriangleOffset * i);
+    ctx.stroke();
+    ctx.lineTo(100 * TriangleOffset * i, 50 * TriangleOffset * i);
+    ctx.lineTo(0 * TriangleOffset * i, 100 * TriangleOffset * i);
+    ctx.stroke();
+    ctx.lineTo(0 * TriangleOffset * i, 100 * TriangleOffset * i);
+    ctx.lineTo(0 * TriangleOffset * i, 0 * TriangleOffset * i);
+    ctx.stroke();
+    ctx.closePath();
+}
+
+const canvas2 = document.getElementById("canvas2");
+const ctx2 = canvas2.getContext("2d");
+let painting = false;
+ctx2.strokeStyle = "#000";
+ctx2.lineWidth = 1;
+let prev = [0, 0];
+
+canvas2.addEventListener("mousedown", (e) => {
+    
+    painting = true;
+    ctx2.beginPath();
+    ctx2.moveTo(e.x - canvas2.getBoundingClientRect().x, e.y - canvas2.getBoundingClientRect().y);
+    prev = [e.x - canvas2.getBoundingClientRect().x, e.y - canvas2.getBoundingClientRect().y];
+});
+canvas2.addEventListener("mousemove", e => {
+    if (painting) {
+        ctx2.lineTo(prev[0], prev[1]);
+        ctx2.lineTo(e.x - canvas2.getBoundingClientRect().x, e.y - canvas2.getBoundingClientRect().y);
+        ctx2.stroke();
+        prev = [e.x - canvas2.getBoundingClientRect().x, e.y - canvas2.getBoundingClientRect().y];
+    
+    }
+});
+canvas2.addEventListener("mouseup", e => {
+    painting = false;
+    ctx2.closePath();
+});
+
+document.getElementById("colorSelector").addEventListener("input", e => {
+    ctx2.strokeStyle = e.target.value;
+});
+document.getElementById("sizeSelector").addEventListener("input", e => {
+    ctx2.lineWidth = e.target.value;
+});
+
 //#endregion Complex Elements

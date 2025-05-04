@@ -55,6 +55,10 @@ Te dice las librerías que utiliza una página.</font>
 
 [Notebook LM](https://notebooklm.google/). IA que te ayuda a condensar información a partir de las fuentes que tú le indiques **(Incluido videos)**.También se puede usar para pedirle ideas para webs o incluso páginas completas a partir de referencias. 
 
+[Envato Market](https://elements.envato.com/es/). Tienda de plantillas prehechas.
+
+[Postman](https://www.postman.com/) Página para crear APIs REST.
+
 ## Librerías
 
 [gsap](https://gsap.com/) Librería para crear animaciones 2d y 3d en el canvas.
@@ -2652,6 +2656,23 @@ y el alpha se pone siempre detrás de un
 <font color ="#e6c925">/.
 </font>
 </font>
+
+## Elegir plantillas prehechas
+
+<font color ="#a0c2f0">
+
+Hay que fijarse en el número de usuarios, las críticas, que esté actualizada y sea reciente y que tenga las características que queremos.
+
+Deberíamos **mirar las páginas secundarias** para ver si la plantilla está currada en todos los aspectos, ya que muchas veces se curran solo la página principal.
+
+</font>
+
+
+## Animar, especialmente en Jquery
+
+En lugar de usar **animate** para disparar una animación (a no ser que estemos usando una librería), lo ideal es **añadir o quitar clases** que tengan definidas las animaciones en el CSS.
+
+
 
 ## Flecha que te devuelve al inicio de la página
 

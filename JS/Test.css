@@ -18,6 +18,12 @@ body {
 
 }
 
+.obj__container:has(#canvas){
+    flex-direction: row;
+    gap: 40px;
+    max-width: fit-content;
+}
+
 .obj__container h2 {
     margin: 0;
     color: rebeccapurple;
@@ -306,4 +312,7 @@ body {
     padding: 10px;
     background-color: #417264;
     color: #e0e0e0;
+}
+canvas{
+    border: 4px #f0557e solid;
 }
