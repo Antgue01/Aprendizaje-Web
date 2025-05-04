@@ -608,7 +608,7 @@ ctx2.lineWidth = 1;
 let prev = [0, 0];
 
 canvas2.addEventListener("mousedown", (e) => {
-    
+
     painting = true;
     ctx2.beginPath();
     ctx2.moveTo(e.x - canvas2.getBoundingClientRect().x, e.y - canvas2.getBoundingClientRect().y);
@@ -616,11 +616,20 @@ canvas2.addEventListener("mousedown", (e) => {
 });
 canvas2.addEventListener("mousemove", e => {
     if (painting) {
+
+        let newX = e.x - canvas2.getBoundingClientRect().x;
+        let newY = e.y - canvas2.getBoundingClientRect().y;
+        if (newX < 0 || newX > canvas2.width || newY < 0 || newY > canvas2.height) {
+            painting = false;
+            ctx2.closePath();
+            return;
+
+        }
         ctx2.lineTo(prev[0], prev[1]);
-        ctx2.lineTo(e.x - canvas2.getBoundingClientRect().x, e.y - canvas2.getBoundingClientRect().y);
+        ctx2.lineTo(newX, newY);
         ctx2.stroke();
-        prev = [e.x - canvas2.getBoundingClientRect().x, e.y - canvas2.getBoundingClientRect().y];
-    
+        prev = [newX, newY];
+
     }
 });
 canvas2.addEventListener("mouseup", e => {
