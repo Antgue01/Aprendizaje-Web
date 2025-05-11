@@ -2065,7 +2065,8 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                 <label><span class="func">getBoundingClientRect()</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Te da las coordenadas del canvas en la pantalla, se usa para traducir las coordenadas de pantalla a las de canvas mediante una resta.
+                                        Te da las coordenadas del canvas en la pantalla, se usa para traducir las
+                                        coordenadas de pantalla a las de canvas mediante una resta.
                                     </div>
                                 </label>
                             </li>
@@ -2150,12 +2151,14 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
 
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Prepara un círculo con los parámetros dados, pero no lo dibuja. Para ello, usamos <span class="func">stroke()</span>
+                                        Prepara un círculo con los parámetros dados, pero no lo dibuja. Para ello,
+                                        usamos <span class="func">stroke()</span>
                                     </div>
                                 </label>
                             </li>
                             <li class="box__list__item --can-open">
-                                <label><span class="func">moveTo(</span><span class ="var">x,y</span><span class="func">)</span>
+                                <label><span class="func">moveTo(</span><span class="var">x,y</span><span
+                                        class="func">)</span>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
                                         Empieza un nuevo trazo en la posición dada por los parámetros.
@@ -4135,8 +4138,13 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         </div>
                     </div>
                     <p>
-                        Para usar selectores de CSS, se usa el símbolo <strong>$</strong> seguido del selector. Además,
-                        los listeners se añaden con la función <span class="func">on(<span class="val">"evento"
+                        La función principal es <span class="func">$()</span>, que puede recibir un <strong>selector
+                            CSS</strong> para obtener los elementos, <strong>o bien código HTML</strong>
+                        para crearlos.
+                    </p>
+                    <p>
+                        Por otra parte, los listeners se añaden con la función <span class="func">on(<span
+                                class="val">"evento"
                             </span><span class="var">, callback </span>)</span>.
                     </p>
                     <p>Hay que tener en cuenta que en Jquery <strong>nunca trabajamos con nodos</strong>, ni hay forma
