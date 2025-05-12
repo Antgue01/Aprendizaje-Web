@@ -55,7 +55,7 @@
             void main() {
                 vec2 distortedUv = vUv + (texture2D(perlinTexture, vUv ).rg ) * .3 * sin(time);
                 vec3 color = texture2D(perlinTexture, distortedUv).rgb;
-                if(color.r<.2)
+                if(color.r<.3)
                     discard;
                 gl_FragColor = vec4(.2*color.r,.8*color.g,0, 1.0);
             }

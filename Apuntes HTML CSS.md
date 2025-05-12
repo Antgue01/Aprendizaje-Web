@@ -59,6 +59,7 @@ Te dice las librerías que utiliza una página.</font>
 
 [Postman](https://www.postman.com/) Página para crear APIs REST.
 
+[SVG Path Creator](https://yqnn.github.io/svg-path-editor/) Crea trazos en SVG online.
 ## Librerías
 
 [gsap](https://gsap.com/) Librería para crear animaciones 2d y 3d en el canvas.
@@ -1033,6 +1034,22 @@ elige al segundo hermano, pero
 2n + 1
 </font>
 elige a los hermanos impares.
+
+<font color="#fff">
+
+### Trucos nth-child (en una box)
+
+</font>
+<font color ="#e6c925"> n + x
+ </font>  selecciona los elementos a partir de <font color ="#e6c925">x</font>, por ejemplo, <font color ="#e6c925">n +3
+ </font> son los elementos a partir del <b>tercero</b>.
+
+
+ <font color ="#e6c925">
+ 
+ -n + x</font> selecciona los <font color ="#e6c925">x</font> primeros elementos.
+
+<font color ="#e6c925">:nth-child(n + x):nth-child(-n + y)</font> selecciona los elementos en las posiciones entre <font color ="#e6c925">x</font > e <font color ="#e6c925">y</font>. Lo podemos interpretar como <b>"De los elementos a partir de <font color ="#e6c925">x</font>, coge los <font color ="#e6c925">y</font> primeros"</b>.
 
 <font color ="#e6c925"><b>
 
