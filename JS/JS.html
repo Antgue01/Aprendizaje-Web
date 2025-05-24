@@ -503,6 +503,55 @@
                                     <label class="index__item__label" for="wkfl"></label>
                                     <a class="index__lv2" href="#Workflow">Workflow</a>
                                 </div>
+                                <!-- #region WordPress -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="wdprssindx">
+                                        <label class="index__item__label" for="wdprssindx"></label>
+                                        <a class="index__lv3" href="#WordPress">WordPress</a>
+                                    </div>
+                                    <!-- #region Bases de Datos -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="dtbsindx">
+                                            <label class="index__item__label" for="dtbsindx"></label>
+                                            <a class="index__lv4" href="#databases">Bases de Datos</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Bases de Datos-->
+                                </div>
+                                <!-- #region Instalación -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="wrdprssinstllindx">
+                                        <label class="index__item__label" for="wrdprssinstllindx"></label>
+                                        <a class="index__lv4" href="#WrdPressInstall">Instalación</a>
+                                        <div class="index__item__bar"></div>
+                                    </div>
+                                </div>
+                                <!-- #endregion Instalación-->
+                                <!-- #region Uso -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="wrdpressusoindx">
+                                        <label class="index__item__label" for="wrdpressusoindx"></label>
+                                        <a class="index__lv4" href="#UsoWrdprss">Uso</a>
+                                        <div class="index__item__bar"></div>
+                                    </div>
+                                </div>
+                                <!-- #endregion Uso-->
+                                <!-- #region Elementor -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="Elementorindx">
+                                        <label class="index__item__label" for="Elementorindx"></label>
+                                        <a class="index__lv4" href="#Elementor">Elementor</a>
+                                        <div class="index__item__bar"></div>
+                                    </div>
+                                </div>
+                                <!-- #endregion Elementor-->
+                                <!-- #endregion WordPress-->
                                 <!-- #region Librerías -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -510,17 +559,17 @@
                                         <label class="index__item__label" for="libreriasindx"></label>
                                         <a class="index__lv3" href="#librerias">Librerías</a>
                                     </div>
-                                </div>
-                                <!-- #region Jquery -->
-                                <div class="index__item__container">
-                                    <div class="index__item">
-                                        <input type="checkbox" hidden id="jqueryindx">
-                                        <label class="index__item__label" for="jqueryindx"></label>
-                                        <a class="index__lv4" href="#Jquery">Jquery</a>
-                                        <div class="index__item__bar"></div>
+                                    <!-- #region Jquery -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="jqueryindx">
+                                            <label class="index__item__label" for="jqueryindx"></label>
+                                            <a class="index__lv4" href="#Jquery">Jquery</a>
+                                            <div class="index__item__bar"></div>
+                                        </div>
                                     </div>
+                                    <!-- #endregion Jquery-->
                                 </div>
-                                <!-- #endregion Jquery-->
                                 <!-- #endregion Librerías-->
                                 <!-- #region Excepciones -->
                                 <div class="index__item__container">
@@ -4113,7 +4162,144 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                         </div>
                     </div>
                 </section>
+                <!-- #region WordPress -->
+                <div id="WordPress" class="header__container">
+                    <h3>WordPress</h3>
+                </div>
+                <section>
+                    <p>
+                        Para usar Wordpress se necesita un <strong>servidor web</strong> y una <strong>base de
+                            datos.</strong> El servidor web código abierto más común es <strong>Apache</strong>, y
+                        necesita PHP para comunicarse. Las bases de datos de gestionan a través de
+                        <strong>localhost/phpmyadmin</strong>.
+                    </p>
+                </section>
+                <!-- #region Bases de datos -->
+                <div id="databases" class="header__container">
+                    <h4>Bases de Datos</h4>
+                </div>
+                <section>
+                    <p>
+                        Las bases de datos relacionales se dividen en <strong>tablas</strong>, que tienen información de
+                        un tipo. Cada entrada de una tabla tiene un id único y la información asociada.
 
+                    </p>
+                    <p>Un ejemplo sería una base de datos con dos tablas con información sobre alumnos. En la tabla
+                        <strong>Alumno</strong> tendría campos como DNI, nombre, apellidos etc, y en la tabla
+                        <strong>Cursos</strong> tendría información sobre calificaciones, comentarios, etc. Lo
+                        importante es que <strong>el mismo alumno tendría el mismo id en ambas tablas.</strong>
+                    </p>
+                </section>
+                <!-- #endregion Bases de datos -->
+                <!-- #region Instalación -->
+                <div id="WrdPressInstall" class="header__container">
+                    <h4>Instalación</h4>
+                </div>
+                <section>
+                    <p>
+                        Wordpress se consigue de <a href="https://wordpress.org/" target="_blank">Wordpress.org</a>,
+                        donde se descargará un zip, que al descompirmirlo habrá que copiar el contenido en una <strong>
+                            carpeta vacía dentro de htdocs</strong>. Entonces creamos una base de datos para el proyecto
+                        desde <strong>phpmyadmin</strong>, entramos en la carpeta del proyecto <strong>desde
+                            localhost</strong> y seguimos los pasos.
+                    </p>
+                    <p>
+                        Cuando nos pidan el <strong>usuario</strong> de la base de datos, usaremos
+                        <strong>root</strong>, y <strong>NO pondremos contraseña.</strong>
+                    </p>
+                    <p>
+                        Una vez instalado, para editar nuestra página, entramos desde localhost en nuestro proyecto y en
+                        la url <strong>añadimos /wp-admin</strong>.
+                    </p>
+                </section>
+                <!-- #endregion Instalación -->
+                <!-- #region Uso -->
+                <div id="UsoWrdprss" class="header__container">
+                    <h4>Uso</h4>
+                </div>
+                <section>
+                    <p>
+                        Es recomendable añadir tanto <strong>Tags</strong> como <strong>Categorías</strong> a los posts
+                        para tenerlos bien organizados y que la <strong> navegación </strong>por las páginas intermedias
+                        (por ejemplo en una página de cocina una página intermedia puede ser recetas veganas, otra
+                        postres, etc) sea <strong>intuitiva</strong>.
+                    </p>
+                    <p>
+                        Se puede personalizar la apariencia de botones, headers, etc instalando Temas en el apartado
+                        <strong>Appearance</strong>. Lo ideal es instalar uno sencillo y customizarlo a nuestro gusto.
+                        El editor de css está en <strong>Appearance -> Theme File Editor</strong>
+                    </p>
+                    <p>
+                        Además, podemos instalar Plugins, los cuales suelen tener un apartado en la barra lateral para
+                        configurarlos, y los que son elementos para nuestros posts suelen tener un
+                        <strong>shortcode</strong> en su apartado de configuración, que es <strong>lo que hay que
+                            copiar</strong> para insertarlo en nuestros posts. Algunos plugins interesantes pueden ser:
+                    </p>
+                    <p>
+                    <div class="box">
+                        <h2 class="box__title">Plugins Interesantes </h2>
+                        <div class="box__text__container">
+                            <ul class="box__list">
+                                <li class="box__list__item --can-open">
+                                    <label><strong>Classic Editor</strong>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Permite usar un editor de código (aunque no autocompleta) en lugar del
+                                            editor de bloques. Para seleccionarlo <strong>Settings -> Writing.</strong>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><strong>FakerPress</strong>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Permite generar posts de prueba. En la barra lateral está la configuración y
+                                            desde su apartado <strong>Posts</strong> se configura el randomizer. Se
+                                            pueden configurar, entre otras cosas, el número de posts y fechas (pasadas y
+                                            futuras para que se publiquen en unos días).
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><strong>Elementor</strong>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Es un plugin generador de páginas. Pide mucha memoria, así que dos o tres
+                                            instancias corriendo simultáneamente en el mismo servidor puede dar
+                                            problemas.
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="box__list__item --can-open">
+                                    <label><strong>Page and Post Clone</strong>
+                                        <input hidden type="checkbox">
+                                        <div class="box__explanation">
+                                            Permite duplicar post. Compatible con Elementor.
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <!-- #endregion Uso -->
+                <!-- #region Elementor -->
+                <div id="Elementor" class="header__container">
+                    <h4>Elementor</h4>
+                </div>
+                <section>
+                    <p>Para editar posts con Elementor, lo que se suele usar es la Template <strong>Elementor Full
+                            Width</strong> y clickar en Edit With Elementor. De esta forma, podremos editar fácilmente
+                        usando los estilos y varios elementos prehechos.</p>
+                    <p>
+                        Por otra parte, Elementor tiene un <strong>Theme Builder</strong> en el apartado
+                        <strong>Appearance</strong> en el que podemos definir el aspecto y la estructura de los posts y
+                        páginas.
+                    </p>
+                </section>
+                <!-- #endregion Elementor -->
+                <!-- #endregion WordPress -->
                 <!-- #region Librerias -->
                 <div id="librerias" class="header__container">
                     <h3>Uso de librerías</h3>
@@ -4248,7 +4434,7 @@ objeto.<span class="func">setAlgo</span> =<span class="decl">  parametros</span>
                                 <li class="box__list__item --can-open">
                                     <span class="func">children()</span>
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </div>
