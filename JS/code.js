@@ -2,6 +2,62 @@
 //#region Globals
 const MAX__WIDTH = 1250;
 //#endregion
+//#region Classes
+class Node {
+    #nextNodes;
+    #domElement;
+    #letter;
+    #parent;
+
+    constructor(letter, DOMelement, nextNode, parent) {
+        this.#domElement = DOMelement;
+        this.#letter = letter;
+        this.#nextNodes = nextNode;
+        this.#parent = parent;
+    }
+    get getElement() { return this.#domElement; }
+    get getLetter() { return this.#letter; }
+    get nextNodes() { return this.#nextNodes; } // TODO: Borrar, es de debug
+    next(char) {
+        if (char in this.#nextNodes)
+            return this.#nextNodes[char];
+        else return new Node(' ', this.#domElement, {}, this.#parent);
+    }
+    append(node) {
+        //We only append the letter if we don't have it
+        if (!(node.#letter in this.#nextNodes))
+            this.#nextNodes[node.#letter] = node;
+    }
+
+}
+class Trie {
+    #root;
+    constructor() {
+        this.#root = new Node(' ', $(document), {}, null);
+    }
+    insert(word, DOMelement) {
+        let node = this.#root;
+        for (const char of word) {
+            const nextNode = node.next(char);
+            //if we have this letter, continue inserting with the next letter
+            if (nextNode.getLetter != ' ') {
+                node = nextNode;
+            }
+            //on the contrary, if we don't have this letter, append it
+            else {
+                const newNode = new Node(char, DOMelement, {}, node);
+                node.append(newNode);
+                node = newNode;
+            }
+        }
+    }
+    get getRoot() { return this.#root; }
+}
+
+
+
+
+//#endregion Classes
 //#region Functions
 function hideLevel(itemContainer) {
 
@@ -155,5 +211,12 @@ for (const label of boxLabels) {
 const main = document.querySelector("main");
 mainMaxWidth(main);
 window.addEventListener("resize", () => mainMaxWidth(main))
+
+//Index term search
+const searchTrie = new Trie();
+searchTrie.insert("apple", $(document));
+searchTrie.insert("apricot", $(document));
+searchTrie.insert("badabum", $(document));
+console.log(searchTrie.getRoot.nextNodes);
 //#endregion Code
 
