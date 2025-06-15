@@ -142,25 +142,30 @@ function mainMaxWidth(main) {
 
 }
 // TODO: Método recursivo. Caso base: si el item es de nivel 2, lo añadimos al root y devolvemos el root. Caso recursivo: si el item no es nivel 2, nos vamos al abuelo y añadimos a la iteración anterior el primer hijo y devolvemos 
-function recursivelyReconstructIndex(item, root) {
+function recursivelyReconstructIndex(item, root,original) {
     if (item.children[0].children[2].classList.contains("index__lv2")) {
         root.appendChild(item);
         return root;
     }
     else {
-        const grandparent = item.parentElement;
+        const grandparent = original.parentElement;
         const firstChild = grandparent.children[0];
         const newNode = document.createElement("div");
         newNode.classList.add("index__item__container");
         newNode.appendChild(firstChild);
-        return recursivelyReconstructIndex(newNode, root);
+        newNode.appendChild(item.children[0]);
+        return recursivelyReconstructIndex(newNode, root, original.parentElement.children[0]);
     }
 }
 function reconstructIndex(items) {
-    // console.log(items.keys());
     let root = document.querySelector(".index .index__container");
     for (const item of items) {
-        root = recursivelyReconstructIndex(item.parentElement, root);
+        //If the item is a level 2 item, we append it directly to the root. Else, we recursively reconstruct the index with the parent element.
+        if (item.children[2].classList.contains("index__lv2")) {
+            root.appendChild(item);
+        }
+        else
+            root = recursivelyReconstructIndex(item.parentElement, root,item.parentElement);
         //We append the item to the index container
         // if (item.children[2].classList.contains("index__lv2"))
         //     root.appendChild(item);
