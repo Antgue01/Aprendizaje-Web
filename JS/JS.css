@@ -291,6 +291,7 @@ p a:hover,
 }
 
 .index__search-bar {
+  user-select: none;
   position: relative;
   width: 90%;
   padding: 0 0 0 20px;

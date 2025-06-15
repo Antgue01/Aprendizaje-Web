@@ -5,28 +5,35 @@ const MAX__WIDTH = 1250;
 //#region Classes
 class Node {
     #nextNodes;
-    #domElement;
+    #domElements;
     #letter;
     #parent;
 
     constructor(letter, DOMelement, nextNode, parent) {
-        this.#domElement = DOMelement;
+        this.#domElements = new Set([DOMelement]);
         this.#letter = letter;
         this.#nextNodes = nextNode;
         this.#parent = parent;
     }
-    get getElement() { return this.#domElement; }
-    get getLetter() { return this.#letter; }
-    get nextNodes() { return this.#nextNodes; } // TODO: Borrar, es de debug
+    get element() { return this.#domElements; }
+    get letter() { return this.#letter; }
+    get parent() { return this.#parent; }
+
+    addElement(DOMelement) {
+        if (!this.#domElements.has(DOMelement))
+            this.#domElements.add(DOMelement);
+    }
+
     next(char) {
         if (char in this.#nextNodes)
             return this.#nextNodes[char];
-        else return new Node(' ', this.#domElement, {}, this.#parent);
+        else return new Node(' ', this.#domElements, {}, this.#parent);
     }
     append(node) {
         //We only append the letter if we don't have it
         if (!(node.#letter in this.#nextNodes))
             this.#nextNodes[node.#letter] = node;
+        else this.#nextNodes[node.#letter].push(node.#nextNodes);
     }
 
 }
@@ -39,18 +46,24 @@ class Trie {
         let node = this.#root;
         for (const char of word) {
             const nextNode = node.next(char);
+            if (char == ' ')
+                continue;
             //if we have this letter, continue inserting with the next letter
-            if (nextNode.getLetter != ' ') {
+            if (nextNode.letter !== ' ') {
+                node.addElement(DOMelement);
                 node = nextNode;
             }
             //on the contrary, if we don't have this letter, append it
             else {
                 const newNode = new Node(char, DOMelement, {}, node);
                 node.append(newNode);
+                //We add the dom element to the list of final elements
+                node.addElement(DOMelement);
                 node = newNode;
             }
         }
     }
+
     get getRoot() { return this.#root; }
 }
 
@@ -127,6 +140,41 @@ function mainMaxWidth(main) {
     else
         main.style.maxWidth = `${screen.width * .5}px`;
 
+}
+// TODO: Método recursivo. Caso base: si el item es de nivel 2, lo añadimos al root y devolvemos el root. Caso recursivo: si el item no es nivel 2, nos vamos al abuelo y añadimos a la iteración anterior el primer hijo y devolvemos 
+function recursivelyReconstructIndex(item, root) {
+    if (item.children[0].children[2].classList.contains("index__lv2")) {
+        root.appendChild(item);
+        return root;
+    }
+    else {
+        const grandparent = item.parentElement;
+        const firstChild = grandparent.children[0];
+        const newNode = document.createElement("div");
+        newNode.classList.add("index__item__container");
+        newNode.appendChild(firstChild);
+        return recursivelyReconstructIndex(newNode, root);
+    }
+}
+function reconstructIndex(items) {
+    // console.log(items.keys());
+    let root = document.querySelector(".index .index__container");
+    for (const item of items) {
+        root = recursivelyReconstructIndex(item.parentElement, root);
+        //We append the item to the index container
+        // if (item.children[2].classList.contains("index__lv2"))
+        //     root.appendChild(item);
+        // else {
+
+        //     let finalItem = item.parentElement;
+        //     let current = item;
+        //     let selectedItems = [item];
+
+        //     //nos vamos al abuelo y nos quedamos con el primer hijo, borramos los dem
+
+        // }
+
+    }
 }
 //#endregion Functions
 
@@ -213,10 +261,48 @@ mainMaxWidth(main);
 window.addEventListener("resize", () => mainMaxWidth(main))
 
 //Index term search
+// TODO: Quizás conviene que en lugar de usar un trie, usemos un map con cada letra y los Eementos del DOM, ya que con el trie nos mostrará solo las palabras que empiecen por lo que queramos
+// y no las que contengan lo que queramos.
 const searchTrie = new Trie();
-searchTrie.insert("apple", $(document));
-searchTrie.insert("apricot", $(document));
-searchTrie.insert("badabum", $(document));
-console.log(searchTrie.getRoot.nextNodes);
+const indexItems = document.querySelectorAll(".index__container .index__item__container .index__item:not(:has(.index__lv1)) a");
+for (const item of indexItems) {
+    //We insert the text content of the link, and the item itself as the DOM element.
+    searchTrie.insert(item.textContent.toLowerCase(), item.parentElement);
+}
+let searchNode = searchTrie.getRoot;
+let searchPreviousLenght = 0;
+const initialIndex = document.querySelector(".index .index__container").children[0];
+
+document.querySelector(".index input").addEventListener("input", (e) => {
+    // If the input is not empty, we reconstruct the index with te terms.
+    // Else, we reset the searchNode the number of letters we deleted and reconstruct the index. 
+    if (e.data !== null) {
+        //Remove all the items but the initial one
+
+        initialIndex.parentElement.removeChild(initialIndex);
+        document.querySelector('.index .index__container').appendChild(initialIndex.children[0]);
+        //recnstruct the index with the items that match the search
+        searchNode = searchNode.next(e.data);
+        const indexItems = searchNode.element;
+        searchPreviousLenght = e.target.value.length;
+        reconstructIndex(indexItems);
+    }
+    else {
+        if (e.target.value.length === 0) {
+            //If the input is empty, we show the initial index
+            document.querySelector(".index .index__container").appendChild(initialIndex);
+        }
+        else {
+
+            const inputDelta = e.target.value.length - searchPreviousLenght;
+            for (let i = 0; i < inputDelta; i++) {
+                searchNode = searchNode.parent;
+            }
+            reconstructIndex(searchNode.element);
+            searchPreviousLenght = e.target.value.length;
+        }
+    }
+});
+// TODO: Al pulsar una letra, que se muestre el primer elemento que contenga esa letra, y al pulsar la siguiente letra, que se muestre el primer elemento que contenga las dos letras, etc.
 //#endregion Code
 
