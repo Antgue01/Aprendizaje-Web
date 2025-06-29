@@ -27,7 +27,7 @@ class Node {
     next(char) {
         if (char in this.#nextNodes)
             return this.#nextNodes[char];
-        else return new Node(' ', this.#domElements, {}, this.#parent);
+        else return new Node(' ', this.#domElements, {}, this);
     }
     append(node) {
         //We only append the letter if we don't have it
@@ -156,7 +156,6 @@ function showAllNodeElements(searchNode) {
         while (!element.classList.contains("index__lv2")) {
             element = element.parentElement.parentElement.parentElement.children[0].querySelector('a');
             showIndexItem(element);
-            console.log(element);
         }
     }
 }
@@ -257,14 +256,27 @@ let searchNode = searchTrie.getRoot;
 let searchPreviousLenght = 0;
 const initialIndex = document.querySelector(".index .index__container").children[0];
 
+
+
+document.querySelector(".index input").addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        //If the key is left or right, we don't want to change the search node.
+        e.preventDefault();
+    }
+});
 document.querySelector(".index input").addEventListener("input", (e) => {
+    if (Math.abs(searchPreviousLenght - e.target.value.length) > 1) {
+        //If the length of the search term has changed more than 1 character, we reset the search node.
+        e.target.value = '';
+        searchNode = searchTrie.getRoot;
+    }
     if (e.target.value.length === 0) {
         for (const item of indexItems) {
             showIndexItem(item);
         }
         searchNode = searchTrie.getRoot;
     }
-    // TODO: Si se borra una selección, que se muestre todo el índice.
+    // TODO: Si no existe el nodo o flechas izquierda o derecha, animación de barra de índice en rojo .
     else {
         //Hide all index items
         for (const item of indexItems) {
@@ -276,12 +288,18 @@ document.querySelector(".index input").addEventListener("input", (e) => {
             item.parentElement.querySelector('.index__item__bar')?.setAttribute('hidden', true);
 
         }
-        if (e.data !== null)
+        if (e.data !== null) {
             searchNode = searchNode.next(e.data);
+            if (searchNode.letter === ' ') {
+                searchNode = searchNode.parent;
+                e.target.value = e.target.value.substring(0, e.target.value.length - 1);
+            }
+        }
         else
             searchNode = searchNode.parent;
         showAllNodeElements(searchNode);
     }
+    searchPreviousLenght = e.target.value.length;
 });
 
 
