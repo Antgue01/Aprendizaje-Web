@@ -129,7 +129,8 @@ function boxExplanationInteract(label) {
             });
     }
 }
-function hideIndex(index) {
+function resetIndex(index) {
+    //hide index
     if (window.innerWidth <= MAX__WIDTH)
         index.checked = true;
 }
@@ -157,6 +158,17 @@ function showAllNodeElements(searchNode) {
             element = element.parentElement.parentElement.parentElement.children[0].querySelector('a');
             showIndexItem(element);
         }
+    }
+}
+function hideIndexItems(indexItems) {
+    for (const item of indexItems) {
+        item.setAttribute('hidden', true);
+        item.parentElement.parentElement.style.display = 'none';
+        item.parentElement.classList.add("hidden__index__item");
+        item.parentElement.querySelector('.index__item__label').setAttribute('hidden', true);
+        //If the item contains the search term, we hide it.
+        item.parentElement.querySelector('.index__item__bar')?.setAttribute('hidden', true);
+
     }
 }
 //#endregion Functions
@@ -210,25 +222,7 @@ for (const button of copyButtons) {
     });
 };
 
-const indexChecker = document.getElementById("index-close");
-//Get all links starting with "#"
-const links = document.querySelectorAll(`a[href^="#"]`);
-// For every link to a box list item, we open it.  
-for (const link of links) {
 
-    link.addEventListener("click", () => {
-        const ref = document.getElementById(link.getAttribute("href").substring(1));
-        //The input which is child of the label which is child of the item.
-        const checkbox = ref.querySelector("input[type=checkbox]");
-        if (ref.classList.contains("--can-open") && !checkbox.checked) {
-            checkbox.click();
-        }
-    });
-    // Close index when small resolutions
-    if (link.parentElement.classList.contains("index__item")) {
-        link.addEventListener("click", () => hideIndex(indexChecker));
-    }
-}
 
 
 
@@ -257,7 +251,7 @@ let searchPreviousLenght = 0;
 const initialIndex = document.querySelector(".index .index__container").children[0];
 const indexInput = document.querySelector(".index input");
 
-
+//#region Index Search
 indexInput.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         //If the key is left or right, we don't want to change the search node.
@@ -282,18 +276,9 @@ indexInput.addEventListener("input", (e) => {
         }
         searchNode = searchTrie.getRoot;
     }
-    // TODO: Si no existe el nodo o flechas izquierda o derecha, animación de barra de índice en rojo .
     else {
         //Hide all index items
-        for (const item of indexItems) {
-            item.setAttribute('hidden', true);
-            item.parentElement.parentElement.style.display = 'none';
-            item.parentElement.classList.add("hidden__index__item");
-            item.parentElement.querySelector('.index__item__label').setAttribute('hidden', true);
-            //If the item contains the search term, we hide it.
-            item.parentElement.querySelector('.index__item__bar')?.setAttribute('hidden', true);
-
-        }
+        hideIndexItems(indexItems);
         if (e.data !== null) {
             searchNode = searchNode.next(e.data);
             if (searchNode.letter === ' ') {
@@ -312,7 +297,37 @@ indexInput.addEventListener("input", (e) => {
     }
     searchPreviousLenght = e.target.value.length;
 });
+//#endregion Index Search
+//#region Links
 
+const indexChecker = document.getElementById("index-close");
+//Get all links starting with "#"
+const links = document.querySelectorAll(`a[href^="#"]`);
+// For every link to a box list item, we open it.  
+for (const link of links) {
 
+    link.addEventListener("click", () => {
+        const ref = document.getElementById(link.getAttribute("href").substring(1));
+        //The input which is child of the label which is child of the item.
+        const checkbox = ref.querySelector("input[type=checkbox]");
+        if (ref.classList.contains("--can-open") && !checkbox.checked) {
+            checkbox.click();
+        }
+    });
+    // Close index when small resolutions
+    if (link.parentElement.classList.contains("index__item")) {
+        link.addEventListener("click", () => {
+
+            resetIndex(indexChecker);
+            searchNode = searchTrie.getRoot;
+            for (const item of indexItems) {
+                showIndexItem(item);
+            }
+            indexInput.value = '';
+        });
+    }
+}
+
+//#endregion Links
 //#endregion Code
 
