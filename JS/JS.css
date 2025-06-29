@@ -11,6 +11,7 @@ p {
 span {
   display: inline;
 }
+
 /*
   TODO: Que la imagen de fondo esté en escala de grises y se le aplique el color de la página
 */
@@ -43,7 +44,8 @@ body {
   --links-color: #8a9715;
   --links-color-hovered: #cea800;
   --box-separator-color: #8d7f00;
-
+  --search-var-focus-color: hsl(from var(--main-color) h calc(s * 0.8) calc(l * 0.8));
+  --search-var-focus-error-color: #fd4c4c;
   /* Code  Colors*/
   --code-color: #f8f8f2;
   --decl-color: #40b5d0;
@@ -305,12 +307,11 @@ p a:hover,
 }
 
 .index__search-bar:focus {
-  background-color: color-mix(in srgb, var(--main-color) 80%, #000 20%);
-  background-color: hsl(from var(--main-color) h calc(s * 0.8) calc(l * 0.8));
+  background-color: var(--search-var-focus-color);
 }
 
-.index__search-bar::-webkit-search-cancel-button {
-  display: none;
+.search__bar__animation {
+  animation: searchError .7s ease-in-out;
 }
 
 .index__search__icon {
@@ -392,12 +393,11 @@ p a:hover,
 
 }
 
-.index__item:is(.hidden__index__item){
-background-color: #fff;
-}
+
 .hidden__index__item::after {
   display: none;
 }
+
 .index__item:has(.index__lv1)::after {
   display: var(--aux-display, block);
 }
@@ -867,6 +867,21 @@ code {
   }
 }
 
+@keyframes searchError {
+  0% {
+    background-color: var(--search-var-focus-color);
+  }
+
+  25% {
+    background-color: var(--search-var-focus-error-color);
+  }
+
+  100% {
+    background-color: var(--search-var-focus-color);
+  }
+
+}
+
 @font-face {
   font-family: FiraCode;
   src: url(Fonts/FiraCode.ttf);
@@ -877,9 +892,11 @@ code {
   .main-wrapper {
     flex-direction: column-reverse;
   }
-  main{
+
+  main {
     max-width: 50dvw;
   }
+
   aside {
     position: fixed;
     bottom: 0;

@@ -255,16 +255,22 @@ for (const item of indexItems) {
 let searchNode = searchTrie.getRoot;
 let searchPreviousLenght = 0;
 const initialIndex = document.querySelector(".index .index__container").children[0];
+const indexInput = document.querySelector(".index input");
 
 
-
-document.querySelector(".index input").addEventListener("keydown", (e) => {
+indexInput.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         //If the key is left or right, we don't want to change the search node.
         e.preventDefault();
+        //Reset error animation
+        indexInput.classList.remove("search__bar__animation");
+        setTimeout(() => {
+            indexInput.classList.add("search__bar__animation");
+        }, 10);
+
     }
 });
-document.querySelector(".index input").addEventListener("input", (e) => {
+indexInput.addEventListener("input", (e) => {
     if (Math.abs(searchPreviousLenght - e.target.value.length) > 1) {
         //If the length of the search term has changed more than 1 character, we reset the search node.
         e.target.value = '';
@@ -293,6 +299,11 @@ document.querySelector(".index input").addEventListener("input", (e) => {
             if (searchNode.letter === ' ') {
                 searchNode = searchNode.parent;
                 e.target.value = e.target.value.substring(0, e.target.value.length - 1);
+                //reset error animation
+                indexInput.classList.remove("search__bar__animation");
+                setTimeout(() => {
+                    indexInput.classList.add("search__bar__animation");
+                }, 10);
             }
         }
         else
