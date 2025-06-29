@@ -141,8 +141,27 @@ function mainMaxWidth(main) {
         main.style.maxWidth = `${screen.width * .5}px`;
 
 }
+function showIndexItem(item) {
+    item.removeAttribute('hidden');
+    item.parentElement.parentElement.style.display = 'flex';
+    item.parentElement.classList.remove("hidden__index__item");
+    item.parentElement.querySelector('.index__item__label').removeAttribute('hidden');
+    item.parentElement.querySelector('.index__item__bar')?.removeAttribute('hidden');
+
+}
+function showAllNodeElements(searchNode) {
+    for (let element of searchNode.element) {
+        element = element.querySelector('a');
+        showIndexItem(element);
+        while (!element.classList.contains("index__lv2")) {
+            element = element.parentElement.parentElement.parentElement.children[0].querySelector('a');
+            showIndexItem(element);
+            console.log(element);
+        }
+    }
+}
 // TODO: Método recursivo. Caso base: si el item es de nivel 2, lo añadimos al root y devolvemos el root. Caso recursivo: si el item no es nivel 2, nos vamos al abuelo y añadimos a la iteración anterior el primer hijo y devolvemos 
-function recursivelyReconstructIndex(item, root,original) {
+function recursivelyReconstructIndex(item, root, original) {
     if (item.children[0].children[2].classList.contains("index__lv2")) {
         root.appendChild(item);
         return root;
@@ -165,7 +184,7 @@ function reconstructIndex(items) {
             root.appendChild(item);
         }
         else
-            root = recursivelyReconstructIndex(item.parentElement, root,item.parentElement);
+            root = recursivelyReconstructIndex(item.parentElement, root, item.parentElement);
         //We append the item to the index container
         // if (item.children[2].classList.contains("index__lv2"))
         //     root.appendChild(item);
@@ -281,33 +300,32 @@ const initialIndex = document.querySelector(".index .index__container").children
 document.querySelector(".index input").addEventListener("input", (e) => {
     // If the input is not empty, we reconstruct the index with te terms.
     // Else, we reset the searchNode the number of letters we deleted and reconstruct the index. 
-    if (e.data !== null) {
-        //Remove all the items but the initial one
-
-        initialIndex.parentElement.removeChild(initialIndex);
-        document.querySelector('.index .index__container').appendChild(initialIndex.children[0]);
-        //recnstruct the index with the items that match the search
-        searchNode = searchNode.next(e.data);
-        const indexItems = searchNode.element;
-        searchPreviousLenght = e.target.value.length;
-        reconstructIndex(indexItems);
+    if (e.target.value.length === 0) {
+        for (const item of indexItems) {
+            showIndexItem(item);
+        }
+        searchNode = searchTrie.getRoot;
     }
+    // TODO: Si se borra una selección, que se muestre todo el índice.
     else {
-        if (e.target.value.length === 0) {
-            //If the input is empty, we show the initial index
-            document.querySelector(".index .index__container").appendChild(initialIndex);
-        }
-        else {
+        //Hide all index items
+        for (const item of indexItems) {
+            item.setAttribute('hidden', true);
+            item.parentElement.parentElement.style.display = 'none';
+            item.parentElement.classList.add("hidden__index__item");
+            item.parentElement.querySelector('.index__item__label').setAttribute('hidden', true);
+            //If the item contains the search term, we hide it.
+            item.parentElement.querySelector('.index__item__bar')?.setAttribute('hidden', true);
 
-            const inputDelta = e.target.value.length - searchPreviousLenght;
-            for (let i = 0; i < inputDelta; i++) {
-                searchNode = searchNode.parent;
-            }
-            reconstructIndex(searchNode.element);
-            searchPreviousLenght = e.target.value.length;
         }
+        if (e.data !== null)
+            searchNode = searchNode.next(e.data);
+        else
+            searchNode = searchNode.parent;
+        showAllNodeElements(searchNode);
     }
 });
-// TODO: Al pulsar una letra, que se muestre el primer elemento que contenga esa letra, y al pulsar la siguiente letra, que se muestre el primer elemento que contenga las dos letras, etc.
+
+
 //#endregion Code
 

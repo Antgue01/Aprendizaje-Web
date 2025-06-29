@@ -392,6 +392,12 @@ p a:hover,
 
 }
 
+.index__item:is(.hidden__index__item){
+background-color: #fff;
+}
+.hidden__index__item::after {
+  display: none;
+}
 .index__item:has(.index__lv1)::after {
   display: var(--aux-display, block);
 }
