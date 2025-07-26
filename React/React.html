@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../JS/JS.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>React</title>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <!-- #region Index -->
+        <aside>
+            <nav class="index">
+                <div class="index__search__ul__container">
+                    <div class="index__search__container">
+                        <span class="index__search__icon material-symbols-outlined">
+                            search
+                        </span>
+
+                        <input type="search" class="index__search-bar">
+                    </div>
+                    <div class="index__container">
+                        <div class="index__item__container ">
+                            <div class="index__item">
+                                <input hidden type="checkbox" name="" id="index__index">
+                                <label class="index__item__label " for="index__index">
+                                </label>
+                                <a class="index__lv1" href="#">Índice</a>
+                            </div>
+                            <!-- #region Comandos -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="cmdindxex">
+                                    <label class="index__item__label" for="cmdindxex">"></label>
+                                    <a class="index__lv2" href="#cmd">Comandos</a>
+                                    <div class="index__item__bar"></div>
+                                </div>
+                            </div>
+                            <!-- #endregion Comandos-->
+                        </div>
+                    </div>
+            </nav>
+            <!-- #endregion Index -->
+        </aside>
+        <!-- #region Main -->
+        <main>
+            <div id="Caracteristicas" class="header__container">
+                <h1>React</h1>
+            </div>
+            <section>
+                <p> React crea <strong>Single Page Applications (SPA)</strong>. Un único `index.html` se carga y su
+                    contenido se actualiza dinámicamente en el navegador. Visualmente parece que navegas, pero
+                    lógicamente, todo ocurre en la misma página, sin recargas completas.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Beneficios </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><strong>Velocidad y Reactividad</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Las aplicaciones son <strong>muy rápidas y fluidas</strong> al no depender de
+                                        recargas desde el servidor.
+                                    </div>
+                                </label>
+
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><strong>Ecosistema Extenso</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Facilita el uso de miles de librerías de <strong>npm</strong>, acelerando el
+                                        desarrollo.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><strong>Eficiencia del Servidor</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Consume pocos recursos</strong> del servidor, ya que el procesamiento principal
+                                        ocurre en el cliente.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><strong>Fácil a Móvil (React Native)</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Permite reutilizar código para crear <strong>apps nativas de
+                                            Android/iOS</strong> con <strong>React Native</strong>.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><strong>Conectividad Flexible a Bases de Datos</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Se conecta a bases de datos <strong>relacionales y no relacionales</strong> (ej.
+                                        MongoDB), manejando grandes volúmenes de datos rápidamente.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    React funciona a través de <strong>node.js</strong> y una serie de programas:
+                <div class="box">
+
+                    <div class="box__text__container">
+                        <ul class="box__list">
+
+                            <li class="box__list__item --can-open">
+                                <label> <strong>NVM (Node Version Manager)</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Una utilidad esencial para gestionar y cambiar entre
+                                        <strong>múltiples versiones de Node.js</strong> en tu sistema, ideal para
+                                        proyectos
+                                        con requisitos
+                                        de versión diferentes.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <strong>NPM (Node Package Manager)</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        El <strong>gestor de paquetes por defecto de
+                                            Node.js</strong>, utilizado para instalar, compartir y gestionar
+                                        dependencias en
+                                        tus
+                                        proyectos. Viene preinstalado con Node.js.
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label> <strong>Yarn</strong>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Un <strong>gestor de paquetes alternativo</strong> a NPM, conocido por su
+                                        velocidad y por un manejo más eficiente de las dependencias y el cacheo.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </section>
+            <div id="cmd" class="header__container">
+                <h2>Comandos</h2>
+            </div>
+            <section></section>
+        </main>
+        <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->
+    </div>
+    <script src="../JS/code.js" type="module"></script>
+</body>
+
+</html>

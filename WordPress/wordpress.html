@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../JS/JS.css"> <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes de Elementor y WordPress</title>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <aside>
+            <nav class="index">
+                <div class="index__search__ul__container">
+                    <div class="index__search__container">
+                        <span class="index__search__icon material-symbols-outlined">
+                            search
+                        </span>
+                        <input type="search" class="index__search-bar">
+                    </div>
+                    <div class="index__container">
+                        <div class="index__item__container">
+                            <div class="index__item">
+                                <input hidden type="checkbox" name="" id="index__index">
+                                <label class="index__item__label" for="index__index"></label>
+                                <a class="index__lv1" href="#">Índice</a>
+                            </div>
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input hidden type="checkbox" name="" id="index__elementor">
+                                    <label class="index__item__label" for="index__elementor"></label>
+                                    <a class="index__lv2" href="#Elementor">Elementor</a>
+                                </div>
+                            </div>
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input hidden type="checkbox" name="" id="index__wordpress">
+                                    <label class="index__item__label" for="index__wordpress"></label>
+                                    <a class="index__lv2" href="#WordPress">WordPress</a>
+                                </div>
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" name="" id="index__cptui">
+                                        <label class="index__item__label" for="index__cptui"></label>
+                                        <a class="index__lv3" href="#CPTUI">Custom Post Type UI</a>
+                                    </div>
+                                </div>
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" name="" id="index__wpcoder">
+                                        <label class="index__item__label" for="index__wpcoder"></label>
+                                        <a class="index__lv3" href="#WPCoder">WP Coder</a>
+                                    </div>
+                                </div>
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" name="" id="index__generatepress">
+                                        <label class="index__item__label" for="index__generatepress"></label>
+                                        <a class="index__lv3" href="#GeneratePress">GeneratePress</a>
+                                    </div>
+                                </div>
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" name="" id="index__temashijos">
+                                        <label class="index__item__label" for="index__temashijos"></label>
+                                        <a class="index__lv3" href="#TemasHijos">Temas Hijos</a>
+                                    </div>
+                                </div>
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" name="" id="index__reset">
+                                        <label class="index__item__label" for="index__reset"></label>
+                                        <a class="index__lv3" href="#ResetWP">Resetear WordPress</a>
+                                    </div>
+                                </div>
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" name="" id="index__exportimport">
+                                        <label class="index__item__label" for="index__exportimport"></label>
+                                        <a class="index__lv3" href="#ExportImport">Exportar e Importar (Updraft)</a>
+                                    </div>
+                                </div>
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input hidden type="checkbox" name="" id="index__menus">
+                                        <label class="index__item__label" for="index__menus"></label>
+                                        <a class="index__lv3" href="#MenusWP">Menús en WordPress</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input hidden type="checkbox" name="" id="index__woocommerce">
+                                    <label class="index__item__label" for="index__woocommerce"></label>
+                                    <a class="index__lv2" href="#Woocommerce">Woocommerce</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <main>
+            <div id="Elementor" class="header__container">
+                <h2>Elementor</h2>
+            </div>
+            <section>
+                <p>
+                    Elementor es un potente constructor visual de páginas para WordPress, pero es importante considerar su rendimiento. [cite_start]Puede ser hasta <span class="val">3 veces más lento</span> que un WordPress nativo debido a la carga de sus propios estilos y scripts[cite: 1]. Muchas de sus funcionalidades se pueden replicar o incluso mejorar con plugins externos más ligeros y específicos.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Consejos y Funcionalidades</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Query Offset en Portfolios</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Al utilizar elementos como el widget de Portfolio en Elementor, dentro de la opción de <span class="var">query</span>, puedes encontrar el campo <span class="val">offset</span>. [cite_start]Este ajuste te permite especificar cuántos posts o elementos se deben saltar al mostrar el contenido, útil para paginaciones o para evitar duplicados en diferentes secciones[cite: 2].
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Creación de Templates de Elementos</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Elementor permite guardar secciones, columnas o incluso widgets completos como <span class="val">templates</span>. Esto es extremadamente útil para reutilizar diseños complejos o elementos personalizados en distintas partes de tu sitio web sin tener que reconstruirlos desde cero. [cite_start]Una vez guardado, puedes instanciar el template en cualquier página[cite: 3].
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Theme Builder (Constructor de Temas)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        [cite_start]Desde el <span class="val">Theme Builder</span> de Elementor Pro, puedes crear plantillas especiales para partes clave de tu sitio como encabezados (<span class="val">header</span>), pies de página (<span class="val">footer</span>), archivos de blog, páginas de producto de WooCommerce, etc. Lo más potente es que puedes definir condiciones de visualización para que estas plantillas se apliquen automáticamente en tipos específicos de páginas, categorías o incluso a entradas individuales[cite: 4].
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <div id="WordPress" class="header__container">
+                <h2>WordPress</h2>
+            </div>
+            <section>
+                <div id="CPTUI" class="header__container">
+                    <h3>Custom Post Type UI (CPTUI)</h3>
+                </div>
+                <p>
+                    El plugin <span class="val">Custom Post Type UI</span> (CPTUI) en WordPress es fundamental para extender la funcionalidad de tu sitio. [cite_start]Sirve para crear tipos de contenido personalizados más allá de los tradicionales "Posts" y "Páginas"[cite: 5]. Piensa en ellos como "estructuras" de datos personalizadas.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Funcionalidad y Uso</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item">
+                                [cite_start]Su principal utilidad es permitirte rellenar una base de datos con campos específicos que añades para cada tipo de contenido[cite: 6].
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Ejemplos de Uso</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Puedes crear CPTs para:
+                                        <ul>
+                                            <li>Renderizados 3D</li>
+                                            <li>Vídeos</li>
+                                            <li>Ilustraciones</li>
+                                            <li>Fichas de productos específicos (no de WooCommerce)</li>
+                                            <li>Libros</li>
+                                            <li>Cursos</li>
+                                            <li>Testimonios</li>
+                                        </ul>
+                                        [cite_start]Esto permite una organización de contenido mucho más granular y específica para las necesidades de tu proyecto[cite: 7].
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Configuración</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        En el menú de CPTUI, al crear un nuevo tipo de contenido, le asignas un nombre en singular y en plural. [cite_start]Una vez añadido, este nuevo tipo aparecerá en la barra lateral de administración de WordPress[cite: 7, 8]. [cite_start]Desde ahí, puedes editarlo para ajustar su visibilidad, comportamiento en búsquedas, asignar un icono personalizado, y lo más importante, añadir campos personalizados (meta boxes) a través de otros plugins como Advanced Custom Fields (ACF)[cite: 8].
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="WPCoder" class="header__container">
+                    <h3>WP Coder y Carga de Librerías/Scripts</h3>
+                </div>
+                <p>
+                    [cite_start]Para cargar librerías y scripts externos en WordPress, plugins como <span class="val">WP Coder</span> ofrecen una interfaz sencilla en el apartado <span class="val">Scripts & Styles</span>[cite: 9].
+                </p>
+                <p>
+                    Si no utilizas un plugin específico para esto, la práctica común es insertar el código directamente en los archivos del tema activo. Los lugares más comunes son:
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Archivos del Tema para Scripts</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item"><span class="val">Theme Header (header.php)</span>: Para scripts que deben cargarse al principio.</li>
+                            <li class="box__list__item"><span class="val">Theme Footer (footer.php)</span>: Ideal para scripts que no bloquean la renderización del contenido, justo antes del cierre de la etiqueta <code>&lt;/body&gt;</code>.</li>
+                            [cite_start]<li class="box__list__item"><span class="val">Functions.php</span>: El lugar preferido para registrar y encolar scripts y estilos de forma correcta usando las funciones de WordPress (<code>wp_enqueue_script()</code> y <code>wp_enqueue_style()</code>)[cite: 10].
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="GeneratePress" class="header__container">
+                    <h3>GeneratePress</h3>
+                </div>
+                <p>
+                    La plantilla <span class="val">GeneratePress</span> es altamente optimizada para la personalización y el rendimiento. [cite_start]Viene con su propio plugin (GeneratePress Premium) que, al configurarlo, permite activar distintos módulos para añadir funcionalidades[cite: 12].
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Características Clave</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Elementos de GeneratePress</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Los "Elementos" (<span class="val">Elements</span>) son una característica poderosa de GeneratePress. [cite_start]Permiten inyectar código (HTML, PHP, Hooks, Layouts) directamente en ubicaciones específicas de tu sitio[cite: 13].
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Hooks</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        GeneratePress ofrece numerosos <span class="val">Hooks</span> (ganchos), que son "callbacks" en PHP que se ejecutan en puntos específicos del proceso de construcción de la página de WordPress. [cite_start]Esto permite a los desarrolladores insertar su propio código o contenido sin modificar los archivos del tema principal, facilitando las actualizaciones[cite: 14].
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item">
+                                [cite_start]Estos elementos permiten una <span class="val">inclusión condicional</span>, lo que significa que puedes elegir exactamente dónde quieres que aparezcan (por ejemplo, solo en páginas específicas, entradas de un tipo determinado, o para ciertos roles de usuario)[cite: 15].
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="TemasHijos" class="header__container">
+                    <h3>Temas Hijos (Child Themes)</h3>
+                </div>
+                <p>
+                    La práctica estándar en WordPress es utilizar <span class="val">temas hijos</span>. [cite_start]Un tema hijo hereda la funcionalidad y el estilo de un tema padre, pero te permite realizar modificaciones sin alterar los archivos del tema original[cite: 16]. Esto es crucial porque si modificas el tema padre directamente, tus cambios se perderán cada vez que el tema se actualice. El tema hijo se sube después del tema padre.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Instalación y Creación</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item">
+                                [cite_start]Para instalar plantillas de HTML o temas en WordPress, ve a <span class="val">Apariencia -> Temas</span> y haz clic en <span class="val">Añadir Tema</span>[cite: 11].
+                            </li>
+                            <li class="box__list__item">
+                                A menudo, las plantillas premium o los temas más complejos requieren la instalación manual de plugins asociados. [cite_start]Generalmente, una vez instalado el tema, verás una notificación o una sección dentro del tema para instalar estos plugins de forma masiva (bulk install)[cite: 17, 18].
+                            </li>
+                            <li class="box__list__item">
+                                [cite_start]Para crear un tema hijo de forma sencilla, puedes utilizar plugins como <span class="val">WP Child Theme Generator</span>[cite: 21]. Este plugin automatiza el proceso de crear los archivos necesarios para tu tema hijo.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="ResetWP" class="header__container">
+                    <h3>Resetear el Sitio de WordPress</h3>
+                </div>
+                <p>
+                    En ocasiones, necesitas resetear tu instalación de WordPress a un estado limpio, por ejemplo, para empezar un nuevo proyecto o deshacer muchos cambios.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Plugin Recomendado</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">WP Reset</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        [cite_start]El plugin <span class="val">WP Reset</span> es el más recomendado para esta tarea[cite: 19]. A diferencia de otros plugins de reseteo, <span class="val">WP Reset</span> te permite borrar la base de datos de WordPress (posts, páginas, comentarios, ajustes, etc.) sin eliminar los usuarios y sus contraseñas. [cite_start]Esto es crucial, ya que si otros plugins borraran los usuarios, perderías el acceso al sitio después del reseteo[cite: 19]. [cite_start]Es una herramienta ideal para desarrolladores que necesitan un entorno de pruebas limpio rápidamente, y también para mitigar riesgos de seguridad, ya que los temas y plugins son vulnerables a la inyección de código[cite: 20].
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="ExportImport" class="header__container">
+                    <h3>Exportar e Importar con UpdraftPlus</h3>
+                </div>
+                <p>
+                    [cite_start]Para realizar copias de seguridad, migraciones o exportar e importar contenido en WordPress, <span class="val">UpdraftPlus</span> es un plugin muy popular y eficaz[cite: 22].
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Proceso de Exportación/Importación</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item">
+                                [cite_start]Las copias de seguridad creadas con UpdraftPlus se pueden descargar a tu PC desde el apartado <span class="val">Backup / Restore</span>[cite: 23].
+                            </li>
+                            <li class="box__list__item">
+                                [cite_start]En el mismo apartado, puedes subir estos archivos de backup para restaurar o importar el sitio[cite: 23].
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Consideración Importante al Migrar la Base de Datos</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Es fundamental recordar que al migrar la base de datos, ¡también se migran las contraseñas! [cite_start]Esto significa que si tenías una contraseña diferente en el servidor de destino antes de la migración, esta será sobrescrita por la contraseña contenida en la base de datos que estás importando[cite: 24]. Asegúrate de tener esto en cuenta y de conocer las credenciales del sitio que estás restaurando.
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="MenusWP" class="header__container">
+                    <h3>Creación de Menús en WordPress</h3>
+                </div>
+                <p>
+                    Para gestionar y crear los menús de navegación de tu sitio WordPress, el proceso es sencillo:
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Ruta de Acceso</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item">
+                                [cite_start]Dirígete a <span class="val">Apariencia -> Menús</span> en el panel de administración de WordPress[cite: 25].
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <div id="Woocommerce" class="header__container">
+                <h2>Woocommerce</h2>
+            </div>
+            <section>
+                <p>
+                    WooCommerce es el plugin de comercio electrónico más popular para WordPress, convirtiendo tu sitio en una tienda online completa.
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Instalación y Configuración Inicial</h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="val">Primeros Pasos al Instalar</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        Al instalar WooCommerce por primera vez, verás una pantalla de bienvenida con opciones para "Get a boost with our free features" (Obtén un impulso con nuestras funciones gratuitas). Es recomendable <span class="val">no seleccionar ninguna</span> de estas opciones, ya que a menudo sugieren la instalación de plugins adicionales que quizás no necesites. [cite_start]Existen opciones mucho mejores y más específicas para las funcionalidades que ofrecen esos plugins integrados[cite: 25].
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item">
+                                [cite_start]Una vez instalado y configurado, puedes acceder a la tienda virtual desde el <span class="val">Dashboard</span> de WordPress[cite: 26].
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            </main>
+    </div>
+    <script src="../JS/code.js"></script>
+
+</body>
+
+</html>
