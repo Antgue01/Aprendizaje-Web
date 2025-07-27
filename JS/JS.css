@@ -281,7 +281,8 @@ p a:hover,
   transition-duration: 0.2s;
   overflow: hidden;
   width: 100%;
-  background-color: var(--main-color);
+  background-color: hsl(from var(--main-color) h calc(s*1.5) l);
+
   transition-property: padding, width;
   display: flex;
   flex-direction: column;
@@ -333,7 +334,7 @@ p a:hover,
 
 .index__container {
   display: flex;
-  background-color: var(--main-color);
+  background-color: hsl(from var(--main-color) h calc(s*1.5) l);
   flex-direction: column;
   /* gap: 30px; */
   margin: 0;

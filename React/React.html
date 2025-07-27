@@ -57,6 +57,15 @@
                                 </div>
                             </div>
                             <!-- #endregion Set Up-->
+                            <!-- #region JSX -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="jsxindx">
+                                    <label class="index__item__label" for="jsxindx"></label>
+                                    <a class="index__lv2" href="#jsx">JSX</a>
+                                </div>
+                            </div>
+                            <!-- #endregion JSX-->
                         </div>
                     </div>
             </nav>
@@ -77,10 +86,7 @@
                     que <strong>el archivo index.html</strong> de una aplicación React contiene un <strong>único
                         &lt;div&gt; con un id="root"</strong> (o similar), donde todo <strong>el contenido</strong> de
                     la aplicación <strong>se inyecta</strong> y gestiona mediante JavaScript.</p>
-<p>
-    Utiliza <strong>JSX</strong>, una <strong>sintaxis</strong> desarrollada para React que <strong>"permite" escribir HTML dentro de JavaScript</strong>, 
-    lo que facilita la creación de componentes y su estructura visual. <strong>JSX se transpila </strong>(compilar de un lenguaje a otro) <strong> JavaScript puro</strong> antes de ejecutarse en el navegador.
-</p>
+
                 <div class="box">
                     <h2 class="box__title">Beneficios </h2>
                     <div class="box__text__container">
@@ -138,7 +144,8 @@
                     </div>
                 </div>
                 <p>
-                    React funciona a través de <strong>node.js</strong> (permite simular un servidor en local) y una serie de programas:
+                    React funciona a través de <strong>node.js</strong> (permite simular un servidor en local) y una
+                    serie de programas:
                 <div class="box">
 
                     <div class="box__text__container">
@@ -188,14 +195,15 @@
                 <h2>Comandos</h2>
             </div>
             <section>
-                <div class = "code__box">
-                    <code>npm create-react-app nombre</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                <div class="code__box">
+                    <code>npm create-react-app nombre</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
                     </div>
                 </div>
                 <p><strong>Crea</strong> la estructura de directorios para <strong>un proyecto de react</strong>.</p>
-                 <div class="code__box">
+                <div class="code__box">
                     <code>npx @react-native-community/cli init NombreDeTuApp</code><button
                         class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
@@ -223,7 +231,7 @@
                 <p>Lo mismo pero <strong>mejora mejor las dependencias porque busca las más actualizadas </strong> que
                     no entran en conflicto.</p>
 
-               
+
                 <div class="code__box">
                     <code>npm start</code><button
                         class="code__box__copy material-symbols-outlined">content_copy</button>
@@ -314,7 +322,38 @@ root.<span class="func">render</span>(
                         ¡Copiado!
                     </div>
                 </div>
-                <p>La palabra clave <strong>class</strong> se reemplaza por <strong>className </strong>para evitar conflictos con JS.</p>
+                <p>La palabra clave <strong>class</strong> se reemplaza por <strong>className </strong>para evitar
+                    conflictos con JS.</p>
+            </section>
+            <div id="jsx" class="header__container">
+                <h2>JSX</h2>
+            </div>
+            <section>
+                <p>Es una <strong>sintaxis</strong> desarrollada para React que permite usar
+                    los <strong>componentes como etiquetas HTML</strong>.
+                    <strong>JSX se transpila </strong>(compilar de un lenguaje a otro) <strong>a JavaScript
+                        puro</strong> antes de ejecutarse en el navegador.
+                </p>
+                <p>Esto hace que sea muy flexible, ya que podemos usar JSX <strong>dentro de bucles</strong>, con <strong>condicionales, variables</strong>,etc.</p>
+                <p>
+                    Para insertar <strong>variables y expresiones</strong> en JSX, usamos <strong>{ }</strong>. Por ejemplo:
+                    
+                </p>
+                <div class = "code__box">
+                    <code><span class="key">const</span> image = &lt;<span class="class">img </span>src = <span class="var">{myImg.uri} </span> alt = <span class="var">{myImg.alt}</span>/&gt;</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Para definir componentes, se puede hacer principalmente de dos formas, a través de una <strong>función normal</strong> o a través de una <strong>función flecha</strong>. </p>
+                <div class="grid --2cols">
+                    <div class = "code__box">
+                        <code>Code</code>
+                    </div>
+                    <div class = "code__box">
+                        <code>Code</code>
+                    </div>
+                </div>
             </section>
         </main>
         <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->
