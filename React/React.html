@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../JS/JS.css">
+    <link rel="stylesheet" href="constants.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>React</title>
 </head>
@@ -40,12 +41,22 @@
                             <div class="index__item__container">
                                 <div class="index__item">
                                     <input type="checkbox" hidden id="cmdindxex">
-                                    <label class="index__item__label" for="cmdindxex">"></label>
+                                    <label class="index__item__label" for="cmdindxex"></label>
                                     <a class="index__lv2" href="#cmd">Comandos</a>
-                                    <div class="index__item__bar"></div>
+
                                 </div>
                             </div>
                             <!-- #endregion Comandos-->
+                            <!-- #region Set Up -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="setupndx">
+                                    <label class="index__item__label" for="setupndx"></label>
+                                    <a class="index__lv2" href="#setup">Set Up</a>
+
+                                </div>
+                            </div>
+                            <!-- #endregion Set Up-->
                         </div>
                     </div>
             </nav>
@@ -61,6 +72,15 @@
                     contenido se actualiza dinámicamente en el navegador. Visualmente parece que navegas, pero
                     lógicamente, todo ocurre en la misma página, sin recargas completas.
                 </p>
+                <p>El principio de diseño ideal en React es que <strong>cada elemento o sección de la página sea un
+                        componente distinto</strong>, fomentando la <strong>modularidad y reutilización</strong>, por lo
+                    que <strong>el archivo index.html</strong> de una aplicación React contiene un <strong>único
+                        &lt;div&gt; con un id="root"</strong> (o similar), donde todo <strong>el contenido</strong> de
+                    la aplicación <strong>se inyecta</strong> y gestiona mediante JavaScript.</p>
+<p>
+    Utiliza <strong>JSX</strong>, una <strong>sintaxis</strong> desarrollada para React que <strong>"permite" escribir HTML dentro de JavaScript</strong>, 
+    lo que facilita la creación de componentes y su estructura visual. <strong>JSX se transpila </strong>(compilar de un lenguaje a otro) <strong> JavaScript puro</strong> antes de ejecutarse en el navegador.
+</p>
                 <div class="box">
                     <h2 class="box__title">Beneficios </h2>
                     <div class="box__text__container">
@@ -69,8 +89,8 @@
                                 <label><strong>Velocidad y Reactividad</strong>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Las aplicaciones son <strong>muy rápidas y fluidas</strong> al no depender de
-                                        recargas desde el servidor.
+                                        <p>Las aplicaciones son <strong>muy rápidas y fluidas</strong> al no depender de
+                                            recargas desde el servidor.</p>
                                     </div>
                                 </label>
 
@@ -79,8 +99,8 @@
                                 <label><strong>Ecosistema Extenso</strong>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Facilita el uso de miles de librerías de <strong>npm</strong>, acelerando el
-                                        desarrollo.
+                                        <p>Facilita el uso de miles de librerías de <strong>npm</strong>, acelerando el
+                                            desarrollo.</p>
                                     </div>
                                 </label>
                             </li>
@@ -88,8 +108,9 @@
                                 <label><strong>Eficiencia del Servidor</strong>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Consume pocos recursos</strong> del servidor, ya que el procesamiento principal
-                                        ocurre en el cliente.
+                                        <p>Consume pocos recursos</strong> del servidor, ya que el procesamiento
+                                            principal
+                                            ocurre en el cliente.</p>
                                     </div>
                                 </label>
                             </li>
@@ -97,8 +118,8 @@
                                 <label><strong>Fácil a Móvil (React Native)</strong>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Permite reutilizar código para crear <strong>apps nativas de
-                                            Android/iOS</strong> con <strong>React Native</strong>.
+                                        <p> Permite reutilizar código para crear <strong>apps nativas de
+                                                Android/iOS</strong> con <strong>React Native</strong>.</p>
                                     </div>
                                 </label>
                             </li>
@@ -106,8 +127,10 @@
                                 <label><strong>Conectividad Flexible a Bases de Datos</strong>
                                     <input hidden type="checkbox">
                                     <div class="box__explanation">
-                                        Se conecta a bases de datos <strong>relacionales y no relacionales</strong> (ej.
-                                        MongoDB), manejando grandes volúmenes de datos rápidamente.
+                                        <p> Se conecta a bases de datos <strong>relacionales y no relacionales</strong>
+                                            (ej.
+                                            MongoDB), manejando grandes volúmenes de datos rápidamente.
+                                        </p>
                                     </div>
                                 </label>
                             </li>
@@ -115,7 +138,7 @@
                     </div>
                 </div>
                 <p>
-                    React funciona a través de <strong>node.js</strong> y una serie de programas:
+                    React funciona a través de <strong>node.js</strong> (permite simular un servidor en local) y una serie de programas:
                 <div class="box">
 
                     <div class="box__text__container">
@@ -164,10 +187,141 @@
             <div id="cmd" class="header__container">
                 <h2>Comandos</h2>
             </div>
-            <section></section>
+            <section>
+                <div class = "code__box">
+                    <code>npm create-react-app nombre</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p><strong>Crea</strong> la estructura de directorios para <strong>un proyecto de react</strong>.</p>
+                 <div class="code__box">
+                    <code>npx @react-native-community/cli init NombreDeTuApp</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p><strong>Descarga</strong> y configura <strong>React Native</strong> dede la plantilla de la
+                    comunidad, preparada ya con React y los <strong>proyectos de Android e iOS</strong>.</p>
+                <div class="code__box">
+                    <code>npm install [paquete]</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Instala un paquete específico o todas las dependencias listadas <strong>en package.json</strong> en
+                    el directorio del proyecto.</p>
+                <div class="code__box">
+                    <code>yarn install [paquete]</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Lo mismo pero <strong>mejora mejor las dependencias porque busca las más actualizadas </strong> que
+                    no entran en conflicto.</p>
+
+               
+                <div class="code__box">
+                    <code>npm start</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Ejecuta el script de inicio definido en package.json, que típicamente <strong>despliega la
+                        aplicación</strong> en un servidor de <strong>desarrollo local para visualización</strong>.</p>
+                <div class="code__box">
+                    <code>npm run build</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p><strong>Compila para producción</strong>, optimizando y minimizando los archivos (CSS, JS, etc.) y
+                    eliminando código no utilizado. Genera una versión lista para ser desplegada.</p>
+                <div class="box">
+                    <h2 class="box__title"><strong>Importante para la resolución de problemas</strong>
+
+                    </h2>
+                    <div class="box__text__container">
+                        <p>Si encuentras errores al compilar (build) o tras actualizar versiones, es una buena práctica
+                            <strong>eliminar node_modules y package-lock.json</strong> antes de ejecutar un nuevo npm
+                            install. Esto asegura una instalación limpia de las dependencias.
+                        </p>
+                    </div>
+                </div>
+                <div class="code__box">
+                    <code>npm install -g serve</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Instala globalmente el paquete serve, un <strong>servidor web estático ligero para probar la
+                        build</strong>. El flag -g lo hace disponible en cualquier directorio del sistema.</p>
+                <div class="code__box">
+                    <code>serve -s build</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p><strong>Inicia el servidor</strong> serve, <strong>sirviendo el contenido de</strong> la carpeta
+                    <strong>build</strong> (la versión compilada de tu
+                    aplicación) de forma estática.
+                </p>
+            </section>
+            <div id="setup" class="header__container">
+                <h2>Set Up</h2>
+            </div>
+            <section>
+                <p>
+                    La página se configura en el <strong>index.js</strong>, donde se <strong>importan</strong> tanto los
+                    <strong>componentes y los CSS como los módulos</strong> que sirven
+                    para <strong>crear y enrutar</strong> (asignar página a "url") los componentes de la aplicación.
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> <span class="class">React </span>from <span class="string">'react'</span>;
+<span class="key">import</span> <span class="class">ReactDOM </span>from <span class="string">'react-dom'</span>;
+<span class="key">import</span> <span class="class">App </span>from <span class="string">'./components/App'</span>; <span class = "comments">// O './App' si App.js está en la raíz</span>
+
+<span class="key">import </span><span class="string">'bootstrap/dist/css/bootstrap.min.css'</span>;
+<span class="key">import</span> HomePage from <span class="string">'./pages/HomePage';</span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Después, <strong>enrutamos</strong> la aplicación,es decir, <strong>asignamos las URL a páginas de
+                        nuestra web</strong> de forma que cuando se <strong>escriba una URL</strong> nuestra, React sepa
+                    que tiene que <strong>reconfigurar el DOM</strong> (o la View en native).</p>
+                WIP WIP WIP
+                <p>Finalmente, <strong>creamos el root y renderizamos</strong>. Para ello, llamamos a <span
+                        class="class">ReactDOM</span>.<span class="func">createRoot(</span><span class="var">div con id
+                        "root"</span><span class="func">)</span> y a su método <span class="func">render(</span><span
+                        class="var">componentes</span><span class="func">)</span>.</p>
+                <div class="code__box">
+                    <code><span class="key">const</span> root = <span class="class">ReactDOM</span>.<span class="func">createRoot</span>(document.<span class="func">getElementById</span>(<span class="string">'root'</span>));
+root.<span class="func">render</span>(
+  &lt;<span class="func">React.StrictMode</span>&gt;
+    &lt;<span class="func">App</span> /&gt;
+  &lt;/<span class="func">React.StrictMode</span>&gt;
+);</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>La palabra clave <strong>class</strong> se reemplaza por <strong>className </strong>para evitar conflictos con JS.</p>
+            </section>
         </main>
         <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <script src="../JS/code.js" type="module"></script>
 </body>
 

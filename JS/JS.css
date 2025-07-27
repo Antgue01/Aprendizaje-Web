@@ -16,12 +16,7 @@ span {
   TODO: Que la imagen de fondo esté en escala de grises y se le aplique el color de la página
 */
 body {
-  background: linear-gradient(rgba(from var(--bg-color) r g b / 0.8),
-      hsl(from var(--bg-color) h calc(s * 0.5) 20 /0.8)),
-    url(../imgs/code.png);
-  margin: 0;
-  padding: 0;
-  font-family: var(--font);
+
   /* #region vars */
   --font: "Lato";
   /* Sizes */
@@ -65,6 +60,12 @@ body {
   --functions-color: #03995f;
   --classes-color: #c25f0e;
   /* #endregion */
+  background: linear-gradient(rgba(from var(--bg-color) r g b / 0.8),
+      hsl(from var(--bg-color) h calc(s * 0.5) 20 /0.8)),
+    url(../imgs/code.png);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
 }
 
 strong {
