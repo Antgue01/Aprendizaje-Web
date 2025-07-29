@@ -100,6 +100,24 @@
                                     </div>
                                 </div>
                                 <!-- #endregion useRef-->
+                                <!-- #region useContext -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="contextindx">
+                                        <label class="index__item__label" for="contextindx"></label>
+                                        <a class="index__lv3" href="#useContext">useContext</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion useContext-->
+                                <!-- #region useMemo -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="umemoindx">
+                                        <label class="index__item__label" for="umemoindx"></label>
+                                        <a class="index__lv3" href="#useMemo">useMemo</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion useMemo-->
                             </div>
                             <!-- #endregion Hooks-->
                         </div>
@@ -245,13 +263,44 @@
             </div>
             <section>
                 <div class="code__box">
-                    <code>npm create-react-app nombre</code><button
+                    <code>npx create-react-app nombre</code><button
                         class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
                     </div>
                 </div>
-                <p><strong>Crea</strong> la estructura de directorios para <strong>un proyecto de react</strong>.</p>
+                <p><strong>Crea</strong> la estructura de directorios para <strong>un proyecto de react</strong>.
+                    <strong>DEPRECADO</strong>
+                </p>
+                <div class="code__box">
+                    <code>yarn create vite nombre</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Crea <strong>la estructura de directorios</strong> más básica posible para un proyecto. Vite es un
+                    <strong>bundler</strong>, <strong>más moderno</strong> que Create React App, por lo que
+                    <strong>preguntará</strong> por el framework a usar. <strong>
+                        Seleccionamos React</strong>. Después preguntará por la variante. <strong>SWC es un
+                        compilador</strong> más rápido que Babel (el que viene por defecto), así que seleccionamos
+                    <strong>SWC + JavaScript</strong> (o typeScript si lo preferimos).
+                </p>
+                <div class="box">
+                    <div class="box__text__container">
+                        <p>Después, hay que instalar y configurar <strong>ESlint</strong>, un programita que mira que
+                            sigas
+                            buenas prácticas de código:</p>
+                        <div class="code__box">
+                            <code>yarn add -D eslint
+npx eslint --init
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                            <div class="code__box__copy__dialog">
+                                ¡Copiado!
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="code__box">
                     <code>npx @react-native-community/cli init NombreDeTuApp</code><button
                         class="code__box__copy material-symbols-outlined">content_copy</button>
@@ -372,10 +421,14 @@ root.<span class="func">render</span>(
                     </div>
                 </div>
                 <p>
-                    Si necesitamos <strong>usar fuentes o librerías ESTÁTICAS</strong>(no cambian nunca), las importamos <strong>en el index.html</strong>
+                    Si necesitamos <strong>usar fuentes o librerías ESTÁTICAS</strong>(no cambian nunca), las importamos
+                    <strong>en el index.html</strong>
                 </p>
                 <p>La palabra clave <strong>class</strong> se reemplaza por <strong>className </strong>para evitar
                     conflictos con JS.</p>
+                <p>
+                    Es recomendable la librería <strong>why did you render</strong> para profiling.
+                </p>
             </section>
             <div id="jsx" class="header__container">
                 <h2>JSX</h2>
@@ -531,7 +584,89 @@ root.<span class="func">render</span>(
                     Como tras cada re-renderizado <strong>se pierden los valores de las variables</strong>, se utiliza
                     este hook para <strong>crear variables que sobrevivan</strong> a estos re-renderizados.
                 </p>
-                <p>Tiene un atributo <strong>current</strong>, que es donde <strong>guardamos y usamos</strong> la referencia que queremos mantener.</p>
+                <p>Tiene un atributo <strong>current</strong>, que es donde <strong>guardamos y usamos</strong> la
+                    referencia que queremos mantener.</p>
+            </section>
+            <div id="useContext" class="header__container">
+                <h3>useContext</h3>
+            </div>
+            <section>
+                <p>
+                    Si necesitamos <strong>pasar el mismo prop a muchos hijos</strong>(con el mismo o distinto valor),
+                    crearemos un <strong>contexto</strong>, que es como un objeto <strong>al que pueden preguntar los
+                        hijos</strong> y busca hacia arriba <strong>hasta llegar al primer padre que lo tiene</strong> .
+                </p>
+                <p>Para ello, <strong>creamos un archivo </strong>loqueseaContext.js en el que creamos el contexto: </p>
+                <div class="code__box">
+                    <code><span class = "comments">//loqueseaContext.js</span>
+<span class="key">import</span> { createContext } <span class="key">from</span> <span class="string">'react'</span>;
+
+<span class="key">export</span> <span class="key">const</span> loqueseaContext = <span class="func">createContext(<span class="literal">valor por defecto</span>)</span>;
+</code>
+                </div>
+                <p>En el padre al que queremos preguntar <strong>envolvemos los hijos en nuestro contexto</strong>:</p>
+                <div class="code__box">
+                    <code><span class = "comments">//Padre.js</span>
+<span class="key">import</span> { loqueseaContext } <span class="key">from</span> <span class="string">'./loqueseaContext.js'</span>;
+
+<span class="key">export default function</span> <span class="func">Padre(<span class="var">{ level, children } </span>) </span>{
+  <span class="key">return</span> (
+<span class = "comments">//cosas del componente que renderizar</span>
+<span class = "comments">//...</span>    
+      &lt;<span class="func">loqueseaContext.Provider</span> value={level}>
+        {children}
+      &lt;/<span class="func">loqueseaContext.Provider</span>>
+  );
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>En el hijo usamos el hook <strong>useContext</strong>:</p>
+                <div class="code__box">
+                    <code><span class = "comments">//Hijo.js</span>
+<span class="key">import</span> { useContext } <span class="key">from</span> <span class="string">'react'</span>;
+<span class="key">import</span> { loqueseaContext } <span class="key">from</span> <span class="string">'./loqueseaContext.js'</span>;
+<span class="key">export default function</span> <span class="func">Hijo()</span> {
+    <span class="key">const</span> loquesea = <span class="func">useContext(</span>loqueseaContext<span class="func">)</span>;
+    <span class = "comments">//usamos loquesea</span>
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
+            <div id="useMemo" class="header__container">
+                <h3>useMemo</h3>
+            </div>
+            <section>
+                <p>
+                    Cachea el resultado de una función para que no se vuelva a ejecutar en cada renderizado, lo que
+                    mejora el rendimiento.
+                    <strong>Pensado para funciones que tardan en ejecutarse.</strong>
+                </p>
+                <p>
+                    La <strong>primera vez que se renderiza</strong> el componente, se ejecuta la función y se guarda el
+                    resultado.
+                </p>
+                <p>
+
+                    En <strong>renderizados posteriores</strong>, si las dependencias no han cambiado, se devuelve el
+                    resultado guardado.
+                </p>
+                <p>
+                    En <strong>cuanto cambia una dependencia</strong>, se vuelve a ejecutar la función y se actualiza el
+                    valor.
+                </p>
+                <p>La sintaxis es la siguiente:</p>
+                <div class="code__box">
+                    <code><span class="func">useMemo(</span>fn, dependencies<span class="func">)</span>;</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
             </section>
         </main>
         <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->
