@@ -66,8 +66,57 @@
                                 </div>
                             </div>
                             <!-- #endregion JSX-->
+                            <!-- #region Hooks -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="hooksindx">
+                                    <label class="index__item__label" for="hooksindx"></label>
+                                    <a class="index__lv2" href="#hooks">Hooks</a>
+                                </div>
+                                <!-- #region useState -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="stateindx">
+                                        <label class="index__item__label" for="stateindx"></label>
+                                        <a class="index__lv3" href="#useState">useState</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion useState-->
+                                <!-- #region useEffect -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="effindx">
+                                        <label class="index__item__label" for="effindx"></label>
+                                        <a class="index__lv3" href="#useEffect">useEffect</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion useEffect-->
+                                <!-- #region useRef -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="refindx">
+                                        <label class="index__item__label" for="refindx"></label>
+                                        <a class="index__lv3" href="#useRef">useRef</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion useRef-->
+                            </div>
+                            <!-- #endregion Hooks-->
                         </div>
+                        <input hidden type="checkbox" id="index-close">
+
                     </div>
+
+                </div>
+                <label class="material-symbols-outlined" for="index-close">
+                    list
+                    <span class="index__open__button">
+                        Arrow_forward_ios
+                    </span>
+                    <span class="index__close__button material-symbols-outlined">
+                        Arrow_back_ios
+                    </span>
+                </label>
             </nav>
             <!-- #endregion Index -->
         </aside>
@@ -322,6 +371,9 @@ root.<span class="func">render</span>(
                         ¡Copiado!
                     </div>
                 </div>
+                <p>
+                    Si necesitamos <strong>usar fuentes o librerías ESTÁTICAS</strong>(no cambian nunca), las importamos <strong>en el index.html</strong>
+                </p>
                 <p>La palabra clave <strong>class</strong> se reemplaza por <strong>className </strong>para evitar
                     conflictos con JS.</p>
             </section>
@@ -334,26 +386,152 @@ root.<span class="func">render</span>(
                     <strong>JSX se transpila </strong>(compilar de un lenguaje a otro) <strong>a JavaScript
                         puro</strong> antes de ejecutarse en el navegador.
                 </p>
-                <p>Esto hace que sea muy flexible, ya que podemos usar JSX <strong>dentro de bucles</strong>, con <strong>condicionales, variables</strong>,etc.</p>
-                <p>
-                    Para insertar <strong>variables y expresiones</strong> en JSX, usamos <strong>{ }</strong>. Por ejemplo:
-                    
+                <p>Esto hace que sea muy flexible, ya que podemos usar JSX <strong>dentro de bucles</strong>, con
+                    <strong>condicionales, variables</strong>,etc.
                 </p>
-                <div class = "code__box">
-                    <code><span class="key">const</span> image = &lt;<span class="class">img </span>src = <span class="var">{myImg.uri} </span> alt = <span class="var">{myImg.alt}</span>/&gt;</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                <p>
+                    Para insertar <strong>variables y expresiones</strong> en JSX, usamos <strong>{ }</strong>. Por
+                    ejemplo:
+
+                </p>
+                <div class="code__box">
+                    <code><span class="key">const</span> image = &lt;<span class="class">img </span>src = <span class="var">{myImg.uri} </span> alt = <span class="var">{myImg.alt}</span>/&gt;</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
                     </div>
                 </div>
-                <p>Para definir componentes, se puede hacer principalmente de dos formas, a través de una <strong>función normal</strong> o a través de una <strong>función flecha</strong>. </p>
+                <p>Para definir componentes, se puede hacer principalmente de dos formas, a través de una
+                    <strong>función normal</strong> o a través de una <strong>función flecha</strong>.
+                </p>
                 <div class="grid --2cols">
-                    <div class = "code__box">
-                        <code>Code</code>
+                    <div class="code__box">
+                        <code><span class="key">function <span class="func">Hola()</span> {</span>
+    <span class="key">return</span> &lt;<span class="func">h1</span>&gt; Hello World &lt;<span class="func">/h1</span>&gt;;
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
                     </div>
-                    <div class = "code__box">
-                        <code>Code</code>
+                    <div class="code__box">
+                        <code><span class="key">const </span>Hola = () => {
+    <span class="key">return </span>(
+        &lt;<span class="func">h1</span>&gt; Hello World &lt;<span class="func">/h1</span>&gt;
+    );
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        </span></code>
                     </div>
                 </div>
+                <p>Los componentes pueden recibir <strong>argumentos</strong> en la función que los define para mostrar
+                    contenido personalizado o hacer lógica, son los llamados <strong>Props</strong> y, como dijimos
+                    antes, se insertarían con { } en el componente.</p>
+                <p>Para <strong>Pasar los props</strong> al componente, se hace como si fuera un <strong>atributo de la
+                        etiqueta HTML</strong>. Después, en el componente, se definen como un <strong>objeto
+                        deserializado</strong>.Por ejemplo:</p>
+
+                <h3 class="--center">En la <strong>App</strong></h3>
+                <div class="code__box">
+                    <code>&lt;<span class="func">Hola </span>name=<span class="var">{<span class="string">"Adri"</span>}</span> age=<span class="var">{<span class="literal">23</span>}</span> /></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <h3 class="--center">En el <strong>componente</strong></h3>
+                <div class="code__box">
+                    <code><span class="key">const</span> Hola = (<span class="var">props</span>) => {
+    <span class="key">const</span> { name, age } = <span class="var">props</span>;
+    <span class="key">return</span> (&lt;<span class="func">h1</span> className="title">Hey wassup, <span class="var">{name} </span> are u <span class="var">{age} </span> years old?&lt;<span class="func">/h1</span>>);
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+
+            </section>
+            <div id="hooks" class="header__container">
+                <h2>Hooks</h2>
+            </div>
+            <section>
+                <p>Los <strong>Hooks</strong> son funciones que permiten a los componentes de React acceder a
+                    <strong>funcionalidades del ciclo de vida y del estado</strong> sin necesidad de crear una clase.
+
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> { <span class="func">useState</span>, <span class="func">useEffect</span> } from <span class="string">'react'</span>;</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
+
+            <div id="useState" class="header__container">
+                <h3>use State</h3>
+            </div>
+            <section>
+                <p><strong>useState</strong> permite añadir un <strong>estado local</strong> a un componente funcional.
+                </p>
+                <p> Primero, tenemos que <strong>importarlo de react</strong>, y luego llamamos a la función <span
+                        class="func">useState(</span><span class="var">valor inicial</span><span class="func">)</span>,
+                    que devuelve un <strong>array</strong> con el <strong>estado y la función que hay que llamar para
+                        cambiarlo</strong>. Nosotros entonces lo declaramos en un <strong>array deserializado</strong> y
+                    ya podemos usarlo:</p>
+                <div class="code__box">
+                    <code><span class="key">import </span>{ <span class="func">useState</span> } <span class="key">from</span><span class="string">'react'</span>;
+                            
+<span class = "comments">//Declaramos el estado</span>
+<span class="key">const</span> [state, setState] = <span class="func">useState(</span><span class ="var"><span class="literal">0</span></span><span class="func">)</span>;
+
+<span class = "comments">//Cambiamos el estado</span>
+<span class="func">setState(</span><span class ="var"><span class="literal">1</span></span><span class="func">);</span>
+
+<span class = "comments">// ...</span>
+<span class="key">return</span> &lt;<span class="func">h1</span>&gt;{state}&lt;<span class="func">/h1</span>&gt;;</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
+
+            <div id="useEffect" class="header__container">
+                <h3>useEffect</h3>
+            </div>
+            <section>
+
+                <p>
+                    El <strong>useEffect</strong> se usa para responder a cambios en el estado o props. <strong>Recibe
+                        una función y un array de dependencias</strong>.
+
+                </p>
+                <p>La idea es que <strong>la función</strong> que pasamos <strong>se ejecute cada vez</strong> que
+                    alguna de <strong>las dependencias cambie</strong>, y si le pasamos una <strong>lista
+                        vacía</strong>, se ejecutará <strong>una sola vez</strong>, al montar el componente.</p>
+                <p>
+                    Si en el efecto <strong>creamos algo externo a React</strong>, como <strong>un intervalo</strong>,
+                    un <strong>listener</strong> o una <strong>conexión a una API externa</strong>, debemos
+                    <strong>limpiarlo</strong> al desmontar el componente, <strong>devolviendo una función de
+                        limpieza</strong> dentro del efecto. Por ejemplo, hacemos clear del intervalo o quitamos el
+                    listener.
+                </p>
+                <p>
+                    De hecho, <strong>si no estamos en modo build</strong>, React ejecutará <strong>dos veces el
+                        efecto</strong> al montar el componente, y <strong>si ocurre algún error</strong>, significa que
+                    <strong>no hemos limpiado del todo</strong> el efecto, ya que <strong>debe soportar</strong> que el
+                    componente <strong>se monte, se desmonte y se vuelva a montar.</strong>
+                </p>
+            </section>
+            <div id="useRef" class="header__container">
+                <h3>useRef</h3>
+            </div>
+            <section>
+                <p>
+
+                    Como tras cada re-renderizado <strong>se pierden los valores de las variables</strong>, se utiliza
+                    este hook para <strong>crear variables que sobrevivan</strong> a estos re-renderizados.
+                </p>
+                <p>Tiene un atributo <strong>current</strong>, que es donde <strong>guardamos y usamos</strong> la referencia que queremos mantener.</p>
             </section>
         </main>
         <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->

@@ -1,0 +1,16 @@
+/* Style for the main title element */
+.title{
+    color: #f0f; /* Sets the text color to a bright magenta */
+}
+
+/* Style for the pick button */
+.pick-button{
+    padding: 20px;
+    outline: none; /* Removes the default outline */
+    border: none; /* Removes the default border */
+    font-size: 2rem;
+    color: #fff;
+    min-width: 250px; /* Ensures the button has a minimum width */
+    border-radius: 20px; /* Rounds the corners of the button */
+    background-color: #66d8f53f; /* Applies a semi-transparent teal background */
+}
