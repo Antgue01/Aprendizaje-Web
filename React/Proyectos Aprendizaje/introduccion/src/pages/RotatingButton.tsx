@@ -1,4 +1,4 @@
-import logo from '../logo.svg';
+// @ts-ignore
 import '../App.css';
 import '../css/styles.css';
 import Hola from '../components/Hello.tsx';
@@ -13,10 +13,11 @@ function RotatingButton() {
     const [showName, setShowName] = useState(names[0]);
     const [spinning, setSpinning] = useState(true);
     const [age, setAge] = useState(23);
-    const [icon, setIcon] = useState(null);
+    const [icon, setIcon] = useState("");
 
     // Reference to store the interval ID
-    const intervalRef = useRef(null);
+    const intervalRef = useRef(setInterval(()=>{},Infinity
+));
     function clickHandler() {
         setSpinning(!spinning);
     }
@@ -24,7 +25,7 @@ function RotatingButton() {
     useEffect(() => {
         if (spinning) {
             // Reset the icon and button name when spinning starts
-            setIcon(null);
+            setIcon("");
             setButtonNameState(names[currentName]);
             // Clear any existing interval
             clearInterval(intervalRef.current);
@@ -53,18 +54,7 @@ function RotatingButton() {
 
                 <Hola name={showName} age={age} icon={icon} />
                 <Button onClick={clickHandler} name={buttonName} icon={icon} />
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+               
             </header>
         </div>
     );

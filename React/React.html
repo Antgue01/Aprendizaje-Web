@@ -55,6 +55,15 @@
                                     <a class="index__lv2" href="#setup">Set Up</a>
 
                                 </div>
+                                <!-- #region Enrutamiento -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="routingindx">
+                                        <label class="index__item__label" for="routingindx"></label>
+                                        <a class="index__lv3" href="#routing">Enrutamiento</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Enrutamiento-->
                             </div>
                             <!-- #endregion Set Up-->
                             <!-- #region JSX -->
@@ -64,6 +73,15 @@
                                     <label class="index__item__label" for="jsxindx"></label>
                                     <a class="index__lv2" href="#jsx">JSX</a>
                                 </div>
+                                <!-- #region Renderizado Condicional -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="cdnrndindx">
+                                        <label class="index__item__label" for="cdnrndindx"></label>
+                                        <a class="index__lv3" href="#rendercond">Renderizado Condicional</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Renderizado Condicional-->
                             </div>
                             <!-- #endregion JSX-->
                             <!-- #region Hooks -->
@@ -401,10 +419,7 @@ npx eslint --init
                         ¡Copiado!
                     </div>
                 </div>
-                <p>Después, <strong>enrutamos</strong> la aplicación,es decir, <strong>asignamos las URL a páginas de
-                        nuestra web</strong> de forma que cuando se <strong>escriba una URL</strong> nuestra, React sepa
-                    que tiene que <strong>reconfigurar el DOM</strong> (o la View en native).</p>
-                WIP WIP WIP
+
                 <p>Finalmente, <strong>creamos el root y renderizamos</strong>. Para ello, llamamos a <span
                         class="class">ReactDOM</span>.<span class="func">createRoot(</span><span class="var">div con id
                         "root"</span><span class="func">)</span> y a su método <span class="func">render(</span><span
@@ -430,9 +445,112 @@ root.<span class="func">render</span>(
                     Es recomendable la librería <strong>why did you render</strong> para profiling.
                 </p>
             </section>
-            <div id="jsx" class="header__container">
-                <h2>JSX</h2>
+            <div id="routing" class="header__container">
+                <h3>Enrutamiento</h3>
             </div>
+            <section>
+                <p>
+                    Para enrutar, es decir, <strong>asignar las URL a páginas de
+                        nuestra web</strong> de forma que cuando se <strong>escriba una URL</strong> nuestra, React
+                    tiene que saber cómo <strong>reconfigurar el DOM</strong> (o la View en native). Para ello usamos el
+                    módulo
+                    <strong>react-router-dom</strong>, que se descarga de yarn con el
+                    comando:
+                </p>
+                <div class="code__box">
+                    <code>yarn add react-router-dom</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Después, usamos el import correspondiente:
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import </span>{ BrowserRouter as Router, Routes, Route, Link } <span class="key">from</span> <span class="string">'react-router-dom'</span>;</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    El componente <strong>Router</strong> se encarga de <strong>gestionar las rutas</strong> de nuestra
+                    aplicación, y
+                    además <strong>es donde se construye el nav</strong> que sobrevivirá entre páginas. Debe
+                    envolver toda la aplicación para que el enrutamiento funcione correctamente.
+
+                </p>
+                <p>Si tiene <strong>componentes padre</strong>, estos <strong>también sobreviven</strong> entre páginas.
+                </p>
+
+                <p>Dentro de Router, ponemos tanto los <strong>componentes visuales</strong> que formen nuestro nav (que
+                    <strong>en cada apartado del nav</strong> deben incluir el componente <span class="func">&lt;Link
+                    </span> to = { <span class="var">"ruta"</span>} <span class="func">/> </span>) como el componente
+                    <span class="func">&lt;Routes></span>, dentro del cual irán cada una de <strong>las rutas</strong>
+                    de la aplicación.
+                </p>
+                <p>
+                    Para ello utilizamos el componente <span class="func">&lt;Route</span> path = { <span
+                        class="var">"ruta"</span>} element = { <span class="var">&lt;Componente /&gt;</span>} <span
+                        class="func">/> </span>, donde <strong>path</strong> es la URL y <strong>element</strong> es el
+                    componente que se muestra al acceder a esa URL (<strong>generalmente una página</strong>).
+                </p>
+                <div class="code__box">
+                    <code><span class="func">&lt;Router></span>
+    {<span class = "comments">/*Construcción visual del nav con &lt;Link&gt; */</span>}
+    <span class="func">&lt;nav </span>className=<span class="string">'main__nav'</span><span class="func">></span>
+        <span class="func">&lt;ul></span>
+            <span class="func">&lt;li></span>
+                <span class="func">&lt;Link</span> to={<span class="string">"/"</span>}<span class="func">></span> <span class="func">&lt;i</span> className=<span class="string">'bi bi-house-door'</span><span class="func">> &lt;/i> </span><span class="func">&lt;/Link></span>
+            <span class="func">&lt;/li></span>
+            <span class="func">&lt;li></span>
+                <span class="func">&lt;Link</span> to={<span class="string">"/rotating"</span>}><span class="string"></span>Botón Rotativo<span class="func">&lt;/Link></span>
+            <span class="func">&lt;/li></span>
+        <span class="func">&lt;/ul></span>
+    <span class="func">&lt;/nav></span>
+
+    {<span class = "comments">/*Rutas lógicas*/</span>}
+    <span class="func">&lt;Routes></span>
+        <span class="func">&lt;Route </span>path=<span class="string">"/"</span> element={<span class="func">&lt;App /></span>} <span class="func">/></span>
+        <span class="func">&lt;Route </span>path=<span class="string">"/rotating"</span> element={<span class="func">&lt;RotatingButtonPage /></span>} <span class="func">/></span>
+    <span class="func">&lt;/Routes></span>
+<span class="func">&lt;/Router></span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Podemos poner <strong>variables en las rutas</strong>, para ello utilizamos el símbolo
+                    <strong>:</strong> en la definición de la ruta, y en el componente al que redirigimos lo declaramos
+                    <strong>como prop</strong> y usamos el hook <strong>useParams</strong>.
+                </p>
+                <div class="code__box">
+                    <code><span class="func">&lt;Route</span> path=<span class="string">"/pagina/:nombre"</span> element={<span class="func">&lt;MiPagina /></span>} />
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Luego, <strong>en el componente</strong> <span class="func">&lt;MiPagina/></span> :
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> { <span class="var">useParams</span> } <span class="key">from</span> <span class="string">'react-router-dom'</span>;
+
+<span class="key">export default function</span> <span class="func">MiPagina()</span> {
+    <span class="key">const </span>{ <span class="var">nombre</span> } = <span class="func">useParams()</span>;
+    <span class = "comments">// Hacemos lo que sea con el parámetro</span>
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Así, al acceder a la URL <strong>/pagina/Pepe</strong>, recibiremos <strong>Pepe</strong> en el prop.
+                </p>
+            </section>
             <section>
                 <p>Es una <strong>sintaxis</strong> desarrollada para React que permite usar
                     los <strong>componentes como etiquetas HTML</strong>.
@@ -475,10 +593,12 @@ root.<span class="func">render</span>(
                         </span></code>
                     </div>
                 </div>
-                <p>Los componentes pueden recibir <strong>argumentos</strong> en la función que los define para mostrar
+                <p>Los componentes pueden recibir <strong>argumentos</strong> en la función que los define para
+                    mostrar
                     contenido personalizado o hacer lógica, son los llamados <strong>Props</strong> y, como dijimos
                     antes, se insertarían con { } en el componente.</p>
-                <p>Para <strong>Pasar los props</strong> al componente, se hace como si fuera un <strong>atributo de la
+                <p>Para <strong>Pasar los props</strong> al componente, se hace como si fuera un <strong>atributo de
+                        la
                         etiqueta HTML</strong>. Después, en el componente, se definen como un <strong>objeto
                         deserializado</strong>.Por ejemplo:</p>
 
@@ -502,12 +622,46 @@ root.<span class="func">render</span>(
                 </div>
 
             </section>
+            <div id="rendercond" class="header__container">
+                <h3>Renderizado Condicional</h3>
+            </div>
+            <section>
+                <p>
+                    Es azúcar sintáctico para hacer condicionales dentro de JSX. Hay tres formas principales de
+                    hacerlo:
+                </p>
+                <p>El <strong>operador ternario</strong> de toda la vida:</p>
+                <div class="code__box">
+                    <code>{condición <span class="key">?</span> <span class="func">&lt;Componente si True/></span> <span class="key">:</span> <span class="func">&lt;Componente si false/></span>}</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Un <strong>AND</strong>:</p>
+                <div class="code__box">
+                    <code>{condición <span class="key">&&</span> <span class="func">&lt;Componente si True/&gt;</span>}</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Un <strong>If / Else </strong>dentro del componente:</p>
+                <div class="code__box">
+                    <code><span class="key">if</span> (condición) { <span class="func">&lt;Componente si True/&gt;</span> } <span class="key">else</span> { <span class="func">&lt;Componente si false/&gt;</span> }</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
             <div id="hooks" class="header__container">
                 <h2>Hooks</h2>
             </div>
             <section>
                 <p>Los <strong>Hooks</strong> son funciones que permiten a los componentes de React acceder a
-                    <strong>funcionalidades del ciclo de vida y del estado</strong> sin necesidad de crear una clase.
+                    <strong>funcionalidades del ciclo de vida y del estado</strong> sin necesidad de crear una
+                    clase.
 
                 </p>
                 <div class="code__box">
@@ -523,12 +677,15 @@ root.<span class="func">render</span>(
                 <h3>use State</h3>
             </div>
             <section>
-                <p><strong>useState</strong> permite añadir un <strong>estado local</strong> a un componente funcional.
+                <p><strong>useState</strong> permite añadir un <strong>estado local</strong> a un componente
+                    funcional.
                 </p>
                 <p> Primero, tenemos que <strong>importarlo de react</strong>, y luego llamamos a la función <span
                         class="func">useState(</span><span class="var">valor inicial</span><span class="func">)</span>,
-                    que devuelve un <strong>array</strong> con el <strong>estado y la función que hay que llamar para
-                        cambiarlo</strong>. Nosotros entonces lo declaramos en un <strong>array deserializado</strong> y
+                    que devuelve un <strong>array</strong> con el <strong>estado y la función que hay que llamar
+                        para
+                        cambiarlo</strong>. Nosotros entonces lo declaramos en un <strong>array
+                        deserializado</strong> y
                     ya podemos usarlo:</p>
                 <div class="code__box">
                     <code><span class="key">import </span>{ <span class="func">useState</span> } <span class="key">from</span><span class="string">'react'</span>;
@@ -554,7 +711,8 @@ root.<span class="func">render</span>(
             <section>
 
                 <p>
-                    El <strong>useEffect</strong> se usa para responder a cambios en el estado o props. <strong>Recibe
+                    El <strong>useEffect</strong> se usa para responder a cambios en el estado o props.
+                    <strong>Recibe
                         una función y un array de dependencias</strong>.
 
                 </p>
@@ -562,7 +720,8 @@ root.<span class="func">render</span>(
                     alguna de <strong>las dependencias cambie</strong>, y si le pasamos una <strong>lista
                         vacía</strong>, se ejecutará <strong>una sola vez</strong>, al montar el componente.</p>
                 <p>
-                    Si en el efecto <strong>creamos algo externo a React</strong>, como <strong>un intervalo</strong>,
+                    Si en el efecto <strong>creamos algo externo a React</strong>, como <strong>un
+                        intervalo</strong>,
                     un <strong>listener</strong> o una <strong>conexión a una API externa</strong>, debemos
                     <strong>limpiarlo</strong> al desmontar el componente, <strong>devolviendo una función de
                         limpieza</strong> dentro del efecto. Por ejemplo, hacemos clear del intervalo o quitamos el
@@ -570,8 +729,10 @@ root.<span class="func">render</span>(
                 </p>
                 <p>
                     De hecho, <strong>si no estamos en modo build</strong>, React ejecutará <strong>dos veces el
-                        efecto</strong> al montar el componente, y <strong>si ocurre algún error</strong>, significa que
-                    <strong>no hemos limpiado del todo</strong> el efecto, ya que <strong>debe soportar</strong> que el
+                        efecto</strong> al montar el componente, y <strong>si ocurre algún error</strong>, significa
+                    que
+                    <strong>no hemos limpiado del todo</strong> el efecto, ya que <strong>debe soportar</strong> que
+                    el
                     componente <strong>se monte, se desmonte y se vuelva a montar.</strong>
                 </p>
             </section>
@@ -581,7 +742,8 @@ root.<span class="func">render</span>(
             <section>
                 <p>
 
-                    Como tras cada re-renderizado <strong>se pierden los valores de las variables</strong>, se utiliza
+                    Como tras cada re-renderizado <strong>se pierden los valores de las variables</strong>, se
+                    utiliza
                     este hook para <strong>crear variables que sobrevivan</strong> a estos re-renderizados.
                 </p>
                 <p>Tiene un atributo <strong>current</strong>, que es donde <strong>guardamos y usamos</strong> la
@@ -592,11 +754,15 @@ root.<span class="func">render</span>(
             </div>
             <section>
                 <p>
-                    Si necesitamos <strong>pasar el mismo prop a muchos hijos</strong>(con el mismo o distinto valor),
-                    crearemos un <strong>contexto</strong>, que es como un objeto <strong>al que pueden preguntar los
-                        hijos</strong> y busca hacia arriba <strong>hasta llegar al primer padre que lo tiene</strong> .
+                    Si necesitamos <strong>pasar el mismo prop a muchos hijos</strong>(con el mismo o distinto
+                    valor),
+                    crearemos un <strong>contexto</strong>, que es como un objeto <strong>al que pueden preguntar
+                        los
+                        hijos</strong> y busca hacia arriba <strong>hasta llegar al primer padre que lo
+                        tiene</strong> .
                 </p>
-                <p>Para ello, <strong>creamos un archivo </strong>loqueseaContext.js en el que creamos el contexto: </p>
+                <p>Para ello, <strong>creamos un archivo </strong>loqueseaContext.js en el que creamos el contexto:
+                </p>
                 <div class="code__box">
                     <code><span class = "comments">//loqueseaContext.js</span>
 <span class="key">import</span> { createContext } <span class="key">from</span> <span class="string">'react'</span>;
@@ -604,7 +770,8 @@ root.<span class="func">render</span>(
 <span class="key">export</span> <span class="key">const</span> loqueseaContext = <span class="func">createContext(<span class="literal">valor por defecto</span>)</span>;
 </code>
                 </div>
-                <p>En el padre al que queremos preguntar <strong>envolvemos los hijos en nuestro contexto</strong>:</p>
+                <p>En el padre al que queremos preguntar <strong>envolvemos los hijos en nuestro contexto</strong>:
+                </p>
                 <div class="code__box">
                     <code><span class = "comments">//Padre.js</span>
 <span class="key">import</span> { loqueseaContext } <span class="key">from</span> <span class="string">'./loqueseaContext.js'</span>;
@@ -647,16 +814,19 @@ root.<span class="func">render</span>(
                     <strong>Pensado para funciones que tardan en ejecutarse.</strong>
                 </p>
                 <p>
-                    La <strong>primera vez que se renderiza</strong> el componente, se ejecuta la función y se guarda el
+                    La <strong>primera vez que se renderiza</strong> el componente, se ejecuta la función y se
+                    guarda el
                     resultado.
                 </p>
                 <p>
 
-                    En <strong>renderizados posteriores</strong>, si las dependencias no han cambiado, se devuelve el
+                    En <strong>renderizados posteriores</strong>, si las dependencias no han cambiado, se devuelve
+                    el
                     resultado guardado.
                 </p>
                 <p>
-                    En <strong>cuanto cambia una dependencia</strong>, se vuelve a ejecutar la función y se actualiza el
+                    En <strong>cuanto cambia una dependencia</strong>, se vuelve a ejecutar la función y se
+                    actualiza el
                     valor.
                 </p>
                 <p>La sintaxis es la siguiente:</p>
