@@ -117,7 +117,7 @@ body {
 
 .container-characters {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto ;
   width: 100%;
   padding-bottom: 50px;
 }
@@ -127,6 +127,7 @@ body {
   background: #3c3e44;
   margin: 20px 10px;
   border-radius: 10px;
+  padding-right: 16px;
   align-items: flex-start;
 }
 
@@ -144,9 +145,10 @@ body {
 }
 
 .character-container .dead,
-.alive {
+.alive,.unknown {
   height: 0.5rem;
   width: 0.5rem;
+  margin-left: 5px;
   margin-right: 0.375rem;
   border-radius: 50%;
   display: inline-block;
@@ -158,6 +160,9 @@ body {
 
 .character-container .alive {
   background: rgb(85, 204, 68);
+}
+.character-container .unknown {
+  background: #5c5c5c;
 }
 
 .character-container div:first-child {

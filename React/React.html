@@ -74,6 +74,7 @@
                                     <a class="index__lv2" href="#jsx">JSX</a>
                                 </div>
                                 <!-- #region Renderizado Condicional -->
+                              
                                 <div class="index__item__container">
                                     <div class="index__item">
                                         <input type="checkbox" hidden id="cdnrndindx">
@@ -82,6 +83,15 @@
                                     </div>
                                 </div>
                                 <!-- #endregion Renderizado Condicional-->
+                                   <!-- #region Renderizado en Bucle -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="loopindx">
+                                        <label class="index__item__label" for="loopindx"></label>
+                                        <a class="index__lv3" href="#loop">Renderizado en Bucle</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Renderizado en Bucle-->
                             </div>
                             <!-- #endregion JSX-->
                             <!-- #region Hooks -->
@@ -548,7 +558,8 @@ root.<span class="func">render</span>(
                     </div>
                 </div>
                 <p>
-                    Así, al acceder a la URL <strong>/pagina/Pepe</strong>, recibiremos <strong>Pepe</strong> en el prop.
+                    Así, al acceder a la URL <strong>/pagina/Pepe</strong>, recibiremos <strong>Pepe</strong> en el
+                    prop.
                 </p>
             </section>
             <section>
@@ -653,6 +664,25 @@ root.<span class="func">render</span>(
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
                     </div>
+                </div>
+            </section>
+            <div id="loop" class="header__container">
+                <h3>Renderizado en Bucle</h3>
+            </div>
+            <section>
+                <p>
+                    Cuando tenemos que renderizar una lista de elementos, podemos usar el método <strong>map</strong> de
+                    los arrays, que nos permite iterar sobre cada elemento y devolver un componente por cada uno. De esta forma:
+                
+                </p>
+                <div class = "code__box">
+                    <code><span class="key">export default function</span> <span class="func">InfoGrid(<span class="var">{ info } </span>)</span> {
+    <span class = "comments">{/*Info es un array que puede venir por ejemplo de una API REST*/}</span>
+    <span class="key">return</span> {info.<span class="func">map(</span>(character,index<span class="func">)</span>=>(<span class="func">&lt;Character</span> characterData={character}<span class="func">/></span>))}
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+<div class="code__box__copy__dialog">
+    ¡Copiado!
+</div>
                 </div>
             </section>
             <div id="hooks" class="header__container">
