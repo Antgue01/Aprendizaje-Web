@@ -2658,7 +2658,7 @@ Buscamos la librería que queramos y copiamos el tag < link> que tenga y lo pega
 </font>
 <h2> 
 
-controlar los canales de las variables de color</h2>
+controlar los canales de las variables de color</h2>      
 <font color ="#a0c2f0">
 
 Para ello se puede usar la función 
@@ -4651,6 +4651,7 @@ Se trata de reservar espacio en la web para nuestra página.
 
 Si tenemos una página con mucha **concurrencia**, puede ser buena idea **contratar servicios de servidores externos** auxiliares para el contenido multimedia, aliviando la carga de los servidores principales.
 
+Para proyectos  que <strong>NO necesitan servidor</strong>(es decir, no almacenan datos de usuarios, no tienen autenticación, etc.),podemos publicarlos en [Netlify](https://app.netlify.com/).
 </font>
 <h2>Tipos de hosting</h2>
 <h3>Hosting compartido</h3>

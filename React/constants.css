@@ -3,8 +3,8 @@
     --bg-color: #41d3ff !important;
 
     --text-color: #003cff;
-    --links-color: #8a9715;
-    --links-color-hovered: #cea800;
+    --links-color: #8a40eb;
+    --links-color-hovered: #4406d4;
     --box-separator-color: #8d7f00;
     --search-var-focus-color: hsl(from var(--main-color) h calc(s * 0.8) calc(l * 0.8));
     --box--bg-color: color-mix(in srgb, var(--bg-color) 60%, #e6e3e3 40%);

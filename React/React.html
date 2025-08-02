@@ -66,6 +66,15 @@
                                 <!-- #endregion Enrutamiento-->
                             </div>
                             <!-- #endregion Set Up-->
+                            <!-- #region Publicación -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="publiindx">
+                                    <label class="index__item__label" for="publiindx"></label>
+                                    <a class="index__lv2" href="#publicacion">Publicación</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Publicación-->
                             <!-- #region JSX -->
                             <div class="index__item__container">
                                 <div class="index__item">
@@ -74,7 +83,7 @@
                                     <a class="index__lv2" href="#jsx">JSX</a>
                                 </div>
                                 <!-- #region Renderizado Condicional -->
-                              
+
                                 <div class="index__item__container">
                                     <div class="index__item">
                                         <input type="checkbox" hidden id="cdnrndindx">
@@ -83,7 +92,7 @@
                                     </div>
                                 </div>
                                 <!-- #endregion Renderizado Condicional-->
-                                   <!-- #region Renderizado en Bucle -->
+                                <!-- #region Renderizado en Bucle -->
                                 <div class="index__item__container">
                                     <div class="index__item">
                                         <input type="checkbox" hidden id="loopindx">
@@ -562,6 +571,21 @@ root.<span class="func">render</span>(
                     prop.
                 </p>
             </section>
+            <div id="publicacion" class="header__container">
+                <h2>Publicación</h2>
+            </div>
+            <section>
+                <p>
+                    Para publicar nuestra aplicación, subiremos la build a la página <a
+                        href="https://app.netlify.com/">Netlify.</a> Esta página es ideal para proyectos que <strong>NO
+                        necesitan servidor</strong>(es decir, no almacenan datos de usuarios, no tienen autenticación,
+                    etc.).
+
+                </p>
+            </section>
+            <div id="jsx" class="header__container">
+                <h2>JSX</h2>
+            </div>
             <section>
                 <p>Es una <strong>sintaxis</strong> desarrollada para React que permite usar
                     los <strong>componentes como etiquetas HTML</strong>.
@@ -672,17 +696,18 @@ root.<span class="func">render</span>(
             <section>
                 <p>
                     Cuando tenemos que renderizar una lista de elementos, podemos usar el método <strong>map</strong> de
-                    los arrays, que nos permite iterar sobre cada elemento y devolver un componente por cada uno. De esta forma:
-                
+                    los arrays, que nos permite iterar sobre cada elemento y devolver un componente por cada uno. De
+                    esta forma:
+
                 </p>
-                <div class = "code__box">
+                <div class="code__box">
                     <code><span class="key">export default function</span> <span class="func">InfoGrid(<span class="var">{ info } </span>)</span> {
     <span class = "comments">{/*Info es un array que puede venir por ejemplo de una API REST*/}</span>
     <span class="key">return</span> {info.<span class="func">map(</span>(character,index<span class="func">)</span>=>(<span class="func">&lt;Character</span> characterData={character}<span class="func">/></span>))}
 }</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
-<div class="code__box__copy__dialog">
-    ¡Copiado!
-</div>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
                 </div>
             </section>
             <div id="hooks" class="header__container">
