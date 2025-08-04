@@ -157,6 +157,24 @@
                                 <!-- #endregion useMemo-->
                             </div>
                             <!-- #endregion Hooks-->
+                            <!-- #region React Native -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="nativeindx">
+                                    <label class="index__item__label" for="nativeindx"></label>
+                                    <a class="index__lv2" href="#native">React Native</a>
+                                </div>
+                                <!-- #region Navegación -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="navegacionindx">
+                                        <label class="index__item__label" for="navegacionindx"></label>
+                                        <a class="index__lv3" href="#navegnative">Navegación</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Navegación-->
+                            </div>
+                            <!-- #endregion React Native-->
                         </div>
                         <input hidden type="checkbox" id="index-close">
 
@@ -347,6 +365,16 @@ npx eslint --init
                 </div>
                 <p><strong>Descarga</strong> y configura <strong>React Native</strong> dede la plantilla de la
                     comunidad, preparada ya con React y los <strong>proyectos de Android e iOS</strong>.</p>
+                <div class="code__box">
+                    <code>npx react-native run-android</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Ejecuta la aplicación en el móvil.
+                </p>
                 <div class="code__box">
                     <code>npm install [paquete]</code>
                     <button class="code__box__copy material-symbols-outlined">content_copy</button>
@@ -892,6 +920,193 @@ root.<span class="func">render</span>(
                         ¡Copiado!
                     </div>
                 </div>
+            </section>
+            <div id="native" class="header__container">
+                <h2>ReactNative</h2>
+            </div>
+            <section>
+                <p>
+                    La principal diferencia es que <strong>tiene componentes nativos </strong> que se importan desde
+                    react-native. A los componentes se les da estilo a partir del prop <strong>style</strong>, que
+                    recibe <strong>un objeto con las propiedades</strong> de estilo, como si fuera CSS, pero en
+                    camelCase.
+                </p>
+                <p>
+                    Lo ideal es crear este objeto con <span class="class">Stylesheet.</span><span
+                        class="func">create()</span>. Aquí <strong>en lugar de selectores</strong>, creamos <strong>un
+                        objeto</strong> en
+                    el que <strong>cada propiedad</strong> tiene como <strong>clave la clase y como valor el objeto de
+                        estilo</strong>.
+                </p>
+                <p>
+                    Además, no hay Grid, <strong>solo hay Flex.</strong>
+                </p>
+                <p>
+                    Para <strong>renderizar listas</strong>, se utiliza el componente <span
+                        class="class">FlatList</span> en lugar de hacer arrays.<span class="func">map</span>(). Otra
+                    opción es <span class="class">SectionList</span> si queremos agrupar los elementos en secciones.
+                </p>
+                <p>
+                    Estos componentes reciben un prop <strong>data</strong> con el <strong>array de datos
+                        (objetos)</strong> a renderizar y un
+                    prop <strong>renderItem</strong> que recibe <strong>una función que devuelve el componente</strong>
+                    (obviamente, debe recibir los props necesarios) a renderizar
+                    por cada elemento del array. Además, podemos usar el prop <strong>keyExtractor</strong> para
+                    especificar una clave única para cada elemento.
+                </p>
+                <p>
+                    Permiten callbacks como <strong>onEndReached</strong> para detectar cuando se llega al final de la
+                    lista y cargar más datos, o <strong>onRefresh</strong> para refrescar la lista.
+                </p>
+                <div class = "code__box">
+                    <code><span class="key">const</span> DATA = [
+  {
+    id: 0,
+    nombre: 'First Item',
+    <span class = "comments">{/*lo que sea*/}</span>
+  },
+<span class = "comments">{/*...*/}
+
+</span>
+<span class = "comments">{/*Este es el render Item*/}</span>
+<span class="key">const</span> Item = ({nombre}) => (
+  <span class="func">&lt;View</span> style={styles.item}<span class="func">></span>
+    <span class="func">&lt;Text</span> style={styles.title}<span class="func">></span>{nombre}<span class="func">&lt;/Text&gt;</span>
+  <span class="func">&lt;/View&gt;</span>
+);
+<span class = "comments">{/*En el componente:*/}</span>
+<span class="func">&lt;FlatList</span> data={DATA} 
+    <span class = "comments">{/*Este es el componente generado al declarar const Item*/}</span>    
+    renderItem={({item}) => <span class="func">&lt;Item</span> nombre={item.title} <span class="func">/></span>}
+    keyExtractor={item => item.id}<span class="func">/></span></code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+  <div class="code__box__copy__dialog">
+    ¡Copiado!
+  </div>
+                </div>
+                <p>
+                    Si queremos <strong>scroll</strong> en una lista, debemos envolverla en un componente <span
+                        class="class">ScrollView</span> y usar la propiedad <strong>contentContainerStyle</strong> para
+                    dar estilo a la parte de dentro.
+                </p>
+                <p>Además, a este scroll podemos <strong>envolverlo con un <span
+                            class="class">KeyboardAvoidingView</span></strong> para evitar que el teclado cubra los
+                    campos de entrada. Le pondríamos el prop <strong>behavior</strong> en <strong>padding</strong> y un
+                    <strong>keyboardVerticalOffset</strong> para ajustar la posición.
+                </p>
+            </section>
+            <div id="navegnative" class="header__container">
+                <h3>Navegación </h3>
+            </div>
+            <section>
+                <p>
+                    Necesitamos instalar la librería <strong>react-navigation</strong> y sus dependencias para poder
+                    navegar entre pantallas en React Native. Para ello, ejecutamos el siguiente comando:
+                </p>
+                <div class="code__box">
+                    <code>yarn add @react-navigation/native
+yarn add react-native-screens react-native-safe-area-context
+                    </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Después, en el <strong>mainActivity</strong> hay que hacer <strong>override</strong> de la función
+                    <strong>onCreate</strong> para llamar al super.
+                </p>
+                <p>Tenemos 3 formas de navegar, por <strong>pila (stack), por pestañas(tabs) y por
+                        cajón(drawer)</strong>(Generalmente un modal que te aparece cuando desplazas a la izquierda).
+                </p>
+                <p>
+                    Necesitamos instalar las librerías correspondientes para cada tipo de navegación e importar la
+                    función <strong>create...LOQUESEA...Navigator.</strong>
+                </p>
+                <p>
+                    Fuera de la función <strong>App</strong>, creamos el <strong>navegador</strong> que queramos y lo
+                    guardamos en una constante. Por ejemplo:
+                </p>
+                <div class="code__box">
+                    <code><span class="key">const</span> Stack = <span class="func">createNativeStackNavigator()</span>;</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Esta constante tiene dos variables, que <strong>a la vez so componentes: Navigator y
+                        Screen.</strong>. Pues bien, creamos un componente <span
+                        class="func">&lt;NavigationContainer&gt;</span> y dentro usamos el componente <strong>Navigator
+                        de la variable</strong>, en el cual pondremos como hijos los componentes <strong>Screen de la
+                        variable</strong> que
+                    queramos. Estos reciben los props <strong>name</strong>(nombre para navegar a esa pantalla) y
+                    <strong>component</strong>.
+                </p>
+                <div class="code__box">
+                    <code><span class="func">&lt;NavigationContainer&gt;</span>
+    <span class="func">&lt;Stack.Navigator&gt;</span>
+        <span class="func">&lt;Stack.Screen</span> name=<span class="string">"Home"</span> component=<span class="var">{HomeScreen}</span> /&gt;
+        <span class="func">&lt;Stack.Screen</span> name=<span class="string">"Details"</span> component=<span class="var">{DetailsScreen}</span> /&gt;
+    <span class="func">&lt;/Stack.Navigator&gt;</span>
+<span class="func">&lt;/NavigationContainer&gt;</span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Para <strong>movernos,</strong> importamos el hook <strong>useNavigation</strong> y lo usamos
+                    dentro del componente <strong>en el que tengamos el botón</strong>. Este hook nos devuelve un objeto
+                    con la función <strong>navigate</strong>,
+                    que recibe como parámetro el nombre de la pantalla a la que queremos ir. También podemos usar estas
+                    otras funcinoes:
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Funciones de navegación </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">navigate(</span><span class="var"><span class="string">"nombre
+                                            de la pantalla"</span></span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Gestiona la navegación de forma que si volvemos a la pantalla, no se vuelve
+                                            a
+                                            renderizar, <strong>evitando duplicados.</strong>
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">push(</span><span class="string">"nombre de la
+                                        pantalla"</span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Navega a la pantalla, pero <strong>si ya está en la pila, se vuelve a
+                                                renderizar</strong>.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <span class="func">goBack()</span>
+                            </li>
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">popTo(</span><span class="var"><span
+                                            class="string">"pantalla"</span></span><span class="func">)</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            Navega a la pantalla especificada <strong>quitando</strong> todas las
+                                            pantallas por encima de ella en la pila.
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </section>
         </main>
         <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->
