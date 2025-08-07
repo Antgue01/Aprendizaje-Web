@@ -171,6 +171,15 @@
                                         <label class="index__item__label" for="navegacionindx"></label>
                                         <a class="index__lv3" href="#navegnative">Navegación</a>
                                     </div>
+                                    <!-- #region Drawer -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="drawerindx">
+                                            <label class="index__item__label" for="drawerindx"></label>
+                                            <a class="index__lv4" href="#drawer">Drawer</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Drawer-->
                                 </div>
                                 <!-- #endregion Navegación-->
                             </div>
@@ -356,6 +365,14 @@ npx eslint --init
                         </div>
                     </div>
                 </div>
+                <div class="code__box">
+                    <code>adb reverse tcp:8081 tcp:8081</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Sincroniza los puertos del móvil y el ordenador. <strong>Ejecutar antes que el server.</strong></p>
                 <div class="code__box">
                     <code>npx @react-native-community/cli init NombreDeTuApp</code><button
                         class="code__box__copy material-symbols-outlined">content_copy</button>
@@ -958,7 +975,7 @@ root.<span class="func">render</span>(
                     Permiten callbacks como <strong>onEndReached</strong> para detectar cuando se llega al final de la
                     lista y cargar más datos, o <strong>onRefresh</strong> para refrescar la lista.
                 </p>
-                <div class = "code__box">
+                <div class="code__box">
                     <code><span class="key">const</span> DATA = [
   {
     id: 0,
@@ -978,10 +995,11 @@ root.<span class="func">render</span>(
 <span class="func">&lt;FlatList</span> data={DATA} 
     <span class = "comments">{/*Este es el componente generado al declarar const Item*/}</span>    
     renderItem={({item}) => <span class="func">&lt;Item</span> nombre={item.title} <span class="func">/></span>}
-    keyExtractor={item => item.id}<span class="func">/></span></code><button class="code__box__copy material-symbols-outlined">content_copy</button>
-  <div class="code__box__copy__dialog">
-    ¡Copiado!
-  </div>
+    keyExtractor={item => item.id}<span class="func">/></span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
                 </div>
                 <p>
                     Si queremos <strong>scroll</strong> en una lista, debemos envolverla en un componente <span
@@ -1010,6 +1028,16 @@ yarn add react-native-screens react-native-safe-area-context
                         ¡Copiado!
                     </div>
                 </div>
+                <p>Este instala <strong>la navegación por pila (stack)</strong>, pero para los otros simplemente
+                    cambiamos el nombre.</p>
+                <div class="code__box">
+                    <code>yarn add @react-navigation/stack</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+
                 <p>Después, en el <strong>mainActivity</strong> hay que hacer <strong>override</strong> de la función
                     <strong>onCreate</strong> para llamar al super.
                 </p>
@@ -1107,6 +1135,86 @@ yarn add react-native-screens react-native-safe-area-context
                     </div>
                 </div>
 
+            </section>
+            <div id="drawer" class="header__container">
+                <h4>Drawer</h4>
+            </div>
+            <section>
+                <p>Dentro de nuestras pantallas <strong>podemos poner Drawers, aunque no sea para navegación</strong>.
+                    Para ello, la pantalla <strong>devolverá un Drawer.Navigator</strong>, que tendrá <strong>una única
+                        Drawer.Screen</strong> la cual tendrá <strong>el contenido de nuestra pantalla en el prop
+                        component</strong>.</p>
+                <p>
+                    El <strong>contenido del drawer</strong> se pondrá en el <strong>prop drawerContent del
+                        Drawer.Navigator</strong>
+                </p>
+                <p>
+                    También podemos poner <strong>dos drawers</strong>, aunque se haría con el drawer de <strong>React
+                        Native Drawer Layout</strong>, que exporta el componente <span class="class">&lt;Drawer>
+                    </span>. Pondríamos uno de estos y rellenaríamos su prop <span class="var">renderDrawerContent
+                    </span> con el <strong>contenido del Drawer</strong>.
+                </p>
+                <p>En nuestra <strong>App.tsx, pondríamos uno de estos.</strong><strong> Dentro</strong> de este Drawer,
+                    <strong>pondríamos otro </strong> con el prop <strong>drawerPosition</strong> en el lado contrario y
+                    su contenido relleno, y <strong>dentro </strong>pondríamos ya <strong>la navegación normal
+                    </strong>de la aplicación.
+                </p>
+
+                <div class="code__box">
+                    <code><span class="key">import</span> MainScreen <span class="key">from</span> <span class="string">'./screens/MainScreen.tsx'</span>;
+<span class="key">import</span> Settings <span class="key">from</span> <span class="string">"./components/Settings.tsx"</span>;
+<span class="key">import</span> QueueViewer <span class="key">from</span> <span class="string">"./components/QueueViewer.tsx"</span>;
+
+<span class="key">function</span> <span class="func">App()</span> {
+  <span class="key">const</span> Stack = <span class="func">createStackNavigator()</span>;
+  <span class="key">const</span> [leftOpen, setLeftOpen] = <span class="func">useState(</span><span class ="var">false</span><span class="func">)</span>;
+  <span class="key">const</span> [rightOpen, setRightOpen] = <span class="func">useState(</span><span class ="var">false</span><span class="func">)</span>;
+
+  <span class = "comments">//Como estas dos funciones están dentro del componente,</span>
+  <span class = "comments">//cada vez que cambia algo en App se redefinen, así que</span>
+  <span class = "comments">//si vamos a pasarlas como prop, usar el useCallback</span>
+  
+  <span class="key">const</span> <span class="func">openRight</span> = () => {
+    <span class="func">setLeftOpen(</span><span class ="var">false</span><span class="func">)</span>;
+<span class = "comments">    //Hay que llamarlo porque internamente usa un bool distinto y hay que sincronizarlos.</span>
+    <span class="func">setRightOpen(</span><span class ="var">true</span><span class="func">)</span>;
+  }
+  <span class="key">const</span> <span class="func">openLeft</span> = () => {
+    <span class="func">setRightOpen(</span><span class ="var">false</span><span class="func">)</span>;
+<span class = "comments">    //Hay que llamarlo porque internamente usa un bool distinto y hay que sincronizarlos.</span>
+    <span class="func">setLeftOpen(</span><span class ="var">true</span><span class="func">)</span>;
+  }
+
+  <span class="key">return</span> (
+    <span class="func">&lt;></span>
+      <span class="func">&lt;Drawer</span> open={rightOpen} onOpen={openRight} 
+            onClose={() => { setRightOpen(false) }}
+             drawerPosition='right' renderDrawerContent={Settings} <span class="func">></span>
+        <span class="func">&lt;Drawer</span> open={leftOpen} onOpen={openLeft}
+         onClose={() => { setLeftOpen(false) }} 
+         drawerPosition='left' renderDrawerContent={QueueViewer}<span class="func">></span>
+
+          <span class="func">&lt;NavigationContainer></span>
+
+            <span class="func">&lt;Stack.Navigator></span>
+              <span class="func">&lt;Stack.Screen</span> name="Main" options={{ title: '', headerShown: false }}
+                 component={MainScreen} <span class="func">/></span>
+              <span class="func">&lt;Stack.Screen</span> name="Settings" options={{ title: '', headerShown: false }}
+                 component={Settings} <span class="func">/></span>
+
+            <span class="func">&lt;/Stack.Navigator></span>
+          <span class="func">&lt;/NavigationContainer></span>
+        <span class="func">&lt;/Drawer></span>
+      <span class="func">&lt;/Drawer></span>
+
+    <span class="func">&lt;/></span>
+  );
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
             </section>
         </main>
         <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->
