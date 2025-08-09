@@ -184,6 +184,24 @@
                                 <!-- #endregion Navegación-->
                             </div>
                             <!-- #endregion React Native-->
+                            <!-- #region Traducciones -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="i18nindx">
+                                    <label class="index__item__label" for="i18nindx"></label>
+                                    <a class="index__lv2" href="#i18n">Traducciones</a>
+                                </div>
+                                <!-- #region Interpolación -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="interpolindx">
+                                        <label class="index__item__label" for="interpolindx"></label>
+                                        <a class="index__lv3" href="#interpol">Interpolación</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Interpolación-->
+                            </div>
+                            <!-- #endregion Traducciones-->
                         </div>
                         <input hidden type="checkbox" id="index-close">
 
@@ -1211,6 +1229,185 @@ yarn add react-native-screens react-native-safe-area-context
   );
 }
 </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
+            <div id="i18n" class="header__container">
+                <h2>Traducciones</h2>
+            </div>
+            <section>
+                <p>
+                    Tanto en React como en React native, se usa una combinación de las librerías <strong>i18n</strong> y
+                    <strong>react-native-localize.</strong>
+                </p>
+                <p>
+                    Lo primero que hay que hacer es instalarlas:
+                </p>
+                <div class="code__box">
+                    <code>yarn add i18next react-i18next
+yarn add react-native-localize
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Opcionalmente, para <strong>evitar almacenar las traducciones</strong> localmente (<strong>en móvil
+                        lo ideal es ALMACENARLAS</strong>), instalamos esta otra librería:</p>
+                <div class="code__box">
+                    <code>yarn add i18next-http-backend
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Después, en la <strong>raíz del proyecto</strong> configuramos i18n en un <strong>archivo
+                        i18n.ts</strong>:
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> i18n <span class="key">from</span> <span class="string">'i18next'</span>;
+<span class="key">import</span> { initReactI18next } <span class="key">from</span> <span class="string">'react-i18next'</span>;
+<span class="key">import</span> <span class="key">* as</span> RNLocalize <span class="key">from</span> <span class="string">'react-native-localize'</span>;
+
+<span class="comments">// imports de los archivos de traducción</span>
+<span class="key">import</span> enCommon <span class="key">from</span> <span class="string">'./locales/en/common.json'</span>
+<span class="key">import</span> esCommon <span class="key">from</span> <span class="string">'./locales/es/common.json'</span>
+
+<span class="comments">// 1) Recursos agrupados por idioma y namespace. Aquí tenemos los archivos almacenados</span>
+<span class="key">const</span> resources = {
+    en: {
+        common: enCommon,
+    },
+    es: {
+        common: esCommon,
+    },
+};
+
+<span class="comments">// 2) Detector sencillo que usa la configuración del sistema</span>
+<span class="key">const</span> detectDeviceLanguage = <span class="func">()</span> =&gt; {
+    <span class="key">const</span> locales = <span class="func">RNLocalize.getLocales</span>();
+    <span class="key">if</span> (locales &amp;&amp; locales.length &gt; 0) {
+        <span class="comments">// languageCode devuelve 'en', 'es', 'fr', ...</span>
+        <span class="key">return</span> locales[0].languageCode;
+    }
+    <span class="key">return</span> <span class="string">'es'</span>;
+};
+
+i18n
+    .<span class="func">use</span>(initReactI18next)
+    .<span class="func">init</span>({
+        resources,
+        lng: <span class="func">detectDeviceLanguage</span>(), <span class="comments">// idioma del sistema</span>
+        fallbackLng: <span class="string">'es'</span>, <span class="comments">// idioma si no hay traducción</span>
+        ns: [<span class="string">'common'</span>], <span class="comments">// namespaces, es decir, traducciones separadas por módulos 
+                        //para no tener un solo archivo gigante</span>
+        defaultNS: <span class="string">'common'</span>,
+
+        interpolation: {
+            escapeValue: false, <span class="comments">// no escapar, React se encarga</span>
+            format: <span class="func">(value, format, lng)</span> =&gt; {
+                <span class="key">if</span> (format === <span class="string">'uppercase'</span>) <span class="key">return</span> <span class="func">String</span>(value).<span class="func">toUpperCase</span>();
+                <span class="key">if</span> (format === <span class="string">'lowercase'</span>) <span class="key">return</span> <span class="func">String</span>(value).<span class="func">toLowerCase</span>();
+                <span class="key">if</span> (format === <span class="string">'number'</span>) <span class="key">return</span> <span class="func">new Intl.NumberFormat</span>(lng).<span class="func">format</span>(value);
+                <span class="key">if</span> (format === <span class="string">'datetime'</span>) <span class="key">return</span> <span class="func">new Date</span>(value).<span class="func">toLocaleString</span>(lng);
+                <span class="key">return</span> value;
+            },
+        },
+        react: {
+            useSuspense: false, <span class="comments">// en RN conviene false  para evitar Suspense issues</span>
+        },
+    });
+
+<span class="key">export default</span> i18n;
+
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Después, en <strong>App.tsx <strong>importamos el archivo para que se ejecute</strong>, y las
+                        librerías necesarias. Además, <strong>envolvemos nuestra App en el componente de
+                            traducción</strong>:</strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> <span class="string">'./i18n'</span>; <span class="comments">// Llamamos a la configuración de i18n, librería de traducciones</span>
+<span class="key">import</span> { I18nextProvider } <span class="key">from</span> <span class="string">'react-i18next'</span>;
+<span class="key">import</span> i18n <span class="key">from</span> <span class="string">'./i18n'</span>;
+
+<span class="key">function</span> <span class="func">App</span>() {
+  <span class="key">return</span> (
+    <span class="func">&lt;&gt;</span>
+      <span class="func">&lt;I18nextProvider</span> i18n={i18n}<span class="func">></span>
+        <span class="comments">{/*los componentes de nuestra aplicación*/}</span>
+      <span class="func">&lt;/I18nextProvider&gt;</span>
+    <span class="func">&lt;/&gt;</span>
+  );
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Crearemos la carpeta <strong>locales</strong> en la <strong>raíz</strong> del proyecto y en ella una
+                    <strong>carpeta por código de idioma</strong>, en las que metemos los <strong>json de cada
+                        módulo.</strong>
+                </p>
+                <p>
+                    <strong>Para usarlo</strong> en nuestros componentes, usamos el hook <strong>useTraslation</strong>,
+                    que <strong>recibe el namespace</strong> y <strong>devuelve una función llamada t</strong>, la cual
+                    <strong>recibe la clave de la palabra a traducir en el JSON</strong>. Un ejemplo de Settings.tsx:
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> { useTranslation } <span class="key">from</span> <span class="string">"react-i18next"</span>;
+
+
+<span class="key">export default function</span> <span class="func">Settings</span>(props) {
+  <span class="comments">{/*Preparamos función traductora, se le pasa el namespace que va a usar*/}</span>
+  <span class="key">const</span> { t } = useTranslation(<span class="string">'common'</span>);
+  <span class="key">return</span> (
+    <span class="func">&lt;View</span> style={Style.container}<span class="func">></span>
+      <span class="comments">{/* usamos la función traductora con la etiqueta del namespace */}</span>
+      <span class="func">&lt;Text&gt;</span>{t(<span class="string">'settings'</span>)}<span class="func">&lt;/Text&gt;</span>
+    <span class="func">&lt;/View&gt;</span>
+  );
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
+            <div id="interpol" class="header__container">
+                <h3>Interpolación</h3>
+            </div>
+            <section>
+                <p>
+                    La interpolación es <strong>poner variables en las traducciones</strong>. Sirve tanto para plurales
+                    como para datos que <strong>cambian en runtime</strong>. Incluso <strong>admite plurales</strong>,
+                    los cuales los detecta <strong>si la variable count </strong> del JSON es mayor que 1. En el
+                    <strong>JSON</strong> se hace con <strong>{{}}</strong> de esta manera:
+                </p>
+                <div class="code__box">
+                    <code>{
+  <span class="string">"welcome"</span>: <span class="string">"Hola {{<span class="var">name</span>}}, tienes {{<span class="var">count</span>}} mensaje nuevo"</span>,
+  <span class="string">"welcome_plural"</span>: <span class="string">"Hola {{<span class="var">name</span>}}, tienes {{<span class="var">count</span>}} mensajes nuevos"</span>,
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    En el <strong>código del componente</strong>, esto se usa <strong>pasándole un objeto con estas
+                        variables a t</strong>:
+                </p>
+                <div class="code__box">
+                    <code><span class="func">t</span>(<span class="string">'welcome'</span>, { count: 1 , name: <span class="string">'Antonio'</span>});</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
                     </div>
