@@ -99,6 +99,15 @@
                                         <label class="index__item__label" for="loopindx"></label>
                                         <a class="index__lv3" href="#loop">Renderizado en Bucle</a>
                                     </div>
+                                    <!-- #region Pasar componentes como props -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="compsaspropsindx">
+                                            <label class="index__item__label" for="compsaspropsindx"></label>
+                                            <a class="index__lv3" href="#compsasprrops">Pasar componentes como props</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Pasar componentes como props-->
                                 </div>
                                 <!-- #endregion Renderizado en Bucle-->
                             </div>
@@ -773,6 +782,65 @@ root.<span class="func">render</span>(
                     </div>
                 </div>
             </section>
+            <div id="compsasprrops" class="header__container">
+                <h3>Pasar componentes como props</h3>
+            </div>
+            <section>
+                <p>
+                    Esto es relevante sobre todo en <strong>Typescript</strong>. En React hay dos tipos para los
+                    componentes: <span class="class">ComponentType<span class="func">&lt;Props></span> </span> (la
+                    plantilla genérica <span class="func">&lt;Props></span> es <strong>opcional</strong>) por una parte
+                    y <span class="class">ReactNode</span> por otra.
+                </p>
+                <p>
+                    Un <strong>componente</strong> es una <strong>función </strong>que <strong>recibe un objeto del tipo
+                        de la plantilla</strong> (<span class="func">Props</span> ), por lo que podemos pasarle
+                    <strong>props desde fuera sin re-renders innecesarios</strong>.
+                </p>
+                <p>
+                    Al <strong>invocarlo</strong>, se hace simplemente pasando la función.
+                </p>
+                <p>
+                    Por otra parte, un <strong>nodo</strong> es una <strong>etiqueta JSX o TSX</strong>, por lo que los
+                    <strong>props</strong> que le pasemos serán <strong>fijos.</strong>
+                </p>
+                <p>
+                    Al <strong>invocarlo</strong>, se hace entre {}.
+                </p>
+                <div class="code__box">
+
+                    <code><span class="comments">// Archivo Types.ts (o bien sin los exports antes de implementar tu componente) </span>
+<span class="key">import</span> { <span class="class">ComponentType</span>, <span class="class">ReactNode</span> } <span class="key">from</span> <span class="string">'react'</span>
+
+<span class="key">export type</span> <span class="class">CustomCompNode</span> = {
+    <span class="comments">//Esto es un nodo, un tsx.</span>
+    node: <span class="class">ReactNode</span>;
+}
+
+<span class="key">export type</span> <span class="class">CustomComp</span> = {
+
+    <span class="comments">// Esto es un componente con dos props: un string y un número. </span>
+    <span class="comments">// SIEMPRE VAN A SER ESOS DOS PROPS </span>
+    comp: <span class="class">ComponentType</span>&lt;{ texto: <span class="key">string</span>, numero: <span class="key">number</span> }&gt;;
+    <span class="comments">// Esto son los props que le pasamos al componente</span>
+    props: { texto: <span class="key">string</span>, numero: <span class="key">number</span> }
+}
+
+<span class="comments">
+//Si declaramos con plantilla que extienda objeto y sea {} por defecto, 
+//cada vez que lo invoquemos 
+// PODEMOS PASARLE LOS PROPS QUE QUERAMOS, AUNQUE SEAN DISTINTOS
+</span>
+<span class="key">export type</span> <span class="class">CustomCompDynamic</span>&lt;<span class="class">MiTipo</span> <span class="key">extends</span> <span class="key">object</span> = {}&gt; = {
+    comp: <span class="class">ComponentType</span>&lt;<span class="class">MiTipo</span>&gt;
+    props: <span class="class">MiTipo</span>
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
             <div id="hooks" class="header__container">
                 <h2>Hooks</h2>
             </div>
@@ -821,6 +889,22 @@ root.<span class="func">render</span>(
                         ¡Copiado!
                     </div>
                 </div>
+                <p>
+                    Si para<strong> cambiar el estado</strong> USAMOS <strong>el valor actual</strong> (por ejemplo, un
+                    contador, que usa el valor actual y le suma 1), en lugar de llamar a la función con la expresión que
+                    actualiza el valor directamente, <strong>le debemos pasar una función flecha cuyo argumento es el
+                        valor actual</strong>. Así:
+                </p>
+                <div class="code__box">
+                    <code><span class="func">setState(<span class="var">prev => prev + 1 </span>)</span>;</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Esto <strong>evita bugs </strong>, sobre todo si cambiamos el valor varias veces en poco tiempo.
+                </p>
             </section>
 
             <div id="useEffect" class="header__container">
@@ -955,6 +1039,17 @@ root.<span class="func">render</span>(
                         ¡Copiado!
                     </div>
                 </div>
+                <p>
+                    <strong>useCallback</strong> es el equivalente <strong>para funciones</strong> en lugar de
+                    resultados de funciones.
+
+                </p>
+                <p>
+                    La regla para usarlos es:
+                </p>
+                <p><strong>Si DENTRO de la función de un componente DECLARAMOS algo Y LO PASAMOS COMO PROP a un
+                        hijo</strong>, o bien <strong>HACEMOS UNA FUNCIÓN MUY COSTOSA DENTRO de la función del
+                        componente</strong>, <strong>USAMOS</strong> estos hooks.</p>
             </section>
             <div id="native" class="header__container">
                 <h2>ReactNative</h2>
@@ -978,7 +1073,8 @@ root.<span class="func">render</span>(
                 </p>
                 <p>
                     Para <strong>renderizar listas</strong>, se utiliza el componente <span
-                        class="class">FlatList</span> en lugar de hacer arrays.<span class="func">map</span>(). Otra
+                        class="class">FlatList</span> en lugar de hacer arrays. <strong>(Este componente ya tiene scoll,
+                        no usar una ScrollView con él).</strong><span class="func">map</span>(). Otra
                     opción es <span class="class">SectionList</span> si queremos agrupar los elementos en secciones.
                 </p>
                 <p>
@@ -1152,7 +1248,39 @@ yarn add react-native-screens react-native-safe-area-context
                         </ul>
                     </div>
                 </div>
+                <p>
+                    En <strong>Typescript</strong>, conviene en un archivo types.ts <strong>exportar un tipo con las
+                        rutas y parámetros que piden</strong>.P. ej:
+                </p>
+                <div class="code__box">
+                    <code><span class="key">export type</span> <span class="func">NavigationRoutes</span> = {
+  <span class="string">"Main"</span>: <span class="key">undefined</span>,
+  <span class="string">"Settings"</span>: { isPremiumUser: <span class="key">boolean</span> }
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Después, <strong>antes de llamar a useNavigation</strong>, definimos un tipo con la <strong>pantalla
+                        en la que estamos</strong>, por ejemplo, en Main:</p>
+                <div class="code__box">
+                    <code><span class="key">import type</span> { NativeStackNavigationProp } <span class="key">from</span> <span class="string">"@react-navigation/native-stack"</span>;
+<span class="key">import</span> { NavigationRoutes } <span class="key">from</span> <span class="string">'../utils/types'</span>
 
+<span class="key">type</span> <span class="func">MainScreenNav</span> = NativeStackNavigationProp<span class="func">&lt;NavigationRoutes</span>, <span class="string">"Main"</span><span class="func">&gt;</span>;
+
+<span class="key">export default function</span> <span class="func">MainScreen</span>() {
+  <span class="key">const</span> navigation = useNavigation&lt;MainScreenNav&gt;();
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Esto hará que <strong>si olvidamos pasar los parámetros</strong> de error.
+                </p>
             </section>
             <div id="drawer" class="header__container">
                 <h4>Drawer</h4>
