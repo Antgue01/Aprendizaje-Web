@@ -82,6 +82,15 @@
                                     <label class="index__item__label" for="jsxindx"></label>
                                     <a class="index__lv2" href="#jsx">JSX</a>
                                 </div>
+                                <!-- #region Typescript y React -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="tsandreactindx">
+                                        <label class="index__item__label" for="tsandreactindx"></label>
+                                        <a class="index__lv3" href="#tsandreact">Typescript y React</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Typescript y React-->
                                 <!-- #region Renderizado Condicional -->
 
                                 <div class="index__item__container">
@@ -99,17 +108,17 @@
                                         <label class="index__item__label" for="loopindx"></label>
                                         <a class="index__lv3" href="#loop">Renderizado en Bucle</a>
                                     </div>
-                                    <!-- #region Pasar componentes como props -->
-                                    <div class="index__item__container">
-                                        <div class="index__item">
-                                            <input type="checkbox" hidden id="compsaspropsindx">
-                                            <label class="index__item__label" for="compsaspropsindx"></label>
-                                            <a class="index__lv3" href="#compsasprrops">Pasar componentes como props</a>
-                                        </div>
-                                    </div>
-                                    <!-- #endregion Pasar componentes como props-->
                                 </div>
                                 <!-- #endregion Renderizado en Bucle-->
+                                <!-- #region Pasar componentes como props -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="compsaspropsindx">
+                                        <label class="index__item__label" for="compsaspropsindx"></label>
+                                        <a class="index__lv3" href="#compsasprrops">Pasar componentes como props</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Pasar componentes como props-->
                             </div>
                             <!-- #endregion JSX-->
                             <!-- #region Hooks -->
@@ -738,6 +747,38 @@ root.<span class="func">render</span>(
                 </div>
 
             </section>
+            <div id="tsandreact" class="header__container">
+                <h3>Typescript y React</h3>
+            </div>
+            <section>
+                <p>
+                    Podemos crear los tipos en un archivo con extensión <strong>.d.ts</strong>, que es un archivo
+                    <strong>para declarar tipos.</strong>
+                </p>
+                <p>
+                    En este archivo se pueden también <strong>declarar la estructura de los JSON</strong> para que el
+                    compilador <strong>detecte errores y autocomplete</strong> al usarlos:
+                </p>
+                <div class="code__box">
+                    <code><span class="comments">//declaramos el tipo del JSON</span>
+<span class="key">type</span> <span class="class">JSONAttributes</span> = {
+    color1: <span class="class">ColorValue</span>,
+    number1: <span class="class">number</span>,
+    string1: <span class="class">string</span>,
+    string2: <span class="class">string</span>
+}
+
+<span class="comments">//aquí la ruta y el * es para todos los archivos .json</span>
+<span class="key">declare</span> <span class="key">module</span> <span class="string">'../themes/*.json'</span> {
+    <span class="key">const</span> jsonAttrs: <span class="class">JSONAttributes</span>;
+    <span class="key">export</span> <span class="key">default</span> jsonAttrs;
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
             <div id="rendercond" class="header__container">
                 <h3>Renderizado Condicional</h3>
             </div>
@@ -816,6 +857,12 @@ root.<span class="func">render</span>(
                 <p>
                     Al <strong>invocarlo</strong>, se hace entre {}.
                 </p>
+                <div class="box">
+                    <h2 class="box__title"><strong>Types.ts</strong> </h2>
+                    <div class="box__text__container">
+                        <p>Esto sería un <strong>types.ts</strong> con todas las posibilidades</p>
+                    </div>
+                </div>
                 <div class="code__box">
 
                     <code><span class="comments">// Archivo Types.ts (o bien sin los exports antes de implementar tu componente) </span>
@@ -829,20 +876,164 @@ root.<span class="func">render</span>(
 <span class="key">export type</span> <span class="class">CustomComp</span> = {
 
     <span class="comments">// Esto es un componente con dos props: un string y un número. </span>
-    <span class="comments">// SIEMPRE VAN A SER ESOS DOS PROPS </span>
-    comp: <span class="class">ComponentType</span>&lt;{ texto: <span class="key">string</span>, numero: <span class="key">number</span> }&gt;;
+    <span class="comments">// SIEMPRE VAN A SER ESOS DOS PROPS
+    //Las variables de tipo componente tienen que empezar POR MAYÚSCULA </span>
+    
+    Comp: <span class="class">ComponentType</span>&lt;{ text: <span class="key">string</span>, number: <span class="key">number</span> }&gt;;
     <span class="comments">// Esto son los props que le pasamos al componente</span>
     props: { texto: <span class="key">string</span>, numero: <span class="key">number</span> }
 }
 
 <span class="comments">
-//Si declaramos con plantilla que extienda objeto y sea {} por defecto, 
+//Si declaramos con plantilla que extienda otro tipo, 
 //cada vez que lo invoquemos 
-// PODEMOS PASARLE LOS PROPS QUE QUERAMOS, AUNQUE SEAN DISTINTOS
+// PODEMOS HACER POLIMORFISMO DE COMPONENTES
+
+//En este caso, cuando definamos el componente,
+//en la signatura tenemos que añadir &lt;T extends OtroTipo 
 </span>
-<span class="key">export type</span> <span class="class">CustomCompDynamic</span>&lt;<span class="class">MiTipo</span> <span class="key">extends</span> <span class="key">object</span> = {}&gt; = {
-    comp: <span class="class">ComponentType</span>&lt;<span class="class">MiTipo</span>&gt;
-    props: <span class="class">MiTipo</span>
+<span class="key">export type</span> <span class="class">CustomCompDynamic</span>&lt;<span class="class">T</span> <span class="key">extends</span> <span class="class">OtroTipo</span>> {
+    comp: <span class="class">ComponentType</span>&lt;<span class="class">T</span>&gt;
+    props: <span class="class">T</span>
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <div class="box">
+                    <h2 class="box__title">Recibir Nodo </h2>
+                    <div class="box__text__container">
+                        <p>
+                            Así se recibe un nodo y cómo se le pasa.
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    Esto sería un componente que <strong>recibe un nodo:</strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> React <span class="key">from</span> <span class="string">"react"</span>;
+<span class="key">import</span> { <span class="class">ReactNode</span> } <span class="key">from</span> <span class="string">"react"</span>;
+<span class="key">import</span> { <span class="class">View</span> } <span class="key">from</span> <span class="string">"react-native"</span>;
+
+<span class="key">type</span> <span class="class">Props</span> = {
+    node: <span class="class">ReactNode</span>
+}
+
+<span class="key">export default function</span> <span class="func">ComponenteQueRecibeNodo</span>({ node }: <span class="class">Props</span>) {
+
+    <span class="comments">// Renderizamos el nodo entre {}</span>
+    <span class="key">return</span> (
+        &lt;<span class="class">View</span>&gt;
+            {node}
+        &lt;/<span class="class">View</span>&gt;
+    )
+}
+
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Y esto sería un componente que le pasa un nodo <strong>(que puede tener hijos, por
+                        supuesto)</strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> { <span class="class">Image</span>, <span class="class">Text</span>, <span class="class">View</span> } <span class="key">from</span> <span class="string">"react-native"</span>;
+<span class="key">import</span> <span class="class">ComponenteQueRecibeNodo</span> <span class="key">from</span> <span class="string">"./ComponenteQueRecibeNodo"</span>;
+<span class="key">import</span> React <span class="key">from</span> <span class="string">"react"</span>;
+
+<span class="key">export default function</span> <span class="func">ComponenteQuePasaNodo</span>() {
+    <span class="key">return</span> (
+        &lt;<span class="class">View</span>&gt;
+            &lt;<span class="class">ComponenteQueRecibeNodo</span> node={
+                &lt;<span class="class">View</span>&gt;
+                    &lt;<span class="class">Text</span>&gt;Hola&lt;/<span class="class">Text</span>&gt;
+                    &lt;<span class="class">Image</span> source={{ uri: <span class="string">'path'</span> }} /&gt;
+                &lt;/<span class="class">View</span>&gt;
+            } /&gt;
+        &lt;/<span class="class">View</span>&gt;
+    )
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <div class="box">
+                    <h2 class="box__title">Recibir Componente con props Fijos </h2>
+                    <div class="box__text__container">
+                        <p>
+                            Así se recibe un componente con props fijos y cómo se pasa ese componente y sus props
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    Esto sería un componente que recibe <strong>otro componente con unos props fijos y
+                        determinados:</strong>
+
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> React, { <span class="class">ComponentType</span> } <span class="key">from</span> <span class="string">"react"</span>;
+
+
+<span class="comments">// Este CustomComp es el del Types.ts </span>
+<span class="key">type</span> <span class="class">Props</span> = {
+    componente: <span class="class">CustomComp</span>
+}
+
+<span class="key">export default function</span> <span class="func">ComponenteQueRecibeComponenteFijo</span>({ componente }: <span class="class">Props</span>) {
+
+    <span class="key">const</span> { Comp, props } = componente;
+
+    <span class="comments">// Renderizamos el componente desestructurando el objeto con los props</span>
+    <span class="key">return</span> (
+        &lt;Comp {...props} /&gt;
+    )
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Esto sería el componente que <strong>le pasa esos props:</strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> { <span class="class">View</span> } <span class="key">from</span> <span class="string">"react-native"</span>;
+<span class="key">import</span> <span class="func">ComponenteQueRecibeComponenteFijo</span> <span class="key">from</span> <span class="string">"./ComponenteQueRecibeComponenteFijo.tsx"</span>;
+<span class="key">import</span> React <span class="key">from</span> <span class="string">"react"</span>;
+<span class="key">import</span> <span class="func">ComponenteCustom</span> <span class="key">from</span> <span class="string">"./ComponenteCustom.tsx"</span>;
+
+<span class="key">export default function</span> <span class="func">ComponenteQuePasaComponenteFijo</span>() {
+    <span class="key">return</span> (
+        &lt;<span class="class">View</span>&gt;
+            &lt;<span class="func">ComponenteQueRecibeComponenteFijo</span> componente={{
+                Comp: <span class="func">ComponenteCustom</span>,
+                props: { text: <span class="string">"hola"</span>, number: <span class="number">2</span> }
+            }} /&gt;
+        &lt;/<span class="class">View</span>&gt;
+    )
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Y este el CustomComponent:
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> React <span class="key">from</span> <span class="string">"react"</span>;
+<span class="key">import</span> { <span class="class">Text</span> } <span class="key">from</span> <span class="string">"react-native"</span>;
+
+<span class="key">export default function</span> <span class="func">ComponenteCustom</span>(props: { text: <span class="class">string</span>, number: <span class="class">number</span> }) {
+    <span class="key">const</span> { text, number } = props;
+    <span class="key">return</span> (
+        &lt;<span class="class">Text</span>&gt;Hola {text} tienes {number} segundos&lt;/<span class="class">Text</span>&gt;
+    )
 }
 </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
@@ -947,12 +1138,14 @@ root.<span class="func">render</span>(
                     componente <strong>se monte, se desmonte y se vuelva a montar.</strong>
                 </p>
                 <div class="box">
-                    <h2 class = "box__title"><strong>¡Importante!</strong> </h2>
-                    <div class ="box__text__container">
+                    <h2 class="box__title"><strong>¡Importante!</strong> </h2>
+                    <div class="box__text__container">
                         <p>
-                            Si <strong>leemos o usamos el valor de un estado</strong> en el useEffect, <strong>NO podemos cambiar su valor</strong>, ya que si lo hacemos entraremos en un <strong>bucle infinito.</strong> 
+                            Si <strong>leemos o usamos el valor de un estado</strong> en el useEffect, <strong>NO
+                                podemos cambiar su valor</strong>, ya que si lo hacemos entraremos en un <strong>bucle
+                                infinito.</strong>
                         </p>
-                     </div>
+                    </div>
                 </div>
             </section>
             <div id="useRef" class="header__container">
@@ -1017,9 +1210,9 @@ root.<span class="func">render</span>(
     <span class="key">return</span> data;
 }
 </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
-<div class="code__box__copy__dialog">
-    ¡Copiado!
-</div>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
                 </div>
                 <p>En el padre al que queremos preguntar <strong>envolvemos los hijos en nuestro contexto</strong>:
                 </p>
@@ -1194,9 +1387,9 @@ root.<span class="func">render</span>(
                                                 un recurso</strong> , que se le pasa usando la función <span
                                                 class="func">require(</span><span class="var"><span class="string">'ruta
                                                     al recurso'</span></span><span class="func">)</span> (Si se le pasa
-                                                <strong>desde fuera</strong> se debe pasar con la función <strong>ya
-                                                    llamada</strong> de forma que en realidad le pasamos el
-                                                número) <strong>O
+                                            <strong>desde fuera</strong> se debe pasar con la función <strong>ya
+                                                llamada</strong> de forma que en realidad le pasamos el
+                                            número) <strong>O
                                                 BIEN</strong> un <strong>objeto</strong> con la propiedad
                                             <strong>uri</strong> si le queremos pasar una <strong>URL</strong>.
                                         </p>
@@ -1578,7 +1771,7 @@ i18n
                     </div>
                 </div>
                 <p>
-                    
+
                 </p>
                 <p>
                     Crearemos la carpeta <strong>locales</strong> en la <strong>raíz</strong> del proyecto y en ella una
