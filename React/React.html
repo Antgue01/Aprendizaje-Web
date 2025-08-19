@@ -173,6 +173,15 @@
                                     <label class="index__item__label" for="nativeindx"></label>
                                     <a class="index__lv2" href="#native">React Native</a>
                                 </div>
+                                <!-- #region Diferencias componentes básicos -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="dcbindx">
+                                        <label class="index__item__label" for="dcbindx"></label>
+                                        <a class="index__lv3" href="#dcb">Diferencias componentes básicos</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Diferencias componentes básicos-->
                                 <!-- #region Navegación -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -937,6 +946,14 @@ root.<span class="func">render</span>(
                     el
                     componente <strong>se monte, se desmonte y se vuelva a montar.</strong>
                 </p>
+                <div class="box">
+                    <h2 class = "box__title"><strong>¡Importante!</strong> </h2>
+                    <div class ="box__text__container">
+                        <p>
+                            Si <strong>leemos o usamos el valor de un estado</strong> en el useEffect, <strong>NO podemos cambiar su valor</strong>, ya que si lo hacemos entraremos en un <strong>bucle infinito.</strong> 
+                        </p>
+                     </div>
+                </div>
             </section>
             <div id="useRef" class="header__container">
                 <h3>useRef</h3>
@@ -966,25 +983,57 @@ root.<span class="func">render</span>(
                 <p>Para ello, <strong>creamos un archivo </strong>loqueseaContext.js en el que creamos el contexto:
                 </p>
                 <div class="code__box">
-                    <code><span class = "comments">//loqueseaContext.js</span>
-<span class="key">import</span> { createContext } <span class="key">from</span> <span class="string">'react'</span>;
+                    <code><span class="comments">//1) Creamos contexto con undefined por defecto</span>
+<span class="key">const</span> ThemeContext = <span class="func">createContext</span>&lt;<span class="class">ThemeContextType</span> | <span class="key">undefined</span>&gt;(<span class="key">undefined</span>);
 
-<span class="key">export</span> <span class="key">const</span> loqueseaContext = <span class="func">createContext(<span class="literal">valor por defecto</span>)</span>;
-</code>
+<span class="comments">//2) creamos y exportamos un componente Provider con los valores reales</span>
+<span class="comments">//Debe recibir un prop {children} con el tipo {children:ReactNode}</span>
+<span class="key">export const</span> ThemeProvider = ({ children }: { children: <span class="class">ReactNode</span> }) =&gt; {
+
+    <span class="comments">//creamos un estado para manejar los datos que sea (en este caso un tema)</span>
+    <span class="key">const</span> [themeState, setThemeState] = <span class="func">useState</span>(defaultTheme);
+
+    <span class="comments">//conviene memoizar ya que no redefinos las cosas a no ser que cambien</span>
+    <span class="key">const</span> value = <span class="func">useMemo</span>(() =&gt;
+    ({
+        theme: themeState,
+        changeThemeFunc: changeTheme,
+    }), [themeState, changeTheme])
+
+    <span class="key">return</span> (
+        &lt;ThemeContext.Provider value={value}&gt;
+            {children}
+        &lt;/ThemeContext.Provider &gt;
+    )
+}
+
+<span class="comments">//3) Creamos y exportamos un Hook para usar los datos del tema. 
+//Si llamamos a useTheme en un componente que no esté envuelto </span>
+<span class="comments">//por el Provider, lanzará la excepción por pasarle undefined</span>
+<span class="key">export const</span> useTheme = () =&gt; {
+    <span class="key">const</span> data = <span class="func">useContext</span>(ThemeContext);
+    <span class="key">if</span> (data === <span class="key">undefined</span>)
+        <span class="key">throw</span> <span class="class">Error</span>(<span class="string">"El tema es undefined"</span>);
+    <span class="key">return</span> data;
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+<div class="code__box__copy__dialog">
+    ¡Copiado!
+</div>
                 </div>
                 <p>En el padre al que queremos preguntar <strong>envolvemos los hijos en nuestro contexto</strong>:
                 </p>
                 <div class="code__box">
-                    <code><span class = "comments">//Padre.js</span>
-<span class="key">import</span> { loqueseaContext } <span class="key">from</span> <span class="string">'./loqueseaContext.js'</span>;
+                    <code><span class = "comments">//Padre.tsx</span>
+<span class="key">import</span> { ThemeProvider } <span class="key">from</span> <span class="string">'./ThemeProvider.tsx'</span>;
 
 <span class="key">export default function</span> <span class="func">Padre(<span class="var">{ level, children } </span>) </span>{
   <span class="key">return</span> (
 <span class = "comments">//cosas del componente que renderizar</span>
 <span class = "comments">//...</span>    
-      &lt;<span class="func">loqueseaContext.Provider</span> value={level}>
+      &lt;<span class="func">ThemeProvider</span> value={level}>
         {children}
-      &lt;/<span class="func">loqueseaContext.Provider</span>>
+      &lt;/<span class="func">ThemeProvider</span>>
   );
 }
 </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
@@ -992,14 +1041,13 @@ root.<span class="func">render</span>(
                         ¡Copiado!
                     </div>
                 </div>
-                <p>En el hijo usamos el hook <strong>useContext</strong>:</p>
+                <p>En el hijo usamos el hook <strong>que exportamos</strong>:</p>
                 <div class="code__box">
-                    <code><span class = "comments">//Hijo.js</span>
-<span class="key">import</span> { useContext } <span class="key">from</span> <span class="string">'react'</span>;
-<span class="key">import</span> { loqueseaContext } <span class="key">from</span> <span class="string">'./loqueseaContext.js'</span>;
+                    <code><span class = "comments">//Hijo.tsx</span>
+<span class="key">import</span> { useTheme } <span class="key">from</span> <span class="string">'./ThemeContext.tsx'</span>;
 <span class="key">export default function</span> <span class="func">Hijo()</span> {
-    <span class="key">const</span> loquesea = <span class="func">useContext(</span>loqueseaContext<span class="func">)</span>;
-    <span class = "comments">//usamos loquesea</span>
+    <span class="key">const</span> { theme, changeThemeFunc } = <span class="func">useTheme</span>();
+    <span class = "comments">//usamos theme o la función changeThemeFunc</span>
 }</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
@@ -1125,6 +1173,40 @@ root.<span class="func">render</span>(
                     campos de entrada. Le pondríamos el prop <strong>behavior</strong> en <strong>padding</strong> y un
                     <strong>keyboardVerticalOffset</strong> para ajustar la posición.
                 </p>
+            </section>
+            <div id="dcb" class="header__container">
+                <h3>Diferencias componentes básicos</h3>
+            </div>
+            <section>
+                <p>
+                    Hay algunos componentes que tienen ciertas <strong>peculiaridades</strong>:
+                </p>
+                <div class="box">
+                    <h2 class="box__title">Componentes especiales </h2>
+                    <div class="box__text__container">
+                        <ul class="box__list">
+                            <li class="box__list__item --can-open">
+                                <label><span class="func">Image</span>
+                                    <input hidden type="checkbox">
+                                    <div class="box__explanation">
+                                        <p>
+                                            El prop <strong>source</strong> puede ser un <strong>número que identifique
+                                                un recurso</strong> , que se le pasa usando la función <span
+                                                class="func">require(</span><span class="var"><span class="string">'ruta
+                                                    al recurso'</span></span><span class="func">)</span> (Si se le pasa
+                                                <strong>desde fuera</strong> se debe pasar con la función <strong>ya
+                                                    llamada</strong> de forma que en realidad le pasamos el
+                                                número) <strong>O
+                                                BIEN</strong> un <strong>objeto</strong> con la propiedad
+                                            <strong>uri</strong> si le queremos pasar una <strong>URL</strong>.
+                                        </p>
+                                    </div>
+                                </label>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </section>
             <div id="navegnative" class="header__container">
                 <h3>Navegación </h3>
@@ -1466,6 +1548,22 @@ i18n
 <span class="key">import</span> i18n <span class="key">from</span> <span class="string">'./i18n'</span>;
 
 <span class="key">function</span> <span class="func">App</span>() {
+    
+    
+    <span class="comments">//Cambiamos idioma por el guardado en el teléfono</span>
+    <span class="func">useEffect</span>(() =&gt; {
+    <span class="comments">//Como no podemos ejecutar funciones asíncronas directamente en un componente</span>
+    <span class="comments">//creamos la función y luego la ejecutamos</span>
+    <span class="key">const</span> checkSavedLanguage = <span class="key">async</span> () =&gt; {
+        <span class="key">const</span> currentLang = i18next.languages[<span class="number">0</span>];
+        <span class="key">const</span> savedLang = <span class="key">await</span> AsyncStorage.<span class="func">getItem</span>(<span class="string">'lang'</span>);
+        <span class="comments">//Si tenemos guardado algún idioma lo cambiamos por ese</span>
+        <span class="key">if</span> (savedLang &amp;&amp; savedLang !== currentLang)
+            i18n.<span class="func">changeLanguage</span>(savedLang);
+    };
+    checkSavedLanguage();
+}, []);
+
   <span class="key">return</span> (
     <span class="func">&lt;&gt;</span>
       <span class="func">&lt;I18nextProvider</span> i18n={i18n}<span class="func">></span>
@@ -1479,6 +1577,9 @@ i18n
                         ¡Copiado!
                     </div>
                 </div>
+                <p>
+                    
+                </p>
                 <p>
                     Crearemos la carpeta <strong>locales</strong> en la <strong>raíz</strong> del proyecto y en ella una
                     <strong>carpeta por código de idioma</strong>, en las que metemos los <strong>json de cada

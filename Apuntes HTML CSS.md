@@ -60,6 +60,12 @@ Te dice las librerías que utiliza una página.</font>
 [Postman](https://www.postman.com/) Página para crear APIs REST.
 
 [SVG Path Creator](https://yqnn.github.io/svg-path-editor/) Crea trazos en SVG online.
+
+## Bancos de imágenes, iconos o videos sin copyright
+
+[IconFinder](https://www.iconfinder.com/)
+
+[Public Domain Vectors](https://publicdomainvectors.org/)
 ## Librerías
 
 [gsap](https://gsap.com/) Librería para crear animaciones 2d y 3d en el canvas.
