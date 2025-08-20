@@ -117,6 +117,42 @@
                                         <label class="index__item__label" for="compsaspropsindx"></label>
                                         <a class="index__lv3" href="#compsasprrops">Pasar componentes como props</a>
                                     </div>
+                                    <!-- #region Types.ts -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="typesindx">
+                                            <label class="index__item__label" for="typesindx"></label>
+                                            <a class="index__lv4" href="#typests">Types.ts</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Types.ts-->
+                                    <!-- #region Recibir Nodos -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="recnodoindx">
+                                            <label class="index__item__label" for="recnodoindx"></label>
+                                            <a class="index__lv4" href="#recnodo">Recibir Nodos</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Recibir Nodos-->
+                                    <!-- #region Recibir un componente Fijo -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="recfiindx">
+                                            <label class="index__item__label" for="recfiindx"></label>
+                                            <a class="index__lv4" href="#recfijos">Recibir un componente Fijo</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Recibir un componente Fijo-->
+                                    <!-- #region Recibir un componente Dinámico -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="reccompdinindx">
+                                            <label class="index__item__label" for="reccompdinindx"></label>
+                                            <a class="index__lv4" href="#reccomdin">Recibir un componente Dinámico</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Recibir un componente Dinámico-->
                                 </div>
                                 <!-- #endregion Pasar componentes como props-->
                             </div>
@@ -857,12 +893,14 @@ root.<span class="func">render</span>(
                 <p>
                     Al <strong>invocarlo</strong>, se hace entre {}.
                 </p>
-                <div class="box">
-                    <h2 class="box__title"><strong>Types.ts</strong> </h2>
-                    <div class="box__text__container">
-                        <p>Esto sería un <strong>types.ts</strong> con todas las posibilidades</p>
-                    </div>
-                </div>
+
+            </section>
+            <div id="typests" class="header__container">
+                <h4>Types.ts</h4>
+            </div>
+            <section>
+                <p>
+
                 <div class="code__box">
 
                     <code><span class="comments">// Archivo Types.ts (o bien sin los exports antes de implementar tu componente) </span>
@@ -892,23 +930,38 @@ root.<span class="func">render</span>(
 //En este caso, cuando definamos el componente,
 //en la signatura tenemos que añadir &lt;T extends OtroTipo 
 </span>
-<span class="key">export type</span> <span class="class">CustomCompDynamic</span>&lt;<span class="class">T</span> <span class="key">extends</span> <span class="class">OtroTipo</span>> {
-    comp: <span class="class">ComponentType</span>&lt;<span class="class">T</span>&gt;
-    props: <span class="class">T</span>
+<span class="key">export interface</span> <span class="class">BaseComp</span> {
+    baseText: <span class="class">string</span>,
+    baseNumb: <span class="class">number</span>,
 }
+
+<span class="key">export interface</span> <span class="class">DynamicComponent</span>&lt;T <span class="key">extends</span> <span class="class">BaseComp</span>&gt; {
+    Comp: <span class="class">ComponentType</span>&lt;T&gt;,
+    props: T
+}
+
+<span class = "comments">//Estas dos interfaces ya incluyen lo de BaseComp</span>
+<span class="key">export interface</span> <span class="class">CustomComp1</span> <span class="key">extends</span> <span class="class">BaseComp</span> {
+    extendedAttr1: <span class="class">string</span>
+}
+
+<span class="key">export interface</span> <span class="class">CustomComp2</span> <span class="key">extends</span> <span class="class">BaseComp</span> {
+    extendedAttr2: <span class="class">number</span>
+}
+
 </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
                     </div>
                 </div>
-                <div class="box">
-                    <h2 class="box__title">Recibir Nodo </h2>
-                    <div class="box__text__container">
-                        <p>
-                            Así se recibe un nodo y cómo se le pasa.
-                        </p>
-                    </div>
-                </div>
+
+            </section>
+            <div id="recnodo" class="header__container">
+                <h4>Recibir Nodos</h4>
+            </div>
+            <section>
+
+
                 <p>
                     Esto sería un componente que <strong>recibe un nodo:</strong>
                 </p>
@@ -962,14 +1015,13 @@ root.<span class="func">render</span>(
                         ¡Copiado!
                     </div>
                 </div>
-                <div class="box">
-                    <h2 class="box__title">Recibir Componente con props Fijos </h2>
-                    <div class="box__text__container">
-                        <p>
-                            Así se recibe un componente con props fijos y cómo se pasa ese componente y sus props
-                        </p>
-                    </div>
-                </div>
+            </section>
+            <div id="recfijos" class="header__container">
+                <h4>Recibir un componente Fijo</h4>
+            </div>
+            <section>
+
+
                 <p>
                     Esto sería un componente que recibe <strong>otro componente con unos props fijos y
                         determinados:</strong>
@@ -981,16 +1033,16 @@ root.<span class="func">render</span>(
 
 <span class="comments">// Este CustomComp es el del Types.ts </span>
 <span class="key">type</span> <span class="class">Props</span> = {
-    componente: <span class="class">CustomComp</span>
+    <span class="key">componente</span>: <span class="class">CustomComp</span>
 }
 
-<span class="key">export default function</span> <span class="func">ComponenteQueRecibeComponenteFijo</span>({ componente }: <span class="class">Props</span>) {
+<span class="key">export</span> <span class="key">default</span> <span class="key">function</span> <span class="func">ComponenteQueRecibeComponenteFijo</span>({ <span class="key">componente</span> }: <span class="class">Props</span>) {
 
-    <span class="key">const</span> { Comp, props } = componente;
+    <span class="key">const</span> { <span class="func">Comp</span>, <span class="key">props</span> } = <span class="key">componente</span>;
 
     <span class="comments">// Renderizamos el componente desestructurando el objeto con los props</span>
     <span class="key">return</span> (
-        &lt;Comp {...props} /&gt;
+        &lt;<span class="func">Comp</span> {...<span class="key">props</span>} />
     )
 }
 </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
@@ -1036,6 +1088,101 @@ root.<span class="func">render</span>(
     )
 }
 </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                </p>
+
+            </section>
+            <div id="reccomdin" class="header__container">
+                <h4>Recibir un componente Dinámico</h4>
+            </div>
+            <section>
+                <p>
+                    Esto sería un componente que <strong>recibe otro componente con unos props que pueden
+                        variar.</strong> Para ello, debemos usar <strong>una template de tipos</strong>.
+                </p>
+                <div class="code__box">
+                    <code><span class="key">export default function</span> <span class="func">ComponenteQueRecibeComponenteDinamico</span>&lt;<span class="class">T</span> <span class="key">extends</span> <span class="class">BaseComp</span>&gt;(componente: <span class="class">DynamicComponent</span>&lt;<span class="class">T</span>&gt;) {
+
+    <span class="key">const</span> { Comp, props } = componente;
+
+    <span class="comments">//Renderizamos el componente desestructurando el objeto con los props</span>
+    <span class="key">return</span> (
+        &lt;<span class="func">Comp</span> {...props} /&gt;
+    )
+}
+
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Este sería el <strong>componente que le pasa los props:</strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> { <span class="func">View</span> } <span class="key">from</span> <span class="string">"react-native"</span>;
+<span class="key">import</span> <span class="func">ComponenteQueRecibeComponenteDinamico</span> <span class="key">from</span> <span class="string">"./ComponenteQueRecibeComponenteDinamico"</span>;
+<span class="key">import</span> <span class="func">React</span> <span class="key">from</span> <span class="string">"react"</span>;
+<span class="key">import</span> <span class="func">ComponenteCustom1</span> <span class="key">from</span> <span class="string">"./ComponenteCustom1"</span>;
+<span class="key">import</span> <span class="func">ComponenteCustom2</span> <span class="key">from</span> <span class="string">"./ComponenteCustom2"</span>;
+
+<span class="key">export</span> <span class="key">default</span> <span class="key">function</span> <span class="func">ComponenteQuePasaComponenteDinamico</span>() {
+    <span class="key">return</span> (
+        &lt;<span class="func">View</span>&gt;
+            &lt;<span class="func">ComponenteQueRecibeComponenteDinamico</span>
+                <span class="func">Comp</span>={ <span class="func">ComponenteCustom1</span> }
+                props={{
+                    <span class="func">baseText</span>: <span class="string">"hola"</span>, <span class="func">baseNumb</span>: 2, <span class="func">extendedAttr1</span>: <span class="string">"adios"</span>
+                }}
+            /&gt;
+
+            &lt;<span class="func">ComponenteQueRecibeComponenteDinamico</span>
+                <span class="func">Comp</span>={ <span class="func">ComponenteCustom2</span> }
+                props={{ <span class="func">baseText</span>: <span class="string">'adios'</span>, <span class="func">baseNumb</span>: 5, <span class="func">extendedAttr2</span>: 4 }}
+            /&gt;
+        &lt;/<span class="func">View</span>&gt;
+    )
+}
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>Este sería el <strong>ComponenteCustom1:</strong> </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> <span class="func">React</span> <span class="key">from</span> <span class="string">"react"</span>;
+<span class="key">import</span> { <span class="func">Text</span> } <span class="key">from</span> <span class="string">"react-native"</span>;
+<span class="key">import</span> { <span class="class">CustomComp1</span> } <span class="key">from</span> <span class="string">"./types"</span>;
+
+<span class="key">export</span> <span class="key">default</span> <span class="key">function</span> <span class="func">ComponenteCustom1</span>(props: <span class="class">CustomComp1</span>) {
+    <span class="key">const</span> { <span class="func">baseText</span>, <span class="func">baseNumb</span>, <span class="func">extendedAttr1</span> } = props;
+    <span class="key">return</span> (
+        &lt;<span class="func">Text</span>&gt;<span class="string">Hola</span> {<span class="func">baseText</span>} <span class="string">tienes</span> {<span class="func">baseNumb</span>} <span class="string">segundos para</span> {<span class="func">extendedAttr1</span>}&lt;/<span class="func">Text</span>&gt;
+    )
+
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Y este sería el <strong>ComponenteCustom2:</strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">import</span> <span class="func">React</span> <span class="key">from</span> <span class="string">"react"</span>;
+<span class="key">import</span> { <span class="func">Text</span> } <span class="key">from</span> <span class="string">"react-native"</span>;
+<span class="key">import</span> { <span class="class">CustomComp2</span> } <span class="key">from</span> <span class="string">"./types"</span>;
+
+<span class="key">export</span> <span class="key">default</span> <span class="key">function</span> <span class="func">ComponenteCustom2</span>(props: <span class="class">CustomComp2</span>) {
+    <span class="key">const</span> { <span class="func">baseText</span>, <span class="func">baseNumb</span>, <span class="func">extendedAttr2</span> } = props;
+    <span class="key">return</span> (
+        &lt;<span class="func">Text</span>&gt;<span class="string">Hola</span> {<span class="func">baseText</span>} <span class="string">tienes</span> {<span class="func">baseNumb</span>} <span class="string">segundos O SUFRIRÁS</span> {<span class="func">extendedAttr2</span>} <span class="string">desgracias</span>&lt;/<span class="func">Text</span>&gt;
+    )
+
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
                     <div class="code__box__copy__dialog">
                         ¡Copiado!
                     </div>
