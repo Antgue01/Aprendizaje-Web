@@ -265,6 +265,15 @@
                                 <!-- #endregion Interpolación-->
                             </div>
                             <!-- #endregion Traducciones-->
+                            <!-- #region Reanimated -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="reanimatedindx">
+                                    <label class="index__item__label" for="reanimatedindx"></label>
+                                    <a class="index__lv2" href="#reanimated">Reanimated</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Reanimated-->
                         </div>
                         <input hidden type="checkbox" id="index-close">
 
@@ -1981,6 +1990,100 @@ i18n
                         ¡Copiado!
                     </div>
                 </div>
+            </section>
+            <div id="reanimated" class="header__container">
+                <h2>Renaimated</h2>
+            </div>
+            <section>
+                <p>
+                    Es la librería de <strong>animaciones</strong>. Exporta una serie de <strong>hooks para usar dentro
+                        de los componentes</strong>.
+
+                </p>
+                <p>Con <span class="func">useSharedValue(</span><span class="var">default</span><span
+                        class="func">)</span> creamos una variable cuya propiedad <span class="var">value </span> será
+                    la que actualicemos usando los hooks <span class="func">withTiming(</span><span class="var">valor al
+                        que transicionamos, objeto de configuración</span><span class="func">)</span>o, si queremos
+                    hacerlo parecer que se mueve con físicas,<span class="func">withSpring(</span><span
+                        class="var">valor, objeto de configuración</span><span class="func">)</span>
+                </p>
+                <p>
+                    Además, podemos usar funciones para crear loops, secuencias o retrasos con <span
+                        class="func">withRepeat()</span>,<span class="func"> withSequence()</span> y <span
+                        class="func">withDelay()</span>
+                </p>
+                <p>
+                    Ahora bien, necesitamos crear un <strong>objeto de estilo</strong> que soporte sharedValues. Para
+                    ello, usamos la función <span class="func">useAnimatedStyle(</span><span class="var">función
+                        factoría</span><span class="func">)</span>. La función <strong>factoría simplemente debe
+                        devolver un objeto de estilo.</strong>
+                    Por ejemplo:
+                </p>
+                <div class="code__box">
+                    <code>
+<span class="key">const</span> <span class="func">scaleDown</span> = <span class="func">useAnimatedStyle</span>(() => ({
+  <span class="key">transform</span>: [{
+    <span class="key">scaleY</span>: <span class="func">scaleShared</span>.<span class="key">value</span>
+  }],
+  <span class="key">opacity</span>: <span class="func">opacityShared</span>.<span class="key">value</span>
+}));</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Este <strong>objeto de estilo</strong> se pasa a un componente de <strong>Reanimated</strong>. Por
+                    ejemplo, <span class="func">&lt;Animated.View/&gt;</span>. Reanimated tiene versiones <strong>para
+                        la mayoría de componentes nativos</strong> para aceptar animaciones.
+                </p>
+                <p>
+                    De todas formas, si tenemos componentes <strong>de librerías o complejos</strong>, podemos
+                    <strong>convertirlos</strong> para que sus props acepten sharedValues. Para ello, pasamos el
+                    componente por la función <span class="func">createAnimatedComponent(</span><span
+                        class="var">comp</span><span class="func">)</span>, que recibe un componente y <strong>te
+                        devuelve su versión convertida</strong>.
+                </p>
+                <p>
+                    A estos componentes les podemos animar los props con la función <span
+                        class="func">useAnimatedProps(</span><span class="var">factoría</span><span
+                        class="func">)</span>.
+                </p>
+                <div class="code__box">
+                    <code><span class="key">const</span> <span class="func">AnimatedCircle</span> = <span class="func">Animated</span>.<span class="func">createAnimatedComponent</span>(<span class="func">Circle</span>);
+
+<span class="key">export</span> <span class="key">default</span> <span class="key">function</span> <span class="func">App</span>() {
+ <span class="key">const</span> <span class="key">r</span> = <span class="func">useSharedValue</span>&lt;<span class="class">number</span>&gt;(<span class="string">20</span>);
+
+ <span class="key">const</span> <span class="func">handlePress</span> = () => {
+  <span class="key">r</span>.<span class="key">value</span> += <span class="string">10</span>;
+ };
+
+ <span class="key">const</span> <span class="func">animatedProps</span> = <span class="func">useAnimatedProps</span>(() => ({
+  <span class="key">r</span>: <span class="func">withTiming</span>(<span class="key">r</span>.<span class="key">value</span>),
+ }));
+
+ <span class="key">return</span> (
+  &lt;<span class="func">View</span> <span class="key">style</span>={<span class="key">styles</span>.<span class="key">container</span>}&gt;
+   &lt;<span class="func">Svg</span> <span class="key">style</span>={<span class="key">styles</span>.<span class="key">svg</span>}&gt;
+    &lt;<span class="func">AnimatedCircle</span>
+     <span class="key">cx</span>=<span class="string">"50%"</span>
+     <span class="key">cy</span>=<span class="string">"50%"</span>
+     <span class="key">fill</span>=<span class="string">"#b58df1"</span>
+     <span class="key">animatedProps</span>={<span class="key">animatedProps</span>}
+    /&gt;
+   &lt;/<span class="func">Svg</span>&gt;
+   &lt;<span class="func">Button</span> <span class="key">onPress</span>={<span class="func">handlePress</span>} <span class="key">title</span>=<span class="string">"Click me"</span> /&gt;
+  &lt;/<span class="func">View</span>&gt;
+ );
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    También podemos gestionar <strong>gestos como Pinch</strong> mediante eventos, y podemos usar la
+                    función <span class="func">withDecay()</span> para controlar la inercia del gesto (por ejemplo <strong>que el usuario haga swipe más rápido o más lento</strong>).
+                </p>
             </section>
         </main>
         <!-- #endregion main ---------------------------------------------------------------------------------------------------------------------------------------------------->
