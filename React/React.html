@@ -240,13 +240,41 @@
                                             <input type="checkbox" hidden id="drawerindx">
                                             <label class="index__item__label" for="drawerindx"></label>
                                             <a class="index__lv4" href="#drawer">Drawer</a>
+                                            <div class="index__item__bar"></div>
                                         </div>
                                     </div>
                                     <!-- #endregion Drawer-->
                                 </div>
                                 <!-- #endregion Navegación-->
+                                <!-- #region Turbo Modules -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="tbmdlIndex">
+                                        <label class="index__item__label" for="tbmdlIndex"></label>
+                                        <a class="index__lv3" href="#Tbmdl">Turbo Modules</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Turbo Modules-->
                             </div>
                             <!-- #endregion React Native-->
+                            <!-- #region Sistema de archivos -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="flstmIndx">
+                                    <label class="index__item__label" for="flstmIndx"></label>
+                                    <a class="index__lv2" href="#flstm">Sistema de archivos</a>
+                                </div>
+                                <!-- #region Java -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="flstmjvindx">
+                                        <label class="index__item__label" for="flstmjvindx"></label>
+                                        <a class="index__lv3" href="#flstmJV">Java</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Java-->
+                            </div>
+                            <!-- #endregion Sistema de archivos-->
                             <!-- #region Traducciones -->
                             <div class="index__item__container">
                                 <div class="index__item">
@@ -1793,6 +1821,220 @@ yarn add react-native-screens react-native-safe-area-context
                     </div>
                 </div>
             </section>
+            <div id="Tbmdl" class="header__container">
+                <h3>Turbo Modules</h3>
+            </div>
+            <section>
+                <p>
+                    Es la forma de <strong>comunicar JS con la parte nativa de la plataforma</strong>.
+                </p>
+                <p>
+                    Necesitamos 3 archivos: la <strong>especificación</strong>, la <strong>Implementación</strong> y el
+                    <strong>paquete</strong>.
+                </p>
+                <p>
+                    La <strong>especificación</strong> es un archivo <strong>Typescript cuyo nombre de archivo DEBE
+                        empezar por
+                        Native</strong>. En ella exportamos una interfaz que debemos llamar <strong><span
+                            class="class">Spec</span></strong> que extienda de <span class="class">TurboModule</span>
+                    con todos los tipos y funciones del módulo.
+                    Además, haremos un export por defecto con el nombre del módulo.
+
+                </p>
+                <div class="code__box">
+                    <code>
+<span class="key">export</span> <span class="key">interface</span> <span class="class">Spec</span> <span class="key">extends</span> <span class="class">TurboModule</span> {
+    <span class="comments">// En este caso exportamos un método;</span>
+    <span class="func">loadLists</span>(path: <span class="key">string</span>): <span class="class">Promise</span>&lt;<span class="class">PlayList</span>[]&gt;;
+}
+
+    <span class="comments">// El nombre DEBE empezar por Native;</span>
+<span class="key">export</span> <span class="key">default</span> <span class="class">TurboModuleRegistry</span>.<span class="func">getEnforcing</span>&lt;<span class="class">Spec</span>&gt;(<span class="string">"Nombre del módulo"</span>);
+</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Después, copiaremos esto en el package.json. El name es el nombre que le daremos al conjunto de
+                    módulos y el javaPackageName el nombre que le daremos al paquete de java que va a crear.
+                </p>
+                <div class="code__box">
+                    <code><span class="string">"codegenConfig"</span>: {
+  <span class="string">"name"</span>: <span class="string">"Nombre del conjunto de módulos"</span>,
+  <span class="string">"type"</span>: <span class="string">"modules"</span>,
+  <span class="string">"jsSrcsDir"</span>: <span class="string">"specs"</span>,
+  <span class="string">"android"</span>: {
+    <span class="string">"javaPackageName"</span>: <span class="string">"com.nombreParaPaquete"</span>
+  }
+},</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Además, ejecutaremos el <strong>siguiente comando</strong> para <strong>generar</strong> las
+                    especificaciones en <strong>código nativo</strong> (aunque realmente se ejecuta también al hacer la
+                    build):
+                </p>
+                <div class="code__box">
+                    <code>cd android
+gradlew generateCodegenArtifactsFromSchema
+                    </code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    En Java y Objective C, implementaremos para Android e iOS respectivamente la especificación. Para
+                    ello, crearemos una clase que extienda de la clase generada, que tendrá <strong>el nombre que le
+                        dimos en el string de Typescript + Spec</strong>.
+                </p>
+                <p>
+                    Además, <strong>React </strong>genera las clases <span class="class">WritableMap </span> y <span
+                        class="class">WritableArray </span>, con métodos
+                    <strong>push y pull</strong> para cada tipo de
+                    dato básico. Además, exporta un tipo <span class="class">Promise </span> para los métodos asíncronos
+                    que exportemos, al que llamaremos a los métodos <span class="func">resolve()</span> y <span
+                        class="func">reject()</span> a los que les pasaremos lo que queramos devolver.
+                </p>
+                <p>
+                    Hay que tener mucho cuidado porque al estar en dos lenguajes distintos, <strong>si no
+                        ponemos los datos adecuados</strong> en el WritableArray (o map), <strong>ningún compilador nos
+                        avisará, pero dará excepción</strong>.
+                </p>
+
+                <p>
+                    Finalmente, crearemos la clase del paquete, que la llamaremos <strong>igual que el string que
+                        definimos como nombre + Package</strong> y haremos que extienda de
+                    <strong>BaseReactPackage</strong>.
+
+                </p>
+                <p>
+                    Esta clase tiene dos métodos, que casi siempre <strong>se implementan igual</strong>, quizás
+                    cambiando los bools.
+                </p>
+                <div class="code__box">
+                    <code>public <span class="class">class</span> <span class="class">NativeMusicFilesPackage</span> <span class="key">extends</span> <span class="class">BaseReactPackage</span> {
+    @<span class="key">Nullable</span>
+    @<span class="key">Override</span>
+    <span class="key">public</span> <span class="class">NativeModule</span> <span class="func">getModule</span>(@<span class="key">NonNull</span> <span class="class">String</span> <span class="key">name</span>, @<span class="key">NonNull</span> <span class="class">ReactApplicationContext</span> <span class="func">reactApplicationContext</span>) {
+        <span class="key">if</span>(name.<span class="func">equals</span>(<span class="class">NativeMusicFilesModule</span>.NAME))
+            <span class="key">return</span> <span class="key">new</span> <span class="func">NativeMusicFilesModule</span>(reactApplicationContext);
+        <span class="key">else</span> <span class="key">return</span> <span class="key">null</span>;
+    }
+
+    @<span class="key">NonNull</span>
+    @<span class="key">Override</span>
+    <span class="key">public</span> <span class="class">ReactModuleInfoProvider</span> <span class="func">getReactModuleInfoProvider</span>() {
+        <span class="key">return</span> <span class="key">new</span> <span class="class">ReactModuleInfoProvider</span>() {
+            @<span class="key">NonNull</span>
+            @<span class="key">Override</span>
+            <span class="key">public</span> <span class="class">Map</span>&lt;<span class="class">String</span>, <span class="class">ReactModuleInfo</span>&gt; <span class="func">getReactModuleInfos</span>() {
+               <span class="class">Map</span>&lt;<span class="class">String</span>,<span class="class">ReactModuleInfo</span>&gt; map= <span class="key">new</span> <span class="class">HashMap</span>&lt;<span class="class">String</span>, <span class="class">ReactModuleInfo</span>&gt;();
+               map.<span class="func">put</span>(<span class="class">NativeMusicFilesModule</span>.NAME,<span class="key">new</span> <span class="class">ReactModuleInfo</span>(
+                        <span class="class">NativeMusicFilesModule</span>.NAME, <span class="comments">//Nombre,</span>
+                        <span class="class">NativeMusicFilesModule</span>.NAME,<span class="comments">//nombre de la clase,</span>
+                        <span class="key">false</span>, <span class="comments">//canOverrideExistingModule</span>
+                        <span class="key">false</span>, <span class="comments">//needsEagerInit</span>
+                        <span class="key">false</span>, <span class="comments">//isCxxModule</span>
+                        <span class="key">true</span> <span class="comments">//isTurboModule</span>
+                        )
+
+                );
+
+                <span class="key">return</span> map;
+            }
+        };
+    }
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Al hacerlo, debemos registrar el paquete en la clase<span class="class">MainApplication</span>,
+                    concretamente en el método <span class="func">getPackages()</span> usando la función <span
+                        class="func">add()</span>.
+                </p>
+                <div class="code__box">
+                    <code><span class="key">override</span> <span class="key">fun</span> <span class="func">getPackages</span>(): <span class="class">List</span>&lt;<span class="class">ReactPackage</span>&gt; =
+    <span class="class">PackageList</span>(<span class="key">this</span>).<span class="func">packages</span>.<span class="func">apply</span> {
+      <span class="comments">// Packages that cannot be autolinked yet can be added manually here, for example:</span>
+      <span class="comments">// add(MyReactNativePackage())</span>
+        <span class="func">add</span>(<span class="func">NativeMusicFilesPackage</span>())
+    }</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
+            <div id="flstm" class="header__container">
+                <h2>Sistema de archivos</h2>
+            </div>
+            <section>
+                <p>Explicamos ahora como accedemos al sistema de archivos en Java y Objetive C.</p>
+            </section>
+            <div id="flstmJV" class="header__container">
+                <h3>Java</h3>
+            </div>
+            <section>
+                <p>
+                    Para acceder al sistema de archivos, necesitamos la <strong>activity de react</strong>, que se
+                    obiene a partir del <strong>contexto de React</strong>. Entonces llamamos al método <span
+                        class="func">startActivityForResult()</span> con el intent
+                    <strong>Intent.ACTION_OPEN_DOCUMENT_TREE</strong>(este nos permite acceder también a
+                    subdirectorios).
+
+                </p>
+                <div class="code__box">
+                    <code><span class="class">Intent</span> <span class="func">intent</span> = <span class="key">new</span> <span class="class">Intent</span>(<span class="class">Intent</span>.<span class="class">ACTION_OPEN_DOCUMENT_TREE</span>);
+<span class="comments">// Le decimos el path inicial si lo damos</span>
+<span class="key">if</span> (<span class="func">path</span> != <span class="key">null</span> &amp;&amp; !<span class="func">path</span>.<span class="func">isEmpty</span>())
+<span class="func">intent</span>.<span class="func">putExtra</span>(<span class="class">DocumentsContract</span>.<span class="class">EXTRA_INITIAL_URI</span>, <span class="func">path</span>);
+<span class="class">Activity</span> <span class="func">activity</span> = <span class="class">CONTEXT</span>.<span class="func">getCurrentActivity</span>();
+<span class="key">if</span> (<span class="func">activity</span> != <span class="key">null</span>)
+<span class="comments">// OPEN_DOCUMENT_TREE es una constante que nos inventamos nosotros</span>
+    <span class="func">startActivityForResult</span>(<span class="func">activity</span>, <span class="func">intent</span>, <span class="class">OPEN_DOCUMENT_TREE</span>, <span class="key">null</span>);</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Para programar lo que queremos hacer una vez tengamos acceso al sistema, necesitamos crear una clase
+                    que implemente la interfaz <span class="class">ActivityEventListener</span> y en el constructor
+                    crear una nueva instancia y añadirla a la lista de listeners con <span
+                        class="var">reactContext</span>.<span class="func">addActivityEventListener(</span><span
+                        class="var">mActivityEventListener </span><span class="func">)</span>;
+                </p>
+                <p>
+                    En esta interfaz, el método en el que trabajamos será <span
+                        class="func">onActivityResult(</span><span class="var">@NonNull Activity activity, int
+                        requestCode, int resultCode, Intent intent</span><span class="func">)</span>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">public void</span> <span class="func">onActivityResult</span>(@NonNull <span class="class">Activity</span> activity, <span class="key">int</span> requestCode, <span class="key">int</span> resultCode, <span class="class">Intent</span> intent) {
+  <span class="key">if</span> (resultCode == <span class="class">Activity</span>.RESULT_CANCELED)
+  {
+  <span class="comments">//codigo para cuando el usuario cancela el abrir documento</span>
+  
+}
+  <span class="key">else if</span> (requestCode == OPEN_DOCUMENT_TREE) {
+  <span class="comments">//Pedimos la URI al Intent</span>
+  <span class="class">Uri</span> uri = intent.<span class="func">getData</span>();
+  <span class="key">if</span> (uri != <span class="key">null</span>) {
+  <span class="comments">// Pedimos permiso si el respositivo se reinicia</span>
+  CONTEXT.<span class="func">getContentResolver</span>().<span class="func">takePersistableUriPermission</span>(uri,
+  <span class="class">Intent</span>.FLAG_GRANT_READ_URI_PERMISSION);
+  }
+  }
+}</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
             <div id="i18n" class="header__container">
                 <h2>Traducciones</h2>
             </div>
@@ -2041,7 +2283,8 @@ i18n
                     <strong>convertirlos</strong> para que sus props acepten sharedValues. Para ello, pasamos el
                     componente por la función <span class="func">createAnimatedComponent(</span><span
                         class="var">comp</span><span class="func">)</span>, que recibe un componente y <strong>te
-                        devuelve su versión convertida</strong>. <strong>CONVIENE MEMOIZARLO</strong> para poner la animación correcta de nuevo.
+                        devuelve su versión convertida</strong>. <strong>CONVIENE MEMOIZARLO</strong> para poner la
+                    animación correcta de nuevo.
                 </p>
                 <p>
                     A estos componentes les podemos animar los props con la función <span
@@ -2082,7 +2325,8 @@ i18n
                 </div>
                 <p>
                     También podemos gestionar <strong>gestos como Pinch</strong> mediante eventos, y podemos usar la
-                    función <span class="func">withDecay()</span> para controlar la inercia del gesto (por ejemplo <strong>que el usuario haga swipe más rápido o más lento</strong>).
+                    función <span class="func">withDecay()</span> para controlar la inercia del gesto (por ejemplo
+                    <strong>que el usuario haga swipe más rápido o más lento</strong>).
                 </p>
             </section>
         </main>
