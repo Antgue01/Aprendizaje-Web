@@ -61,6 +61,7 @@ Te dice las librerías que utiliza una página.</font>
 
 [SVG Path Creator](https://yqnn.github.io/svg-path-editor/) Crea trazos en SVG online.
 
+[Comprobador de contrastes](https://webaim.org/resources/contrastchecker/) Lo ideal es que para textos normales sea **mayor a 4.5:1** y para **textos grandes 3:1**
 ## Bancos de imágenes, iconos o videos sin copyright
 
 [IconFinder](https://www.iconfinder.com/)

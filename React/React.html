@@ -227,6 +227,15 @@
                                     </div>
                                 </div>
                                 <!-- #endregion Diferencias componentes básicos-->
+                                <!-- #region Iconos -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="iconsindx">
+                                        <label class="index__item__label" for="iconsindx"></label>
+                                        <a class="index__lv3" href="#icons">Iconos</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Iconos-->
                                 <!-- #region Navegación -->
                                 <div class="index__item__container">
                                     <div class="index__item">
@@ -255,6 +264,15 @@
                                     </div>
                                 </div>
                                 <!-- #endregion Turbo Modules-->
+                                <!-- #region Eventos -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="evntsindx">
+                                        <label class="index__item__label" for="evntsindx"></label>
+                                        <a class="index__lv4" href="#evnts">Eventos</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Eventos-->
                             </div>
                             <!-- #endregion React Native-->
                             <!-- #region Sistema de archivos -->
@@ -271,6 +289,15 @@
                                         <label class="index__item__label" for="flstmjvindx"></label>
                                         <a class="index__lv3" href="#flstmJV">Java</a>
                                     </div>
+                                    <!-- #region Directorios importantes -->
+                                    <div class="index__item__container">
+                                        <div class="index__item">
+                                            <input type="checkbox" hidden id="imtdinx">
+                                            <label class="index__item__label" for="imtdinx"></label>
+                                            <a class="index__lv4" href="#importantIdr">Directorios importantes</a>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion Directorios importantes-->
                                 </div>
                                 <!-- #endregion Java-->
                             </div>
@@ -1585,6 +1612,26 @@ root.<span class="func">render</span>(
                     </div>
                 </div>
             </section>
+            <div id="icons" class="header__container">
+                <h3>Iconos</h3>
+            </div>
+            <section>
+                <p>
+                    Se puede instalar el paquete <strong>react-native-vector-icons</strong> y para hacer sets personalizados instalando <strong>react-native-vector-icons/icomoon</strong>
+                </p>
+                <p>
+                    Cuando queramos usar un set personalizado, al descargarse el zip de icomoon <strong>solo necesitamos el ttf y el json en la carpeta rnvi-fonts/icomoon </strong>(la cual situaremos en la raíz del proyecto).
+                    En el componente que queramos usarlo creamos la constante Icon (que es un componente) de esta forma:
+                    <div class = "code__box">
+                        <code><span class="key">import</span> <span class="func">createIconSet</span> <span class="key">from</span> <span class="string">'@react-native-vector-icons/icomoon'</span>;
+<span class="key">import</span> <span class="func">icoMoonConfig</span> <span class="key">from</span> <span class="string">'../rnvi-fonts/icomoon/selection.json'</span>;
+<span class="key">const</span> <span >Icon</span> = <span class="func">createIconSet</span>(<span class="func">icoMoonConfig</span>);</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
+                        <div class="code__box__copy__dialog">
+                            ¡Copiado!
+                        </div>
+                    </div>
+                </p>
+            </section>
             <div id="navegnative" class="header__container">
                 <h3>Navegación </h3>
             </div>
@@ -1969,6 +2016,51 @@ gradlew generateCodegenArtifactsFromSchema
                     </div>
                 </div>
             </section>
+            <div id="evnts" class="header__container">
+                <h3>Eventos</h3>
+            </div>
+            <section>
+                <p>
+                    Si queremos <strong>enviar eventos desde la parte nativa a JS</strong>, debemos definir el evento en
+                    <strong>el archivo de especificación</strong>
+                    con el tipo <span class="class">CodegenTypes.EventEmitter&lt;Tipos de los argumentos&gt;</span>
+                </p>
+                <p>
+                    Al hacer el build schemas, <strong>se generará solo el método <span
+                            class="func">emitNombreDelEvento()</span></strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="comments">/**
+* Esto en el archivo spec generará en nativo el método <strong>emitOnNewPlaylistFound</strong>.
+*                        
+* Emitted when a new playlist is found, with its path as a parameter
+*/</span>
+<span class="key">readonly</span> <span class="func">onNewPlaylistFound</span>:<span class="class">CodegenTypes</span>.<span class="class">EventEmitter</span>&lt;<span class="string">string</span>&gt;;</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    En TS, luego tendríamos que suscribirnos al evento en un <strong>useEffect</strong>
+                </p>
+                <div class="code__box">
+                    <code><span class="key">const</span> <span class="func">onPlaylistFoundListener</span> = <span class="func">useRef</span>&lt;<span class="class">EventSubscription</span> | <span class="key">null</span>&gt;(<span class="key">null</span>);
+<span class="func">useEffect</span>(() =&gt; {
+    <span class="comments">//Subscribe to playlistFound</span>
+    <span class="func">onPlaylistFoundListener</span>.<span class="key">current</span> = <span class="class">NativeMusicFilesModule</span>.<span class="func">onNewPlaylistFound</span>(<span class="func">playlistFoundCallback</span>);
+    <span class="key">return</span> () =&gt; {
+        <span class="comments">//Unsubscribe</span>
+        <span class="func">onPlaylistFoundListener</span>.<span class="key">current</span>?.<span class="func">remove</span>()
+        <span class="func">onPlaylistFoundListener</span>.<span class="key">current</span> = <span class="key">null</span>;
+    }
+}, [<span class="func">playlistFoundCallback</span>, <span class="func">miscPlaylistCallback</span>]);</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+            </section>
             <div id="flstm" class="header__container">
                 <h2>Sistema de archivos</h2>
             </div>
@@ -2035,6 +2127,20 @@ gradlew generateCodegenArtifactsFromSchema
                     </div>
                 </div>
             </section>
+            <div id="importantIdr" class="header__container">
+                <h4>Directorios importantes</h4>
+            </div>
+            <section>
+                <p>
+                    <strong>FilesDir</strong>. Está pensado para archivos <strong>IMPRESCINDIBLE</strong> para el
+                    funcionamiento de la app. El sistema operativo <strong>nunca borrará nada de aquí</strong>.
+                </p>
+                <p>
+                    <strong>CacheDir</strong>. Está pensado para archivos que <strong>no pasa nada si se
+                        borran.</strong>
+                </p>
+            </section>
+
             <div id="i18n" class="header__container">
                 <h2>Traducciones</h2>
             </div>
@@ -2249,6 +2355,39 @@ i18n
                     hacerlo parecer que se mueve con físicas,<span class="func">withSpring(</span><span
                         class="var">valor, objeto de configuración</span><span class="func">)</span>
                 </p>
+                <p>
+                    Estas funciones admiten como tercer argumento <strong>un callback que se ejecuta en Java</strong>.
+                    Por tanto, si <strong>queremos ejecutar algo que no tenga que ver con animaciones</strong> (por
+                    ejemplo ejecutar una función cualquiera) tenemos que <strong>definirla antes del <span
+                            class="func">withTiming()</span></strong> y pasárselas a la función <span
+                        class="func">runOnJS()</span>
+                </p>
+                <div class="code__box">
+                    <code>&lt;<span class="func">Pressable</span> <span class="func">onPress</span>={
+    () =&gt; {
+        <span class="comments">//primero definimos la función que 
+        vamos a llamar al terminar la animación</span>
+        <span class="key">const</span> <span class="func">handlePress</span> = () =&gt; {
+            <span class="func">setOpen</span>(<span class="key">false</span>)
+            <span class="class">item</span>?.<span class="func">onPress</span>?.();
+        }
+        <span class="func">opacityShared</span>.<span class="key">value</span> = <span class="func">withTiming</span>(<span class="string">0</span>, animConfig);
+        <span class="comments">//después, en uno de los WithTiming,
+        en el callback se la pasamos a runOnJS y ejecutamos </span>
+        <span class="func">scaleShared</span>.<span class="key">value</span> = <span class="func">withTiming</span>(<span class="string">0</span>, <span class="func">animConfig</span>, (<span class="class">finished</span>) =&gt; {
+            <span class="key">if</span> (<span class="class">finished</span>) {
+                <span class="func">runOnJS</span>(<span class="func">handlePress</span>)();
+            }
+        });
+    }
+}&gt;
+    &lt;<span class="func">OptionsComponent</span> {...<span class="class">item</span>} /&gt;
+&lt;/<span class="func">Pressable</span>&gt;</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
                 <p>
                     Además, podemos usar funciones para crear loops, secuencias o retrasos con <span
                         class="func">withRepeat()</span>,<span class="func"> withSequence()</span> y <span
