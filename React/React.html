@@ -211,6 +211,15 @@
                                 <!-- #endregion useMemo-->
                             </div>
                             <!-- #endregion Hooks-->
+                            <!-- #region Zustand -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="zustandindx">
+                                    <label class="index__item__label" for="zustandindx"></label>
+                                    <a class="index__lv2" href="#Zustand">Zustand</a>
+                                </div>
+                            </div>
+                            <!-- #endregion Zustand-->
                             <!-- #region React Native -->
                             <div class="index__item__container">
                                 <div class="index__item">
@@ -1503,6 +1512,18 @@ root.<span class="func">render</span>(
                         hijo</strong>, o bien <strong>HACEMOS UNA FUNCIÓN MUY COSTOSA DENTRO de la función del
                         componente</strong>, <strong>USAMOS</strong> estos hooks.</p>
             </section>
+            <div id="Zustand" class="header__container">
+                <h2>Zustand</h2>
+            </div>
+            <section>
+                <!--
+                  TODO: Dar formato
+                -->
+                <p>
+                    Imagina que tu aplicación es un Restaurante.1. La Analogía: React Context vs. ZustandReact Context (Lo que tenías):Es como si el jefe de cocina (Provider) tuviera que gritar los pedidos a todos los camareros a la vez. Cada vez que entra un plato nuevo, todos los camareros se giran para escuchar, aunque el plato sea solo para la mesa 4.Resultado: Mucho ruido, estrés y "re-renders" innecesarios.Zustand (Lo que tienes ahora):Es una Pizarra Gigante en la pared de la cocina.El estado (idToPlaylist, playlistIds) está escrito en la pizarra.Los camareros (Componentes) solo miran la parte de la pizarra que les interesa (Selectores).El jefe de cocina (Tu Contexto/Nativo) puede escribir en la pizarra sin molestar a los camareros.2. El Flujo de Trabajo (The Workflow)Aquí tienes el diagrama mental de cómo fluye la información en tu App de Música con Zustand.Paso A: El Almacén (Store)Es un objeto que vive en la memoria de JavaScript, fuera de React.Tiene Datos: playlistIds, idToPlaylist.Tiene Acciones: addPlaylist, updatePlaylist.Regla de Oro: Para cambiar un dato, tienes que llamar a una acción. No puedes editar la variable a mano.Paso B: La Escritura (Nativo -> Store)Aquí es donde entra tu Contexto y el getState.El TurboModule encuentra una canción.Tu Contexto recibe el evento.Tu Contexto dice: "No quiero repintarme yo, solo quiero actualizar la base de datos".Llama a usePlaylistsStore.getState().addPlaylist(...).Zustand actualiza la "Pizarra".OJO: El componente Contexto NO se entera. No se re-renderiza. Sigue escuchando eventos tranquilamente.Paso C: La Lectura Reactiva (Store -> Componentes UI)Aquí es donde entran tus pantallas (ej. PlaylistList).El componente dice: "Me suscribo SOLO a playlistIds".TypeScriptconst ids = usePlaylistsStore(state => state.playlistIds);
+Cuando el Paso B actualiza el Store, Zustand avisa: "¡Eh! Alguien tocó playlistIds".El componente PlaylistList se re-renderiza y pinta la nueva lista.Magia: Otros componentes que miran otras cosas (ej. el botón de Play que mira isPlaying) NI SE INMUTAN.3. Diferencia clave: useStore() vs useStore.getState()Esta es la parte que te confundía. Son dos puertas para entrar al mismo sitio.Métodoconst x = useStore(s => s.x)useStore.getState().x¿Qué es?Un Hook de React.Una Función de JS puro.¿Dónde se usa?Dentro de Componentes (function MyComponent).En Callbacks, Eventos, useEffect, fuera de React.ComportamientoSuscribe al componente. Si el dato cambia, el componente se re-renderiza.Lee el dato en ese instante exacto. No suscribe ni provoca renders.Tu uso principalEn tu UI (FlatList, Text).En tu NativeMusicFilesModule listeners.4. Tu nuevo flujo en la App de MúsicaVisualiza esto cuando ejecutes tu código mañana:Inicio: La App arranca. El Store está vacío. La UI muestra "Cargando".Evento: El TurboModule encuentra "Linkin Park - Numb".Contexto (El Puente):Se dispara fileDiscoverdCallback.Ejecutas usePlaylistsStore.getState().addPlaylist(song).Tu Contexto NO se re-renderiza. Sigue fluido.Zustand (El Cerebro):Recibe la acción.Hace new Map().Actualiza su estado interno.Grita: "¡Cambio en playlistIds!"UI (La Pantalla):Tu componente LibraryScreen (que usa el hook) escucha el grito.React hace el re-render solo de esa pantalla.Aparece la canción.
+                </p>
+            </section>
             <div id="native" class="header__container">
                 <h2>ReactNative</h2>
             </div>
@@ -1617,19 +1638,23 @@ root.<span class="func">render</span>(
             </div>
             <section>
                 <p>
-                    Se puede instalar el paquete <strong>react-native-vector-icons</strong> y para hacer sets personalizados instalando <strong>react-native-vector-icons/icomoon</strong>
+                    Se puede instalar el paquete <strong>react-native-vector-icons</strong> y para hacer sets
+                    personalizados instalando <strong>react-native-vector-icons/icomoon</strong>
                 </p>
                 <p>
-                    Cuando queramos usar un set personalizado, al descargarse el zip de icomoon <strong>solo necesitamos el ttf y el json en la carpeta rnvi-fonts/icomoon </strong>(la cual situaremos en la raíz del proyecto).
+                    Cuando queramos usar un set personalizado, al descargarse el zip de icomoon <strong>solo necesitamos
+                        el ttf y el json en la carpeta rnvi-fonts/icomoon </strong>(la cual situaremos en la raíz del
+                    proyecto).
                     En el componente que queramos usarlo creamos la constante Icon (que es un componente) de esta forma:
-                    <div class = "code__box">
-                        <code><span class="key">import</span> <span class="func">createIconSet</span> <span class="key">from</span> <span class="string">'@react-native-vector-icons/icomoon'</span>;
+                <div class="code__box">
+                    <code><span class="key">import</span> <span class="func">createIconSet</span> <span class="key">from</span> <span class="string">'@react-native-vector-icons/icomoon'</span>;
 <span class="key">import</span> <span class="func">icoMoonConfig</span> <span class="key">from</span> <span class="string">'../rnvi-fonts/icomoon/selection.json'</span>;
-<span class="key">const</span> <span >Icon</span> = <span class="func">createIconSet</span>(<span class="func">icoMoonConfig</span>);</code><button class="code__box__copy material-symbols-outlined">content_copy</button>
-                        <div class="code__box__copy__dialog">
-                            ¡Copiado!
-                        </div>
+<span class="key">const</span> <span >Icon</span> = <span class="func">createIconSet</span>(<span class="func">icoMoonConfig</span>);</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
                     </div>
+                </div>
                 </p>
             </section>
             <div id="navegnative" class="header__container">
