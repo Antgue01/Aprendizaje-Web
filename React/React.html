@@ -221,6 +221,25 @@
                             </div>
                             <!-- #endregion Zustand-->
                             <!-- #region React Native -->
+
+                            <!-- #region C++ y JNI -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="jniindx">
+                                    <label class="index__item__label" for="jniindx"></label>
+                                    <a class="index__lv2" href="#jni">C++ y JNI</a>
+                                </div>
+                                <!-- #region Apuntes Básicos -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="jnibasicosindx">
+                                        <label class="index__item__label" for="jnibasicosindx"></label>
+                                        <a class="index__lv3" href="#jnibasicos">JNI — Apuntes básicos</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Apuntes Básicos-->
+                            </div>
+                            <!-- #endregion C++ y JNI-->
                             <div class="index__item__container">
                                 <div class="index__item">
                                     <input type="checkbox" hidden id="nativeindx">
@@ -1602,6 +1621,141 @@ Cuando el Paso B actualiza el Store, Zustand avisa: "¡Eh! Alguien tocó playlis
             <div id="dcb" class="header__container">
                 <h3>Diferencias componentes básicos</h3>
             </div>
+
+            <div id="jni" class="header__container">
+                <h2>C++ y JNI</h2>
+            </div>
+            <section>
+                <p>
+                    <strong>JNI (Java Native Interface)</strong> es la interfaz que permite comunicar código Java/Kotlin con código nativo escrito en C/C++.
+                </p>
+                <p>
+                    El flujo de ejecucion sigue la estructura: <strong>Java &rarr; JNI &rarr; C++</strong>. El código C++ se compila dentro de una biblioteca nativa (<code>.so</code> en Android) ejecutada directamente por el proceso de la aplicación.
+                </p>
+            </section>
+
+            <div id="jnibasicos" class="header__container">
+                <h3>JNI — Apuntes básicos</h3>
+            </div>
+            <section>
+                <div class="box">
+                    <h2 class="box__title">Método native en Java</h2>
+                    <div class="box__text__container">
+                        <p>
+                            Para declarar en Java un método cuya implementación estará escrita en C/C++, se utiliza la palabra clave <strong>native</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="code__box">
+                    <code><span class="key">public native void</span> <span class="func">printHello</span>();</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">¡Copiado!</div>
+                </div>
+
+                <p>
+                    La palabra clave <strong>native</strong> indica que el método está declarado en la capa de Java, pero su lógica real reside en la capa nativa. Una vez declarado, se invoca como cualquier otro método de Java.
+                </p>
+
+                <p>
+                    <strong>Cargar la biblioteca nativa:</strong> Antes de utilizar las funciones nativas, Java debe cargar la biblioteca desde un bloque estático utilizando <code>System.loadLibrary</code>:
+                </p>
+
+                <div class="code__box">
+                    <code><span class="key">static</span> {
+    <span class="class">System</span>.<span class="func">loadLibrary</span>(<span class="string">"musicar_android"</span>);
+}</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">¡Copiado!</div>
+                </div>
+
+                <p>
+                    Si CMake genera el archivo <code>libmusicar_android.so</code>, se omite tanto el prefijo <em>lib</em> como la extensión <em>.so</em>.
+                </p>
+
+                <div class="box">
+                    <h2 class="box__title">Implementación y Convención de Nombres</h2>
+                    <div class="box__text__container">
+                        <p>
+                            JNI localiza automáticamente la función C++ mediante una convención de nombres estricta estructurada como <code>Java_paquete_Clase_metodo</code>.
+                        </p>
+                        <p>
+                            Por ejemplo, para el paquete <code>com.musicar</code>, la clase <code>MusicarMediaLibraryService</code> y el método <code>printHello</code>, la firma nativa en C++ debe ser <code>Java_com_musicar_MusicarMediaLibraryService_printHello</code>. Los puntos del paquete se reemplazan por guiones bajos (<code>_</code>).
+                        </p>
+                    </div>
+                </div>
+
+                <p>
+                    Para evitar el <em>name mangling</em> (sobrecarga de funciones) de C++ y garantizar que JNI encuentre el símbolo exacto, la función debe declararse con enlace C usando <strong>extern "C"</strong>:
+                </p>
+
+                <div class="code__box">
+                    <code><span class="key">extern</span> <span class="string">"C"</span> {
+    <span class="class">JNIEXPORT</span> <span class="key">void</span> <span class="class">JNICALL</span>
+    <span class="func">Java_com_musicar_MusicarMediaLibraryService_printHello</span>(<span class="class">JNIEnv</span>* env, <span class="class">jobject</span> thiz) {
+        <span class="comments">// Implementación nativa</span>
+    }
+}</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">¡Copiado!</div>
+                </div>
+
+                <p>
+                    <strong>Análisis de la firma de compilación JNI:</strong>
+                </p>
+                <ul class="box__list">
+                    <li><strong>JNIEXPORT:</strong> Macro que marca la función para ser exportada y visible públicamente desde la biblioteca compartida.</li>
+                    <li><strong>JNICALL:</strong> Macro que define la convención de llamada de la plataforma destino.</li>
+                    <li><strong>JNIEnv*:</strong> Puntero a la estructura de la interfaz JNI. Proporciona las funciones necesarias para interactuar con la JVM (crear objetos, llamar métodos de Java, manipular arrays y cadenas, etc.).</li>
+                    <li><strong>jobject / jclass:</strong> Si el método de Java es de instancia, recibe un <code>jobject</code> que representa a esa instancia. Si el método es <code>static</code>, recibe un <code>jclass</code> representando la clase.</li>
+                </ul>
+
+                <div class="box">
+                    <h2 class="box__title">Mapeo de Tipos JNI</h2>
+                    <div class="box__text__container">
+                        <p>JNI define tipos primitivos específicos para realizar la correspondencia entre los tipos de Java y C++:</p>
+                        <div class="grid --2cols">
+                            <ul>
+                                <li><code>int</code> &rarr; <code>jint</code></li>
+                                <li><code>long</code> &rarr; <code>jlong</code></li>
+                                <li><code>boolean</code> &rarr; <code>jboolean</code></li>
+                                <li><code>float</code> &rarr; <code>jfloat</code></li>
+                            </ul>
+                            <ul>
+                                <li><code>double</code> &rarr; <code>jdouble</code></li>
+                                <li><code>String</code> &rarr; <code>jstring</code></li>
+                                <li><code>Object</code> &rarr; <code>jobject</code></li>
+                                <li><code>Class</code> &rarr; <code>jclass</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    <strong>Logging nativo en Android:</strong> Para escribir en Logcat desde C++ se utiliza la cabecera nativa de Android <code>&lt;android/log.h&gt;</code> e invocamos a la función <code>__android_log_print()</code> de la biblioteca <code>liblog</code> (debe estar enlazada dentro del <code>CMakeLists.txt</code>):
+                </p>
+
+                <div class="code__box">
+                    <code><span class="key">#include</span> <span class="string">&lt;android/log.h&gt;</span>
+
+<span class="func">__android_log_print</span>(ANDROID_LOG_INFO, <span class="string">"MusicarNative"</span>, <span class="string">"Mensaje desde C++: %d"</span>, <span class="literal">42</span>);</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">¡Copiado!</div>
+                </div>
+
+                <div class="box">
+                    <h2 class="box__title">Arquitectura de Separación (Adapter Pattern)</h2>
+                    <div class="box__text__container">
+                        <p>
+                            Estructuramos el código dividiendo la responsabilidad en dos capas:
+                        </p>
+                        <p>
+                            1. <strong>C++ Puro:</strong> Lógica del dominio/reproductor independiente que no incluye cabeceras de Android ni JNI.<br>
+                            2. <strong>Adaptador JNI:</strong> Capa puente que entiende JNI, traduce los datos provenientes de Java/Kotlin e invoca las funciones del C++ puro.
+                        </p>
+                    </div>
+                </div>
+            </section>
             <section>
                 <p>
                     Hay algunos componentes que tienen ciertas <strong>peculiaridades</strong>:
