@@ -238,6 +238,13 @@
                                     </div>
                                 </div>
                                 <!-- #endregion Apuntes Básicos-->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="jnimoduleindx">
+                                        <label class="index__item__label" for="jnimoduleindx"></label>
+                                        <a class="index__lv3" href="#jnimodule">Crear un módulo nativo Android independiente</a>
+                                    </div>
+                                </div>
                             </div>
                             <!-- #endregion C++ y JNI-->
                             <div class="index__item__container">
@@ -357,6 +364,78 @@
                                 </div>
                             </div>
                             <!-- #endregion Reanimated-->
+                            <!-- #region SQL -->
+                            <div class="index__item__container">
+                                <div class="index__item">
+                                    <input type="checkbox" hidden id="sqlindx">
+                                    <label class="index__item__label" for="sqlindx"></label>
+                                    <a class="index__lv2" href="#sql">SQL</a>
+                                </div>
+                                <!-- #region Cómo pensar una consulta -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="sqlpensarindx">
+                                        <label class="index__item__label" for="sqlpensarindx"></label>
+                                        <a class="index__lv3" href="#sqlpensar">Cómo pensar una consulta</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Cómo pensar una consulta-->
+                                <!-- #region JOIN -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="sqljoinindx">
+                                        <label class="index__item__label" for="sqljoinindx"></label>
+                                        <a class="index__lv3" href="#sqljoin">JOIN</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion JOIN-->
+                                <!-- #region UNION -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="sqlunionindx">
+                                        <label class="index__item__label" for="sqlunionindx"></label>
+                                        <a class="index__lv3" href="#sqlunion">UNION</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion UNION-->
+                                <!-- #region ORDER BY y NULL -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="sqlorderindx">
+                                        <label class="index__item__label" for="sqlorderindx"></label>
+                                        <a class="index__lv3" href="#sqlorder">ORDER BY y NULL</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion ORDER BY y NULL-->
+                                <!-- #region Parámetros -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="sqlparamsindx">
+                                        <label class="index__item__label" for="sqlparamsindx"></label>
+                                        <a class="index__lv3" href="#sqlparams">Parámetros</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Parámetros-->
+                                <!-- #region Formarla ejecutándola -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="sqlejecutarindx">
+                                        <label class="index__item__label" for="sqlejecutarindx"></label>
+                                        <a class="index__lv3" href="#sqlejecutar">Formarla ejecutándola</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Formarla ejecutándola-->
+                                <!-- #region Diagnóstico -->
+                                <div class="index__item__container">
+                                    <div class="index__item">
+                                        <input type="checkbox" hidden id="sqldiagindx">
+                                        <label class="index__item__label" for="sqldiagindx"></label>
+                                        <a class="index__lv3" href="#sqldiag">Diagnóstico</a>
+                                    </div>
+                                </div>
+                                <!-- #endregion Diagnóstico-->
+                            </div>
+                            <!-- #endregion SQL-->
                         </div>
                         <input hidden type="checkbox" id="index-close">
 
@@ -1756,38 +1835,261 @@ Cuando el Paso B actualiza el Store, Zustand avisa: "¡Eh! Alguien tocó playlis
                     </div>
                 </div>
             </section>
+            <div id="jnimodule" class="header__container">
+                <h3>Crear un módulo nativo Android independiente</h3>
+            </div>
             <section>
-                <p>
-                    Hay algunos componentes que tienen ciertas <strong>peculiaridades</strong>:
-                </p>
                 <div class="box">
-                    <h2 class="box__title">Componentes especiales </h2>
+                    <h2 class="box__title">Crear el módulo desde Android Studio</h2>
                     <div class="box__text__container">
-                        <ul class="box__list">
-                            <li class="box__list__item --can-open">
-                                <label><span class="func">Image</span>
-                                    <input hidden type="checkbox">
-                                    <div class="box__explanation">
-                                        <p>
-                                            El prop <strong>source</strong> puede ser un <strong>número que identifique
-                                                un recurso</strong> , que se le pasa usando la función <span
-                                                class="func">require(</span><span class="var"><span class="string">'ruta
-                                                    al recurso'</span></span><span class="func">)</span> (Si se le pasa
-                                            <strong>desde fuera</strong> se debe pasar con la función <strong>ya
-                                                llamada</strong> de forma que en realidad le pasamos el
-                                            número) <strong>O
-                                                BIEN</strong> un <strong>objeto</strong> con la propiedad
-                                            <strong>uri</strong> si le queremos pasar una <strong>URL</strong>.
-                                        </p>
-                                    </div>
-                                </label>
-
-                            </li>
-                        </ul>
+                        <p>
+                            En Android Studio: <strong>File &rarr; New &rarr; New Module</strong> y seleccionamos una
+                            biblioteca nativa/Android.
+                        </p>
+                        <p>
+                            Le damos un nombre, por ejemplo <code>musicarNative</code>, y dejamos
+                            <strong>C++ Standard</strong> en <code>Toolchain Default</code>.
+                        </p>
+                        <p>
+                            Android Studio crea la carpeta del módulo, su <code>build.gradle.kts</code>, el
+                            <code>CMakeLists.txt</code> y la estructura de código nativo. El módulo queda registrado
+                            en <code>settings.gradle</code>.
+                        </p>
                     </div>
                 </div>
-            </section>
-            <div id="icons" class="header__container">
+
+                <div class="box">
+                    <h2 class="box__title">settings.gradle</h2>
+                    <div class="box__text__container">
+                        <p>
+                            Comprueba que el módulo aparece incluido con su nombre exacto, por ejemplo
+                            <code>include(":musicarNative")</code>.
+                        </p>
+                        <p>
+                            <strong>¿Por qué?</strong> <code>settings.gradle</code> es donde Gradle conoce qué módulos
+                            forman parte del proyecto; el nombre debe coincidir con el que después usaremos como
+                            dependencia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2 class="box__title">musicarNative/build.gradle.kts</h2>
+                    <div class="box__text__container">
+                        <p>
+                            El módulo utiliza el plugin <code>com.android.library</code> porque no genera un APK propio:
+                            genera una biblioteca que puede consumir <code>app</code>.
+                        </p>
+                        <p>
+                            En <code>android { ... }</code> se configura <code>externalNativeBuild</code> para que este
+                            módulo use su propio <code>CMakeLists.txt</code> y la versión de CMake que tengamos instalada.
+                        </p>
+                        <p>
+                            También se configura aquí la versión de Android mínima y el NDK que utilizará el módulo.
+                        </p>
+                        <p>
+                            <strong>¿Por qué?</strong> Así <code>musicarNative</code> tiene su propio build nativo y no
+                            toca el CMake que utiliza el módulo <code>app</code> para React Native.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2 class="box__title">app/build.gradle</h2>
+                    <div class="box__text__container">
+                        <p>
+                            En las dependencias de <code>app</code> se añade una dependencia de proyecto apuntando al
+                            módulo local, por ejemplo <code>implementation project(":musicarNative")</code>.
+                        </p>
+                        <p>
+                            <strong>¿Por qué?</strong> Esto le dice a Gradle que la aplicación utiliza esa biblioteca,
+                            por lo que al construir <code>app</code> también construirá <code>musicarNative</code> y
+                            empaquetará su biblioteca nativa.
+                        </p>
+                        <p>
+                            No se utiliza una cadena como <code>com.example.musicarnative</code>: esa notación es para
+                            dependencias externas publicadas, no para módulos del propio proyecto.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2 class="box__title">CMakeLists.txt</h2>
+                    <div class="box__text__container">
+                        <p>
+                            <code>CMakeLists.txt</code> describe a CMake <strong>qué construir</strong>; CMake después
+                            utiliza el compilador y el toolchain configurados para realizar la compilación.
+                        </p>
+                        <p>
+                            <strong><code>cmake_minimum_required(...)</code>:</strong> indica la versión mínima de CMake
+                            que acepta el proyecto.
+                        </p>
+                        <p>
+                            <strong><code>project(...)</code>:</strong> da nombre al proyecto de CMake.
+                        </p>
+                        <p>
+                            <strong><code>add_library(...)</code>:</strong> crea una biblioteca e indica qué archivos
+                            fuente la forman. <code>STATIC</code> genera una biblioteca estática y <code>SHARED</code>
+                            una biblioteca compartida (<code>.so</code> en Android).
+                        </p>
+                        <p>
+                            El primer argumento de <code>add_library</code> es el nombre del <strong>target/librería</strong>
+                            que estamos creando. Si generamos, por ejemplo, una biblioteca llamada
+                            <code>musicar_android</code>, en Android el archivo resultante será
+                            <code>libmusicar_android.so</code> y, al cargarla desde Java, se utiliza ese mismo nombre
+                            sin el prefijo <code>lib</code> ni la extensión <code>.so</code>.
+                        </p>
+                        <p>
+                            <strong><code>find_library(...)</code>:</strong> busca una biblioteca que proporciona el
+                            sistema/NDK, como <code>log</code>.
+                        </p>
+                        <p>
+                            <strong><code>target_link_libraries(...)</code>:</strong> indica contra qué bibliotecas debe
+                            enlazarse un target para resolver sus dependencias.
+                        </p>
+                        <p>
+                            El CMake del módulo <strong>no debe incluir</strong>
+                            <code>ReactNative-application.cmake</code> ni trabajar con <code>appmodules</code>: nuestra
+                            biblioteca es independiente de React Native.
+                        </p>
+                    </div>
+                </div>
+
+                
+
+                <div class="box">
+                    <h2 class="box__title">CMake: targets, STATIC y SHARED</h2>
+                    <div class="box__text__container">
+                        <p>
+                            Un <strong>target</strong> es algo que CMake sabe construir, como una biblioteca o un
+                            ejecutable. Con <code>add_library</code> creamos un target que representa una biblioteca y
+                            le damos un nombre.
+                        </p>
+                        <p>
+                            <strong>STATIC</strong> crea una biblioteca estática: sirve para agrupar código que después
+                            se enlazará dentro de otro target. <strong>SHARED</strong> crea una biblioteca compartida:
+                            queda como un archivo independiente que puede cargarse en tiempo de ejecución.
+                        </p>
+                        <p>
+                            Por eso, una forma sencilla de entender <code>STATIC</code> en nuestro proyecto es como un
+                            <strong>grupo reutilizable de código común</strong>. No es obligatorio usarlo: también podemos
+                            crear directamente una <code>SHARED</code> con todos los <code>.cpp</code> del core y el
+                            adaptador de una plataforma, pero <strong>ESTARÍAMOS EJECUTANDO EL MISMO ENLACE SOBRE LOS MISMOS
+                                 ARCHIVOS, RALENTIZANDO EL BUILD</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="code__box">
+                    <code><span class="comments"># Versión mínima de CMake que acepta este proyecto.</span>
+<span class="func">cmake_minimum_required</span>(VERSION 3.22.1)
+
+<span class="comments"># Nombre del proyecto de CMake.</span>
+<span class="func">project</span>(MusicarNative)
+
+<span class="comments"># Target que agrupa el código común.</span>
+<span class="comments"># Aquí podríamos tener A.cpp, B.cpp, Player.cpp, Queue.cpp, etc.</span>
+<span class="comments"># STATIC no es un "objeto": es una biblioteca estática que después puede enlazarse</span>
+<span class="comments"># dentro de uno o varios outputs.</span>
+<span class="func">add_library</span>(
+    musicar_core
+    STATIC
+    core/A.cpp
+    core/B.cpp
+    core/Player.cpp
+)
+
+<span class="comments"># Target final para Android.</span>
+<span class="comments"># SHARED produce la .so que Android puede cargar en runtime. (o la .dll para windows, .so para linux, etc)</span>
+<span class="comments"># El adaptador es solo la parte que conoce JNI/Android.</span>
+<span class="func">add_library</span>(
+    musicar_android
+    SHARED
+    adapters/android/AndroidAdapter.cpp
+)
+
+<span class="comments"># Busca una biblioteca que Android ya proporciona.</span>
+<span class="comments"># Primer argumento: variable que elegimos nosotros para guardar el resultado.</span>
+<span class="comments"># Segundo argumento: nombre con el que CMake busca la biblioteca.</span>
+<span class="comments"># "log" corresponde a la biblioteca liblog de Android.</span>
+<span class="func">find_library</span>(
+    ANDROID_LOG_LIB
+    log
+)
+
+<span class="comments"># El target Android usa el código común y la biblioteca de logging.</span>
+<span class="func">target_link_libraries</span>(
+    musicar_android
+    musicar_core
+    ${ANDROID_LOG_LIB}
+)</code>
+                    <button class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">¡Copiado!</div>
+                </div>
+
+                <div class="box">
+                    <h2 class="box__title">Varios .cpp dentro del mismo target</h2>
+                    <div class="box__text__container">
+                        <p>
+                            Si el core tiene <code>A.h</code> + <code>A.cpp</code> y <code>B.h</code> +
+                            <code>B.cpp</code>, no se crea un target por cada clase. Los dos <code>.cpp</code> pertenecen
+                            al mismo target.
+                        </p>
+                        <p>
+                            Si <code>A</code> utiliza <code>B</code>, <code>A.cpp</code> incluye <code>B.h</code>. CMake
+                            solo necesita que <code>A.cpp</code> y <code>B.cpp</code> estén incluidos en
+                            <code>musicar_core</code>; las relaciones entre las clases las resuelve C++.
+                        </p>
+                        <p>
+                            Para añadir más clases al core, simplemente se añaden sus <code>.cpp</code> al mismo
+                            <code>add_library(musicar_core ...)</code>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2 class="box__title">STATIC no es obligatorio</h2>
+                    <div class="box__text__container">
+                        <p>
+                            También podríamos crear directamente una biblioteca <code>SHARED</code> para Android
+                            incluyendo el core y el adaptador en el mismo target.
+                        </p>
+                        <p>
+                            Y al hacer Windows podríamos crear otra <code>SHARED</code> reutilizando los mismos archivos
+                            del core y cambiando solo el adaptador:
+                        </p>
+                        <p>
+                            <code>musicar_android</code> &rarr; A.cpp + B.cpp + Player.cpp + AndroidAdapter.cpp
+                        </p>
+                        <p>
+                            <code>musicar_windows</code> &rarr; A.cpp + B.cpp + Player.cpp + WindowsAdapter.cpp
+                        </p>
+                        <p>
+                            La ventaja de un target <code>STATIC</code> separado es simplemente tener el código común
+                            agrupado en un target reutilizable; no es necesario para reutilizar esos archivos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2 class="box__title">¿De dónde salen los nombres de find_library?</h2>
+                    <div class="box__text__container">
+                        <p>
+                            El primer nombre, por ejemplo <code>ANDROID_LOG_LIB</code>, lo eliges tú: es la variable donde
+                            CMake guardará la biblioteca encontrada.
+                        </p>
+                        <p>
+                            El segundo nombre, <code>log</code> en este caso, es el nombre que CMake tiene que buscar entre
+                            las bibliotecas disponibles para esa plataforma. Para saberlo hay que consultar cómo se llama
+                            la biblioteca que proporciona la plataforma.
+                        </p>
+                        <p>
+                            En Android buscamos <code>log</code> porque la plataforma proporciona <code>liblog</code>, que
+                            contiene <code>__android_log_print</code>.
+                        </p>
+                    </div>
+                </div>
+<div id="icons" class="header__container">
                 <h3>Iconos</h3>
             </div>
             <section>
@@ -2645,6 +2947,416 @@ i18n
                     También podemos gestionar <strong>gestos como Pinch</strong> mediante eventos, y podemos usar la
                     función <span class="func">withDecay()</span> para controlar la inercia del gesto (por ejemplo
                     <strong>que el usuario haga swipe más rápido o más lento</strong>).
+                </p>
+            </section>
+            <div id="sql" class="header__container">
+                <h2>SQL</h2>
+            </div>
+            <section>
+                <p>
+                    La idea que sostiene todo lo demás: en SQL <strong>no buscas datos, describes una tabla nueva a
+                        partir de tablas existentes</strong>. Entrada tabla(s), salida tabla. Y como la salida es una
+                    tabla, puede ser la entrada de otra cosa. Todo lo demás son formas distintas de fabricar esa tabla.
+                </p>
+                <p>
+                    Un detalle que aclara mucho: la tabla resultante es conceptualmente <strong>un conjunto sin
+                        orden</strong>. SQL no garantiza en qué orden salen las filas a menos que lo pidas
+                    explícitamente.
+                </p>
+            </section>
+            <div id="sqlpensar" class="header__container">
+                <h3>Cómo pensar una consulta</h3>
+            </div>
+            <section>
+                <p>
+                    Una sentencia tiene siempre las mismas cláusulas y <strong>se escriben en un orden fijo</strong>,
+                    que <strong>no es el orden en el que se evalúan</strong>:
+                </p>
+                <div class="code__box">
+                    <code><span class="key">SELECT</span>    <span class="comments">-- qué columnas quiero en el resultado</span>
+<span class="key">FROM</span>      <span class="comments">-- de qué tabla salen las filas</span>
+<span class="key">JOIN</span>      <span class="comments">-- con qué otra tabla las combino, y por qué columna (ON)</span>
+<span class="key">WHERE</span>     <span class="comments">-- qué filas descarto</span>
+<span class="key">GROUP BY</span>  <span class="comments">-- cómo las agrupo (sólo si agregas)</span>
+<span class="key">HAVING</span>    <span class="comments">-- qué grupos descarto (sólo si agrupas)</span>
+<span class="key">ORDER BY</span>  <span class="comments">-- en qué orden las entrego</span>
+<span class="key">LIMIT</span>     <span class="comments">-- cuántas</span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    El <strong>orden lógico de evaluación</strong> es otro: primero <span class="key">FROM</span> /
+                    <span class="key">JOIN</span>, luego <span class="key">WHERE</span>, <span
+                        class="key">GROUP BY</span>, <span class="key">SELECT</span>, <span class="key">ORDER BY</span>
+                    y por último <span class="key">LIMIT</span>. Esto explica cosas que si no parecen caprichos: un
+                    <strong>alias que inventas en el SELECT no lo puedes usar en el WHERE</strong> (el WHERE ya pasó),
+                    pero <strong>sí en el ORDER BY</strong>, que viene después. Cuando algo no compile, mira dónde estás
+                    en esta escalera.
+                </p>
+                <p>
+                    Es una <strong>tubería</strong>, y por cada tramo pasa <strong>un conjunto de filas</strong>. Cada
+                    cláusula recibe el conjunto que le dejó la anterior y entrega otro:
+                </p>
+                <div class="code__box">
+                    <code><span class="class">FROM</span>      recibe nada       devuelve filas de una tabla
+<span class="class">JOIN</span>      recibe filas      devuelve filas MÁS ANCHAS (añade columnas)
+<span class="class">WHERE</span>     recibe filas      devuelve MENOS filas (nunca cambia columnas)
+<span class="class">GROUP BY</span>  recibe filas      devuelve una fila por grupo
+<span class="class">SELECT</span>    recibe filas      devuelve filas con OTRA FORMA
+<span class="class">ORDER BY</span>  recibe filas      devuelve las mismas, secuenciadas
+<span class="class">LIMIT</span>     recibe filas      devuelve menos filas</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Lo importante de ahí: <strong>hasta el SELECT, todas las columnas de todas las tablas implicadas
+                        siguen disponibles</strong>. Por eso el WHERE puede filtrar por una columna que luego no aparece
+                    en el resultado. <strong>El SELECT es el recorte final</strong>, no la selección de con qué
+                    trabajas. De ahí sale el error mental más común: creer que el SELECT es lo primero que ocurre porque
+                    es lo primero que se escribe. Es casi lo último.
+                </p>
+                <p>
+                    <strong>El método, en seis pasos:</strong>
+                </p>
+                <p>
+                    <strong>1. Di en castellano qué es una fila del resultado.</strong> Literalmente termina la frase
+                    <em>«quiero una fila por cada ______»</em>. Es la decisión más importante y todo lo demás se deriva
+                    de ella; a eso se le llama el <strong>grano</strong> de la consulta. Si no puedes terminar la frase
+                    con un sustantivo único y claro, la consulta todavía no está pensada y ninguna sintaxis te va a
+                    salvar.
+                </p>
+                <p>
+                    <strong>2. ¿De qué tabla sale una fila de ésas?</strong> Esa es tu tabla del FROM. Cuando el grano
+                    es una relación (un hijo dentro de un padre, una compra de un cliente), <strong>la tabla de partida
+                        suele ser la tabla de la relación</strong>, no la de las entidades. Es un reflejo que cuesta
+                    adquirir: la tendencia natural es empezar por la entidad «importante», y casi siempre es la elección
+                    equivocada.
+                </p>
+                <p>
+                    <strong>3. ¿Qué datos necesito que no estén en esa tabla?</strong> Cada respuesta es un JOIN. Y para
+                    cada uno, pregúntate <strong>por qué columna se corresponden las filas</strong>: ésa es la condición
+                    del ON. Si no sabes contestar eso, no sabes cómo se relacionan las tablas y tienes que mirar el
+                    esquema antes de seguir.
+                </p>
+                <p>
+                    <strong>4. ¿Qué filas sobran?</strong> Eso es el WHERE. Aquí van las condiciones de negocio, y los
+                    valores concretos van <strong>como parámetros</strong>, no escritos en el texto.
+                </p>
+                <p>
+                    <strong>5. ¿Qué columnas quiero, y con qué nombre?</strong> Eso es el SELECT. Aquí añades columnas
+                    calculadas o constantes si las necesitas, <strong>siempre con <span class="key">AS</span></strong>
+                    si las vas a leer desde código.
+                </p>
+                <p>
+                    <strong>6. ¿En qué orden?</strong> El ORDER BY, con las claves en cascada.
+                </p>
+            </section>
+            <div id="sqljoin" class="header__container">
+                <h3>JOIN</h3>
+            </div>
+            <section>
+                <p>
+                    Existe porque el modelo relacional <strong>reparte</strong> la información. Una entidad vive en su
+                    tabla, y una relación de muchos-a-muchos vive en <strong>una tabla propia</strong> que sólo guarda
+                    pares de ids (más lo que sea propio <em>de la relación</em>, no de ninguno de los dos extremos).
+                    Para reconstruir la vista completa hay que volver a juntar.
+                </p>
+                <p>
+                    El mecanismo conceptual es <strong>producto cartesiano más filtro</strong>: combina cada fila de la
+                    izquierda con cada fila de la derecha, y quédate con las parejas que cumplen una condición. Esa
+                    condición es el <span class="key">ON</span>. <strong>JOIN pega a lo ancho</strong>: añade columnas a
+                    la fila.
+                </p>
+                <div class="code__box">
+                    <code><span class="class">X</span>          <span class="class">Y</span>            <span class="class">X</span> <span class="key">JOIN</span> <span class="class">Y</span> <span class="key">ON</span> <span class="class">X</span>.<span class="var">k</span> = <span class="class">Y</span>.<span class="var">k</span>
+<span class="var">k</span>  <span class="var">a</span>       <span class="var">k</span>  <span class="var">b</span>         <span class="var">k</span>  <span class="var">a</span>  <span class="var">k</span>  <span class="var">b</span>
+<span class="string">1</span>  <span class="string">p</span>       <span class="string">1</span>  <span class="string">z</span>    -->    <span class="string">1</span>  <span class="string">p</span>  <span class="string">1</span>  <span class="string">z</span>
+<span class="string">2</span>  <span class="string">q</span>       <span class="string">3</span>  <span class="string">w</span>           <span class="comments">(2 y 3 no casan: se caen)</span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    El motor no lo hace así de verdad (usa los índices), pero pensar así te dice qué esperar. En
+                    particular: <strong>si te olvidas el ON, te llevas el producto cartesiano entero</strong>, N×M
+                    filas. No es un error de sintaxis: es una consulta válida que devuelve una barbaridad.
+                </p>
+                <p>
+                    Variantes que importan:
+                </p>
+                <p>
+                    <span class="key">INNER JOIN</span> (el JOIN a secas): <strong>sólo las parejas que casan</strong>.
+                    Lo que no casa desaparece <strong>de los dos lados</strong>.
+                </p>
+                <p>
+                    <span class="key">LEFT JOIN</span>: <strong>todas las filas de la izquierda pase lo que pase</strong>;
+                    si no encuentran pareja, las columnas de la derecha salen a <span class="key">NULL</span>. Es lo que
+                    usas cuando «puede no haber».
+                </p>
+                <p>
+                    Y una distinción que confunde a todo el mundo: <strong>ON no es WHERE</strong>. El ON dice cómo se
+                    emparejan las filas; el WHERE descarta filas del resultado. En un INNER JOIN da igual dónde pongas
+                    la condición. <strong>En un LEFT JOIN no</strong>: una condición en el ON afecta a si hay pareja (y
+                    si no la hay, la fila izquierda sobrevive con nulos), mientras que <strong>la misma condición en el
+                        WHERE elimina esas filas y convierte tu LEFT JOIN en un INNER JOIN</strong> sin que te enteres.
+                </p>
+                <p>
+                    Dos detalles de sintaxis que necesitas: los <strong>alias de tabla</strong> (dar un nombre corto a
+                    una tabla en el FROM/JOIN) son <strong>obligatorios cuando la misma tabla aparece dos veces</strong>
+                    en la consulta, porque si no, no hay forma de decir a cuál de las dos te refieres. Y cuando dos
+                    tablas tienen una columna con el mismo nombre, hay que <strong>cualificarla</strong> con la tabla o
+                    su alias, o el motor se queja de ambigüedad.
+                </p>
+            </section>
+            <div id="sqlunion" class="header__container">
+                <h3>UNION</h3>
+            </div>
+            <section>
+                <p>
+                    Si JOIN añade <strong>columnas</strong> a una fila, UNION añade <strong>filas</strong> a la tabla.
+                    Son perpendiculares: <strong>UNION pega a lo alto</strong>.
+                </p>
+                <div class="code__box">
+                    <code><span class="class">A</span>          <span class="class">B</span>            <span class="class">A</span> <span class="key">UNION ALL</span> <span class="class">B</span>
+<span class="var">k</span>  <span class="var">v</span>       <span class="var">k</span>  <span class="var">v</span>         <span class="var">k</span>  <span class="var">v</span>
+<span class="string">1</span>  <span class="string">p</span>       <span class="string">7</span>  <span class="string">z</span>    -->    <span class="string">1</span>  <span class="string">p</span>
+<span class="string">2</span>  <span class="string">q</span>                     <span class="string">2</span>  <span class="string">q</span>
+                                <span class="string">7</span>  <span class="string">z</span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Como el resultado tiene que seguir siendo una tabla (y una tabla tiene forma fija), ambos lados
+                    deben aportar <strong>el mismo número de columnas, en el mismo orden y con tipos
+                        compatibles</strong>. Ojo: <strong>SQL no empareja por nombre, empareja por posición</strong>.
+                    Los nombres de columna del resultado los pone <strong>la primera mitad</strong>; los de la segunda
+                    se ignoran.
+                </p>
+                <p>
+                    <span class="key">UNION</span> es el operador de teoría de conjuntos: <strong>elimina
+                        duplicados</strong>. Para saber qué está duplicado tiene que comparar todo con todo, y en la
+                    práctica eso significa ordenar internamente: cuesta. <span class="key">UNION ALL</span> es
+                    <strong>concatenación pura</strong>: no mira nada, no ordena nada, no descarta nada. Salvo que de
+                    verdad quieras deduplicar, <strong>UNION ALL es lo correcto</strong>, y no sólo por rendimiento:
+                    UNION puede comerse filas legítimamente repetidas.
+                </p>
+                <p>
+                    Cuando juntas dos consultas que no traen exactamente lo mismo, el truco es que <strong>el SELECT es
+                        una proyección, no una lista de columnas</strong>. Lo que pones ahí no tiene por qué venir de
+                    ninguna tabla: puede ser una <strong>constante</strong> (un número, un texto, un NULL), un
+                    <strong>cálculo</strong>, una <strong>condición</strong> (que produce 1 o 0), una expresión
+                    condicional <span class="func">CASE WHEN</span> ... <span class="func">THEN</span> ... <span
+                        class="func">ELSE</span> ... <span class="func">END</span> (el <em>if</em> de SQL), o <span
+                        class="func">COALESCE(</span><span class="var">a, b, c</span><span class="func">)</span>, que
+                    devuelve el primer argumento no nulo.
+                </p>
+                <p>
+                    Ese es el mecanismo que te deja <strong>fabricar columnas que no existen</strong>: una constante
+                    distinta en cada mitad de un UNION te da una columna que <strong>distingue de dónde vino cada
+                        fila</strong>, y un NULL literal te rellena un hueco donde el otro lado sí tiene dato.
+                </p>
+            </section>
+            <div id="sqlorder" class="header__container">
+                <h3>ORDER BY y NULL</h3>
+            </div>
+            <section>
+                <p>
+                    No forma parte de fabricar la tabla: <strong>se aplica al entregarla</strong>. Por eso va al final
+                    del todo, y por eso <strong>sobre un UNION se escribe una sola vez</strong> y ordena el conjunto ya
+                    combinado, no cada mitad por su lado.
+                </p>
+                <p>
+                    <strong>Varias claves = orden lexicográfico sobre tuplas.</strong> Como ordenar palabras: compara la
+                    primera letra; sólo si son iguales mira la segunda. <span class="key">ORDER BY</span> <span
+                        class="var">k1, k2, k3</span> compara por k1; si empatan, por k2; si vuelven a empatar, por k3.
+                    <span class="key">ASC</span> / <span class="key">DESC</span> se aplican <strong>a cada clave por
+                        separado</strong>.
+                </p>
+                <p>
+                    <strong>Cada clave se evalúa fila a fila</strong>, y puede ser cualquier expresión. Esto es lo que
+                    hace que un orden así <strong>sea siempre transitivo</strong>: cada fila produce su tupla mirándose
+                    sólo a sí misma, sin saber contra quién va a competir. <strong>No hay forma de que la regla cambie
+                        según el par.</strong>
+                </p>
+                <p>
+                    Y ahí está el error a evitar cuando ordenas <strong>en código</strong> en vez de en SQL: si escribes
+                    un comparador que <strong>decide qué regla usar según con quién compara</strong> (por ejemplo «si
+                    uno de los dos no tiene orden, comparo por nombre»), <strong>la relación deja de ser
+                        transitiva</strong>. Se puede construir A &lt; B &lt; C &lt; A. En JavaScript eso te da un orden
+                    raro y ya; <strong>en C++ es comportamiento indefinido</strong>: <span class="func">std::sort</span>
+                    asume la transitividad para saber cuándo parar y puede leer fuera del rango. La STL lo llama
+                    <strong>strict weak ordering</strong>, y la parte que suele pillar desprevenido no es la
+                    transitividad de <em>&lt;</em> sino la de la <strong>equivalencia</strong>: si <em>a</em> y
+                    <em>b</em> son «iguales» para el comparador, y <em>b</em> y <em>c</em> también, tiene que serlo
+                    <em>a</em> y <em>c</em>. Regla práctica: <strong>haz que cada elemento produzca su tupla de claves y
+                        compara tuplas</strong>.
+                </p>
+                <p>
+                    <strong>NULL no es un valor, es «desconocido»</strong>, y SQL usa lógica de tres valores. <span
+                        class="func">NULL = NULL</span> no da verdadero: da desconocido. Por eso <span class="func">x =
+                        NULL</span> nunca casa con nada y existe un operador aparte, <span class="key">IS NULL</span>.
+                </p>
+                <p>
+                    Pero ORDER BY <strong>tiene que colocar esas filas en algún sitio</strong>: no puede decir «no sé».
+                    Así que se define arbitrariamente que todos los nulos van juntos a un extremo. <strong>SQLite los
+                        pone primero en ascendente.</strong> Si quieres lo contrario se pide explícitamente con <span
+                        class="key">NULLS LAST</span> sobre esa clave. La alternativa portable, útil en motores que no
+                    la tengan: ordenar primero por la expresión <span class="func">columna IS NULL</span>, que vale 0 o
+                    1, y sólo después por la columna; el bloque de los 0 (no nulos) va delante del de los 1.
+                </p>
+                <p>
+                    Importante: <strong>si no dices dónde van los nulos, el motor decide por ti y no avisa</strong>. No
+                    hay error ni aviso: el silencio es una decisión tomada por SQLite.
+                </p>
+            </section>
+            <div id="sqlparams" class="header__container">
+                <h3>Parámetros</h3>
+            </div>
+            <section>
+                <p>
+                    Un literal escrito dentro del SQL forma parte <strong>del texto</strong> de la consulta. Un
+                    parámetro es <strong>un hueco que se rellena después</strong>, ya compilada. Existen por dos
+                    razones: <strong>el texto nunca se mezcla con los datos</strong> (un valor con una comilla dentro no
+                    puede alterar la estructura de la consulta, que es lo que evita la inyección SQL), y <strong>la
+                        forma y los datos quedan separados</strong>, así que la consulta se compila una vez y se puede
+                    reejecutar con otros valores.
+                </p>
+                <p>
+                    Tres formas de escribirlos en SQLite:
+                </p>
+                <div class="code__box">
+                    <code><span class="func">?</span>        <span class="comments">-- posicional anónimo: CADA ? ES UN PARÁMETRO DISTINTO,
+            numerado por orden de aparición</span>
+<span class="func">?1</span>       <span class="comments">-- posicional explícito: ?1 repetido en varios sitios
+            es EL MISMO parámetro, se enlaza una vez</span>
+<span class="func">:nombre</span>  <span class="comments">-- con nombre: igual que el anterior pero legible</span></code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    Esto muerde con <strong>UNION</strong>: si el mismo id aparece en el WHERE de las dos mitades y usas
+                    <span class="func">?</span> sin numerar, <strong>son dos parámetros y hay que enlazar los dos</strong>.
+                    El que se quede sin enlazar vale NULL, y como <em>columna = NULL</em> nunca es cierto,
+                    <strong>esa mitad no devolverá jamás una fila</strong> y no habrá ningún error que te lo diga.
+                </p>
+                <p>
+                    Desde C++ el ciclo es <span class="func">prepare</span> → <span class="func">bind</span> → <span
+                        class="func">step</span> en bucle mientras devuelva <span class="key">SQLITE_ROW</span> → <span
+                        class="func">column_*</span> para sacar cada campo → <span class="func">finalize</span>. Dos
+                    trampas clásicas: <strong>los índices de bind empiezan en 1, los de column empiezan en 0</strong>, y
+                    <span class="func">sqlite3_column_int</span> es de <strong>32 bits</strong> (existe <span
+                        class="func">sqlite3_column_int64</span> para lo que no quepa; un valor grande se
+                    <strong>trunca en silencio</strong>). El <span class="func">finalize</span> conviene ponerlo
+                    <strong>en un guard RAII</strong> y no repetido en cada return: si una excepción se cuela entre el
+                    prepare y el finalize, el statement se queda sin liberar.
+                </p>
+                <p>
+                    <span class="key">prepare</span> <strong>compila</strong> el texto SQL a bytecode de la máquina
+                    virtual de SQLite; ese objeto compilado es el <span class="class">sqlite3_stmt</span>. Puedes
+                    ejecutarlo, hacerle <span class="func">reset</span>, cambiarle los parámetros y volver a ejecutarlo
+                    <strong>sin recompilar</strong>. Guardarlo en un miembro en vez de compilar y destruir en cada
+                    llamada es lo que se llama «cachear el statement», y <strong>no tiene nada que ver con cachear
+                        datos</strong>. Cuidado si el código es recursivo: reutilizar el mismo statement mientras un
+                    nivel de arriba lo está recorriendo lo rompe.
+                </p>
+            </section>
+            <div id="sqlejecutar" class="header__container">
+                <h3>Formarla ejecutándola</h3>
+            </div>
+            <section>
+                <p>
+                    <strong>Nunca escribas la consulta entera y la ejecutes al final.</strong> Escribes un trozo, lo
+                    ejecutas, miras el resultado, añades el siguiente. Con <span class="key">LIMIT</span> puesto
+                    mientras exploras, para no llenar la pantalla.
+                </p>
+                <p>
+                    La secuencia es la del método: primero sólo <strong>FROM con todas las columnas</strong>, para ver
+                    qué pinta tiene la tabla de verdad. Luego añades un JOIN y <strong>cuentas las filas</strong>: si
+                    tenías 7 y ahora tienes 7, bien; si tienes 21, ese JOIN multiplicó y hay que entender por qué antes
+                    de seguir. Luego el WHERE. Y <strong>sólo cuando el conjunto de filas es el correcto</strong> te
+                    pones a recortar columnas en el SELECT y a ordenar.
+                </p>
+                <p>
+                    <strong>Contar filas después de cada JOIN es el hábito que ahorra la mayoría de los ratos
+                        perdidos.</strong>
+                </p>
+                <p>
+                    Un fichero SQLite es <strong>un fichero suelto</strong> que cualquier herramienta puede abrir; no
+                    hace falta la app para nada. En el PC: <strong>DB Browser for SQLite</strong> (GUI, tiene una
+                    pestaña «Execute SQL» donde escribes y ves la tabla debajo) o <strong>sqlite3.exe</strong>, la
+                    consola oficial. <strong>Depurar SQL desde el código es horrible</strong>: escríbela fuera y pégala
+                    cuando funcione.
+                </p>
+                <p>
+                    Y para el desarrollo, <strong>mejor una BD de prueba fabricada a mano que los datos reales</strong>.
+                    No es comodidad: con datos reales <strong>no sabes qué tendría que salir</strong>, así que mires lo
+                    que mires no sabrás si está bien. Con tres listas anidadas y cinco canciones repartidas por ti, sí.
+                    Las migraciones de Drizzle son <strong>SQL puro y ejecutable</strong>: la consola tiene un comando
+                    <span class="func">.read</span> para leer y ejecutar un fichero, así que aplicándolas en orden sobre
+                    una BD vacía tienes el esquema idéntico al de la app sin tocar el móvil.
+                </p>
+                <p>
+                    Si necesitas la BD real del dispositivo, en una build de debug se saca a través de la propia app:
+                </p>
+                <div class="code__box">
+                    <code>adb shell run-as com.musicar cp databases/Musicar2.db /sdcard/Musicar2.db
+adb pull /sdcard/Musicar2.db</code><button
+                        class="code__box__copy material-symbols-outlined">content_copy</button>
+                    <div class="code__box__copy__dialog">
+                        ¡Copiado!
+                    </div>
+                </div>
+                <p>
+                    <strong>No uses <span class="func">&gt;</span> en PowerShell para traerte un binario.</strong> La
+                    variante que se ve por ahí (<span class="func">adb exec-out run-as ... cat ... &gt; fichero.db</span>)
+                    funciona en bash, pero PowerShell 5.1 <strong>le aplica codificación de texto a la redirección y
+                        corrompe el .db</strong> sin decir nada. De ahí el rodeo del <span class="func">cp</span> +
+                    <span class="func">pull</span>.
+                </p>
+                <p>
+                    <strong>Cuidado con el WAL.</strong> Si la BD está en modo <em>write-ahead log</em>, junto al
+                    <span class="class">.db</span> hay un <span class="class">-wal</span> y un <span
+                        class="class">-shm</span>, y <strong>los datos recientes están en el -wal, no en el .db</strong>.
+                    Si copias sólo el .db te llevas una foto vieja y te vuelves loco preguntándote por qué no ves lo que
+                    acabas de guardar. Cierra la app del todo antes de copiar (al cerrar limpiamente el WAL se integra),
+                    o cópiate los tres ficheros.
+                </p>
+            </section>
+            <div id="sqldiag" class="header__container">
+                <h3>Diagnóstico</h3>
+            </div>
+            <section>
+                <p>
+                    Casi todo lo que sale mal es uno de estos tres síntomas:
+                </p>
+                <p>
+                    <strong>Salen más filas de las que esperabas.</strong> Un JOIN está multiplicando. O la condición
+                    del ON no es suficientemente específica, o <strong>la relación no es la que creías</strong> (crees
+                    que es uno-a-uno y es uno-a-muchos). Comprueba el grano.
+                </p>
+                <p>
+                    <strong>Salen menos filas, o faltan las «vacías».</strong> Un INNER JOIN se está comiendo las filas
+                    sin pareja. O quieres un LEFT JOIN, o hay <strong>una condición sobre la tabla de la derecha metida
+                        en el WHERE</strong> que anula el LEFT JOIN.
+                </p>
+                <p>
+                    <strong>Salen columnas a NULL que no esperabas.</strong> O el dato es nulo de verdad en la BD, o
+                    vienen de un LEFT JOIN que no encontró pareja. Distinguir cuál de las dos cosas es te dice si el
+                    problema está <strong>en los datos o en la consulta</strong>.
+                </p>
+                <p>
+                    Y el que no es de SQL pero cuesta lo mismo: <strong>una consulta correcta que devuelve cero filas
+                        porque un parámetro se quedó sin enlazar</strong>. No hay error. Si una mitad de un UNION nunca
+                    aparece, mira los <span class="func">bind</span> antes que el SQL.
                 </p>
             </section>
         </main>
